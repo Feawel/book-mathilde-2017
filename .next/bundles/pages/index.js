@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/', function() {
+            var comp = module.exports=webpackJsonp([5],{348:function(e,t,l){e.exports=l(349)},349:function(e,t,l){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var u=l(10),n=a(u),r=l(114),d=a(r),c=l(175),f=a(c);t.default=function(){return n.default.createElement("div",null,n.default.createElement(d.default,null,n.default.createElement("title",null,"This page has a title 🤔"),n.default.createElement("meta",{charSet:"utf-8"}),n.default.createElement("meta",{name:"viewport",content:"initial-scale=1.0, width=device-width"})),n.default.createElement("h1",null,"Welcome to next.js!"),n.default.createElement("div",null,"Click ",n.default.createElement(f.default,{href:{pathname:"/about",query:{name:"Zeit"}}},n.default.createElement("a",null,"here"))," to read more"),n.default.createElement("div",null,"Click ",n.default.createElement(f.default,{href:"about",replace:!0},n.default.createElement("a",null,"here"))," to read more"))}}},[348]);
+            return { page: comp.default }
+          })
+        

@@ -1,0 +1,27 @@
+{
+  "name": "book-mathilde-2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feawel/book-mathilde-2017.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Feawel/book-mathilde-2017/issues"
+  },
+  "homepage": "https://github.com/Feawel/book-mathilde-2017#readme",
+  "dependencies": {
+    "next": "^3.0.1-beta.21",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
