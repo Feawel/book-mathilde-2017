@@ -121,7 +121,7 @@ var HomeProjects = function (_React$Component) {
         });
       } else {
         clearInterval(_this.interval);
-        _this.setState({ animating: false });
+        _this.setState({ animating: false, textTop: 0, lineWidth: 40, draw: true });
       }
     };
 
@@ -132,7 +132,10 @@ var HomeProjects = function (_React$Component) {
       opacityFrames: _data2.default.animations.switchProjects.opacityFrames,
       width: 1,
       opacity: 0.5,
-      animating: false
+      animating: false,
+      textTop: 0,
+      lineWidth: 40,
+      draw: null
     };
 
     _this.updateProject = _this.updateProject.bind(_this);
@@ -147,59 +150,61 @@ var HomeProjects = function (_React$Component) {
       var _state = this.state,
           current = _state.current,
           width = _state.width,
-          opacity = _state.opacity;
+          opacity = _state.opacity,
+          textTop = _state.textTop,
+          lineWidth = _state.lineWidth,
+          draw = _state.draw;
 
       var project = _data2.default.projects[current % 2];
 
       return _react2.default.createElement(_wrapper2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 51
         }
       }, _react2.default.createElement(_columns2.default, { width: width, opacity: opacity, __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 52
         }
       }), _react2.default.createElement(_about2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 53
         }
       }), _react2.default.createElement(_menu2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 54
         }
       }), _react2.default.createElement(_scrollDown2.default, { onClick: function onClick() {
           return _this2.updateWithDebounce();
         }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 55
         }
       }), _react2.default.createElement(_social2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 56
         }
       }), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 0 }, _data2.default.projects[0].picture, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 57
         }
       })), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 1 }, _data2.default.projects[1].picture, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 58
         }
-      })), _react2.default.createElement(_infos2.default, (0, _extends3.default)({}, project, {
+      })), _react2.default.createElement(_infos2.default, (0, _extends3.default)({ top: textTop, lineWidth: lineWidth }, project, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 59
         }
-      })), _react2.default.createElement(_call2.default, {
-        __source: {
+      })), _react2.default.createElement(_call2.default, { top: textTop, draw: draw, __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 60
         }
       }));
     }
@@ -213,7 +218,10 @@ var HomeProjects = function (_React$Component) {
           index: 0,
           opacity: 0.5,
           width: 1,
-          animating: true
+          animating: true,
+          textTop: 100,
+          lineWidth: 0,
+          draw: false
         }, function () {
           return _this3.interval = setInterval(function () {
             return _this3.updateWidth();

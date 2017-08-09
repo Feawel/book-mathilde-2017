@@ -1,5 +1,6 @@
+import DownUp from '../animations/downUp.js'
 // src/componentqs/homeProjects/infos.js
-const Infos = ({ title, problematic, number, tags }) => (
+const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
   <div className='Project_infos'>
     <style jsx>{`
       div {
@@ -30,23 +31,27 @@ const Infos = ({ title, problematic, number, tags }) => (
         color: #94eced;
         line-height: 30px;
       }
-      .Project_infos_tags {
-        font-family: 'Playfair Display';
-        font-weight: 700;
-        font-size: 12px;
-      }
-      .Tag {
-        font-style: italic;
-      }
-      .Dot {
-        padding: 0 20px;
-      }
       .Line {
-        width: 40px;
         height: 4px;
         background-color: #94eced;
         margin: 37px auto 20px auto;
       }
+    `}</style>
+    <Number top={top} number={number} />
+    <div style={{ width: lineWidth}} className='Line transitions' />
+    <DownUp top={top}>
+      <h2 className='Project_infos_title'>{title}</h2>
+    </DownUp>
+    <DownUp top={top}>
+      <p className='Project_infos_problematic' dangerouslySetInnerHTML={{ __html: problematic }}/>
+    </DownUp>
+    <Tags top={top} />
+  </div>
+)
+
+const Number = ({ top, number }) =>
+  <DownUp top={top}>
+    <style jsx>{`
       object svg {
         fill: white;
       }
@@ -57,17 +62,30 @@ const Infos = ({ title, problematic, number, tags }) => (
       className='Project_infos_number'
       height='70'>
     </object>
-    <div className='Line' />
-    <h2 className='Project_infos_title'>{title}</h2>
-    <p className='Project_infos_problematic' dangerouslySetInnerHTML={{ __html: problematic }}/>
+  </DownUp>
+
+const Tags = ({ top }) =>
+  <DownUp top={top}>
     <div className='Project_infos_tags'>
+      <style jsx>{`
+        .Project_infos_tags {
+          font-family: 'Playfair Display';
+          font-weight: 700;
+          font-size: 12px;
+        }
+        .Tag {
+          font-style: italic;
+        }
+        .Dot {
+          padding: 0 20px;
+        }
+      `}</style>
       <span className='Tag'>User Interface</span>
       <span className='Dot'>•</span>
       <span className='Tag'>User Experience</span>
       <span className='Dot' >•</span>
       <span className='Tag'>Illustration</span>
     </div>
-  </div>
-)
+  </DownUp>
 
 export default Infos

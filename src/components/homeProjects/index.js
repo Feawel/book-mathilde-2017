@@ -27,7 +27,10 @@ class HomeProjects extends React.Component {
       opacityFrames: data.animations.switchProjects.opacityFrames,
       width: 1,
       opacity: 0.5,
-      animating: false
+      animating: false,
+      textTop: 0,
+      lineWidth: 40,
+      draw: null
     }
 
     this.updateProject = this.updateProject.bind(this)
@@ -42,7 +45,7 @@ class HomeProjects extends React.Component {
     window.removeEventListener('mousewheel', this.updateWithDebounce)
 
   render () {
-    const { current, width, opacity } = this.state
+    const { current, width, opacity, textTop, lineWidth, draw } = this.state
     const project = data.projects[current%2]
 
     return <Wrapper>
@@ -53,8 +56,8 @@ class HomeProjects extends React.Component {
       <Social />
       <Background hide={current !== 0} {...data.projects[0].picture} />
       <Background hide={current !== 1} {...data.projects[1].picture} />
-      <Infos {...project}/>
-      <Call />
+      <Infos top={textTop} lineWidth={lineWidth} {...project}/>
+      <Call top={textTop} draw={draw} />
     </Wrapper>
   }
 
@@ -64,7 +67,10 @@ class HomeProjects extends React.Component {
         index: 0,
         opacity: 0.5,
         width: 1,
-        animating: true
+        animating: true,
+        textTop: 100,
+        lineWidth: 0,
+        draw: false
       }, () => this.interval = setInterval(() => this.updateWidth(), 100))
 
     }
@@ -82,7 +88,7 @@ class HomeProjects extends React.Component {
       })
     } else {
       clearInterval(this.interval)
-      this.setState({animating: false})
+      this.setState({ animating: false, textTop: 0, lineWidth: 40, draw: true })
     }
   }
 }
