@@ -3,7 +3,7 @@ const Social = () => (
   <div className='Social'>
     <style jsx>{`
       .Social {
-        z-index: 10;
+        z-index: 9;
         width: 20px;
         position: absolute;
         bottom: 8px;

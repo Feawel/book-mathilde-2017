@@ -22,7 +22,7 @@ class Menu extends React.Component {
           width: 40px;
           height: 40px;
           border: 1px solid white;
-          z-index: 10;
+          z-index: 9;
         }
       `}</style>
         { open ? <SVGCloseIcon key='open' /> : <SVGMenuIcon key='close' /> }

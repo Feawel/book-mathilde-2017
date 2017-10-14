@@ -11,7 +11,7 @@ const ScrollDown = ({ onClick }) => (
         font-size: 10px;
         font-family: Futura;
         font-weight: bold;
-        z-index: 10;
+        z-index: 9;
       }
       .Scroll_down_text {
         text-orientation: upright;

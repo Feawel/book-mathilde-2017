@@ -16,6 +16,10 @@ export default () => (
         margin: 0;
         padding: 0;
       }
+       body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-child > div:first-child  {
+        height: 100%;
+        margin: 0;
+      }
       .clickable:hover {
         cursor: pointer;
       }

@@ -6,7 +6,7 @@ const WhiteBorderWrapper = ({ children }) =>
         width: calc(100% - 20px);
         height: calc(100% - 20px);
         border: 10px solid white;
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         margin: 0;

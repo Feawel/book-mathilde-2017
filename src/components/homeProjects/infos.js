@@ -20,7 +20,7 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
         text-align: center;
         position: absolute;
         top: calc(50% - 256px);
-        z-index: 10;
+        z-index: 9;
       }
       .Project_infos_problematic {
         font-size: 16px;

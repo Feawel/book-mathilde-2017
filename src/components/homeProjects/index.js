@@ -49,18 +49,20 @@ class HomeProjects extends React.Component {
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating } = this.state
     const project = data.projects[current%2]
-    return <Wrapper>
-      <Lines  />
-      <About />
-      <Menu />
-      <ScrollDown onClick={() => this.updateWithDebounce()} />
-      <Social />
-      {/*<Background hide={current !== 0} {...data.projects[0].picture} />
-      <Background hide={current !== 1} {...data.projects[1].picture} />*/}
-      <Infos top={textTop} lineWidth={lineWidth} {...project}/>
-      <BackgroundMask animating={animating} current={current} maskWidth={maskWidth} picture1={data.projects[0].picture} picture2={data.projects[1].picture} />
-      <Call top={textTop} draw={draw} />
-    </Wrapper>
+    return [
+      <About key='about' />,
+      <Wrapper key='project' >
+        <Lines  />
+        <Menu />
+        <ScrollDown onClick={() => this.updateWithDebounce()} />
+        <Social />
+        {/*<Background hide={current !== 0} {...data.projects[0].picture} />
+        <Background hide={current !== 1} {...data.projects[1].picture} />*/}
+        <Infos top={textTop} lineWidth={lineWidth} {...project}/>
+        <BackgroundMask animating={animating} current={current} maskWidth={maskWidth} picture1={data.projects[0].picture} picture2={data.projects[1].picture} />
+        <Call top={textTop} draw={draw} />
+      </Wrapper>
+    ]
   }
 
   updateProject () {

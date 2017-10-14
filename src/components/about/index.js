@@ -1,23 +1,27 @@
 // src/componentqs/about/index.js
-const About = () => (
-  <div className='Logo_wrapper'>
-    <style jsx>{`
-      .Logo_wrapper {
-        position : absolute;
-        top: 40px;
-        left: 30px;
-        color: white;
-        z-index: 10;
-      }
-      img {
-        width: 180px;
-      }
-      img:hover {
-        cursor: pointer;
-      }
-    `}</style>
-    <img className='Logo' src='/static/logo-01.svg' alt='Logo Mathilde Serra - 2017©' />
-  </div>
-)
+import AboutPanel from './panel'
+import AboutLogo from './logo'
+
+class About extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false
+    }
+  }
+
+  render () {
+    const { open } = this.state
+    return [
+      <AboutPanel key='panel' toggleOpen={() => this.toggleOpen()} open={open} />,
+      <AboutLogo key='logo' toggleOpen={() => this.toggleOpen()} />
+    ]
+  }
+
+  toggleOpen () {
+    console.log('toggle open ')
+    this.setState({open: !this.state.open})
+  }
+}
 
 export default About

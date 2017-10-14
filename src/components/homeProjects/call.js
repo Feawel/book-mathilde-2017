@@ -9,7 +9,7 @@ const Call = ({ draw, top }) => (
       text-align: center;
       position: absolute;
       bottom: 140px;
-      z-index: 10;
+      z-index: 9;
       height: 40px;
       color: white;
     }
