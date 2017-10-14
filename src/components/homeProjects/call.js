@@ -40,11 +40,11 @@ const Call = ({ draw, top }) => (
     }
     .path {
       stroke-dasharray: 2000;
-      animation: dash 5s linear forwards;
+      animation: dash 3s linear forwards;
     }
     .path2 {
       stroke-dasharray: 2000;
-      animation: dash2 5s linear forwards;
+      animation: dash2 3s linear forwards;
     }
     @keyframes dash {
       from {

@@ -9,11 +9,11 @@ const DownUp = ({ children, top = 0 }) =>
       }
       .Down_up {
         position: relative;
-        -webkit-transition			: all 1s  ;
-        -moz-transition				: all 1s  ;
-        -ms-transition				: all 1s  ;
-        -o-transition 				: all 1s  ;
-        transition 					: all 1s  ;
+        -webkit-transition			: all 1.5s  ;
+        -moz-transition				: all 1.5s  ;
+        -ms-transition				: all 1.5s  ;
+        -o-transition 				: all 1.5s  ;
+        transition 					: all 1.5s  ;
       }
     `}</style>
     <div style={{ top }} className='Down_up transitions'>{children}</div>
