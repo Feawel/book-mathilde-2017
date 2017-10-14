@@ -3,7 +3,7 @@ import Line from './line'
 import data from '../../../data'
 
 const Columns = ({ width, opacity }) =>
-  <div>
+  <div style={{height:0}}>
     <DesktopLines width={width} opacity={opacity} />
     <TabletLines width={typeof width === 'string' ? width.split('%')[0]*1.25+'%' : width} opacity={opacity} />
     <SmartphoneLines width={typeof width === 'string' ? width.split('%')[0]*1.67+'%' : width} opacity={opacity} />
