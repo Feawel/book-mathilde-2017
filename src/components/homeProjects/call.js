@@ -62,6 +62,14 @@ const Call = ({ draw, top }) => (
         stroke-dashoffset: -2000;
       }
     }
+    @media screen and (max-width: 1023px) {
+      svg path {
+        fill: white;
+      }
+      .Call_text {
+        color: #008db9;
+      }
+    }
   `}</style>
     <div className='Call clickable'>
       <svg>

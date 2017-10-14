@@ -10,6 +10,7 @@ import Background from './background'
 import Call from './call'
 import About from '../about'
 import Lines from '../columns'
+import BackgroundMask from '../animations/backgroundMask'
 
 // Static data
 import data from '../../../data'
@@ -56,6 +57,7 @@ class HomeProjects extends React.Component {
       <Social />
       <Background hide={current !== 0} {...data.projects[0].picture} />
       <Background hide={current !== 1} {...data.projects[1].picture} />
+      {/*<BackgroundMask hide={current !== 0} width={width} picture1={data.projects[0].picture} picture2={data.projects[1].picture} />*/}
       <Infos top={textTop} lineWidth={lineWidth} {...project}/>
       <Call top={textTop} draw={draw} />
     </Wrapper>

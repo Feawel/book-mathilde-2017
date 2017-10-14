@@ -2,7 +2,7 @@
 import Down_arrow from '../pictos/down_arrow'
 
 const ScrollDown = ({ onClick }) => (
-  <div className='Scroll_down clickable'>
+  <div onClick={onClick} className='Scroll_down clickable'>
     <style jsx>{`
       .Scroll_down {
         position: absolute;
@@ -21,8 +21,19 @@ const ScrollDown = ({ onClick }) => (
         color: white;
         position: relative;
       }
+      @media screen and (max-width: 1023px) {
+        .Scroll_down {
+          width: 100%;
+          bottom: 35px;
+          left: 6px;
+          text-align: center;
+        }
+        .Scroll_down_text {
+          display: none;
+        }
+      }
     `}</style>
-    <div onClick={onClick} className='Scroll_down_text'>
+    <div className='Scroll_down_text'>
       <span className='Scroll_down_letter'>S</span>
       <span className='Scroll_down_letter'>C</span>
       <span className='Scroll_down_letter'>R</span>

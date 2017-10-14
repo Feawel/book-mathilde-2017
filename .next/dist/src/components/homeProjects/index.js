@@ -68,6 +68,10 @@ var _columns = require('../columns');
 
 var _columns2 = _interopRequireDefault(_columns);
 
+var _backgroundMask = require('../animations/backgroundMask');
+
+var _backgroundMask2 = _interopRequireDefault(_backgroundMask);
+
 var _data = require('../../../data');
 
 var _data2 = _interopRequireDefault(_data);
@@ -76,17 +80,10 @@ var _debounce = require('../../utils/debounce');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/feawel/Dev/book-mathilde-2017/src/components/homeProjects/index.js';
-
-// Components
-
-
 // Static data
 
 
-// Utils
-
-
+// Components
 var HomeProjects = function (_React$Component) {
   (0, _inherits3.default)(HomeProjects, _React$Component);
 
@@ -157,56 +154,9 @@ var HomeProjects = function (_React$Component) {
 
       var project = _data2.default.projects[current % 2];
 
-      return _react2.default.createElement(_wrapper2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        }
-      }, _react2.default.createElement(_columns2.default, { width: width, opacity: opacity, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        }
-      }), _react2.default.createElement(_about2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 53
-        }
-      }), _react2.default.createElement(_menu2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        }
-      }), _react2.default.createElement(_scrollDown2.default, { onClick: function onClick() {
+      return _react2.default.createElement(_wrapper2.default, null, _react2.default.createElement(_columns2.default, { width: width, opacity: opacity }), _react2.default.createElement(_about2.default, null), _react2.default.createElement(_menu2.default, null), _react2.default.createElement(_scrollDown2.default, { onClick: function onClick() {
           return _this2.updateWithDebounce();
-        }, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        }
-      }), _react2.default.createElement(_social2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56
-        }
-      }), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 0 }, _data2.default.projects[0].picture, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        }
-      })), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 1 }, _data2.default.projects[1].picture, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        }
-      })), _react2.default.createElement(_infos2.default, (0, _extends3.default)({ top: textTop, lineWidth: lineWidth }, project, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        }
-      })), _react2.default.createElement(_call2.default, { top: textTop, draw: draw, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        }
-      }));
+        } }), _react2.default.createElement(_social2.default, null), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 0 }, _data2.default.projects[0].picture)), _react2.default.createElement(_background2.default, (0, _extends3.default)({ hide: current !== 1 }, _data2.default.projects[1].picture)), _react2.default.createElement(_infos2.default, (0, _extends3.default)({ top: textTop, lineWidth: lineWidth }, project)), _react2.default.createElement(_call2.default, { top: textTop, draw: draw }));
     }
   }, {
     key: 'updateProject',
@@ -234,4 +184,5 @@ var HomeProjects = function (_React$Component) {
   return HomeProjects;
 }(_react2.default.Component);
 
+// Utils
 exports.default = HomeProjects;

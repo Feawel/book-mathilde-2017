@@ -20,6 +20,7 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
         text-align: center;
         position: absolute;
         top: calc(50% - 256px);
+        z-index: 10;
       }
       .Project_infos_problematic {
         font-size: 16px;
@@ -35,6 +36,25 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
         height: 4px;
         background-color: #94eced;
         margin: 37px auto 20px auto;
+      }
+      @media screen and (max-width: 1023px) {
+        .Project_infos {
+          top: calc(50% - 170px);
+        }
+        h2 {
+          font-size:44px;
+        }
+        .Line {
+          margin: 17px auto 0 auto;
+        }
+        .Project_infos_problematic {
+          font-size:12px;
+        }
+      }
+      @media screen and (max-width: 640px) {
+        h2 {
+          padding: 10px;
+        }
       }
     `}</style>
     <Number top={top} number={number} />
@@ -55,6 +75,11 @@ const Number = ({ top, number }) =>
       object svg {
         fill: white;
       }
+      @media screen and (max-width: 1023px) {
+        object {
+          height: 48px;
+        }
+      }
     `}</style>
     <object
       data={`/static/home-projects/number/${number}.svg`}
@@ -72,6 +97,11 @@ const Tags = ({ top }) =>
           font-family: 'Playfair Display';
           font-weight: 700;
           font-size: 12px;
+        }
+        @media screen and (max-width: 1023px) {
+          .Project_infos_tags {
+            display: none;
+          }
         }
         .Tag {
           font-style: italic;

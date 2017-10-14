@@ -16,6 +16,11 @@ const Social = () => (
         margin-bottom: 20px;
         display: inline-block;
       }
+      @media screen and (max-width: 1023px) {
+        .Social {
+          display: none;
+        }
+      }
     `}</style>
     <a target='_blank' href='/'><img src='/static/pictos/picto-twitter.svg' alt={`Mathilde Serra's twitter`} /></a>
     <a target='_blank' href='/'><img src='/static/pictos/picto-behance.svg' alt={`Mathilde Serra's behance`} /></a>
