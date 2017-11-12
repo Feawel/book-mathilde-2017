@@ -3,8 +3,8 @@ const SVGCloseIcon = () =>
     <style jsx>{`
       svg {
           position: absolute;
-          top: 4px;
-          left: 4px;
+          top: 6px;
+          left: 3px;
           fill: white;
           width: 40px;
           height: 40px;

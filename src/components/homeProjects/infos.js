@@ -1,6 +1,8 @@
 import DownUp from '../animations/downUp.js'
+import Call from './call'
+
 // src/componentqs/homeProjects/infos.js
-const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
+const Infos = ({ title, problematic, number, tags, top, draw, lineWidth = 35 }) => (
   <div className='Project_infos'>
     <style jsx>{`
       div {
@@ -19,15 +21,16 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
         display: inline-block;
         text-align: center;
         position: absolute;
-        top: calc(50% - 256px);
+        top: calc(50% - 202px);
         z-index: 9;
+        zoom: 1;
       }
       .Project_infos_problematic {
         font-size: 16px;
         font-family: Futura;
         font-weight: bold;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.15em;
         margin-bottom: 30px;
         color: #94eced;
         line-height: 30px;
@@ -56,6 +59,12 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
           padding: 10px;
         }
       }
+      // Media Query to handle dezoom effect on centered typo when small height
+      @media screen and (max-height: 700px) {
+        .Project_infos {
+          zoom: 0.9;
+        }
+      }
     `}</style>
     <Number top={top} number={number} />
     <div style={{ width: lineWidth}} className='Line transitions' />
@@ -66,6 +75,7 @@ const Infos = ({ title, problematic, number, tags, top, lineWidth = 40 }) => (
       <p className='Project_infos_problematic' dangerouslySetInnerHTML={{ __html: problematic }}/>
     </DownUp>
     <Tags top={top} />
+    <Call top={top} draw={draw} />
   </div>
 )
 
@@ -82,10 +92,10 @@ const Number = ({ top, number }) =>
       }
     `}</style>
     <object
-      data={`/static/home-projects/number/${number}.svg`}
+      data={`/static/home-projects/number/${number.index}.svg`}
       type='image/svg+xml'
       className='Project_infos_number'
-      height='70'>
+      height={number.height}>
     </object>
   </DownUp>
 
@@ -95,7 +105,7 @@ const Tags = ({ top }) =>
       <style jsx>{`
         .Project_infos_tags {
           font-family: 'Playfair Display';
-          font-weight: 700;
+          font-weight: bold;
           font-size: 12px;
         }
         @media screen and (max-width: 1023px) {
@@ -105,6 +115,7 @@ const Tags = ({ top }) =>
         }
         .Tag {
           font-style: italic;
+          letter-spacing: 0.05em;
         }
         .Dot {
           padding: 0 20px;

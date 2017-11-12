@@ -1,25 +1,62 @@
-const SVGMenuIcon = () =>
+const translations = {
+  topLeft: {X: 8, Y: 8},
+  topCenter: {X: 0, Y: 8},
+  topRight: {X: -8, Y: 8},
+  centerLeft: {X: 8, Y:0},
+  centerRight: {X: -8, Y:0},
+  bottomLeft: {X: 8, Y: -8},
+  bottomCenter: {X: 0, Y: -8},
+  bottomRight: {X: -8, Y: -8}
+}
+
+const SVGMenuIcon = ({}) =>
   <svg className='clickable'>
     <style jsx>{`
       svg {
-          position: absolute;
-          top: 7px;
-          left: 7px;
-          fill: white;
-          width: 40px;
-          height: 40px;
-        }
+        position: absolute;
+        top: 3px;
+        left: -1px;
+        width: 40px;
+        height: 40px;
+      }
+      circle {
+        fill: white;
+      }
+      svg:hover > g > .Top_left {
+        transform: translate(8px, 8px);
+      }
+      svg:hover > g > .Top_center {
+        transform: translate(0px, 8px);
+      }
+      svg:hover > g > .Top_right {
+        transform: translate(-8px, 8px);
+      }
+      svg:hover > g > .Center_left {
+        transform: translate(8px, 0px);
+      }
+      svg:hover > g > .Center_right {
+        transform: translate(-8px, 0px);
+      }
+      svg:hover > g > .Bottom_left {
+        transform: translate(8px, -8px);
+      }
+      svg:hover > g > .Bottom_center {
+        transform: translate(0px, -8px);
+      }
+      svg:hover > g > .Bottom_right {
+        transform: translate(-8px, -8px);
+      }
     `}</style>
     <g>
-      <circle cx='5' cy='5.1' r='2'/>
-      <circle cx='20.9' cy='5.1' r='2'/>
-      <circle cx='13' cy='5.1' r='2'/>
-      <circle cx='5' cy='13' r='2'/>
-      <circle cx='20.9' cy='13' r='2'/>
-      <circle cx='13' cy='13' r='2'/>
-      <circle cx='5' cy='21' r='2'/>
-      <circle cx='20.9' cy='21' r='2'/>
-      <circle cx='13' cy='21' r='2'/>
+      <circle className='transitions Top_left' cx='12' cy='10.1' r='2'/>
+      <circle className='transitions Top_right' cx='27.9' cy='10.1' r='2'/>
+      <circle className='transitions Top_center' cx='20' cy='10.1' r='2'/>
+      <circle className='transitions Center_left' cx='12' cy='18' r='2'/>
+      <circle className='transitions Center_right' cx='27.9' cy='18' r='2'/>
+      <circle  cx='20' cy='18' r='2'/>
+      <circle className='transitions Bottom_left' cx='12' cy='26' r='2'/>
+      <circle className='transitions Bottom_right' cx='27.9' cy='26' r='2'/>
+      <circle className='transitions Bottom_center' cx='20' cy='26' r='2'/>
     </g>
   </svg>
 

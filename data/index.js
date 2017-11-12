@@ -3,7 +3,10 @@ const data = {
         {
           title: "Numeric books",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
-          number: 1,
+          number: {
+            index: 1,
+            height: 60
+          },
           tags: ["User Interface", "User Experience", "Illustration"],
           picture: {
             alt: "Background picture for project #1 : numeric books",
@@ -13,7 +16,49 @@ const data = {
         {
           title: "Rosetta exposition",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
-          number: 2,
+          number: {
+            index: 2,
+            height: 60
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          }
+        },
+        {
+          title: "Ornikar",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 3,
+            height: 70
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          }
+        },
+        {
+          title: "Classe numérique",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 4,
+            height: 67
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          }
+        },
+        {
+          title: "Projet 5",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 5,
+            height: 70
+          },
           tags: ["User Interface", "User Experience", "Illustration"],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
@@ -30,5 +75,43 @@ const data = {
       }
     }
 }
+
+export const skills = [
+  {
+    title: 'Adobe Photoshop',
+    icon: 'Ps',
+    level: 'Expert',
+    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    className: 'Photoshop'
+  },
+  {
+    title: 'Adobe Illustrator',
+    icon: 'Ai',
+    level: 'Expert',
+    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    className: 'Illustrator'
+  },
+  {
+    title: 'Sketch',
+    icon: 'Sk',
+    level: 'Expert',
+    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    className: 'Sketch'
+  },
+  {
+    title: 'Adobe AfterEffect',
+    icon: 'Ae',
+    level: 'Expert',
+    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    className: 'Aftereffect'
+  },
+  {
+    title: 'Drawing',
+    icon: 'Dr',
+    level: 'Expert',
+    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    className: 'Drawing'
+  }
+]
 
 export default data

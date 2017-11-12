@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import HomeProject from '../src/components/homeProjects'
+import App from '../src/components/app'
 export default () => (
-  <div>
+  <div className='generic-text'>
     <Head>
       <title>Book 🤔</title>
       <meta charSet='utf-8' />
@@ -30,7 +30,14 @@ export default () => (
         -o-transition 				: all .5s  ;
         transition 					: all .5s  ;
       }
+      .generic-text{
+        text-rendering: optimizelegibility;
+        font-smooth: always;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: rgba(0,0,0,0.8);
+      }
     `}</style>
-    <HomeProject />
+    <App />
   </div>
 )

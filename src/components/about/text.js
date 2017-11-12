@@ -39,7 +39,7 @@ const Text = () =>
       I’m looking for challenging design work, if you have a particulary tricky one, no doubt,
       i’m the girl for you !
     </div>
-    <div className='About_text Email'>mathilde.serra01@gmail.com</div>
+    <div className='About_text Email transitions'>mathilde.serra01@gmail.com</div>
   </div>
 
 export default Text

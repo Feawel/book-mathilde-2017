@@ -2,13 +2,11 @@ import React from 'react'
 
 // Components
 import Social from './social'
-import Menu from './menu'
 import ScrollDown from './scrollDown'
 import Infos from './infos'
 import Wrapper from './wrapper'
 import Background from './background'
-import Call from './call'
-import About from '../about'
+
 import Lines from '../columns'
 import BackgroundMask from '../animations/backgroundMask'
 
@@ -40,29 +38,26 @@ class HomeProjects extends React.Component {
 
   componentDidMount = () => {
     this.updateWithDebounce = debounce(this.updateProject, 500, true)
-    window.addEventListener('mousewheel', this.updateWithDebounce)
+    window.addEventListener('wheel', this.updateWithDebounce)
   }
 
   componentWillUnmount = () =>
-    window.removeEventListener('mousewheel', this.updateWithDebounce)
+    window.removeEventListener('wheel', this.updateWithDebounce)
 
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating } = this.state
     const project = data.projects[current%2]
-    return [
-      <About key='about' />,
-      <Wrapper key='project' >
+    return (
+      <Wrapper >
         <Lines  />
-        <Menu />
-        <ScrollDown onClick={() => this.updateWithDebounce()} />
+        <ScrollDown move={animating} onClick={() => this.updateWithDebounce()} />
         <Social />
         {/*<Background hide={current !== 0} {...data.projects[0].picture} />
         <Background hide={current !== 1} {...data.projects[1].picture} />*/}
-        <Infos top={textTop} lineWidth={lineWidth} {...project}/>
+        <Infos top={textTop} draw={draw} lineWidth={lineWidth} {...project}/>
         <BackgroundMask animating={animating} current={current} maskWidth={maskWidth} picture1={data.projects[0].picture} picture2={data.projects[1].picture} />
-        <Call top={textTop} draw={draw} />
       </Wrapper>
-    ]
+    )
   }
 
   updateProject () {

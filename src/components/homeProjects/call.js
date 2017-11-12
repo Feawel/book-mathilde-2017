@@ -7,17 +7,17 @@ const Call = ({ draw, top }) => (
     .Call_wrapper {
       width: 100%;
       text-align: center;
-      position: absolute;
-      bottom: 140px;
-      z-index: 9;
+      z-index: 8;
       height: 40px;
       color: white;
+      margin-top: 40px;
     }
     .Call {
       display: inline-block;
       position: relative;
       width: 218px;
       height: 40px;
+      z-index: 12;
     }
     .Call_text {
       text-transform: uppercase;
@@ -30,6 +30,7 @@ const Call = ({ draw, top }) => (
       left: 0;
       height: 45px;
       width: 218px;
+      letter-spacing: 0.1em;
     }
     svg {
       height: 45px;
@@ -37,6 +38,12 @@ const Call = ({ draw, top }) => (
       position: absolute;
       top: 0;
       left: 0;
+    }
+    .Call:hover path {
+      fill: white;
+    }
+    .Call:hover .Call_text {
+      color: #008db9;
     }
     .path {
       stroke-dasharray: 2000;
@@ -71,12 +78,12 @@ const Call = ({ draw, top }) => (
       }
     }
   `}</style>
-    <div className='Call clickable'>
+    <div className='Call transitions clickable'>
       <svg>
 
         <path d={'M25 2 L 195 2 A 5 5 0 0 1 195 42 L 25 42 A 5 5 0 0 1 25 2'}
           stroke='white'
-          className={draw === null ? '' : (draw === false ? 'path2' : 'path')}
+          className={`transitions ${draw === null ? '' : (draw === false ? 'path2' : 'path')}`}
           strokeWidth={1}
           fill='none'
         />

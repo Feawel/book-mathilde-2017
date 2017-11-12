@@ -14,6 +14,12 @@ const CloseAbout = ({toggleOpen}) =>
         text-transform: uppercase;
         color: white;
         display: inline-block;
+        display: none;
+      }
+      .Circle {
+        position: absolute;
+        bottom: 17px;
+        right: 10px;
       }
       svg {
         fill: white;
@@ -26,7 +32,6 @@ const CloseAbout = ({toggleOpen}) =>
       circle {
         opacity: 0.5;
       }
-      polygon {}
       .Close_text {
         display: inline-block;
         vertical-align: top;
@@ -37,8 +42,11 @@ const CloseAbout = ({toggleOpen}) =>
       }
     `}</style>
     <div className='Close_text'>CLOSE</div>
+    <svg className='Circle'>
+      <circle cx="26" cy="26" r="20" stroke="white" strokeWidth="1" fill="none" />
+    </svg>
+
     <svg>
-      <circle cx="16" cy="16" r="20" stroke="white" strokeWidth="1" fill="none" />
       <polygon points="26.1,8.8 23.2,5.9 16,13.2 8.9,6.1 6.1,9 13.2,16 5.9,23.3 8.7,26.1 16,18.8 23,25.9 25.9,23.1 18.8,16 "/>
     </svg>
   </div>
