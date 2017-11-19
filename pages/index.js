@@ -30,6 +30,9 @@ export default () => (
         -o-transition 				: all .5s  ;
         transition 					: all .5s  ;
       }
+      .hide {
+        display: none;
+      }
       .generic-text{
         text-rendering: optimizelegibility;
         font-smooth: always;

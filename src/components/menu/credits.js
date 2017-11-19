@@ -18,6 +18,11 @@ const Credits = () =>
         color: #61daff;
         text-decoration: none;
       }
+      @media screen and (max-width: 750px) {
+        .Menu_credits {
+          display:none;
+        }
+      }
     `}</style>
     <span className='Prefix'>developped by</span>
     <a className='Me' href='https://www.linkedin.com/in/jonathanbanon' target='_blank'>jonathan banon</a>

@@ -1,7 +1,9 @@
 // src/componentqs/menu/slider.js
+import Button from './button'
+import Picture from './picture'
 
 const MainItem = ({ project }) =>
-  <div className='Main_item'>
+  <div className='Main_item' style={{color: project.color}}>
     <style jsx>{`
       .Main_item {
         color: #00b0dc;
@@ -12,12 +14,15 @@ const MainItem = ({ project }) =>
     {project.title}
   </div>
 
-const Item = ({ project, index }) =>
-   <div style={{opacity: Math.max(1 - index*0.2, 0)}} className='Item'>
+const Item = ({ project, index, current }) =>
+   <div style={{
+      opacity: Math.max(1 - Math.abs(index-current)*0.2, 0),
+      color: index === current ? project.color : 'white',
+      fontSize: index === current ? 36 : 24,
+      height: index===current ? 80 : 40
+    }} className='Item transitions'>
     <style jsx>{`
       .Item {
-        color: white;
-        font-size: 24px;
         height: 20px;
         margin: 30px 0;
       }
@@ -25,12 +30,14 @@ const Item = ({ project, index }) =>
     {project.title}
   </div>
 
-const MenuSlider = ({ projects = [], current }) =>
-  <div className='Menu_slider'>
+const MenuSlider = ({ projects = [], current }) => [
+  <Button key='button' gradient={projects[current].gradient} />,
+  <Picture key='picture' picture={projects[current].picture} />,
+  <div key='slider' className='Menu_slider transitions' style={{top: `calc(50% - ${80 + 70*current}px)`}}>
     <style jsx>{`
       .Menu_slider {
         position: absolute;
-        top: 40px;
+        top: calc(50% - 80px);
         width: 350px;
         left: calc(50% - 150px);
         height: 100%;
@@ -44,14 +51,11 @@ const MenuSlider = ({ projects = [], current }) =>
         width: 350px;
       }
     `}</style>
+
     <div className='Items'>
-      {projects.map((project, i) =>
-        i === current
-          ? <MainItem key={i} project={project} />
-          : <Item key={i} project={project} index={i} />
-      )}
+      {projects.map((project, i) => <Item current={current} key={i} project={project} index={i} />)}
     </div>
   </div>
-
+]
 
 export default MenuSlider

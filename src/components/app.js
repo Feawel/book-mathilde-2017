@@ -1,18 +1,17 @@
 // src/components/app.js
 import React from 'react'
-import debounce from 'lodash/debounce'
 import data from '../../data'
-console.log('data', data)
 // Components
 import Menu from './menu'
 import About from './about'
 import HomeProject from './homeProjects'
+import throttle from 'lodash/throttle'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      openMenu: false,
+      openMenu: true,
       currentMenu: 0,
       openAbout: false
     }
@@ -40,11 +39,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.onScrollMenu);
+    this.handleScrollMenu = throttle(this.onScrollMenu, 500, { 'trailing': false });
+    window.addEventListener('wheel', this.handleScrollMenu);
   }
 
   componentWillUnmount() {
-    window.addEventListener('wheel', this.onScrollMenu);
+
+    window.removeEventListener('wheel', this.handleScrollMenu);
   }
 
   onScrollMenu (e) {

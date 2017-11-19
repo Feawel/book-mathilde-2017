@@ -1,7 +1,7 @@
 import React from 'react'
 import {enableScroll, disableScroll} from '../../utils/scroll'
 
-import Social from '../homeProjects/social'
+import Social from './social'
 import AboutText from './text'
 import AboutSkills from './skills'
 import Close from './close'
@@ -35,15 +35,15 @@ class Panel extends React.Component {
           }
 
           // Desktop > 1200px
-          @media screen and (min-width: 1200) {
-            zoom: 0.8;
+          @media screen and (min-width: 1200px) {
+            zoom: 1;
           }
           // 1000 < Screen < 1200 : mini texte skill + pas de trait + animation successive
-          @media screen and (min-width: 1000) and (max-width: 1200) {
+          @media screen and (min-width: 1000px) and (max-width: 1200px) {
             zoom: 0.8;
           }
           // 750 < Screen < 1000 (tablette portrait) : plus de texte, animation successive
-          @media screen and (min-width: 750) and (max-width: 1000) {
+          @media screen and (min-width: 750px) and (max-width: 1000px) {
             zoom: 0.7;
           }
         `}</style>

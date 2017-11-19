@@ -11,6 +11,11 @@ const data = {
           picture: {
             alt: "Background picture for project #1 : numeric books",
             src: "/static/home-projects/background/accueil-numerique-book-3000x1600px.jpg"
+          },
+          color: '#00b3df',
+          gradient: {
+            dark: '#008db9',
+            light: '#6ad7d9'
           }
         },
         {
@@ -24,6 +29,11 @@ const data = {
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#8061e7',
+          gradient: {
+            dark: '#5d1bb0',
+            light: '#4dd0ff'
           }
         },
         {
@@ -37,6 +47,11 @@ const data = {
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#ee5b60',
+          gradient: {
+            dark: '#d6181f',
+            light: '#f5c253'
           }
         },
         {
@@ -50,21 +65,86 @@ const data = {
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#fb5e80',
+          gradient: {
+            dark: '#f04372',
+            light: '#ffd69c'
           }
         },
         {
-          title: "Projet 5",
+          title: "PROJET 5",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
           number: {
-            index: 5,
+            index: 3,
             height: 70
           },
           tags: ["User Interface", "User Experience", "Illustration"],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#ee5b60',
+          gradient: {
+            dark: '#d6181f',
+            light: '#f5c253'
           }
-        }
+        },
+        {
+          title: "PROJET 6",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 4,
+            height: 67
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#fb5e80',
+          gradient: {
+            dark: '#f04372',
+            light: '#ffd69c'
+          },
+        },
+        {
+          title: "PROJET 7",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 3,
+            height: 70
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#ee5b60',
+          gradient: {
+            dark: '#d6181f',
+            light: '#f5c253'
+          }
+        },
+        {
+          title: "PROJET 8",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          number: {
+            index: 4,
+            height: 67
+          },
+          tags: ["User Interface", "User Experience", "Illustration"],
+          picture: {
+            alt: "Background picture for project #2 : comet exposition",
+            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
+          },
+          color: '#fb5e80',
+          gradient: {
+            dark: '#f04372',
+            light: '#ffd69c'
+          },
+        },
+
     ],
     animations: {
       switchProjects: {
@@ -80,37 +160,42 @@ export const skills = [
   {
     title: 'Adobe Photoshop',
     icon: 'Ps',
-    level: 'Expert',
+    level: '5 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
-    className: 'Photoshop'
+    className: 'Photoshop',
+    lineLength: 180
   },
   {
     title: 'Adobe Illustrator',
     icon: 'Ai',
-    level: 'Expert',
+    level: '8 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
-    className: 'Illustrator'
+    className: 'Illustrator',
+    lineLength: 128
   },
   {
     title: 'Sketch',
     icon: 'Sk',
-    level: 'Expert',
+    level: '3 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
-    className: 'Sketch'
+    className: 'Sketch',
+    lineLength: 70
   },
   {
     title: 'Adobe AfterEffect',
     icon: 'Ae',
-    level: 'Expert',
+    level: '3 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
-    className: 'Aftereffect'
+    className: 'Aftereffect',
+    lineLength: 20
   },
   {
     title: 'Drawing',
     icon: 'Dr',
-    level: 'Expert',
+    level: '20 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
-    className: 'Drawing'
+    className: 'Drawing',
+    lineLength: 30
   }
 ]
 

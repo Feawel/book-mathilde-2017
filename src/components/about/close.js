@@ -6,7 +6,7 @@ const CloseAbout = ({toggleOpen}) =>
       .About_close {
         position: absolute;
         top: 40px;
-        right: 40px;
+        right: 20px;
         font-family: Futura;
         font-weight: bold;
         line-height: 22px;
@@ -14,11 +14,10 @@ const CloseAbout = ({toggleOpen}) =>
         text-transform: uppercase;
         color: white;
         display: inline-block;
-        display: none;
       }
       .Circle {
         position: absolute;
-        bottom: 17px;
+        bottom: 7px;
         right: 10px;
       }
       svg {
@@ -29,6 +28,11 @@ const CloseAbout = ({toggleOpen}) =>
         position: relative;
         z-index: 1;
       }
+      .Cross {
+        zoom: 0.7;
+        position: relative;
+        right: 15px;
+      }
       circle {
         opacity: 0.5;
       }
@@ -36,8 +40,8 @@ const CloseAbout = ({toggleOpen}) =>
         display: inline-block;
         vertical-align: top;
         position: relative;
-        top: 6px;
-        right: 10px;
+        top: 0px;
+        right: 35px;
         z-index: 0;
       }
     `}</style>
@@ -46,7 +50,7 @@ const CloseAbout = ({toggleOpen}) =>
       <circle cx="26" cy="26" r="20" stroke="white" strokeWidth="1" fill="none" />
     </svg>
 
-    <svg>
+    <svg className='Cross'>
       <polygon points="26.1,8.8 23.2,5.9 16,13.2 8.9,6.1 6.1,9 13.2,16 5.9,23.3 8.7,26.1 16,18.8 23,25.9 25.9,23.1 18.8,16 "/>
     </svg>
   </div>

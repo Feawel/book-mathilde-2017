@@ -1,5 +1,5 @@
-const Logo = ({ toggleOpen, open }) =>
-  <div style={{top: open ? '625px' : '40px'}} className='Logo_wrapper clickable' onClick={(e) => toggleOpen()}>
+const Logo = ({ toggleOpen, open, openMenu }) =>
+  <div style={{top: open ? '625px' : '40px', display: openMenu ? 'none' : ''}} className='Logo_wrapper clickable' onClick={(e) => toggleOpen()}>
     <style jsx>{`
       .Logo_wrapper {
         position : absolute;

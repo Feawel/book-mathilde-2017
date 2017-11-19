@@ -1,16 +1,16 @@
 // src/componentqs/menu/button.js
 
-const MenuButton = ({ openProject }) =>
-  <div className='Menu_button clickable'>
+const MenuButton = ({ openProject, color, gradient }) =>
+  <div style={{backgroundImage: `linear-gradient(to left, ${gradient.dark} 0%, ${gradient.light} 100%)`}}
+    className='Menu_button transitions clickable'>
     <style jsx>{`
       .Menu_button {
         position: absolute;
-        top: calc(50% - 25px);
-        right: 200px;
+        top: calc(50% - 40px);
+        right: calc(50% - 420px);
         width: 200px;
         height: 52px;
         border-radius: 25px;
-        background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
         text-align: center;
         font-family: Futura;
         font-weight: bold;

@@ -1,15 +1,19 @@
 // src/componentqs/menu/slider.js
 
-const MenuPicture = ({  }) =>
+const MenuPicture = ({ picture }) =>
   <div className='Menu_picture'>
     <style jsx>{`
       .Menu_picture {
         position: absolute;
-        top: calc(50% - 100px);
-        left: 100px;
+        top: calc(50% - 120px);
+        left: calc(50% - 500px);
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
       }
     `}</style>
-    <img width='200' height='200' alt='thumbnail project picture' src='/static/menu/picture.png' />
+    <img height='200' alt={picture.alt} src={picture.src} />
   </div>
 
 

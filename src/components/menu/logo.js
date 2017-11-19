@@ -1,7 +1,7 @@
 import SVGMenuIcon from '../pictos/menu'
 import SVGCloseIcon from '../pictos/close'
 
-const MenuLogo = ({open, toggleOpen, openAbout}) => [
+const MenuLogo = ({open, toggleOpen, openAbout}) =>
   <div style={{top: openAbout ? '625px' : '40px'}} onClick={() => toggleOpen()} className={`Menu_dots_container ${open ? 'Open' : ''}`} >
     <style jsx>{`
       .Menu_dots_container {
@@ -10,6 +10,11 @@ const MenuLogo = ({open, toggleOpen, openAbout}) => [
         width: 40px;
         height: 40px;
         z-index: 11;
+        -webkit-transition      : all 1.5s  ;
+        -moz-transition       : all 1.5s  ;
+        -ms-transition        : all 1.5s  ;
+        -o-transition         : all 1.5s  ;
+        transition          : all 1.5s  ;
       }
       .Menu_dots_container:hover > .Menu_radius {
         opacity: 1;
@@ -81,7 +86,9 @@ const MenuLogo = ({open, toggleOpen, openAbout}) => [
       }
     `}</style>
     <div key='menu-dots' className='Menu_dots'>
-      {open ? <SVGCloseIcon key='open' /> : <SVGMenuIcon key='close' />}
+      {open
+        ? <SVGCloseIcon key='open' />
+        : <SVGMenuIcon key='close' />}
     </div>
     <div key='menu-radius' className='Menu_radius clickable'>
     </div>
@@ -102,6 +109,6 @@ const MenuLogo = ({open, toggleOpen, openAbout}) => [
         ]
     }
   </div>
-]
+
 
 export default MenuLogo
