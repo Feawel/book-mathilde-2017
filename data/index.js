@@ -37,8 +37,18 @@ const data = {
           }
         },
         {
-          title: "Ornikar",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          title: "Ornikar’s advertisings",
+          problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
+          description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
+          customer: 'Ornikar',
+          role: 'Directrice artistique',
+          year: 2015,
+          stats: [
+            {
+              label: 'NUMBER OF TRAINING IN THE HIGHAWAY CODE SELLS',
+              value: 8000
+            }
+          ],
           number: {
             index: 3,
             height: 70
@@ -198,5 +208,33 @@ export const skills = [
     lineLength: 30
   }
 ]
+
+
+export const ads = {
+  boys: {
+    title: 'boys between 16 anD 20',
+    description: 'his advertisement targets boys between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to use a service more entertaining and less restrictive than the traditional driving schools.',
+    gradient: {light: '#d6181f', dark: '#f5c253'},
+    firstPic: '/static/projects/ornikar/boys-first.png',
+    secondPic: '/static/projects/ornikar/boys-second.png',
+    thirdPic: '/static/projects/ornikar/boys-third.png'
+  },
+  girls: {
+    title: 'girls between 16 anD 20',
+    description: 'This advertisement targets girls between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to strengthen their self-confidence by reviewing as much as they wish before passing the exam.',
+    gradient: {light: '#81c7be', dark: '#f5f2b5'},
+    firstPic: '/static/projects/ornikar/girls-first.png',
+    secondPic: '/static/projects/ornikar/girls-second.png',
+    thirdPic: '/static/projects/ornikar/girls-third.png'
+  },
+  youngs: {
+    title: 'YOUNG between 20 anD 26',
+    description: 'This advertisement targets young between the ages of 20 and 26. Their main motivation for passing the code of the road with Ornikar is to have a simple service and to interact with a company close to its cients.',
+    gradient: {light: '#fa8633', dark: '#ffe05e'},
+    firstPic: '/static/projects/ornikar/youngs-first.png',
+    secondPic: '/static/projects/ornikar/youngs-second.png',
+    thirdPic: '/static/projects/ornikar/youngs-third.png'
+  }
+}
 
 export default data

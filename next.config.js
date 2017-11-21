@@ -1,6 +1,5 @@
 // next.config.js
 exports.exportPathMap = () => ({
-  "/": { page: "/" },
-  "/about": { page: "/about" },
+  "/": { page: "/" }
   //"/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } },
 })

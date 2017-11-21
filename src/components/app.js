@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      openMenu: true,
+      openMenu: false,
       currentMenu: 0,
       openAbout: false
     }
