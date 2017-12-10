@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom'
 
 import { firstGameScreens,  secondGameScreens } from '../../../../data/comete'
 import Call from '../common/call'
+import Number from '../common/number'
+import DoubleIllustrations from '../common/doubleIllustrations'
+import SectionInfos from '../common/sectionInfos'
+import { TitleSecondary, Description } from '../common/texts'
 
 class VideoGames extends React.Component {
   constructor(props) {
@@ -30,91 +34,17 @@ class VideoGames extends React.Component {
             margin: auto;
             overflow: hidden;
           }
-          .Number_container {
-            font-family: 'Playfair Display';
-            font-size: 48px;
-            color: #221061;
-            line-height: 32px;
-            text-transform: uppercase;
-            height: 65px;
-            text-align: center;
-            margin-top: 60px;
-            position: relative;
-            text-align: center;
-          }
-          .Border_bottom {
-            display: inline-block;
-            width: 52px;
-            height: 4px;
-            background-image: linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%);
-          }
-          .Infos {
-            display: inline-block;
-            width: 50%;
-            vertical-align: top;
-            margin-top: 180px;
-          }
-          .Illustration {
-            position: relative;
-            display: inline-block;
-            width: 50%;
-            margin-top: 60px;
-          }
-          .Illustration .Main {
-            padding-right: 60px;
-            float: right;
-            z-index: 1;
-            position: relative;
-          }
-          .Illustration .Second {
-            position: absolute;
-            opacity: 0.1;
-            bottom: 200px;
-            right: 100px;
-            z-index: 0;
-          }
-          .Title {
-            font-family: 'Playfair Display';
-            font-weight: 900;
-            font-size: 66px;
-            color: #221061;
-            line-height: 32px;
-            max-width: 460px;
-          }
-          .Baseline {
-            font-family: Futura;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 24px;
-            color: #abb0bc;
-            text-transform: uppercase;
-            margin-top: 30px;
-            max-width: 460px;
-          }
-          .Description {
-            font-family: Futura;
-            font-size: 14px;
-            line-height: 24px;
-            color: #474f6f;
-            margin-top: 10px;
-            max-width: 460px;
-            margin-bottom: 30px;
-          }
         `}</style>
-        <div className='Number_container'>
-          <div className='Number'>03</div>
-          <div className='Border_bottom'></div>
-        </div>
-        <div className='Illustration'>
-          <img className='Second' width='850' src='/static/projects/comete/5-video-games/picto-video-game.png' />
-          <img className='Main' width='462' src='/static/projects/comete/5-video-games/picto-video-game.png' />
-        </div>
-        <div className='Infos'>
-          <div className='Title'>Video Games</div>
-          <div className='Baseline'>Make funny and educational videos games</div>
-          <div className='Description'>We made two games first to ensure traffic to the site, but also to do a scientific mediation work with the general public..</div>
-          <Call width={200} text='TRY THE VIDEOS GAMES' />
-        </div>
+        <Number content='03' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+        <DoubleIllustrations
+            main={{width: 462, src: '/static/projects/comete/5-video-games/picto-video-game.png'}}
+            second={{width: 850, src: '/static/projects/comete/5-video-games/picto-video-game.png'}}
+            location={{bottom: 200, right: 100}} />
+        <SectionInfos
+          title={{content: 'Video Games', color: '#221061'}}
+          baseline={{content: 'Make funny and educational videos games', color: '#abb0bc'}}
+          description={{color: '#474f6f', content: 'We made two games first to ensure traffic to the site, but also to do a scientific mediation work with the general public.'}}
+          />
         <FirstVideoGame />
         <SecondVideoGame />
       </div>
@@ -130,29 +60,6 @@ const FirstVideoGame = () =>
         background-image: linear-gradient(to bottom, #0d0136 0%, #230f66 100%);
         padding: 80px 130px;
       }
-      .Title {
-        font-family: Futura;
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 34px;
-        font-size: 21px;
-      }
-      .Title_1 {
-        color: #00f1cc;
-      }
-      .Title_2 {
-        color: #8061e7;
-      }
-      .Description {
-        font-family: Futura;
-        color: white;
-        font-size: 14px;
-        opacity: 0.6;
-        line-height: 24px;
-        max-width: 310px;
-        margin-top: 30px;
-        margin-bottom: 40px;
-      }
       .Details {
         width: 100%;
         position: relative;
@@ -160,9 +67,9 @@ const FirstVideoGame = () =>
       }
     `}</style>
     <div className='Infos'>
-      <div className='Title Title_1'>THE FIRST</div>
-      <div className='Title Title_2'>VIDEO GAME</div>
-      <div className='Description'>The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.</div>
+      <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+      <TitleSecondary content='VIDEO GAME' style={{color: '#8061e7', marginTop: 0, marginBottom: 40}} />
+      <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', maxWidth: 310}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
       <Call
         color='white'
         colorHover='#0d0136'
@@ -191,30 +98,6 @@ const SecondVideoGame = () =>
         padding: 0;
         background-image: linear-gradient(to bottom, #0d0136 0%, #230f66 100%);
       }
-      .Title {
-        font-family: Futura;
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 34px;
-        font-size: 21px;
-        text-align: left;
-      }
-      .Title_1 {
-        color: #00f1cc;
-      }
-      .Title_2 {
-        color: #240868;
-      }
-      .Description {
-        font-family: Futura;
-        color: #474f6f;
-        font-size: 14px;
-        line-height: 24px;
-        max-width: 300px;
-        margin-top: 30px;
-        text-align: left;
-        margin-bottom: 40px;
-      }
       .Details {
         display: inline-block;
         position: relative;
@@ -235,9 +118,9 @@ const SecondVideoGame = () =>
         <img className='Detail_screen' height='361' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear-violet.png' />
       </div>
       <div className='Infos'>
-        <div className='Title Title_1'>THE SECOND</div>
-        <div className='Title Title_2'>VIDEO GAME</div>
-        <div className='Description'>The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.</div>
+        <TitleSecondary content='THE SECOND' style={{color: '#00f1cc', textAlign: 'left', marginBottom: 5, marginTop: 0}} />
+        <TitleSecondary content='VIDEO GAME' style={{color: '#240868', textAlign: 'left', marginTop: 0, marginBottom: 20}} />
+        <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300, textAlign: 'left'}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
         <Call text='Try the game' />
       </div>
     </div>

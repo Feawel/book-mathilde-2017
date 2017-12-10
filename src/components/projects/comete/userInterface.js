@@ -1,6 +1,9 @@
 // src/componentqs/projects/comete/userInterface.js
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Number from '../common/number'
+import DoubleIllustrations from '../common/doubleIllustrations'
+import SectionInfos from '../common/sectionInfos'
 
 class UserInterface extends React.Component {
   constructor(props) {
@@ -62,76 +65,6 @@ class UserInterface extends React.Component {
             z-index: 1;
             position: relative;
           }
-          .Number_container {
-            font-family: 'Playfair Display';
-            font-size: 48px;
-            color: white;
-            line-height: 32px;
-            text-transform: uppercase;
-            height: 65px;
-            text-align: center;
-            margin-top: 60px;
-            position: relative;
-            text-align: center;
-          }
-          .Border_bottom {
-            display: inline-block;
-            width: 52px;
-            height: 4px;
-            background-image: linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%);
-          }
-          .Infos {
-            display: inline-block;
-            width: 50%;
-            vertical-align: top;
-            margin-top: 180px;
-          }
-          .Illustration {
-            position: relative;
-            display: inline-block;
-            width: 50%;
-            margin-top: 60px;
-          }
-          .Illustration .Main {
-            padding-right: 60px;
-            float: right;
-            z-index: 1;
-            position: relative;
-          }
-          .Illustration .Second {
-            position: absolute;
-            opacity: 0.1;
-            bottom: 150px;
-            right: 160px;
-            z-index: 0;
-          }
-          .Title {
-            font-family: 'Playfair Display';
-            font-weight: 900;
-            font-size: 66px;
-            color: white;
-            line-height: 32px;
-            max-width: 460px;
-          }
-          .Baseline {
-            font-family: Futura;
-            font-weight: bold;
-            font-size: 14px;
-            line-height: 24px;
-            color: white;
-            text-transform: uppercase;
-            margin-top: 30px;
-            max-width: 460px;
-          }
-          .Description {
-            font-family: Futura;
-            font-size: 14px;
-            line-height: 24px;
-            color: white;
-            margin-top: 10px;
-            max-width: 460px;
-            opacity: 0.6;
-          }
           .Content_illustration {
             background-image: url('/static/projects/comete/4-user-interface/illu-content-page-1200px.png');
             background-size: cover;
@@ -162,19 +95,16 @@ class UserInterface extends React.Component {
           <div className='Background_5' />
         </div>
         <div className='Part_1'>
-          <div className='Number_container'>
-            <div className='Number'>02</div>
-            <div className='Border_bottom'></div>
-          </div>
-          <div className='Illustration'>
-            <img className='Second' width='1001' src='/static/projects/comete/4-user-interface/picto-UI.png' />
-            <img className='Main' width='462' src='/static/projects/comete/4-user-interface/picto-UI.png' />
-          </div>
-          <div className='Infos'>
-            <div className='Title'>User Interface</div>
-            <div className='Baseline'>Create an interface able to please to children</div>
-            <div className='Description'>To feat to the strategique choice, we creat a visual identity colorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.</div>
-          </div>
+          <Number content='02' color='white' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+          <DoubleIllustrations
+            main={{width: 462, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
+            second={{width: 1001, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
+            location={{bottom: 150, right: 160}} />
+          <SectionInfos
+            title={{content: 'User Interface', color: 'white'}}
+            baseline={{content: 'Create an interface able to please to children', color: 'white'}}
+            description={{color: 'white', content: 'To feat to the strategique choice, we creat a visual identity colorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
+            />
         </div>
         <Homepage />
         <Content />

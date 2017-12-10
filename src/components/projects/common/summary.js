@@ -1,6 +1,7 @@
 import React from 'react'
 import Social from './social'
 import Call from './call'
+import { TitlePrimary, TitleSecondary, Description } from './texts'
 
 const Summary = ({ project }) =>
   <div className='Project Summary'>
@@ -30,35 +31,12 @@ const Summary = ({ project }) =>
         margin: auto;
         width: calc(100% - 100px);
       }
-      .Title {
-        font-family: 'Playfair Display';
-        font-weight: 900;
-        font-size: 74px;
-        color: #260608;
-        margin-bottom: 20px;
-        max-width: 420px;
-      }
-      .Problematic {
-        font-family: Futura;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 36px;
-        max-width: 345px;
-
-      }
       .Description_title {
-        margin-top: 50px;
-        font-family: Futura;
-        font-weight: bold;
+        margin-top: 80px;
+        font-family: 'Futura - Bold';
         font-size: 10px;
         line-height: 27px;
         color: #abb0bc;
-      }
-      .Description {
-        font-family: Futura;
-        color: #474f6f;
-        font-size: 16px;
-        line-height: 28px;
       }
       .Social_container {
         margin-bottom: 40px;
@@ -75,8 +53,23 @@ const Summary = ({ project }) =>
     </div>
     <div className='Summary_section'>
       <div className='Inner_left_section'>
-        <h1 className='Title'>{project.title}</h1>
-        <h2 style={{color: project.color}} className='Problematic'>{project.problematic}</h2>
+        <TitlePrimary
+          content={project.title}
+          style={{
+            fontSize: 74,
+            color: '#260608',
+            marginTop: 80,
+            marginBottom: 20,
+            maxWidth: 420
+          }}/>
+        <TitleSecondary
+          content={project.problematic}
+          style={{
+            color: project.color,
+            fontSize: 23,
+            marginTop: 20,
+            maxWidth: 445
+          }}/>
         <div className='Social_container'>
           <Social />
         </div>
@@ -86,7 +79,16 @@ const Summary = ({ project }) =>
     <div className='Summary_section'>
       <div className='Inner_right_section'>
         <div className='Description_title'>THE PROJECT</div>
-        <div className='Description' dangerouslySetInnerHTML={{__html: project.description}} />
+        <Description
+          content={project.description}
+          style={{
+            color: '#474f6f',
+            fontSize: 16,
+            lineHeight: '28px',
+            marginTop: 0,
+            marginBottom: 0
+          }} />
+        <div className='Description'  />
         <div className='Meta'>
           <Meta label='CUSTOMER' value={project.customer} />
           <Meta label='ROLE' value={project.role} />
@@ -105,12 +107,12 @@ const Meta = ({label, value}) =>
     <style jsx>{`
       .Meta {
         display: inline-block;
-        margin-top: 40px;
+        margin-top: 20px;
         width: 33%;
         vertical-align: top;
       }
       .Label {
-        font-family: Futura;
+        font-family: 'Futura - Bold';
         font-weight: bold;
         font-size: 10px;
         line-height: 27px;
@@ -118,6 +120,7 @@ const Meta = ({label, value}) =>
       }
       .Value {
         font-family: 'Playfair Display';
+        font-weight: 400;
         font-size: 12px;
         font-style: italic;
         line-height: 24px;
