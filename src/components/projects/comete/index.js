@@ -23,12 +23,6 @@ class Comete extends React.Component {
     const {project, section, sections} = this.state
     return (
       <div className='Project Comete'>
-        <style jsx>{`
-          .Comete {
-
-          }
-
-        `}</style>
         <Summary project={data.projects[1]} />
         <Menu sections={sections} section={section} project={data.projects[1]} />
         <VisualIdentity
