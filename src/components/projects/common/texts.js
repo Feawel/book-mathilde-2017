@@ -9,15 +9,11 @@ export const TitlePrimary = ({content, style}) =>
 
 export const TitleSecondary = ({content, style}) =>
   <h3 className='Global_title_secondary' style={{...style}}>
-    <style jsx>{`
-    `}</style>
     {content}
   </h3>
 
 export const Subtitle = ({content, style}) =>
   <h3 className='Global_subtitle' style={{...style}}>
-    <style jsx>{`
-    `}</style>
     {content}
   </h3>
 
