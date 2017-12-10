@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import App from '../src/components/app'
-import Ornikar from '../src/components/projects/ornikar'
 export default () => (
   <div className='generic-text'>
     <Head>
@@ -42,6 +41,6 @@ export default () => (
         color: rgba(0,0,0,0.8);
       }
     `}</style>
-    <Ornikar />
+    <App />
   </div>
 )

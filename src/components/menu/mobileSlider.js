@@ -50,7 +50,7 @@ const Item = ({ project, index, current }) =>
     </div>
     <div className='Infos'>
       <div className='Title'>{project.title}</div>
-      <div className='Tags' style={{color: project.color}}>{project.tags.join(' • ')}</div>
+      <div className='Tags' style={{color: project.color}}>{project.tags.map(tag => tag.title).join(' • ')}</div>
     </div>
     <div className='Arrow'>
     ›

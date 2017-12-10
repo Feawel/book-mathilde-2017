@@ -7,7 +7,20 @@ const data = {
             index: 1,
             height: 60
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "User Interface",
+              icon: "picto-UI"
+            },
+            {
+              title: "User Experience",
+              icon: "picto-UX"
+            },
+            {
+              title: "Illustration",
+              icon: "picto-illu"
+            }
+          ],
           picture: {
             alt: "Background picture for project #1 : numeric books",
             src: "/static/home-projects/background/accueil-numerique-book-3000x1600px.jpg"
@@ -19,13 +32,28 @@ const data = {
           }
         },
         {
-          title: "Rosetta exposition",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          title: "Comete Exhibition",
+          problematic: "HOW TO GET A LARGE AUDIENCE TO GO TO A SCIENTIFIC EXHIBITION ?",
+          website: "http://www.expo-cometes.fr/",
+          description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
           number: {
             index: 2,
             height: 60
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "User Interface",
+              icon: "picto-UI"
+            },
+            {
+              title: "User Experience",
+              icon: "picto-UX"
+            },
+            {
+              title: "Illustration",
+              icon: "picto-illu"
+            }
+          ],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
@@ -33,13 +61,32 @@ const data = {
           color: '#8061e7',
           gradient: {
             dark: '#5d1bb0',
-            light: '#4dd0ff'
-          }
+            light: '#4dd0ff',
+            base: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)'
+          },
+          customer: 'The Air and Space museum <br/>of Paris',
+          role: 'Directrice artistique',
+          year: 2015,
+          stats: [
+            {
+              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
+              value: 1200
+            },
+            {
+              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
+              value: 589
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "Ornikar’s advertisings",
           problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
           description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
+          header: {
+            illustration: '/static/projects/ornikar/ornikar_header.png',
+            gradient: 'linear-gradient(-27deg, #d6181f 0%, #f5c253 100%)'
+          },
           customer: 'Ornikar',
           role: 'Directrice artistique',
           year: 2015,
@@ -53,7 +100,20 @@ const data = {
             index: 3,
             height: 70
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "User Interface",
+              icon: "picto-UI"
+            },
+            {
+              title: "User Experience",
+              icon: "picto-UX"
+            },
+            {
+              title: "Illustration",
+              icon: "picto-illu"
+            }
+          ],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
@@ -71,7 +131,20 @@ const data = {
             index: 4,
             height: 67
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "User Interface",
+              icon: "picto-UI"
+            },
+            {
+              title: "User Experience",
+              icon: "picto-UX"
+            },
+            {
+              title: "Illustration",
+              icon: "picto-illu"
+            }
+          ],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
@@ -89,7 +162,20 @@ const data = {
             index: 3,
             height: 70
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "User Interface",
+              icon: "picto-UI"
+            },
+            {
+              title: "User Experience",
+              icon: "picto-UX"
+            },
+            {
+              title: "Illustration",
+              icon: "picto-illu"
+            }
+          ],
           picture: {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
