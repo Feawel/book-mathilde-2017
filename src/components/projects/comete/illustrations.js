@@ -39,15 +39,18 @@ class Illustrations extends React.Component {
             position: relative;
             top: -4px;
           }
+          .First_row.responsive, .Second_row.responsive {
+            display: none;
+          }
           @media screen and (max-width: 750px) {
+            .First_row.responsive, .Second_row.responsive {
+              display: block;
+            }
             .First_row_illustrations {
               width: 100%;
             }
-            .Poster {
+            .First_row.desktop, .Second_row.desktop {
               display: none;
-            }
-            .Second_row {
-              top: 0;
             }
           }
         `}</style>
@@ -61,12 +64,18 @@ class Illustrations extends React.Component {
           baseline={{content: 'pedagogical illustrations', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'In addition to the site, the communication and the interractive games, I made for the exhibition illustrations with pedagogical purpose in addition to the photographs presented.'}}
           />
-        <div className='First_row'>
-          <img className='First_row_illustrations Poster' src='/static/projects/comete/6-illustrations/illu1-2.png' />
+        <div className='First_row desktop'>
+          <img className='First_row_illustrations' src='/static/projects/comete/6-illustrations/illu1-2.png' />
           <img className='First_row_illustrations' src='/static/projects/comete/6-illustrations/ilu1-zoom2.png' />
         </div>
-        <div className='Second_row'>
+        <div className='Second_row desktop'>
           <img width='100%' src='/static/projects/comete/6-illustrations/illu2.png' />
+        </div>
+        <div className='First_row responsive'>
+          <img className='First_row_illustrations' src='/static/projects/comete/responsive/6-illustrations/ilu1-zoom2.png' />
+        </div>
+        <div className='Second_row responsive'>
+          <img width='100%' src='/static/projects/comete/responsive/6-illustrations/illu2.png' />
         </div>
       </div>
     )
