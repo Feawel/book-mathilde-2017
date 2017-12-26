@@ -28,6 +28,11 @@ const Social = ({ grey = true, centered = false}) => (
       a:last-child {
         margin-right: 0;
       }
+      @media screen and (max-width: 1000px) {
+        .Social_inner_container {
+          margin: auto;
+        }
+      }
     `}</style>
     <div className='Social_inner_container'>
       <a className='Link' target='_blank' title='Twitter @Mathilde__Serra' href='/'><img src={`/static/pictos/picto-twitter${grey ? '-grey.png' : '.svg'}`} alt={`Mathilde Serra's twitter`} /></a>

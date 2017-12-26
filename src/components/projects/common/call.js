@@ -39,6 +39,11 @@ const Call = ({text, color = '#8061e7', colorHover = 'white', width = 150,
       .Call:hover .Call_text {
         color: ${colorHover}!important;
       }
+      @media screen and (max-width: 1000px) {
+        .Call {
+          margin: auto;
+        }
+      }
     `}</style>
     <div style={{background: backgroundInner}} className='Call_inner transitions'>
     </div>

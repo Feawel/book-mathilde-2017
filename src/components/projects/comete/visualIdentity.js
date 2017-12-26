@@ -9,6 +9,11 @@ const mainColors = ['#240868', '#805bec', '#00f1cc']
 const addColors = ['#0f0f0f', '#381958', '#808080', '#0f949f', '#00c1ff']
 const addColors2 = ['#ff7780', '#ed8a7a', '#f3cb7f', '#eeb6ff']
 
+// responsive color distribution
+const respAddColors = ['#0f0f0f', '#381958', '#808080', '#0f949f']
+const respAddColors2 = ['#ff7780', '#ed8a7a', '#f3cb7f']
+const respAddColors3 = ['#00c1ff', '#eeb6ff']
+
 class VisualIdentity extends React.Component {
   constructor(props) {
     super(props)
@@ -33,6 +38,7 @@ class VisualIdentity extends React.Component {
             width: 100%;
             margin: auto;
             overflow: hidden;
+            position: relative;
           }
           .Logo_header {
             width: 1020px;
@@ -47,12 +53,20 @@ class VisualIdentity extends React.Component {
             position: relative;
             top: 35px;
           }
+          @media screen and (max-width: 750px) {
+            .Logo_header {
+              text-align: left;
+              padding-left: 25px;
+              zoom: 0.8;
+            }
+          }
         `}</style>
         <Number content='01' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
         <DoubleIllustrations
             main={{width: 462, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}
             second={{width: 1001, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}
-            location={{bottom: 150, right: 160}} />
+            location={{bottom: 150, right: 160}}
+            mobileLocation={{top: -800, right: -215, zoom: 0.7}} />
         <SectionInfos
           title={{content: 'Visual Identity', color: '#221061'}}
           baseline={{content: 'Create a visual identity able to please to a large audience', color: '#abb0bc'}}
@@ -178,6 +192,54 @@ const Color = () =>
         top: 200px;
         right: calc(50% - 510px);
       }
+      .Add_colors_3 {
+        width: 260px;
+        text-align: left;
+        position: absolute;
+      }
+      .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Title {
+          margin-left: 25px;
+        }
+        .Outer_circle {
+          position: relative;
+          left: 190px;
+          zoom: 0.8;
+        }
+        .Main_colors {
+          left: 25px;
+        }
+        .Main_color {
+          margin-right: 18px;
+        }
+        .Add_colors {
+          top: 200px;
+          left: 25px;
+        }
+        .Add_color {
+          margin-right: 15px;
+        }
+        .Add_colors_2 {
+          left: 25px;
+          top: 300px;
+        }
+        .Add_colors_3 {
+          left: 25px;
+          top: 350px;
+        }
+        .Color_title {
+          text-align: left!important;
+        }
+        .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
+          display: inline-block;
+        }
+        .Add_colors.desktop, .Add_colors_2.desktop, .Add_colors_3.desktop {
+          display: none;
+        }
+      }
     `}</style>
     <div className='Title'>Color</div>
     <div className='Main_colors'>
@@ -190,7 +252,7 @@ const Color = () =>
         )
       }
     </div>
-    <div className='Add_colors'>
+    <div className='Add_colors desktop'>
       <div style={{textAlign: 'right'}} className='Color_title'>Additional colors</div>
       {
         addColors.map((color, i) =>
@@ -200,9 +262,37 @@ const Color = () =>
         )
       }
     </div>
-    <div className='Add_colors_2'>
+    <div className='Add_colors_2 desktop'>
       {
         addColors2.map((color, i) =>
+          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+            <div style={{backgroundColor: color}} className='Add_color_inner' />
+          </div>
+        )
+      }
+    </div>
+    <div className='Add_colors responsive'>
+      <div style={{textAlign: 'right'}} className='Color_title'>Additional colors</div>
+      {
+        respAddColors.map((color, i) =>
+          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+            <div style={{backgroundColor: color}} className='Add_color_inner' />
+          </div>
+        )
+      }
+    </div>
+    <div className='Add_colors_2 response'>
+      {
+        respAddColors2.map((color, i) =>
+          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+            <div style={{backgroundColor: color}} className='Add_color_inner' />
+          </div>
+        )
+      }
+    </div>
+    <div className='Add_colors_3 response'>
+      {
+        respAddColors3.map((color, i) =>
           <div key={i} style={{borderColor: color}} className='Add_color clickable'>
             <div style={{backgroundColor: color}} className='Add_color_inner' />
           </div>
@@ -238,10 +328,28 @@ const Typography = () =>
       }
       .Picture {
         margin-top: 40px;
+        display: inline-block;
+      }
+      .Picture_responsive {
+        display:none;
+      }
+      @media screen and (max-width: 750px) {
+        .Title {
+          margin-left: 25px;
+        }
+        .Picture {
+          display:none;
+        }
+        .Picture_responsive {
+          margin-top: 40px;
+          display: inline-block;
+        }
       }
     `}</style>
     <div className='Title'>Typography</div>
     <img className='Picture' width='550' src='/static/projects/comete/3-visual-identity/typo-titilium.svg' alt='typo titilium' />
+    <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium1.svg' alt='typo titilium 1' />
+    <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium2.svg' alt='typo titilium 2' />
   </div>
 
 export default VisualIdentity

@@ -10,7 +10,15 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460}) =>
         width: calc(50% - 40px);
         vertical-align: top;
         margin-top: 180px;
-        padding-left: 40px;
+        padding: 0 40px;
+      }
+      @media screen and (max-width: 750px) {
+        .Infos {
+          width: calc(100% - 40px);
+          text-align:center;
+          margin-top: 40px;
+          padding: 0 20px;
+        }
       }
     `}</style>
     <TitlePrimary content={title.content} style={{color: title.color, marginBottom: 20, marginTop: 0, maxWidth}} />

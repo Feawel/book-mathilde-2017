@@ -41,6 +41,22 @@ const Summary = ({ project }) =>
       .Social_container {
         margin-bottom: 40px;
       }
+      @media screen and (max-width: 1000px) {
+        .Summary_section {
+          width: 100%;
+          text-align:center;
+        }
+        .Inner_left_section, .Inner_right_section {
+          margin: auto;
+          width: calc(100% - 50px);
+        }
+        .Description_title {
+          display: none;
+        }
+        .Call_top {
+          display: none;
+        }
+      }
     `}</style>
     <div className='Header'>
       <img
@@ -73,7 +89,9 @@ const Summary = ({ project }) =>
         <div className='Social_container'>
           <Social />
         </div>
-        {project.website && <Call text='VIEW THE WEBSITE' />}
+        <div className='Call_top'>
+          {project.website && <Call text='VIEW THE WEBSITE' />}
+        </div>
       </div>
     </div>
     <div className='Summary_section'>

@@ -33,6 +33,7 @@ class VideoGames extends React.Component {
             width: 100%;
             margin: auto;
             overflow: hidden;
+            position: relative;
           }
         `}</style>
         <Number content='03' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
@@ -65,19 +66,50 @@ const FirstVideoGame = () =>
         position: relative;
         text-align: right;
       }
+      .Details.responsive {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .First_video_game {
+          width: calc(100% - 100px);
+          padding: 40px 50px 0 50px;;
+        }
+        .Call_wrapper {
+          display: none;
+        }
+        .Details.desktop {
+          display: none;
+        }
+        .Details.responsive {
+          display: inline-block;
+          position: relative;
+          right: 50px;
+        }
+        .Description_wrapper {
+          position: relative;
+          top: -100px;
+        }
+      }
     `}</style>
     <div className='Infos'>
       <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
       <TitleSecondary content='VIDEO GAME' style={{color: '#8061e7', marginTop: 0, marginBottom: 40}} />
-      <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', maxWidth: 310}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
-      <Call
-        color='white'
-        colorHover='#0d0136'
-        background='white'
-        backgroundInner='#0d0136'
-        text='Try the game' />
+      <div className='Details responsive'>
+        <img className='Detail_screen' height='500' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/smartphone-jeux1-01.png' />
+      </div>
+      <div className='Description_wrapper'>
+        <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', maxWidth: 310}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
+      </div>
+      <div className='Call_wrapper'>
+        <Call
+          color='white'
+          colorHover='#0d0136'
+          background='white'
+          backgroundInner='#0d0136'
+          text='Try the game' />
+        </div>
     </div>
-    <div className='Details'>
+    <div className='Details desktop'>
       <img className='Detail_screen' height='539' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear.png' />
     </div>
     <Screens screens={firstGameScreens} />
@@ -111,17 +143,53 @@ const SecondVideoGame = () =>
       .Infos {
         float: right;
         display: inline-block;
+        text-align: left;
+      }
+      .Details.responsive {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .First_part {
+          width: 100%;
+          padding: 40px 0px;
+        }
+        .Call_wrapper {
+          display: none;
+        }
+        .Infos {
+          text-align: center;
+          float: none;
+          width: 100%;
+          display: inline-block;
+        }
+        .Details.desktop {
+          display: none;
+        }
+        .Details.responsive {
+          display: inline-block;
+          position: relative;
+          margin-top: 0px;
+          position: relative;
+          right: 30px;
+        }
+        .Description_wrapper {
+          position: relative;
+          top: -100px;
+        }
       }
     `}</style>
     <div className='First_part'>
-      <div className='Details'>
+      <div className='Details desktop'>
         <img className='Detail_screen' height='361' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear-violet.png' />
       </div>
       <div className='Infos'>
-        <TitleSecondary content='THE SECOND' style={{color: '#00f1cc', textAlign: 'left', marginBottom: 5, marginTop: 0}} />
-        <TitleSecondary content='VIDEO GAME' style={{color: '#240868', textAlign: 'left', marginTop: 0, marginBottom: 20}} />
-        <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300, textAlign: 'left'}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
-        <Call text='Try the game' />
+        <TitleSecondary content='THE SECOND' style={{width: '100%', color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+        <TitleSecondary content='VIDEO GAME' style={{width: '100%', color: '#240868', marginTop: 0, marginBottom: 20}} />
+        <div className='Details responsive'>
+          <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
+        </div>
+        <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
+        <div className='Call_wrapper'><Call text='Try the game' /></div>
       </div>
     </div>
     <div className='Second_part'>
@@ -146,6 +214,11 @@ const Screens = ({screens, dashTop = 0, paddingTop = 110}) =>
       .Screen_container {
         position: relative;
         z-index: 1;
+      }
+      @media screen and (max-width: 750px) {
+        .Screens {
+          display: none;
+        }
       }
     `}</style>
     <img style={{top: dashTop}} height='2182' width='100' className='Dash' alt='poitilles vert comete' src='/static/projects/comete/5-video-games/ligne-pointiller-vert.svg' />

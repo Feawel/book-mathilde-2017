@@ -33,6 +33,7 @@ class UserInterface extends React.Component {
             background-color: #0d0136;
             z-index: 0;
             height: 5100px;
+            position: relative;
           }
           .Backgrounds {
             width: 100%;
@@ -86,6 +87,37 @@ class UserInterface extends React.Component {
               background-image: url('/static/projects/comete/4-user-interface/illu-content-page-3000px.png');
             }
           }
+          @media screen and (max-width: 750px) { {
+            .User_interface {
+              height: 2910px;
+            }
+            .Background_1 {
+              height: 815px;
+              background-image: url('/static/projects/comete/responsive/4-user-interface/fond-comete/fond-comete1.png');
+            }
+            .Background_2 {
+              height: 725px;
+              background-image: url('/static/projects/comete/responsive/4-user-interface/fond-comete/fond-comete2.png');
+            }
+            .Background_3 {
+              height: 815px;
+              background-image: url('/static/projects/comete/responsive/4-user-interface/fond-comete/fond-comete3.png');
+            }
+            .Background_4 {
+              height: 815px;
+              background-image: url('/static/projects/comete/responsive/4-user-interface/fond-comete/fond-comete4.png');
+            }
+            .Background_5 {
+              height: 481;
+              background-image: url('/static/projects/comete/responsive/4-user-interface/fond-comete/fond-comete5.png');
+            }
+            .Content_illustration {
+              background-image: url('/static/projects/comete/responsive/4-user-interface/content-page-smartphone-01.png');
+              background-size: cover;
+              width: 100%;
+              height: 280px;
+            }
+          }
         `}</style>
         <div className='Backgrounds'>
           <div className='Background_1' />
@@ -99,7 +131,8 @@ class UserInterface extends React.Component {
           <DoubleIllustrations
             main={{width: 462, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
             second={{width: 1001, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
-            location={{bottom: 150, right: 160}} />
+            location={{bottom: 150, right: 160}}
+            mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
           <SectionInfos
             title={{content: 'User Interface', color: 'white'}}
             baseline={{content: 'Create an interface able to please to children', color: 'white'}}
@@ -154,6 +187,7 @@ const Content = () =>
       max-width: 450px;
       margin: auto;
       margin-top: 10px;
+      width: calc(100% - 50px);
     }
   `}</style>
     <div className='Title'>CONTENT PAGE</div>
@@ -195,6 +229,9 @@ const Homepage = () =>
       display: block;
       margin: auto;
     }
+    .Smartphone_home.responsive {
+      display: none;
+    }
     .Home_screen {
       display: block;
       margin: auto;
@@ -204,19 +241,38 @@ const Homepage = () =>
       vertical-align: top;
       margin-right: 200px;
       opacity: 0.08;
+      height: 1826px;
     }
     .Home_screen_image {
       vertical-align: top;
+      height: 2565px;
       filter: drop-shadow(0px 5px 50px rgba(128, 97, 231, 0.8));
       text-shadow: 0px 5px 237px rgba(128, 97, 231, 0.8);
     }
+    @media screen and (max-width: 750px) {
+      .Smartphone_home.desktop {
+        display: none;
+      }
+      .Smartphone_home.responsive {
+        display: block;
+      }
+      .Home_typo {
+        height: 840px;
+        margin-right: 0px;
+      }
+      .Home_screen_image {
+        height: 1151px;
+      }
+    }
+
   `}</style>
     <div className='Title'>Homepage</div>
     <div className='Description'>The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.</div>
-    <img className='Smartphone_home' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
+    <img className='Smartphone_home desktop' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
+    <img className='Smartphone_home responsive' width='100%' alt='tablet smartphone homepage comete' src='/static/projects/comete/responsive/4-user-interface/illu-iphone-homepage-01.png' />
     <div className='Home_screen'>
-      <img className='Home_typo' height='1826' alt='homepage typo' src='/static/projects/comete/4-user-interface/typo-homepage.svg' />
-      <img className='Home_screen_image' height='2565' alt='homepage comete' src='/static/projects/comete/4-user-interface/page_accueil_final_3.jpg' />
+      <img className='Home_typo' alt='homepage typo' src='/static/projects/comete/4-user-interface/typo-homepage.svg' />
+      <img className='Home_screen_image' alt='homepage comete' src='/static/projects/comete/4-user-interface/page_accueil_final_3.jpg' />
     </div>
   </div>
 

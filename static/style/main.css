@@ -117,15 +117,19 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 
 @media screen and (max-width: 750px) {
   .Global_title_primary {
-    font-size: 44px;
-    line-height: 32px;
+    font-size: 44px!important;
+    line-height: 50px!important;
   }
 
   .Global_title_secondary {
-    font-size: 18px;
+    font-size: 18px!important;
+    line-height: 36px!important;
   }
 
   .Global_subtitle {
-    font-size: 12px;
+    font-size: 12px!important;
+  }
+  .Global_description {
+    margin: auto;
   }
 }
