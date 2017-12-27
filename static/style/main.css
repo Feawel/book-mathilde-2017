@@ -29,6 +29,16 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
        url('/static/style/fonts/futuralt_book.ttf')  format('truetype');
 }
 
+.futuralt_bold {
+  font-family: 'Futura - Bold';
+  font-weight:400;
+}
+
+.futuralt_book {
+  font-family: 'Futura LT - Book';
+  font-weight:400;
+}
+
 /******** UTILS *********/
 
 .clickable:hover {
