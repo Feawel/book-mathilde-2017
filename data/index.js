@@ -28,8 +28,23 @@ const data = {
           color: '#00b3df',
           gradient: {
             dark: '#008db9',
-            light: '#6ad7d9'
-          }
+            light: '#6ad7d9',
+            base: 'background-image: linear-gradient(-27deg, #008db9 0%, #6ad7d9 100%)'
+          },
+          customer: 'Lelivrescolaire.fr',
+          role: 'Directrice artistique',
+          year: 2015,
+          stats: [
+            {
+              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
+              value: 1200
+            },
+            {
+              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
+              value: 589
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "Comete Exhibition",

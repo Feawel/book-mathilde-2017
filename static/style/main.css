@@ -34,6 +34,7 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 .clickable:hover {
   cursor: pointer;
 }
+
 .transitions {
   -webkit-transition      : all .5s  ;
   -moz-transition       : all .5s  ;
