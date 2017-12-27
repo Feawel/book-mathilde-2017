@@ -9,6 +9,7 @@ const DoubleIllustrations = ({main, second, location, mobileLocation = {}}) =>
         display: inline-block;
         width: 46%;
         margin-top: 60px;
+        z-index: -2;
       }
       .Illustration .Main {
         padding-right: 60px;

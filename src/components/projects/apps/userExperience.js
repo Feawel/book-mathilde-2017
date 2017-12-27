@@ -45,6 +45,7 @@ class UserExperience extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 0;
+            height: 2700px;
           }
         `}</style>
 
@@ -55,6 +56,7 @@ class UserExperience extends React.Component {
           location={{bottom: 150, right: 120}}
           mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
         <SectionInfos
+          marginTop={90}
           title={{content: 'User Experience', color: '#004459'}}
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'This app is a transcription of books for tablets. It is intended to be used by teachers and children in class. The user experience must therefore be as simple and instinctive as with the basic books, while adding tools such as the ability to documents in full screens, to draw and write on the pages, to put some of them side, or even to respond to exercises.'}}
@@ -194,9 +196,10 @@ const Sidebar = () =>
         position: relative;
         width: 100%;
         text-align: center;
-        z-index: 1;
         background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
         height: 800px;
+        top: -150px;
+        z-index: -1;
       }
       .Infos {
         display: block;

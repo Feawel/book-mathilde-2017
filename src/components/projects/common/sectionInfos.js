@@ -2,14 +2,14 @@
 import React from 'react'
 import {TitlePrimary, Subtitle, Description} from './texts'
 
-const SectionInfos = ({title, baseline, description, maxWidth = 460}) =>
+const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop = 180}) =>
   <div className='Infos'>
     <style jsx>{`
       .Infos {
         display: inline-block;
         width: calc(50% - 40px);
         vertical-align: top;
-        margin-top: 180px;
+        margin-top: ${marginTop}px;
         padding: 0 40px;
       }
       @media screen and (max-width: 750px) {
