@@ -34,6 +34,7 @@ class Menu extends React.Component {
             text-align: center;
             position: relative;
             z-index: 9;
+            overflow: hidden;
           }
           .Menu_fixed {
             position: fixed;
@@ -67,25 +68,39 @@ class Menu extends React.Component {
             top: 4px;
             margin-right: 12px;
           }
+          .Menu_inner {
+            height: 100%;
+            position: relative;
+            overflow: auto;
+          }
+          .Scroll {
+            position: relative;
+            height: 100%;
+            overflow: auto;
+          }
           @media screen and (max-width: 750px) {
             .Menu_inner {
-              overflow-x: auto;
+              width: 100%;
+            }
+            .Scroll {
               width: ${sections.length*180}px!important;
             }
           }
         `}</style>
         <div className='Menu_inner'>
-          {
-            sections.map((item, i) =>
-              <div onClick={() => this.changeCurrent(i)} key={i} className={`Menu_item transitions clickable ${current === i ? 'active' : ''}`}>
-                <img width='18' src={current === i ? item.activeIcon : item.icon} className='Icon' alt={`Icon for ${item.title}`}/>
-                <span className='Text'>{item.title}</span>
-              </div>
-            )
-          }
-          <div
-            style={{left: `calc(50% ${current < sections.length/2 ? '-' : '+'} ${leftBorder}px)`}}
-            className='Border transitions'>
+          <div className='Scroll'>
+            {
+              sections.map((item, i) =>
+                <div onClick={() => this.changeCurrent(i)} key={i} className={`Menu_item transitions clickable ${current === i ? 'active' : ''}`}>
+                  <img width='18' src={current === i ? item.activeIcon : item.icon} className='Icon' alt={`Icon for ${item.title}`}/>
+                  <span className='Text'>{item.title}</span>
+                </div>
+              )
+            }
+            <div
+              style={{left: `calc(50% ${current < sections.length/2 ? '-' : '+'} ${leftBorder}px)`}}
+              className='Border transitions'>
+            </div>
           </div>
         </div>
       </div>
