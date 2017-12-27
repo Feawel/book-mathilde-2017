@@ -70,6 +70,8 @@ class UserInterface extends React.Component {
         <Typeface />
         <Colors />
         <Picto />
+        <Illustration />
+        <Types />
       </div>
     )
   }
@@ -354,18 +356,56 @@ const Illustration = () =>
   <div className='Illustration'>
    <style jsx>{`
       .Illustration {
-
+        width: 100%;
+        position: relative;
+        height: 575px;
+        background-size: contain;
+      }
+      @media screen and (min-width: 750px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/photo-ipad-1200px.jpg');
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/photo-ipad-2000px.jpg');
+        }
+      }
+      @media screen and (min-width: 2000px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/photo-ipad-3000px.jpg');
+        }
       }
     `}</style>
   </div>
 
 const Types = () =>
   <div className='Types'>
-   <style jsx>{`
+    <style jsx>{`
       .Types {
-
+        width: 100%;
+        position: relative;
+        height: 2150px;
+        margin: auto;
+        text-align: center;
       }
     `}</style>
+    <TitleSecondary content='Types of pages' style={{color: '#004459', margin: '80px auto 0 auto'}} />
+    <Subtitle
+      content='We create a template for every type of page'
+      style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+  </div>
+
+const Templates = () =>
+  <div className='Templates'>
+    <style jsx>{`
+      .Templates {
+        width: 1050px;
+      }
+    `}</style>
+    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
+    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
+    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
   </div>
 
 const Tools = () =>
