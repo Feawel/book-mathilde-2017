@@ -24,7 +24,7 @@ class Comete extends React.Component {
     return (
       <div className='Project Comete'>
         <Summary project={project} />
-        <Menu sections={sections} section={section} project={project} />
+        <Menu sections={sections} section={section} project={project} color='#00b3df' borderImage='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
         <UserExperience
           setSectionMetadata={(metadata) => this.setSectionMetadata(0, metadata)} />
         <UserInterface

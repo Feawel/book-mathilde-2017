@@ -18,7 +18,7 @@ class Menu extends React.Component {
 
   render () {
     const { items, current, fixed } = this.state
-    const { section, sections } = this.props
+    const { section, sections, borderImage, color } = this.props
     const leftBorder = current < sections.length/2
       ? 170*((sections.length/2)-current)
       : 170*(current-sections.length/2)
@@ -53,7 +53,7 @@ class Menu extends React.Component {
             top: 20px;
           }
           .Menu_item.active {
-            color: #8061e7;
+            color: ${color};
           }
           .Border {
             position: absolute;
@@ -61,7 +61,7 @@ class Menu extends React.Component {
             left: 300px;
             height: 4px;
             width: 166px;
-            background-image: linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%);
+            background-image: ${borderImage};
           }
           .Icon {
             position: relative;

@@ -33,7 +33,6 @@ class UserInterface extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 0;
-            top: -40px;
           }
           .Infos {
             display: inline-block;
@@ -72,6 +71,7 @@ class UserInterface extends React.Component {
         <Picto />
         <Illustration />
         <Types />
+        <More />
       </div>
     )
   }
@@ -366,12 +366,12 @@ const Illustration = () =>
           background-image: url('/static/projects/apps/4-user-interface/photo-ipad-1200px.jpg');
         }
       }
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1400px) {
         .Illustration {
           background-image: url('/static/projects/apps/4-user-interface/photo-ipad-2000px.jpg');
         }
       }
-      @media screen and (min-width: 2000px) {
+      @media screen and (min-width: 2400px) {
         .Illustration {
           background-image: url('/static/projects/apps/4-user-interface/photo-ipad-3000px.jpg');
         }
@@ -385,7 +385,7 @@ const Types = () =>
       .Types {
         width: 100%;
         position: relative;
-        height: 2150px;
+        height: 2850px;
         margin: auto;
         text-align: center;
       }
@@ -394,6 +394,9 @@ const Types = () =>
     <Subtitle
       content='We create a template for every type of page'
       style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+    <Background />
+    <Templates />
+    <Tools />
   </div>
 
 const Templates = () =>
@@ -401,29 +404,169 @@ const Templates = () =>
     <style jsx>{`
       .Templates {
         width: 1050px;
+        margin: auto;
+        margin-top: 80px;
+        z-index: 1
+      }
+      .Template {
+        display: inline-block;
+        width: 320px;
+        margin-right: 30px;
+        vertical-align: top;
+      }
+      .Template img {
+        height: 425px;
+      }
+      .Description {
+        font-size: 12px;
+        line-height: 18px;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
       }
     `}</style>
-    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
-    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
-    <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
+    <div className='Template'>
+      <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template1.jpg' />
+      <div className='Description futuralt_book'>Introduction of a chapter in French.</div>
+    </div>
+    <div className='Template'>
+      <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template2.jpg' />
+      <div className='Description futuralt_book'>A page with a principal document like a text and severall documents less important.</div>
+    </div>
+    <div className='Template'>
+      <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template3.jpg' />
+      <div className='Description futuralt_book'>A page with document of equal importance.</div>
+    </div>
+  </div>
+
+const Background = () =>
+  <div className='Background'>
+    <style jsx>{`
+      .Background {
+        position: absolute;
+        right: 0;
+        top: 200px;
+        width: 100%;
+        z-index: -1;
+      }
+      .clip-borders {
+        height: 1250px;
+        width: 100%;
+        background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
+        margin: 0 auto;
+        -webkit-clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        -webkit-clip-path: url("#rhomboid-clip");
+        clip-path: url("#rhomboid-clip");
+      }
+    `}</style>
+    <div className="clip-borders"></div>
+    <svg className="clip-svg">
+      <defs>
+        <clipPath id="rhomboid-clip" clipPathUnits="objectBoundingBox">
+          <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
+        </clipPath>
+      </defs>
+    </svg>
   </div>
 
 const Tools = () =>
   <div className='Tools'>
    <style jsx>{`
       .Tools {
-
+        position: relative;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+      }
+      .Screen {
+        margin-top: 60px;
+        position: relative;
+      }
+      .Infos {
+        text-align: left;
+        display: inline-block;
+        width: 300px;
+        vertical-align: top;
+        position: relative;
+        margin-left: 130px;
+        top: 120px;
+      }
+      .Border {
+        height: 22px;
+        width: 2px;
+        position: absolute;
+        left: -20px;
+        top: 7px;
+        background-color: white;
+      }
+      .Screen_2 {
+        margin-top: 0;
+        top: -200px;
+        text-align: right;
+      }
+      .Screen_2 .Infos {
+        margin-right: 130px;
+        margin-left: 0;
+        top: 250px;
+      }
+      .Screen_2 .Border {
+        background-color: #00b3df;
       }
     `}</style>
+    <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: '80px 0 0 0'}} />
+    <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+    <div className='Screen Screen_1'>
+      <img height='616' alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+      <div className='Infos'>
+        <div className='Border' />
+        <TitleSecondary content='Answer to the question' style={{letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: 'white', margin: 0}} />
+        <Description
+          style={{textAlign: 'left', marginTop: 20}}
+          content='On each page, the student can answer questions. It is accessed thanks to a floating button which is therefore always accessible. Once it has pressed the button, the interface divides between questions and response space, and related documents on the other. Once he has answered, the student can send the answers to his teacher.' />
+      </div>
+    </div>
+    <div className='Screen Screen_2'>
+      <div className='Infos'>
+        <div className='Border' />
+        <TitleSecondary content='Draw on the pages' style={{textAlign: 'left', letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: '#00b3df', margin: 0}} />
+        <Description
+          style={{textAlign: 'left', marginTop: 20, color: '#474f6f'}}
+          content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
+      </div>
+      <img height='616' alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+    </div>
+    <TitleSecondary content='and more ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
   </div>
 
 const More = () =>
-  <div className='More'>
+  <div className='Illustration'>
    <style jsx>{`
-      .More {
-
+      .Illustration {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 700px;
+        background-size: cover;
+      }
+      @media screen and (min-width: 750px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/illu-ipad-more-1200px.png');
+        }
+      }
+      @media screen and (min-width: 1400px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/illu-ipad-more-2000px.png');
+        }
+      }
+      @media screen and (min-width: 2400px) {
+        .Illustration {
+          background-image: url('/static/projects/apps/4-user-interface/illu-ipad-more-3000px.png');
+        }
       }
     `}</style>
   </div>
+
+
 
 export default UserInterface
