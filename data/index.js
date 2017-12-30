@@ -2,7 +2,7 @@ const data = {
     projects: [
         {
           title: "Numeric books",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 1,
             height: 60
@@ -141,7 +141,7 @@ const data = {
         },
         {
           title: "Classe numérique",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 4,
             height: 67
@@ -167,12 +167,27 @@ const data = {
           color: '#fb5e80',
           gradient: {
             dark: '#f04372',
-            light: '#ffd69c'
-          }
+            light: '#ffd69c',
+            base: 'linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
+          },
+          customer: 'Lelivrescolaire.fr',
+          role: 'Directrice artistique',
+          year: 2016,
+          stats: [
+            {
+              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
+              value: 1200
+            },
+            {
+              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
+              value: 589
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "PROJET 5",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 3,
             height: 70
@@ -203,7 +218,7 @@ const data = {
         },
         {
           title: "PROJET 6",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 4,
             height: 67
@@ -221,7 +236,7 @@ const data = {
         },
         {
           title: "PROJET 7",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 3,
             height: 70
@@ -239,7 +254,7 @@ const data = {
         },
         {
           title: "PROJET 8",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH AN WEBINTERFACE ?",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 4,
             height: 67

@@ -29,6 +29,46 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
        url('/static/style/fonts/futuralt_book.ttf')  format('truetype');
 }
 
+
+@font-face {
+  font-family: 'OpenSans Regular';
+  src: url('/static/style/fonts/Opensans-Regular.eot'),
+       url('/static/style/fonts/Opensans-Regular.woff') format('woff'),
+       url('/static/style/fonts/OpenSans-Regular.ttf') format('truetype'),
+       url('/static/style/fonts/Opensans-Regular.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'OpenSans Bold';
+  src: url('/static/style/fonts/OpenSans-Bold.eot'),
+       url('/static/style/fonts/OpenSans-Bold.woff') format('woff'),
+       url('/static/style/fonts/OpenSans-Bold.ttf') format('truetype'),
+       url('/static/style/fonts/OpenSans-Bold.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'OpenSans Semi-Bold';
+  src: url('/static/style/fonts/OpenSans-Bold.eot'),
+       url('/static/style/fonts/OpenSans-Bold.woff') format('woff'),
+       url('/static/style/fonts/OpenSans-Bold.ttf') format('truetype'),
+       url('/static/style/fonts/OpenSans-Bold.svg') format('svg');
+}
+
+.opensans {
+  font-family: 'OpenSans Regular';
+  font-weight:400;
+}
+
+.opensans_bold {
+  font-family: 'OpenSans Bold';
+  font-weight:400;
+}
+
+.opensans_semibold {
+  font-family: 'OpenSans Bold';
+  font-weight:400;
+}
+
 .futuralt_bold {
   font-family: 'Futura - Bold';
   font-weight:400;

@@ -61,7 +61,6 @@ class UserExperience extends React.Component {
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'This app is a transcription of books for tablets. It is intended to be used by teachers and children in class. The user experience must therefore be as simple and instinctive as with the basic books, while adding tools such as the ability to documents in full screens, to draw and write on the pages, to put some of them side, or even to respond to exercises.'}}
           />
-        {console.log('timer', this.state.timer, this.state.timer%3)}
         <Architecture timer={this.state.timer} />
         <Navbar />
         <Sidebar />
