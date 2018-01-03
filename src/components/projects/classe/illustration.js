@@ -32,7 +32,6 @@ class Illustration extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 0;
-            padding-bottom: 400px;
           }
         `}</style>
 
@@ -174,23 +173,36 @@ class Classes extends React.Component {
             margin: auto;
             margin-top: 80px;
             text-align: center;
+            z-index: 0;
           }
           .Banners {
             position: relative;
             height: 400px;
             margin-top: 200px;
+            z-index: 2;
           }
           .Iphone {
             position: absolute;
             width: 494px;
             top: -126px;
             left: calc(50% - 247px);
+            z-index: 0;
           }
           .Circles {
             margin: auto;
             text-align: center;
             width: 1070px;
             position: relative;
+            z-index: 3;
+          }
+          .Grey_backgroud {
+            display: inline-block;
+            width: 100%;
+            height: 286px;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            z-index: 2;
           }
         `}</style>
         <TitleSecondary content='illustrations of classes' style={{color: '#474f6f', margin: '0 auto'}} />
@@ -205,6 +217,7 @@ class Classes extends React.Component {
         <div className='Circles'>
           {banners.map((banner, i) => <Circle index={i} setActive={(index) => this.setActive(index)} active={banner.index === active} banner={banner} key={i} />)}
         </div>
+        <img src='/static/projects/classe/5-illustration/fond-6.svg' className='Grey_backgroud' />
       </div>
     )
   }
