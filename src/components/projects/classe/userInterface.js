@@ -33,7 +33,6 @@ class UserInterface extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 1;
-            padding-bottom: 400px;
           }
           .Call_wrapper {
             position: absolute;
@@ -520,6 +519,27 @@ const Components = () =>
         height: 676px;
         margin-top: 40px;
       }
+      .Illustration {
+        width: 100%;
+        height: 634px;
+        background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
+        background-size: cover;
+      }
+      @media screen and (max-width: 1280px) {
+        .Illustration {
+          background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
+        }
+      }
+      @media screen and (min-width: 1280px) {
+        .Illustration {
+          background-image: url('/static/projects/classe/3-user-interface/fond-2-2000.png');
+        }
+      }
+      @media screen and (min-width: 2000px) {
+        .Illustration {
+          background-image: url('/static/projects/classe/3-user-interface/fond-2-3000.png');
+        }
+      }
     `}</style>
     <TitleSecondary content='Components' style={{color: '#474f6f', margin: '50px auto 0 auto'}} />
     <SubtitlePart
@@ -529,16 +549,8 @@ const Components = () =>
     <Description
             style={{width: 400, margin: 0, color: '#474f6f', lineHeight: '20px', margin: '30px auto'}}
             content='For a layout between 840 and 1600px, the grid contains 12 columns. The first breaking point is at 840px (8 columns), the second at 600px (4 columns). At over 1600px, the grid aligns in the center and stops growing.' />
-    <img alt='illu component' width='100%' src='/static/projects/classe/3-user-interface/illu-component.png' />
+    <div className='Illustration' />
   </div>
 
-const Illustration = () =>
-  <div className='Illustration'>
-    <style jsx>{`
-      .Illustration {
-
-      }
-    `}</style>
-  </div>
 
 export default UserInterface
