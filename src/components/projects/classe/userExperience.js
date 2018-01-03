@@ -419,7 +419,7 @@ const Step3 = () =>
         top: 40px;
       }
     `}</style>
-    <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework1.gif' />
+    <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework3.gif' />
     <div className='Infos'>
       <TitlePrimary
         content='03'
