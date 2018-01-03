@@ -12,6 +12,11 @@ export const TitleSecondary = ({content, style, cn}) =>
     {content}
   </h3>
 
+export const SubtitlePart = ({content, style, cn}) =>
+  <h3 className='Global_subtitle_part' style={{...style}}>
+    {content}
+  </h3>
+
 export const Subtitle = ({content, style, cn}) =>
   <h3 className='Global_subtitle' style={{...style}}>
     {content}
@@ -19,3 +24,4 @@ export const Subtitle = ({content, style, cn}) =>
 
 export const Description = ({content, style, cn}) =>
   <h3 className='Global_description' style={{...style}} dangerouslySetInnerHTML={{__html: content}} />
+

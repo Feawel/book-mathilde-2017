@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
-import { TitleSecondary, Subtitle, Description } from '../common/texts'
+import { TitleSecondary, Description, SubtitlePart } from '../common/texts'
 import Call from '../common/call'
 
 class UserInterface extends React.Component {
@@ -293,9 +293,9 @@ const Colors = () =>
       }
     `}</style>
     <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '80px auto 0 auto'}} />
-    <Subtitle
+    <SubtitlePart
       content='Colors to find there'
-      style={{color: '#a8adb9', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+      style={{color: '#a8adb9'}} />
     <div className='Big_colors'>
       {bigColors.map((color, i) => <BigColor key={i} {...color} />)}
     </div>
@@ -414,12 +414,12 @@ const Icon = () =>
         height: 558px;
       }
       .Blue_background {
-        background-image: url('/static/projects/classe/3-user-interface/fond-bleu1-01.svg');
-        background-size: cover;
+        display: inline-block;
         width: 100%;
         height: 800px;
         position: absolute;
         top: 360px;
+        left: 0;
         z-index: -1;
       }
       .Pictos {
@@ -460,13 +460,13 @@ const Icon = () =>
       .Description {
         width: 170px;
       }
+
     `}</style>
     <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/iphones-colors-01.png' className='Mockups' />
     <TitleSecondary content='icons' style={{color: 'white', margin: '50px auto 0 auto'}} />
-    <Subtitle
-      content='Guidelines'
-      style={{color: 'white', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
-    <div className='Blue_background' />
+    <SubtitlePart
+      content='Guidelines' />
+    <img src='/static/projects/classe/3-user-interface/fond-bleu1-01.svg' className='Blue_background' />
     <div className='Pictos'>
       <div className='Section_left'>
         <img height='229' alt='first picto exemple' src='/static/projects/classe/3-user-interface/picto1-01.png' />
@@ -522,9 +522,9 @@ const Components = () =>
       }
     `}</style>
     <TitleSecondary content='Components' style={{color: '#474f6f', margin: '50px auto 0 auto'}} />
-    <Subtitle
+    <SubtitlePart
       content='Grid system for responsive'
-      style={{color: '#a8adb9', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+      style={{color: '#a8adb9'}} />
     <img alt='component mockups' src='/static/projects/classe/3-user-interface/grid-01.png' className='Mockups' />
     <Description
             style={{width: 400, margin: 0, color: '#474f6f', lineHeight: '20px', margin: '30px auto'}}

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
-import { TitleSecondary, Subtitle, Description } from '../common/texts'
+import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 import Call from '../common/call'
 
 class UserInterface extends React.Component {
@@ -133,9 +133,9 @@ const Typo = ({ font, index }) =>
     `}</style>
     <div className='Border' />
     <div className='Content'>
-      <Subtitle
+      <SubtitlePart
         content={font.app}
-        style={{color: '#abb0bc', fontSize: 16, margin: 0, textTransform: 'none', fontStyle: 'italic'}} />
+        style={{color: '#abb0bc', margin: 0}} />
       <img className='Font' src={`/static/projects/apps/4-user-interface/typeface/${font.font}.svg`} alt={`${font.font}`} />
       <img className='Exemple' src={`/static/projects/apps/4-user-interface/typeface/${font.font}-exemple.svg`} alt={`${font.font} exemple`} />
     </div>
@@ -189,22 +189,22 @@ const Colors = () =>
     <TitleSecondary content='Color' style={{color: '#004459', position: 'relative', top: 45, left: 'calc(20% - 125px)'}} />
     <div className='Colors'>
       <div className='Main_colors'>
-        <Subtitle
+        <SubtitlePart
           content='Main colors'
-          style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '20px 0', fontStyle: 'italic'}} />
+          style={{color: '#abb0bc', margin: '20px 0'}} />
         {mainColors.map((color, i) => <MainColor color={color} key={i} />)}
       </div>
       <div className='Secondary_colors'>
         <div className='Font_colors'>
-          <Subtitle
+          <SubtitlePart
             content='Font colors'
-            style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '20px 0', fontStyle: 'italic'}} />
+            style={{color: '#abb0bc', margin: '20px 0'}} />
             {fontColors.map((color, i) => <SecondaryColor color={color} key={i} />)}
         </div>
         <div className='Additional_colors'>
-          <Subtitle
+          <SubtitlePart
             content='Additional colors'
-            style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '20px 0', fontStyle: 'italic'}} />
+            style={{color: '#abb0bc', margin: '20px 0'}} />
           {additionalColors1.map((color, i) => <SecondaryColor color={color} key={i} />)}
           {additionalColors2.map((color, i) => <SecondaryColor color={color} key={i} />)}
         </div>
@@ -327,9 +327,9 @@ const Picto = () =>
       }
     `}</style>
     <TitleSecondary content='PICTOGRAMME' style={{color: 'white', margin: '80px auto 0 auto'}} />
-    <Subtitle
+    <SubtitlePart
       content='Guidelines'
-      style={{color: 'white', fontSize: 16, opacity: 0.6, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+      style={{opacity: 0.6}} />
     <div className='Pictograms'>
       <div className='Picto_big_left'>
         <img height='288' src='/static/projects/apps/4-user-interface/picto/picto-grand.svg' alt='picto-grand' />
@@ -391,9 +391,9 @@ const Types = () =>
       }
     `}</style>
     <TitleSecondary content='Types of pages' style={{color: '#004459', margin: '80px auto 0 auto'}} />
-    <Subtitle
+    <SubtitlePart
       content='We create a template for every type of page'
-      style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+      style={{color: '#abb0bc'}} />
     <Background />
     <Templates />
     <Tools />

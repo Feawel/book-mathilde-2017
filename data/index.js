@@ -137,7 +137,8 @@ const data = {
           gradient: {
             dark: '#d6181f',
             light: '#f5c253'
-          }
+          },
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "Classe numérique",
@@ -331,25 +332,25 @@ export const ads = {
     title: 'boys between 16 anD 20',
     description: 'his advertisement targets boys between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to use a service more entertaining and less restrictive than the traditional driving schools.',
     gradient: {light: '#d6181f', dark: '#f5c253'},
-    firstPic: '/static/projects/ornikar/boys-first.png',
-    secondPic: '/static/projects/ornikar/boys-second.png',
-    thirdPic: '/static/projects/ornikar/boys-third.png'
+    firstPic: '/static/projects/ornikar/lossless/boys-first.png',
+    secondPic: '/static/projects/ornikar/lossless/boys-second.jpg',
+    thirdPic: '/static/projects/ornikar/lossless/boys-third.jpg'
   },
   girls: {
     title: 'girls between 16 anD 20',
     description: 'This advertisement targets girls between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to strengthen their self-confidence by reviewing as much as they wish before passing the exam.',
     gradient: {light: '#81c7be', dark: '#f5f2b5'},
-    firstPic: '/static/projects/ornikar/girls-first.png',
-    secondPic: '/static/projects/ornikar/girls-second.png',
-    thirdPic: '/static/projects/ornikar/girls-third.png'
+    firstPic: '/static/projects/ornikar/lossless/girls-first.png',
+    secondPic: '/static/projects/ornikar/lossless/girls-second.jpg',
+    thirdPic: '/static/projects/ornikar/lossless/girls-third.jpg'
   },
   youngs: {
     title: 'YOUNG between 20 anD 26',
     description: 'This advertisement targets young between the ages of 20 and 26. Their main motivation for passing the code of the road with Ornikar is to have a simple service and to interact with a company close to its cients.',
     gradient: {light: '#fa8633', dark: '#ffe05e'},
-    firstPic: '/static/projects/ornikar/youngs-first.png',
-    secondPic: '/static/projects/ornikar/youngs-second.png',
-    thirdPic: '/static/projects/ornikar/youngs-third.png'
+    firstPic: '/static/projects/ornikar/lossless/youngs-first.png',
+    secondPic: '/static/projects/ornikar/lossless/youngs-second.jpg',
+    thirdPic: '/static/projects/ornikar/lossless/youngs-third.jpg'
   }
 }
 

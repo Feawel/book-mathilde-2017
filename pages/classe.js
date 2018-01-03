@@ -7,7 +7,6 @@ export default () => (
       <title>Book 🤔</title>
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700i,900" rel="stylesheet" />
       <link href="/static/style/main.css" rel="stylesheet" />
     </Head>
     <style jsx global>{`

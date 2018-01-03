@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
-import { TitleSecondary, Subtitle, Description } from '../common/texts'
+import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 
 class UserExperience extends React.Component {
   constructor(props) {
@@ -128,9 +128,9 @@ const Architecture = ({ timer }) =>
       }
     `}</style>
     <TitleSecondary content='Architecture' style={{color: '#004459', margin: '80px auto 0 auto'}} />
-    <Subtitle
+    <SubtitlePart
       content='How does it work ?'
-      style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '25px 0 60px 0', fontStyle: 'italic'}} />
+      style={{color: '#abb0bc', margin: '25px 0 60px 0'}} />
     <div className='Slider'>
       <img
         className={`Screen Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}
@@ -181,9 +181,9 @@ const Navbar = () =>
     <div className='Illustration' />
     <div className='Infos'>
       <TitleSecondary content='Navbar' style={{color: '#004459', margin: '40px auto 0 auto'}} />
-      <Subtitle
+      <SubtitlePart
         content='iOS version'
-        style={{color: '#abb0bc', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+        style={{color: '#abb0bc'}} />
     </div>
   </div>
 
@@ -232,8 +232,7 @@ const Sidebar = () =>
     <div className='Infos'>
       <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto'}} />
       <Subtitle
-        content='iOS version'
-        style={{color: 'white', fontSize: 16, textTransform: 'none', margin: '10px 0', fontStyle: 'italic'}} />
+        content='iOS version' />
       <Description
         content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
         style={{color: 'white', margin: '20px 0'}} />
