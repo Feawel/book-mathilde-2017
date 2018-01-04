@@ -25,9 +25,10 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
         height: 630px;
         text-align: center;
       }
-      .First_illustration_section > img {
+      .First_illustration {
         position: relative;
         top: 110px;
+        width: 780px;
         box-shadow: 9px 9px 10px 7px rgba(1, 1, 1, 0.2);
       }
       .Low_picture {
@@ -35,6 +36,32 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
         width: 50%;
         height: 400px;
         background-size: cover;
+      }
+      .Low_picture_first {
+        background-image: url('${secondPic}');
+      }
+      .Low_picture_second {
+        background-image: url('${thirdPic}');
+      }
+      @media screen and (max-width: 750px) {
+        .First_illustration_section {
+          height: 288px;
+        }
+        .First_illustration {
+          width: 80%;
+          top: 65px;
+        }
+        .Low_picture {
+          width: 100%;
+          height: 360px;
+          background-size: cover;
+        }
+        .Low_picture_first {
+          background-image: url('${secondPic.replace('desktop', 'smartphone')}');
+        }
+        .Low_picture_second {
+          background-image: url('${thirdPic.replace('desktop', 'smartphone')}');
+        }
       }
 
     `}</style>
@@ -47,11 +74,11 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
     <div
       style={{backgroundImage: `linear-gradient(-41deg, ${gradient.light} 0%, ${gradient.dark} 100%)`}}
       className='First_illustration_section'>
-      <img className='' width='780' src={firstPic} alt='main orknikar boys ad' />
+      <img className='First_illustration' src={firstPic} alt='main orknikar boys ad' />
     </div>
     <div className='Second_illustration_section'>
-      <div style={{backgroundImage: `url('${secondPic}')`}} className='Low_picture' />
-      <div style={{backgroundImage: `url('${thirdPic}')`}} className='Low_picture' />
+      <div className='Low_picture Low_picture_first' />
+      <div className='Low_picture Low_picture_second' />
     </div>
   </div>
 

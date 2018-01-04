@@ -5,6 +5,7 @@ import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
+import { responsive } from '../../../utils/responsive'
 
 const mainColors = ['#240868', '#805bec', '#00f1cc']
 const addColors = ['#0f0f0f', '#381958', '#808080', '#0f949f', '#00c1ff']
@@ -83,255 +84,287 @@ class VisualIdentity extends React.Component {
   }
 }
 
-const Color = () =>
-  <div className='Color'>
-   <style jsx>{`
-      .Color {
-        max-width: 1020px;
-        text-align: center;
-        margin: auto;
-        position: relative;
-      }
-      .Outer_circle {
-        width: 446px;
-        height: 446px;
-        border-radius: 50%;
-        border: 1px solid #dee2ed;
-        margin: auto;
-        display: inline-block;
-      }
-      .Inner_circle {
-        width: 375px;
-        height: 375px;
-        border-radius: 50%;
-        background-color:#dee2ed;
-        margin: auto;
-        position: relative;
-        top: 38px;
-      }
-      .Picture {
-        margin: auto;
-        position: relative;
-        bottom: 55px;
-      }
-      .Main_colors {
-        width: 205px;
-        text-align: left;
-        position: absolute;
-        top: 100px;
-        left: calc(50% - 388px);
-      }
-      .Main_color {
-        width: 39px;
-        height: 39px;
-        border: 1px solid #240868;
-        border-radius: 50%;
-        display: inline-block;
-        margin: auto;
-        margin-right: 40px;
-      }
-      .Main_color:nth-child(4) {
-        margin-right: 0;
-      }
-      .Main_color_inner {
-        width: 31px;
-        height: 31px;
-        border-radius: 50%;
-        margin: auto;
-        position: relative;
-        top: 4px;
-      }
-      .Add_colors {
-        width: 260px;
-        text-align: left;
-        position: absolute;
-        top: 100px;
-        right: calc(50% - 450px);
-      }
-      .Add_color {
-        width: 26px;
-        height: 26px;
-        border: 1px solid #0f0f0f;
-        border-radius: 50%;
-        display: inline-block;
-        margin: auto;
-        margin-right: 30px;
-      }
-      .Add_color:nth-child(6) {
-        margin-right: 0;
-      }
-      .Add_color_inner {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin: auto;
-        position: relative;
-        top: 3px;
-      }
-      .Add_colors_2 {
-        width: 260px;
-        text-align: left;
-        position: absolute;
-        top: 200px;
-        right: calc(50% - 510px);
-      }
-      .Add_colors_3 {
-        width: 260px;
-        text-align: left;
-        position: absolute;
-      }
-      .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
-        display: none;
-      }
-      @media screen and (max-width: 750px) {
-        .Outer_circle {
-          position: relative;
-          left: 190px;
-          zoom: 0.8;
-        }
-        .Main_colors {
-          left: 25px;
-        }
-        .Main_color {
-          margin-right: 18px;
-        }
-        .Add_colors {
-          top: 200px;
-          left: 25px;
-        }
-        .Add_color {
-          margin-right: 15px;
-        }
-        .Add_colors_2 {
-          left: 25px;
-          top: 300px;
-        }
-        .Add_colors_3 {
-          left: 25px;
-          top: 350px;
-        }
-        .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
-          display: inline-block;
-        }
-        .Add_colors.desktop, .Add_colors_2.desktop, .Add_colors_3.desktop {
-          display: none;
-        }
-      }
-    `}</style>
-    <TitleSecondary
-      content='Color'
-      mobile='margin-left: 25px;'
-      style={{color: '#8061e7', textAlign: 'left'}} />
-    <div className='Main_colors'>
-      <SubtitlePart
-        content='Main colors'
-        mobile='text-align: left!important;'
-        style={{color: '#abb0bc', margin: '0 0 20px 0'}} />
-        { mainColors.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Main_color clickable'>
-            <div style={{backgroundColor: color}} className='Main_color_inner' />
+class Color extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      titleStyle: {color: '#8061e7', textAlign: 'left'},
+      subtitle1Style: {color: '#abb0bc', margin: '0 0 20px 0'},
+      subtitle2Style: {textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}
+    }
+  }
+  componentDidMount() {
+    const { titleStyle, subtitle1Style, subtitle2Style } = this.state
+    this.setState({
+      titleStyle: responsive({base: {...titleStyle}, mobile: {marginLeft: 25}}),
+      subtitle1Style: responsive({base: {...subtitle1Style}, mobile: {textAlign: 'left'}}),
+      subtitle2Style: responsive({base: {...subtitle2Style} , mobile:{textAlign: 'left'}})
+    })
+  }
+  render() {
+    const { titleStyle, subtitle1Style, subtitle2Style } = this.state
+    return (
+      <div className='Color'>
+        <style jsx>{`
+          .Color {
+            max-width: 1020px;
+            text-align: center;
+            margin: auto;
+            position: relative;
+          }
+          .Outer_circle {
+            width: 446px;
+            height: 446px;
+            border-radius: 50%;
+            border: 1px solid #dee2ed;
+            margin: auto;
+            display: inline-block;
+          }
+          .Inner_circle {
+            width: 375px;
+            height: 375px;
+            border-radius: 50%;
+            background-color:#dee2ed;
+            margin: auto;
+            position: relative;
+            top: 38px;
+          }
+          .Picture {
+            margin: auto;
+            position: relative;
+            bottom: 55px;
+          }
+          .Main_colors {
+            width: 205px;
+            text-align: left;
+            position: absolute;
+            top: 100px;
+            left: calc(50% - 388px);
+          }
+          .Main_color {
+            width: 39px;
+            height: 39px;
+            border: 1px solid #240868;
+            border-radius: 50%;
+            display: inline-block;
+            margin: auto;
+            margin-right: 40px;
+          }
+          .Main_color:nth-child(4) {
+            margin-right: 0;
+          }
+          .Main_color_inner {
+            width: 31px;
+            height: 31px;
+            border-radius: 50%;
+            margin: auto;
+            position: relative;
+            top: 4px;
+          }
+          .Add_colors {
+            width: 260px;
+            text-align: left;
+            position: absolute;
+            top: 100px;
+            right: calc(50% - 450px);
+          }
+          .Add_color {
+            width: 26px;
+            height: 26px;
+            border: 1px solid #0f0f0f;
+            border-radius: 50%;
+            display: inline-block;
+            margin: auto;
+            margin-right: 30px;
+          }
+          .Add_color:nth-child(6) {
+            margin-right: 0;
+          }
+          .Add_color_inner {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: auto;
+            position: relative;
+            top: 3px;
+          }
+          .Add_colors_2 {
+            width: 260px;
+            text-align: left;
+            position: absolute;
+            top: 200px;
+            right: calc(50% - 510px);
+          }
+          .Add_colors_3 {
+            width: 260px;
+            text-align: left;
+            position: absolute;
+          }
+          .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
+            display: none;
+          }
+          @media screen and (max-width: 750px) {
+            .Outer_circle {
+              position: relative;
+              left: 190px;
+              zoom: 0.8;
+            }
+            .Main_colors {
+              left: 25px;
+            }
+            .Main_color {
+              margin-right: 18px;
+            }
+            .Add_colors {
+              top: 200px;
+              left: 25px;
+            }
+            .Add_color {
+              margin-right: 15px;
+            }
+            .Add_colors_2 {
+              left: 25px;
+              top: 300px;
+            }
+            .Add_colors_3 {
+              left: 25px;
+              top: 350px;
+            }
+            .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
+              display: inline-block;
+            }
+            .Add_colors.desktop, .Add_colors_2.desktop, .Add_colors_3.desktop {
+              display: none;
+            }
+          }
+        `}</style>
+        <TitleSecondary
+          content='Color'
+          style={titleStyle} />
+        <div className='Main_colors'>
+          <SubtitlePart
+            content='Main colors'
+            style={subtitle1Style} />
+            { mainColors.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Main_color clickable'>
+                <div style={{backgroundColor: color}} className='Main_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Add_colors desktop'>
+          <SubtitlePart
+            content='Additional colors'
+            style={subtitle2Style} />
+          {
+            addColors.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+                <div style={{backgroundColor: color}} className='Add_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Add_colors_2 desktop'>
+          {
+            addColors2.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+                <div style={{backgroundColor: color}} className='Add_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Add_colors responsive'>
+          <SubtitlePart
+            content='Additional colors'
+            style={subtitle2Style} />
+          {
+            respAddColors.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+                <div style={{backgroundColor: color}} className='Add_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Add_colors_2 response'>
+          {
+            respAddColors2.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+                <div style={{backgroundColor: color}} className='Add_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Add_colors_3 response'>
+          {
+            respAddColors3.map((color, i) =>
+              <div key={i} style={{borderColor: color}} className='Add_color clickable'>
+                <div style={{backgroundColor: color}} className='Add_color_inner' />
+              </div>
+            )
+          }
+        </div>
+        <div className='Outer_circle'>
+          <div className='Inner_circle'>
+            <img width='398' className='Picture' alt='smartphone comete' src='/static/projects/comete/3-visual-identity/illu-smartphone-couleures.png' />
           </div>
-        )
-      }
-    </div>
-    <div className='Add_colors desktop'>
-      <SubtitlePart
-        content='Additional colors'
-        mobile='text-align: left!important;'
-        style={{textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}} />
-      {
-        addColors.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
-            <div style={{backgroundColor: color}} className='Add_color_inner' />
-          </div>
-        )
-      }
-    </div>
-    <div className='Add_colors_2 desktop'>
-      {
-        addColors2.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
-            <div style={{backgroundColor: color}} className='Add_color_inner' />
-          </div>
-        )
-      }
-    </div>
-    <div className='Add_colors responsive'>
-      <SubtitlePart
-        content='Additional colors'
-        mobile='text-align: left!important;'
-        style={{textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}} />
-      {
-        respAddColors.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
-            <div style={{backgroundColor: color}} className='Add_color_inner' />
-          </div>
-        )
-      }
-    </div>
-    <div className='Add_colors_2 response'>
-      {
-        respAddColors2.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
-            <div style={{backgroundColor: color}} className='Add_color_inner' />
-          </div>
-        )
-      }
-    </div>
-    <div className='Add_colors_3 response'>
-      {
-        respAddColors3.map((color, i) =>
-          <div key={i} style={{borderColor: color}} className='Add_color clickable'>
-            <div style={{backgroundColor: color}} className='Add_color_inner' />
-          </div>
-        )
-      }
-    </div>
-    <div className='Outer_circle'>
-      <div className='Inner_circle'>
-        <img width='398' className='Picture' alt='smartphone comete' src='/static/projects/comete/3-visual-identity/illu-smartphone-couleures.png' />
+        </div>
       </div>
-    </div>
+    )
+  }
+}
 
-  </div>
-
-const Typography = () =>
-  <div className='Typography'>
-   <style jsx>{`
-      .Typography {
-        max-width: 1020px;
-        text-align: center;
-        margin: auto;
-        margin-top: 60px;
-        margin-bottom: 80px;
-      }
-      .Picture {
-        margin-top: 40px;
-        display: inline-block;
-      }
-      .Picture_responsive {
-        display:none;
-      }
-      @media screen and (max-width: 750px) {
-        .Title {
-          margin-left: 25px;
-        }
-        .Picture {
-          display:none;
-        }
-        .Picture_responsive {
-          margin-top: 40px;
-          display: inline-block;
-        }
-      }
-    `}</style>
-    <TitleSecondary
-      content='Typography'
-      cn='Title'
-      style={{color: '#8061e7', textAlign: 'left'}} />
-    <img className='Picture' width='550' src='/static/projects/comete/3-visual-identity/typo-titilium.svg' alt='typo titilium' />
-    <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium1.svg' alt='typo titilium 1' />
-    <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium2.svg' alt='typo titilium 2' />
-  </div>
+class Typography extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      titleStyle: {color: '#8061e7', textAlign: 'left'}
+    }
+  }
+  componentDidMount() {
+    const { titleStyle } = this.state
+    this.setState({ titleStyle: responsive({base: {...titleStyle}, mobile: {marginLeft: 25}}) })
+  }
+  render() {
+    const { titleStyle } = this.state
+    return (
+      <div className='Typography'>
+        <style jsx>{`
+          .Typography {
+            max-width: 1020px;
+            text-align: center;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 80px;
+          }
+          .Picture {
+            margin-top: 40px;
+            display: inline-block;
+          }
+          .Picture_responsive {
+            display:none;
+          }
+          @media screen and (max-width: 750px) {
+            .Title {
+              margin-left: 25px;
+            }
+            .Picture {
+              display:none;
+            }
+            .Picture_responsive {
+              margin-top: 40px;
+              display: inline-block;
+            }
+          }
+        `}</style>
+        <TitleSecondary
+          content='Typography'
+          style={titleStyle} />
+        <img className='Picture' width='550' src='/static/projects/comete/3-visual-identity/typo-titilium.svg' alt='typo titilium' />
+        <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium1.svg' alt='typo titilium 1' />
+        <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium2.svg' alt='typo titilium 2' />
+      </div>
+    )
+  }
+}
 
 export default VisualIdentity

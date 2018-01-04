@@ -161,7 +161,7 @@ const Content = () =>
       margin: auto;
     }
   `}</style>
-    <TitleSecondary content='CONTENT PAGE' mobile='margin-left:25px!important;' style={{color: '#221061', margin: 0, marginTop: 80}} />
+    <TitleSecondary content='CONTENT PAGE' style={{color: '#221061', margin: 0, marginTop: 80}} />
     <SubtitlePart
       content='Scientific pages for a scientific exhibition'
       style={{color: '#abb0bc', maxWidth: '450px'}} />

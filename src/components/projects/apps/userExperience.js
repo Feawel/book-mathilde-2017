@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
-import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
+import { TitleSecondary, Subtitle, SubtitlePart, Description } from '../common/texts'
 
 class UserExperience extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class UserExperience extends React.Component {
       activeIcon: '/static/projects/apps/2-menu/picto-UX.svg',
       element: ReactDOM.findDOMNode(this)
     })
-    const intervalId = setInterval(this.timer, 4000)
+    const intervalId = setInterval(this.timer, 3000)
     this.setState({ intervalId })
   }
 
@@ -69,6 +69,14 @@ class UserExperience extends React.Component {
   }
 }
 
+const textStyle = {
+  position: 'absolute',
+  bottom: -90,
+  width: 260,
+  textAlign: 'center',
+  color: '',
+
+}
 const Architecture = ({ timer }) =>
   <div className='Architecture'>
    <style jsx>{`
@@ -95,13 +103,25 @@ const Architecture = ({ timer }) =>
         display: inline-block;
         height: 349px;
       }
-      .Screen.Left {
+      .Text {
+        position: absolute;
+        bottom: -70px;
+        width: 260px;
+        text-align: center;
+      }
+      .Line {
+        width: 1px;
+        height: 24px;
+        background-color: #bbc9d5;
+        margin: auto;
+      }
+      .Left {
         left: calc(50% - 262px - 131px - 80px);
       }
-      .Screen.Center {
+      .Center {
         left: calc(50% - 131px);
       }
-      .Screen.Right {
+      .Right {
         left: calc(50% + 131px + 80px);
       }
       .Screen.active {
@@ -113,7 +133,7 @@ const Architecture = ({ timer }) =>
       .Ipad {
         width: 308px;
         position: absolute;
-        top: 115px;
+        top: 123px;
         z-index: 10;
         display: block;
       }
@@ -138,21 +158,35 @@ const Architecture = ({ timer }) =>
       <img
         className={`Screen Left transitions ${timer%3 === 0 ? 'inactive' : 'active'}`}
         src='/static/projects/apps/3-user-experience/illus-archi-0.png' />
+      <div className='Text Left transitions' style={{opacity: timer%3 === 0 ? 1 : 0}}>
+        <div className='Line' />
+        <Subtitle content='CHOOSE A BOOK' style={{color: '#00b3df', margin: 0}} />
+      </div>
+
       <img
         className={`Screen Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}
         src='/static/projects/apps/3-user-experience/illus-archi-1-active.png' />
       <img
         className={`Screen Center transitions ${timer%3 === 1 ? 'inactive' : 'active'}`}
         src='/static/projects/apps/3-user-experience/illus-archi-1.png' />
+      <div className='Text Center transitions' style={{opacity: timer%3 === 1 ? 1 : 0}}>
+        <div className='Line' />
+        <Subtitle content='CHOOSE A CHAPTER' style={{color: '#00b3df', margin: 0}} />
+      </div>
+
       <img
         className={`Screen Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}
         src='/static/projects/apps/3-user-experience/illus-archi-2-active.png' />
       <img
         className={`Screen Right transitions ${timer%3 === 2 ? 'inactive' : 'active'}`}
         src='/static/projects/apps/3-user-experience/illus-archi-2.png' />
+      <div className='Text Right transitions' style={{opacity: timer%3 === 2 ? 1 : 0}}>
+        <div className='Line' />
+        <Subtitle content='CHOOSE A LESSON' style={{color: '#00b3df', margin: 0}} />
+      </div>
     </div>
-    <img
-        className={`Ipad transitions position_${timer%3}`} src='/static/projects/apps/3-user-experience/ipad.png' />
+    <img className={`Ipad transitions position_${timer%3}`}
+      src='/static/projects/apps/3-user-experience/ipad.png' />
   </div>
 
 const Navbar = () =>
@@ -231,7 +265,7 @@ const Sidebar = () =>
     `}</style>
     <div className='Infos'>
       <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto'}} />
-      <Subtitle
+      <SubtitlePart
         content='iOS version' />
       <Description
         content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'

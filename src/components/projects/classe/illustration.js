@@ -251,7 +251,7 @@ const Banner = ({banner, active}) =>
   </div>
 
 const Circle = ({banner, active, setActive, index}) =>
-  <div onClick={() => setActive(index)} className={`transitions Circle clickable ${active ? 'active' : ''}`}>
+  <div onMouseEnter={() => setActive(index)} className={`transitions Circle clickable ${active ? 'active' : ''}`}>
     <style jsx>{`
       .Circle {
         position: relative;

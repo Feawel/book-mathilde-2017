@@ -214,5 +214,6 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 
   .Global_description {
     margin: auto;
+    text-align: center!important;
   }
 }
