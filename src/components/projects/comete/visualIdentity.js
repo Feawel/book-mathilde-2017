@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
+import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 
 const mainColors = ['#240868', '#805bec', '#00f1cc']
 const addColors = ['#0f0f0f', '#381958', '#808080', '#0f949f', '#00c1ff']
@@ -91,15 +92,6 @@ const Color = () =>
         margin: auto;
         position: relative;
       }
-      .Title {
-        font-family: Futura;
-        font-weight: bold;
-        font-size: 21px;
-        text-transform: uppercase;
-        color: #8061e7;
-        line-height: 32px;
-        text-align: left;
-      }
       .Outer_circle {
         width: 446px;
         height: 446px;
@@ -121,15 +113,6 @@ const Color = () =>
         margin: auto;
         position: relative;
         bottom: 55px;
-      }
-      .Color_title {
-        font-family: Playfair Display;
-        font-weight: 900;
-        font-style: italic;
-        font-size: 16px;
-        color: #abb0bc;
-        line-height: 32px;
-        margin-bottom: 20px;
       }
       .Main_colors {
         width: 205px;
@@ -201,9 +184,6 @@ const Color = () =>
         display: none;
       }
       @media screen and (max-width: 750px) {
-        .Title {
-          margin-left: 25px;
-        }
         .Outer_circle {
           position: relative;
           left: 190px;
@@ -230,9 +210,6 @@ const Color = () =>
           left: 25px;
           top: 350px;
         }
-        .Color_title {
-          text-align: left!important;
-        }
         .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
           display: inline-block;
         }
@@ -241,11 +218,16 @@ const Color = () =>
         }
       }
     `}</style>
-    <div className='Title'>Color</div>
+    <TitleSecondary
+      content='Color'
+      mobile='margin-left: 25px;'
+      style={{color: '#8061e7', textAlign: 'left'}} />
     <div className='Main_colors'>
-      <div className='Color_title'>Main colors</div>
-      {
-        mainColors.map((color, i) =>
+      <SubtitlePart
+        content='Main colors'
+        mobile='text-align: left!important;'
+        style={{color: '#abb0bc', margin: '0 0 20px 0'}} />
+        { mainColors.map((color, i) =>
           <div key={i} style={{borderColor: color}} className='Main_color clickable'>
             <div style={{backgroundColor: color}} className='Main_color_inner' />
           </div>
@@ -253,7 +235,10 @@ const Color = () =>
       }
     </div>
     <div className='Add_colors desktop'>
-      <div style={{textAlign: 'right'}} className='Color_title'>Additional colors</div>
+      <SubtitlePart
+        content='Additional colors'
+        mobile='text-align: left!important;'
+        style={{textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}} />
       {
         addColors.map((color, i) =>
           <div key={i} style={{borderColor: color}} className='Add_color clickable'>
@@ -272,7 +257,10 @@ const Color = () =>
       }
     </div>
     <div className='Add_colors responsive'>
-      <div style={{textAlign: 'right'}} className='Color_title'>Additional colors</div>
+      <SubtitlePart
+        content='Additional colors'
+        mobile='text-align: left!important;'
+        style={{textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}} />
       {
         respAddColors.map((color, i) =>
           <div key={i} style={{borderColor: color}} className='Add_color clickable'>
@@ -317,15 +305,6 @@ const Typography = () =>
         margin-top: 60px;
         margin-bottom: 80px;
       }
-      .Title {
-        font-family: Futura;
-        font-weight: bold;
-        font-size: 21px;
-        text-transform: uppercase;
-        color: #8061e7;
-        line-height: 32px;
-        text-align: left;
-      }
       .Picture {
         margin-top: 40px;
         display: inline-block;
@@ -346,7 +325,10 @@ const Typography = () =>
         }
       }
     `}</style>
-    <div className='Title'>Typography</div>
+    <TitleSecondary
+      content='Typography'
+      cn='Title'
+      style={{color: '#8061e7', textAlign: 'left'}} />
     <img className='Picture' width='550' src='/static/projects/comete/3-visual-identity/typo-titilium.svg' alt='typo titilium' />
     <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium1.svg' alt='typo titilium 1' />
     <img className='Picture_responsive' width='90%' src='/static/projects/comete/responsive/3-visual-identity/typo-titilium2.svg' alt='typo titilium 2' />

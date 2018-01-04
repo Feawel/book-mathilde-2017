@@ -7,7 +7,7 @@ import Call from '../common/call'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
-import { TitleSecondary, Description } from '../common/texts'
+import { TitleSecondary,  Description } from '../common/texts'
 
 class VideoGames extends React.Component {
   constructor(props) {
@@ -260,25 +260,12 @@ const LeftScreen = ({screen}) =>
         top: 5px;
         left: -20px;
       }
-      .Title {
-        font-family: Futura;
-        font-size: 21px;
-        line-height: 32px;
-        color: #00c1ff;
-        letter-spacing: 1.05px;
-      }
-      .Description {
-        font-family: Futura;
-        font-size: 12px;
-        line-height: 18px;
-        color: white;
-      }
     `}</style>
     <img height='439' className='Screen' alt='screen comete' src={`/static/projects/comete/5-video-games/${screen.src}.png`} />
     <div className='Infos'>
       <div className='Line' />
-      <div className='Title'>{screen.title}</div>
-      <div className='Description'>{screen.description}</div>
+      <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0}} />
+      <Description content={screen.description} style={{fontSize: 12, margin: 0}} />
     </div>
   </div>
 
@@ -308,24 +295,11 @@ const RightScreen = ({screen}) =>
         top: 5px;
         left: -20px;
       }
-      .Title {
-        font-family: Futura;
-        font-size: 21px;
-        line-height: 32px;
-        color: #00c1ff;
-        letter-spacing: 1.05px;
-      }
-      .Description {
-        font-family: Futura;
-        font-size: 12px;
-        line-height: 18px;
-        color: white;
-      }
     `}</style>
     <div className='Infos'>
       <div className='Line' />
-      <div className='Title'>{screen.title}</div>
-      <div className='Description'>{screen.description}</div>
+      <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0}} />
+      <Description content={screen.description} style={{fontSize: 12, margin: 0}} />
     </div>
     <img height='439' className='Screen' alt='screen comete' src={`/static/projects/comete/5-video-games/${screen.src}.png`} />
   </div>

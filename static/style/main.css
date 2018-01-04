@@ -212,9 +212,6 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
     line-height: 36px!important;
   }
 
-  .Global_subtitle {
-    font-size: 12px!important;
-  }
   .Global_description {
     margin: auto;
   }

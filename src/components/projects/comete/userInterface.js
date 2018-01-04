@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
+import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 
 class UserInterface extends React.Component {
   constructor(props) {
@@ -159,40 +160,14 @@ const Content = () =>
       background-color: white;
       margin: auto;
     }
-    .Title {
-      font-family: Futura;
-      font-weight: bold;
-      font-size: 21px;
-      line-height: 32px;
-      color: #221061;
-      display: inline-block;
-      margin-top: 80px;
-    }
-    .Baseline {
-      font-family: Playfair Display;
-      font-weight: 900;
-      font-size: 16px;
-      font-style: italic;
-      line-height: 32px;
-      color: #abb0bc;
-      max-width: 450px;
-      margin: auto;
-      margin-top: 10px;
-    }
-    .Description {
-      font-family: Futura;
-      font-size: 16px;
-      line-height: 24px;
-      color: #474f6f;
-      max-width: 450px;
-      margin: auto;
-      margin-top: 10px;
-      width: calc(100% - 50px);
-    }
   `}</style>
-    <div className='Title'>CONTENT PAGE</div>
-    <div className='Baseline'>Scientific pages for a scientific exhibition</div>
-    <div className='Description'>The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.</div>
+    <TitleSecondary content='CONTENT PAGE' mobile='margin-left:25px!important;' style={{color: '#221061', margin: 0, marginTop: 80}} />
+    <SubtitlePart
+      content='Scientific pages for a scientific exhibition'
+      style={{color: '#abb0bc', maxWidth: '450px'}} />
+    <Description
+      content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+      style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: 'calc(100% - 50px)'}} />
   </div>
 
 const Homepage = () =>
@@ -204,26 +179,6 @@ const Homepage = () =>
       z-index: 1;
       position: relative;
       margin-top: 80px;
-    }
-    .Title {
-      font-family: Futura;
-      font-weight: bold;
-      font-size: 21px;
-      line-height: 32px;
-      color: #8061e7;
-      margin: auto;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-    }
-    .Description {
-      width: 315px;
-      margin: auto;
-      font-family: Futura;
-      font-size: 14px;
-      line-height: 24px;
-      color: white;
-      opacity: 0.6;
-      text-align: center;
     }
     .Smartphone_home {
       display: block;
@@ -266,7 +221,11 @@ const Homepage = () =>
     }
 
   `}</style>
-    <div className='Title'>Homepage</div>
+    <TitleSecondary content='Homepage' style={{color: '#8061e7', margin: 'auto auto 40px auto'}} />
+    <Description
+      content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+      style={{opacity: 0.6, margin: 'auto', width: '315px', textAlign: 'center'}} />
+    <div className='Title'></div>
     <div className='Description'>The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.</div>
     <img className='Smartphone_home desktop' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
     <img className='Smartphone_home responsive' width='100%' alt='tablet smartphone homepage comete' src='/static/projects/comete/responsive/4-user-interface/illu-iphone-homepage-01.png' />
