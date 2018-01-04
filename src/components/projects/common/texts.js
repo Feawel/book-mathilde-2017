@@ -13,15 +13,15 @@ export const TitleSecondary = ({content, style, mobile}) =>
   </h3>
 
 export const SubtitlePart = ({content, style, mobile}) =>
-  <h3 className='Global_subtitle_part' style={{...style}}>
+  <h4 className='Global_subtitle_part' style={{...style}}>
     {content}
-  </h3>
+  </h4>
 
 export const Subtitle = ({content, style, mobile}) =>
-  <h3 className='Global_subtitle' style={{...style}}>
+  <h4 className='Global_subtitle' style={{...style}}>
     {content}
-  </h3>
+  </h4>
 
 export const Description = ({content, style, mobile}) =>
-  <h3 className='Global_description' style={{...style}} dangerouslySetInnerHTML={{__html: content}} />
+  <div className='Global_description' style={{...style}} dangerouslySetInnerHTML={{__html: content}} />
 

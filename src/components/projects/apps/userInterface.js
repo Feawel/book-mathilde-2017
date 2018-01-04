@@ -6,6 +6,7 @@ import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 import Call from '../common/call'
+import { responsive } from '../../../utils/responsive'
 
 class UserInterface extends React.Component {
   constructor(props) {
@@ -43,6 +44,15 @@ class UserInterface extends React.Component {
             top: 470px;
             left: calc(50% - 14px);
           }
+          @media screen and (max-width: 750px) {
+            .Call_wrapper {
+              position: relative;
+              width: 100%;
+              margin: auto;
+              left: 0;
+              top: 30px;
+            }
+          }
         `}</style>
 
         <Number content='02' color='#004459' borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%);' />
@@ -61,7 +71,7 @@ class UserInterface extends React.Component {
           <Call
             color='#00b3df'
             colorHover='white'
-            background='#00b3df'
+            background='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
             backgroundInner='white'
             width={170}
             text='VIEW ALL THE CHARTE' />
@@ -89,8 +99,27 @@ const Typeface = () =>
         background: #eaecf2;
         margin-top: 80px;
       }
+      .Title_wrapper {
+        position: absolute;
+        top: 45px;
+        left: calc(20% - 125px);
+      }
+      @media screen and (max-width: 750px) {
+        .Typeface {
+          height: 525px;
+        }
+        .Title_wrapper {
+          display: inline-block;
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: 60px 25px 40px 25px;
+        }
+      }
     `}</style>
-    <TitleSecondary content='Typeface' style={{color: '#004459', position: 'absolute', top: 45, left: 'calc(20% - 125px)'}} />
+    <div className='Title_wrapper'>
+      <TitleSecondary content='Typeface' style={{color: '#004459', margin: 0}} />
+    </div>
     {typos.map((font, i) => <Typo key={i} index={i} font={font} />)}
   </div>
 
@@ -130,6 +159,26 @@ const Typo = ({ font, index }) =>
         position: absolute;
         left: 230px;
       }
+      @media screen and (max-width: 750px) {
+        .Typo {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin-left: 25px;
+          display: block;
+          margin-bottom: 40px;
+        }
+        .Exemple {
+          display: none;
+        }
+        .Border {
+          top: 10px;
+        }
+        .Font {
+          height: 55px;
+          margin-top: 1px;
+        }
+      }
     `}</style>
     <div className='Border' />
     <div className='Content'>
@@ -141,7 +190,7 @@ const Typo = ({ font, index }) =>
     </div>
   </div>
 
-const mainColors = [{src: 'illu-lls', desc: 'App color', code: '#00b3df'}, {src: 'illu-exo', desc: 'Exercise color', code: '#66cc80'}]
+const mainColors = [{src: 'illu-lls', desc: 'App color', code: '#00b3df', right: false}, {src: 'illu-exo', desc: 'Exercise color', code: '#66cc80', right: true}]
 const fontColors = [
   {src: 'illu-typo1', desc: 'Title & text', code: '#383838'},
   {src: 'illu-typo2', desc: 'Additional info', code: '#878787'},
@@ -166,6 +215,11 @@ const Colors = () =>
         position: relative;
         height: 551px;
       }
+      .Title_wrapper {
+        position: relative;
+        top: 45px;
+        left: calc(20% - 125px);
+      }
       .Colors {
         position: relative;
         margin-top: 60px;
@@ -174,6 +228,7 @@ const Colors = () =>
       .Main_colors {
         display: inline-block;
         width: 150px;
+        margin-top: 20px;
       }
       .Secondary_colors {
         display: inline-block;
@@ -185,13 +240,47 @@ const Colors = () =>
         width: 700px;
         display: inline-block;
       }
+      @media screen and (max-width: 750px) {
+        .Color_wrapper {
+          height: 952px;
+        }
+        .Title_wrapper {
+          display: inline-block;
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: 60px 25px 0 25px;
+        }
+        .Colors {
+          margin-left: 25px;
+          margin-top: 0;
+        }
+        .Main_colors {
+          margin: auto;
+          margin-top: 0;
+          width: 310px;
+        }
+        .Secondary_colors {
+          display: inline-block;
+          margin-left: 0;
+          vertical-align: top;
+          width: 310px;
+        }
+        .Font_colors,.Additional_colors {
+          display: inline-block;
+          margin: auto;
+          width: 310px;
+        }
+      }
     `}</style>
-    <TitleSecondary content='Color' style={{color: '#004459', position: 'relative', top: 45, left: 'calc(20% - 125px)'}} />
+    <div className='Title_wrapper'>
+      <TitleSecondary content='Color' style={{color: '#004459', margin: 0}} />
+    </div>
     <div className='Colors'>
       <div className='Main_colors'>
         <SubtitlePart
           content='Main colors'
-          style={{color: '#abb0bc', margin: '20px 0'}} />
+          style={{color: '#abb0bc', margin: '0 0 20px 0'}} />
         {mainColors.map((color, i) => <MainColor color={color} key={i} />)}
       </div>
       <div className='Secondary_colors'>
@@ -233,10 +322,35 @@ const MainColor = ({color, big = false}) =>
         left: 20px;
       }
       .Border {
+        display: inline-block;
         height: 2px;
         width: 20px;
         background: ${color.code};
         margin-bottom: 10px;
+      }
+      @media screen and (max-width: 750px) {
+        .Main_color {
+          display: inline-block;
+          width: 155px;
+          margin: auto;
+        }
+        .Illustration {
+          margin-bottom: 0;
+        }
+        .Infos {
+          width: 155px;
+          text-align: center;
+          top: 0;
+          left: 0;
+        }
+        .Illustration {
+          position: relative;
+          left: ${color.right ? '20px' : '0'};
+        }
+        .Infos {
+          margin-top: 20px;
+          left: ${color.right ? 10 : -10}px;
+        }
       }
     `}</style>
     <img className='Illustration' alt='lls picto' src={`/static/projects/apps/4-user-interface/color/${color.src}.svg`} />
@@ -271,10 +385,31 @@ const SecondaryColor = ({color, big = false}) =>
         left: 20px;
       }
       .Border {
+        display: inline-block;
         height: 2px;
         width: 20px;
         background: ${color.code};
         margin-bottom: 10px;
+      }
+      @media screen and (max-width: 750px) {
+        .Secondary_color {
+          width: 100px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .Border {
+          position: relative;
+          top: 7px;
+        }
+        .Illustration {
+          margin-bottom: 0;
+        }
+        .Infos {
+          width: 100px;
+          text-align: center;
+          top: 0;
+          left: 0;
+        }
       }
     `}</style>
     <img className='Illustration' alt='lls picto' src={`/static/projects/apps/4-user-interface/color/${color.src}.svg`} />
@@ -325,6 +460,63 @@ const Picto = () =>
         width: 288px;
         vertical-align: top;
       }
+      .Description_container_1 {
+        display: inline-block;
+        width: 150px;
+        margin-left: 50px;
+        vertical-align: top;
+      }
+      .Description_container_2 {
+        display: inline-block;
+        width: 155px;
+        vertical-align: top;
+        position: relative;
+        right: 96px;
+        top: 20px;
+      }
+      .Picto_list_responsive {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Picto {
+          height: 1272px;
+        }
+        .Picto_list {
+          display: none;
+        }
+        .Pictograms {
+          width: 100%;
+        }
+        .Picto_big_left {
+          display: block;
+        }
+        .Picto_text {
+          display: block;
+          width: 100%;
+          margin: auto;
+        }
+        .Picto_text img {
+          display: none;
+        }
+        .Description_container_1, .Description_container_2 {
+          width: 300px;
+          margin: auto;
+          top: 0;
+          left: 0;
+          margin-top: 20px;
+        }
+        .Description_container_2 {
+          margin-bottom: 20px;
+        }
+        .Picto_big_right {
+          display: block;
+          margin: auto;
+        }
+        .Picto_list_responsive {
+          display: block;
+          margin-top: 30px;
+        }
+      }
     `}</style>
     <TitleSecondary content='PICTOGRAMME' style={{color: 'white', margin: '80px auto 0 auto'}} />
     <SubtitlePart
@@ -336,12 +528,16 @@ const Picto = () =>
       </div>
       <div className='Picto_text'>
         <img height='144px' src='/static/projects/apps/4-user-interface/picto/picto-petit.svg' alt='picto-petit' />
-        <Description
-          style={{verticalAlign: 'top', textAlign: 'left', display: 'inline-block', width: 150, marginLeft: 50, fontSize: 12, marginTop: 0}}
-          content='The contours and radius of Angles makes 2px for a picto Of 44x44. The interior spaces make 2px or a multiple.' />
-        <Description
-          style={{textAlign: 'left', display: 'block', width: 180, position: 'relative', left: 28, top: 30, fontSize: 12, marginTop: 0}}
-          content='The pictograms are drawn In an "inline" style, in lines And not in full. They are used In two versions, 44px X 44px, and 22px X 22px.' />
+        <div className='Description_container_1'>
+          <Description
+            style={{verticalAlign: 'top', textAlign: 'left', display: 'inline-block', fontSize: 12, marginTop: 0}}
+            content='The contours and radius of Angles makes 2px for a picto Of 44x44. The interior spaces make 2px or a multiple.' />
+        </div>
+        <div className='Description_container_2'>
+          <Description
+            style={{textAlign: 'left', display: 'block', fontSize: 12, marginTop: 0}}
+            content='The pictograms are drawn In an "inline" style, in lines And not in full. They are used In two versions, 44px X 44px, and 22px X 22px.' />
+        </div>
       </div>
       <div className='Picto_big_right'>
         <img height='288' src='/static/projects/apps/4-user-interface/picto/picto-guidelines.svg' alt='picto-guidelines' />
@@ -349,6 +545,9 @@ const Picto = () =>
     </div>
     <div className='Picto_list'>
       <img height='121' src='/static/projects/apps/4-user-interface/picto/pictos.svg' alt='picto list' />
+    </div>
+    <div className='Picto_list_responsive'>
+      <img height='252' src='/static/projects/apps/4-user-interface/smartphone/picto.svg' alt='picto list' />
     </div>
   </div>
 
@@ -360,6 +559,13 @@ const Illustration = () =>
         position: relative;
         height: 575px;
         background-size: contain;
+      }
+      @media screen and (max-width: 750px) {
+        .Illustration {
+          height: 450px;
+          background-size: cover;
+          background-image: url('/static/projects/apps/4-user-interface/smartphone/ipad-photo-600.jpg');
+        }
       }
       @media screen and (min-width: 750px) {
         .Illustration {
@@ -388,6 +594,11 @@ const Types = () =>
         height: 2850px;
         margin: auto;
         text-align: center;
+      }
+      @media screen and (max-width: 750px) {
+        .Types {
+          height: 3600px;
+        }
       }
     `}</style>
     <TitleSecondary content='Types of pages' style={{color: '#004459', margin: '80px auto 0 auto'}} />
@@ -423,6 +634,15 @@ const Templates = () =>
         color: white;
         text-align: center;
         margin-top: 20px;
+      }
+      @media screen and (max-width: 750px) {
+        .Templates {
+          width: 100%;
+        }
+        .Template {
+          display: block;
+          margin: 40px auto;
+        }
       }
     `}</style>
     <div className='Template'>
@@ -470,74 +690,123 @@ const Background = () =>
     </svg>
   </div>
 
-const Tools = () =>
-  <div className='Tools'>
-   <style jsx>{`
-      .Tools {
-        position: relative;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-      }
-      .Screen {
-        margin-top: 60px;
-        position: relative;
-      }
-      .Infos {
-        text-align: left;
-        display: inline-block;
-        width: 300px;
-        vertical-align: top;
-        position: relative;
-        margin-left: 130px;
-        top: 120px;
-      }
-      .Border {
-        height: 22px;
-        width: 2px;
-        position: absolute;
-        left: -20px;
-        top: 7px;
-        background-color: white;
-      }
-      .Screen_2 {
-        margin-top: 0;
-        top: -200px;
-        text-align: right;
-      }
-      .Screen_2 .Infos {
-        margin-right: 130px;
-        margin-left: 0;
-        top: 250px;
-      }
-      .Screen_2 .Border {
-        background-color: #00b3df;
-      }
-    `}</style>
-    <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: '80px 0 0 0'}} />
-    <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
-    <div className='Screen Screen_1'>
-      <img height='616' alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
-      <div className='Infos'>
-        <div className='Border' />
-        <TitleSecondary content='Answer to the question' style={{letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: 'white', margin: 0}} />
-        <Description
-          style={{textAlign: 'left', marginTop: 20}}
-          content='On each page, the student can answer questions. It is accessed thanks to a floating button which is therefore always accessible. Once it has pressed the button, the interface divides between questions and response space, and related documents on the other. Once he has answered, the student can send the answers to his teacher.' />
+class Tools extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      screen1Title: {letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: 'white', margin: 0},
+      screen1Desc: {textAlign: 'left', marginTop: 20},
+      screen2Title: {textAlign: 'left', letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: '#00b3df', margin: 0},
+      screen2Desc: {textAlign: 'left', marginTop: 20, color: '#474f6f'}
+    }
+  }
+  componentDidMount() {
+    const { screen1Title, screen1Desc, screen2Title, screen2Desc } = this.state
+    this.setState({
+      screen1Title: responsive({base: {...screen1Title}, mobile: {textAlign: 'center', color: '#00b0dc'}}),
+      screen1Desc: responsive({base: {...screen1Desc}, mobile: {textAlign: 'center', color: '#474f6f'}}),
+      screen2Title: responsive({base: {...screen2Title} , mobile:{textAlign: 'center', color: '#00b0dc'}}),
+      screen2Desc: responsive({base: {...screen2Desc} , mobile:{textAlign: 'center', color: '#474f6f'}})
+    })
+  }
+  render() {
+    const { screen1Title, screen1Desc, screen2Title, screen2Desc } = this.state
+    return (
+      <div className='Tools'>
+       <style jsx>{`
+          .Tools {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+          }
+          .Screen {
+            margin-top: 60px;
+            position: relative;
+          }
+          .Infos {
+            text-align: left;
+            display: inline-block;
+            width: 300px;
+            vertical-align: top;
+            position: relative;
+            margin-left: 130px;
+            top: 120px;
+          }
+          .Border {
+            height: 22px;
+            width: 2px;
+            position: absolute;
+            left: -20px;
+            top: 7px;
+            background-color: white;
+          }
+          .Screen_1 img, .Screen_2 img {
+            height: 616px;
+          }
+          .Screen_2 {
+            margin-top: 0;
+            top: -200px;
+            text-align: right;
+          }
+          .Screen_2 .Infos {
+            margin-right: 130px;
+            margin-left: 0;
+            top: 250px;
+          }
+          .Screen_2 .Border {
+            background-color: #00b3df;
+          }
+          @media screen and (max-width: 750px) {
+            .Border {
+              display: none;
+            }
+            .Screen_1 img, .Screen_2 img {
+              display: block;
+              margin: auto;
+              width: 328px;
+              height: auto;
+            }
+            .Infos {
+              text-align: center;
+              display: block;
+              width: 300px;
+              margin: 0 auto 60px auto;
+              top: 0;
+            }
+            .Screen_2 .Infos {
+              margin: 0 auto;
+              top: 530px;
+            }
+          }
+        `}</style>
+        <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: '80px 0 0 0'}} />
+        <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+        <div className='Screen Screen_1'>
+          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+          <div className='Infos'>
+            <div className='Border' />
+            <TitleSecondary content='Answer to the question' style={screen1Title} />
+            <Description
+              style={screen1Desc}
+              content='On each page, the student can answer questions. It is accessed thanks to a floating button which is therefore always accessible. Once it has pressed the button, the interface divides between questions and response space, and related documents on the other. Once he has answered, the student can send the answers to his teacher.' />
+          </div>
+        </div>
+        <div className='Screen Screen_2'>
+          <div className='Infos'>
+            <div className='Border' />
+            <TitleSecondary content='Draw on the pages' style={screen2Title} />
+            <Description
+              style={screen2Desc}
+              content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
+          </div>
+          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+        </div>
+        <TitleSecondary content='and more ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
       </div>
-    </div>
-    <div className='Screen Screen_2'>
-      <div className='Infos'>
-        <div className='Border' />
-        <TitleSecondary content='Draw on the pages' style={{textAlign: 'left', letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: '#00b3df', margin: 0}} />
-        <Description
-          style={{textAlign: 'left', marginTop: 20, color: '#474f6f'}}
-          content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
-      </div>
-      <img height='616' alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
-    </div>
-    <TitleSecondary content='and more ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
-  </div>
+    )
+  }
+}
 
 const More = () =>
   <div className='Illustration'>
@@ -548,6 +817,12 @@ const More = () =>
         bottom: 0;
         height: 700px;
         background-size: cover;
+      }
+      @media screen and (max-width: 750px) {
+        .Illustration {
+          height: 436px;
+          background-image: url('/static/projects/apps/4-user-interface/smartphone/ipad-screen-600px-01.png');
+        }
       }
       @media screen and (min-width: 750px) {
         .Illustration {

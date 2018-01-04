@@ -47,6 +47,11 @@ class UserExperience extends React.Component {
             z-index: 0;
             height: 2700px;
           }
+          @media screen and (max-width: 750px) {
+            .User_experience {
+              height: 2685px;
+            }
+          }
         `}</style>
 
         <Number content='01' color='#004459' borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
@@ -54,7 +59,7 @@ class UserExperience extends React.Component {
           main={{width: 460, src: '/static/projects/apps/3-user-experience/picto-UX.png'}}
           second={{width: 764, src: '/static/projects/apps/3-user-experience/picto-UX.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
           title={{content: 'User Experience', color: '#004459'}}
@@ -181,6 +186,9 @@ const Architecture = ({ timer }) =>
       src='/static/projects/apps/3-user-experience/ipad.png' />
   </div>
 
+
+const mobileList1 = ['Open the sidebar', 'Search a page on the book', 'Bookmark']
+const mobileList2 = ['Connect / Disconnect', 'Setting (light, typo size)', 'Use the pencil tool']
 const Navbar = () =>
   <div className='Navbar'>
    <style jsx>{`
@@ -203,6 +211,54 @@ const Navbar = () =>
         top: 30px;
         right: 150px;
       }
+      .Mobile_grey_part{
+        display: none;
+      }
+      .Mobile_pictos {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Illustration {
+          display: none;
+        }
+        .Navbar {
+          height: 677px;
+        }
+        .Infos {
+          height: 160px;
+          background-color: white;
+        }
+        .Mobile_grey_part {
+          position: absolute;
+          top: 190px;
+          display: inline-block;
+          height: 284px;
+          width: 100%;
+          background-color: #dbdfea;
+        }
+        .Mockup {
+          display: inline-block;
+          height: 244px;
+          margin: auto;
+          position: relative;
+          top: 40px;
+        }
+        .Mobile_pictos {
+          display: inline-block;
+          width: 100%;
+          position: absolute;
+          top: 530px;
+        }
+        .Mobile_pictos_inner {
+          width: 311px;
+          margin: auto;
+        }
+        .List {
+          display: inline-block
+          width: 170px;
+          vertical-align: top;
+        }
+      }
     `}</style>
     <div className='Illustration' />
     <div className='Infos'>
@@ -211,60 +267,200 @@ const Navbar = () =>
         content='iOS version'
         style={{color: '#abb0bc'}} />
     </div>
+    <div className='Mobile_grey_part'>
+      <img src='/static/projects/apps/3-user-experience/smartphone/ipad-navbar.png' alt='responsive navbar image' className='Mockup' />
+    </div>
+    <div className='Mobile_pictos'>
+      <div className='Mobile_pictos_inner'>
+        <div className='List'>
+          {mobileList1.map((item, i) => <Item item={item}  key={i} index={i} list={0} />)}
+        </div>
+        <div className='List' style={{width: 140}}>
+          {mobileList2.map((item, i) => <Item item={item}  key={i} index={i} list={1} />)}
+        </div>
+      </div>
+    </div>
   </div>
 
-const Sidebar = () =>
-  <div className='Sidebar'>
-   <style jsx>{`
-      .Sidebar {
-        display: block;
-        position: relative;
+const Item = ({ item, index, list }) =>
+  <div className='Item'>
+    <style jsx>{`
+      .Item {
         width: 100%;
-        text-align: center;
-        background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
-        height: 800px;
-        top: -150px;
-        z-index: -1;
+        height: 32px;
+        vertical-align: top;
+        margin-bottom: 20px;
       }
-      .Infos {
-        display: block;
-        max-width: 290px;
-        text-align: left;
-        position: absolute;
-        top: 100px;
-        left: calc(50% - 524px);
-      }
-      .Pictos {
+      .Item img {
+        margin-right: 10px;
+        width: 32px;
+        height: 32px;
         display: inline-block;
-        background: url('/static/projects/apps/3-user-experience/sidebar-pictos.png');
-        height: 242px;
-        width: 368px;
-        background-size: contain;
-        position: absolute;
-        top: 300px;
-        left: calc(100% - 705px - 368px + 20px);
-      }
-      .Screens {
-        display: inline-block;
-        background: url('/static/projects/apps/3-user-experience/sidebar-screens.png');
-        height: 601px;
-        width: 705px;
-        background-size: contain;
-        position: absolute;
-        right: 0;
-        top: 100px;
       }
     `}</style>
-    <div className='Infos'>
-      <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto'}} />
-      <SubtitlePart
-        content='iOS version' />
-      <Description
-        content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
-        style={{color: 'white', margin: '20px 0'}} />
-    </div>
-    <div className='Pictos' />
-    <div className='Screens' />
+    <img src={`/static/projects/apps/3-user-experience/smartphone/picto-navbar-${list}${index}.svg`} alt={`image ${item}`} />
+    <Description
+      content={item}
+      style={{display: 'inline-block', color: '#474f6f', margin: 0, width: 95, textAlign: 'left', lineHeight: '18px'}} />
   </div>
+
+
+class Sidebar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {first: true}
+  }
+  toggleMobileScreen(first) {
+    this.setState({first})
+  }
+  render() {
+    const { first } = this.state
+    const leftColor = first ? '#00b2e1' : 'white'
+    const rightColor = first ? 'white' : '#00b2e1'
+
+    return (
+      <div className='Sidebar'>
+       <style jsx>{`
+          .Sidebar {
+            display: block;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
+            height: 800px;
+            top: -150px;
+            z-index: -1;
+          }
+          .Infos {
+            display: block;
+            max-width: 290px;
+            text-align: left;
+            position: absolute;
+            top: 100px;
+            left: calc(50% - 524px);
+          }
+          .Pictos {
+            display: inline-block;
+            background: url('/static/projects/apps/3-user-experience/sidebar-pictos.png');
+            height: 242px;
+            width: 368px;
+            background-size: contain;
+            position: absolute;
+            top: 300px;
+            left: calc(100% - 705px - 368px + 20px);
+          }
+          .Screens {
+            display: inline-block;
+            background: url('/static/projects/apps/3-user-experience/sidebar-screens.png');
+            height: 601px;
+            width: 705px;
+            background-size: contain;
+            position: absolute;
+            right: 0;
+            top: 100px;
+          }
+          .Mobile_screens {
+            display: none;
+          }
+          .Switch {
+            display: none;
+          }
+          @media screen and (max-width: 750px) {
+            .Sidebar {
+              top: 0;
+            }
+            .Infos {
+              position: relative;
+              width: 300px;
+              text-align: center;
+              top: 30px;
+              left: 0;
+              margin: auto;
+            }
+            .Screens {
+              display: none;
+              background: url('/static/empty_icon.png');
+            }
+            .Pictos {
+              display: none;
+              background: url('/static/empty_icon.png');
+            }
+            .Mobile_screens {
+              position: relative;
+              display: inline-block;
+              width: 310px;
+              margin: 30px auto;
+            }
+            .Screen {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 310px;
+              box-shadow: 0px 7px 20px 0px rgba(1,1,1,0.5);
+            }
+            .Screen.active {
+              opacity: 1;
+            }
+            .Screen.inactive {
+              opacity: 0;
+            }
+            .Switch {
+              display: inline-block;
+              margin: auto;
+              position: absolute;
+              bottom: 60px;
+              left: calc(50% - 155px);
+              width: 310px;
+              height: 42px;
+            }
+            .Left {
+              vertical-align: top;
+              display: inline-block;
+              width: 155px;
+            }
+            .Right {
+              vertical-align: top;
+              display: inline-block;
+              width: 153px;
+            }
+            .Left.inactive, .Right.inactive {
+              background-color: transparent;
+              border: 1px solid white;
+              height: 40px;
+            }
+            .Left.active, .Right.active {
+              background-color: white;
+              border: none;
+              height: 42px;
+            }
+          }
+        `}</style>
+        <div className='Infos'>
+          <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto'}} />
+          <SubtitlePart
+            content='iOS version' />
+          <Description
+            content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
+            style={{color: 'white', margin: '20px 0'}} />
+        </div>
+        <div className='Pictos' />
+        <div className='Screens' />
+        <div className='Mobile_screens'>
+          <img className={`transitions Screen Screen_pages ${first ? 'active' : 'inactive'}`} alt='pages screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar1.jpg' />
+          <img className={`transitions Screen Screen_notes ${first ? 'inactive' : 'active'}`} alt='notes screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar2.jpg' />
+        </div>
+        <div className='Switch'>
+          <div className={`Left clickable ${first ? 'active' : 'inactive'}`} onClick={() => this.toggleMobileScreen(true)}>
+            <Description content='Pages' style={{color: leftColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+          </div>
+          <div className={`Right clickable ${first ? 'inactive' : 'active'}`} onClick={() => this.toggleMobileScreen(false)}>
+            <Description content='Notes' style={{color: rightColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
 
 export default UserExperience
