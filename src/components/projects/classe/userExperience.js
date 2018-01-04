@@ -233,9 +233,135 @@ const Homepage = () =>
           content='Manage your students, your homework and communicate with the class.'
           style={{lineHeight: '24px'}} />
       </div>
-      <img className='Anim_ipad' alt='animation class ipad' src='/static/projects/classe/4-user-experience/anim-classes.gif' />
+      <Classe />
     </div>
   </div>
+
+class Classe extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      timer: 0
+    }
+    this.timer = this.timer.bind(this)
+  }
+
+  componentDidMount() {
+    const intervalId = setInterval(this.timer, 3000)
+    this.setState({ intervalId })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId)
+  }
+
+  timer() {
+    this.setState({ timer: this.state.timer + 1 })
+  }
+
+  render() {
+    const { timer } = this.state
+    const left = timer%3 === 0 ? 343 : (timer%3 === 1 ? 1 : -341)
+    return (
+      <div className='Classe'>
+       <style jsx>{`
+          .Classe {
+            display: block;
+            position: relative;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            z-index: 1;
+            margin-top: 60px;
+          }
+          .Slider {
+            width: 100%;
+            height: 390px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+          }
+          .Screen {
+            position: absolute;
+            top: 19px;
+            display: inline-block;
+            height: 349px;
+            zoom: 1;
+          }
+          .Text {
+            position: absolute;
+            bottom: -100px;
+            width: 220px;
+            text-align: center;
+            margin-left: 20px;
+          }
+          .Text.active {
+            opacity: 1;
+          }
+          .Text.inactive {
+            opacity: 0;
+          }
+          .Line {
+            width: 1px;
+            height: 24px;
+            background-color: #bbc9d5;
+            margin: auto;
+          }
+          .Left {
+            left: calc(50% - 262px - 131px - 80px);
+          }
+          .Center {
+            left: calc(50% - 131px);
+          }
+          .Right {
+            left: calc(50% + 131px + 80px);
+          }
+          .Screen.active {
+            zoom: 1;
+          }
+          .Screen.inactive {
+            zoom: 0.9;
+          }
+          .Ipad {
+            width: 308px;
+            position: absolute;
+            top: -25px;
+            z-index: 10;
+            display: block;
+            left: calc(50% - 155px);
+          }
+        `}</style>
+        <div className='Slider transitions' style={{ left }}>
+          <img
+            className={`Screen Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}
+            src='/static/projects/classe/4-user-experience/anim-classe-1.png' />
+          <div className={`Text Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}>
+            <div className='Line' />
+            <Subtitle content='INVITE STUDENTS AND SEE THEIR STATS' style={{color: '#00b3df', margin: 0}} />
+          </div>
+
+          <img
+            className={`Screen Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}
+            src='/static/projects/classe/4-user-experience/anim-classe-2.png' />
+          <div className={`Text Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}>
+            <div className='Line' />
+            <Subtitle content='MANAGE THE HOMEWORK YOU CREATED' style={{color: '#00b3df', margin: 0}} />
+          </div>
+
+          <img
+            className={`Screen Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}
+            src='/static/projects/classe/4-user-experience/anim-classe-3.png' />
+          <div className={`Text Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}>
+            <div className='Line' />
+            <Subtitle content='CHAT WITH YOUR STUDENTS ACROSS CLASSES' style={{color: '#00b3df', margin: 0}} />
+          </div>
+        </div>
+        <img className='Ipad transitions'
+          src='/static/projects/classe/4-user-experience/ipad.png' />
+      </div>
+    )
+  }
+}
 
 const Statistics = () =>
   <div className='Statistics'>

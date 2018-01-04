@@ -69,14 +69,6 @@ class UserExperience extends React.Component {
   }
 }
 
-const textStyle = {
-  position: 'absolute',
-  bottom: -90,
-  width: 260,
-  textAlign: 'center',
-  color: '',
-
-}
 const Architecture = ({ timer }) =>
   <div className='Architecture'>
    <style jsx>{`
