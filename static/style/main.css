@@ -101,6 +101,11 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   font-weight:400;
 }
 
+.playfairdisplay_black {
+  font-family: 'Playfair Display - Black';
+  font-weight:400;
+}
+
 /******** UTILS *********/
 
 .clickable:hover {

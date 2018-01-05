@@ -234,8 +234,9 @@ const data = {
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
-          title: "PROJET 6",
+          title: "Typography project",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
+          description: "Lelivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers. To increase their notoriety and reinforce the community of teachers, I created for them a series of ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. Here is a selection of three of them",
           number: {
             index: 4,
             height: 67
@@ -248,8 +249,23 @@ const data = {
           color: '#fb5e80',
           gradient: {
             dark: '#f04372',
-            light: '#ffd69c'
+            light: '#ffd69c',
+            base: 'linear-gradient(-27deg, #11998e 0%, #38ef7d 100%)'
           },
+          customer: 'Lelivrescolaire.fr',
+          role: 'Directrice artistique',
+          year: 2016,
+          stats: [
+            {
+              label: 'NUMBER OF TYPOS <br/>REALIZED',
+              value: 10
+            },
+            {
+              label: 'NUMBER OF POSTERS <br/>DISTRIBUTED',
+              value: 600
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "PROJET 7",
