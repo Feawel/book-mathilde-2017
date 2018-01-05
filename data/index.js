@@ -188,8 +188,8 @@ const data = {
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
-          title: "PROJET 5",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
+          title: "Ganesha Drawing",
+          problematic: "EXPERIMENTAL DRAW",
           number: {
             index: 3,
             height: 70
@@ -212,11 +212,26 @@ const data = {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
           },
-          color: '#ee5b60',
+          color: '#2cd582',
           gradient: {
-            dark: '#d6181f',
-            light: '#f5c253'
-          }
+            dark: '#11998e',
+            light: '#38ef7d',
+            base: 'linear-gradient(-27deg, #11998e 0%, #38ef7d 100%)'
+          },
+          customer: 'Lelivrescolaire.fr',
+          role: 'Directrice artistique',
+          year: 2016,
+          stats: [
+            {
+              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
+              value: 1200
+            },
+            {
+              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
+              value: 589
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "PROJET 6",
@@ -354,5 +369,7 @@ export const ads = {
     thirdPic: '/static/projects/ornikar/desktop/youngs-third.jpg'
   }
 }
+
+
 
 export default data
