@@ -66,6 +66,7 @@ class UserExperience extends React.Component {
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'This app is a transcription of books for tablets. It is intended to be used by teachers and children in class. The user experience must therefore be as simple and instinctive as with the basic books, while adding tools such as the ability to documents in full screens, to draw and write on the pages, to put some of them side, or even to respond to exercises.'}}
           />
+        <ArchitectureMobile timer={this.state.timer} />
         <Architecture timer={this.state.timer} />
         <Navbar />
         <Sidebar />
@@ -143,6 +144,11 @@ const Architecture = ({ timer }) =>
       .Ipad.position_2 {
         left: calc(50% - 155px + 262px + 80px);
       }
+      @media screen and (max-width: 750px) {
+        .Architecture {
+          display: none;
+        }
+      }
     `}</style>
     <TitleSecondary content='Architecture' style={{color: '#004459', margin: '80px auto 0 auto'}} />
     <SubtitlePart
@@ -186,6 +192,119 @@ const Architecture = ({ timer }) =>
       src='/static/projects/apps/3-user-experience/ipad.png' />
   </div>
 
+
+
+const ArchitectureMobile = ({ timer }) => {
+  const left = timer%3 === 0 ? 343 : (timer%3 === 1 ? 1 : -341)
+  return (
+    <div className='Architecture_mobile'>
+     <style jsx>{`
+        .Architecture_mobile {
+          display: block;
+          position: relative;
+          width: 100%;
+          margin: auto;
+          background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
+          text-align: center;
+          z-index: 1;
+          margin-top: 60px;
+        }
+        .Slider {
+          width: 100%;
+          height: 410px;
+          margin: auto;
+          position: relative;
+          z-index: 1;
+        }
+        .Screen {
+          position: absolute;
+          top: -22px;
+          display: inline-block;
+          height: 349px;
+          zoom: 1;
+        }
+        .Text {
+          position: absolute;
+          top: 340px;
+          width: 220px;
+          text-align: center;
+          margin-left: 20px;
+        }
+        .Text.active {
+          opacity: 1;
+        }
+        .Text.inactive {
+          opacity: 0;
+        }
+        .Left {
+          left: calc(50% - 262px - 131px - 80px);
+        }
+        .Center {
+          left: calc(50% - 131px);
+        }
+        .Right {
+          left: calc(50% + 131px + 80px);
+        }
+        .Screen.active {
+          zoom: 1;
+        }
+        .Screen.inactive {
+          zoom: 0.9;
+        }
+        .Squares {
+          width: 80px;
+          margin: auto;
+        }
+        .Square {
+          position: relative;
+          top: -20px;
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          opacity: 0.6;
+          margin-right: 15px;
+          border-radius: 2px;
+          background-color: white;
+        }
+        .Square.active {
+          width: 16px;
+          height: 16px;
+          opacity: 1;
+        }
+        .Square:nth-child(3) {
+          margin-right: 0;
+        }
+      `}</style>
+      <div className='Slider transitions' style={{ left }}>
+        <img
+          className={`Screen Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}
+          src='/static/projects/apps/3-user-experience/illus-archi-0-active.png' />
+        <div className={`Text Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}>
+          <Subtitle content='CHOOSE A BOOK' style={{margin: 0}} />
+        </div>
+
+        <img
+          className={`Screen Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}
+          src='/static/projects/apps/3-user-experience/illus-archi-1-active.png' />
+        <div className={`Text Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}>
+          <Subtitle content='CHOOSE A CHAPTER' style={{margin: 0}} />
+        </div>
+
+        <img
+          className={`Screen Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}
+          src='/static/projects/apps/3-user-experience/illus-archi-2-active.png' />
+        <div className={`Text Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}>
+          <Subtitle content='CHOOSE A LESSON' style={{margin: 0}} />
+        </div>
+      </div>
+      <div className='Squares'>
+        <div className={`Square transitions ${timer%3 === 0 ? 'active' : ''}`} />
+        <div className={`Square transitions ${timer%3 === 1 ? 'active' : ''}`} />
+        <div className={`Square transitions ${timer%3 === 2 ? 'active' : ''}`} />
+      </div>
+    </div>
+  )
+}
 
 const mobileList1 = ['Open the sidebar', 'Search a page on the book', 'Bookmark']
 const mobileList2 = ['Connect / Disconnect', 'Setting (light, typo size)', 'Use the pencil tool']

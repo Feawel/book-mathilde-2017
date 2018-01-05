@@ -606,6 +606,9 @@ const Types = () =>
       content='We create a template for every type of page'
       style={{color: '#abb0bc'}} />
     <Background />
+    <BackgroundMobile1 />
+    <BackgroundMobile2 />
+    <BackgroundMobile3 />
     <Templates />
     <Tools />
   </div>
@@ -679,11 +682,124 @@ const Background = () =>
         -webkit-clip-path: url("#rhomboid-clip");
         clip-path: url("#rhomboid-clip");
       }
+      @media screen and (max-width: 750px) {
+        .Background {
+          display: none;
+        }
+      }
     `}</style>
     <div className="clip-borders"></div>
     <svg className="clip-svg">
       <defs>
         <clipPath id="rhomboid-clip" clipPathUnits="objectBoundingBox">
+          <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+
+const BackgroundMobile1 = () =>
+  <div className='Background'>
+    <style jsx>{`
+      .Background {
+        position: absolute;
+        right: 0;
+        top: 120px;
+        width: 100%;
+        z-index: -1;
+      }
+      .clip-borders {
+        height: 616px;
+        width: 100%;
+        background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
+        margin: 0 auto;
+        -webkit-clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        -webkit-clip-path: url("#background-mobile-1");
+        clip-path: url("#background-mobile-1");
+      }
+      @media screen and (min-width: 750px) {
+        .Background {
+          display: none;
+        }
+      }
+    `}</style>
+    <div className="clip-borders"></div>
+    <svg className="clip-svg">
+      <defs>
+        <clipPath id="background-mobile-1" clipPathUnits="objectBoundingBox">
+          <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+
+const BackgroundMobile2 = () =>
+  <div className='Background'>
+    <style jsx>{`
+      .Background {
+        position: absolute;
+        right: 0;
+        top: 860px;
+        width: 100%;
+        z-index: -1;
+      }
+      .clip-borders {
+        height: 485px;
+        width: 100%;
+        background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
+        margin: 0 auto;
+        -webkit-clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        -webkit-clip-path: url("#background-mobile-2");
+        clip-path: url("#background-mobile-2");
+      }
+      @media screen and (min-width: 750px) {
+        .Background {
+          display: none;
+        }
+      }
+    `}</style>
+    <div className="clip-borders"></div>
+    <svg className="clip-svg">
+      <defs>
+        <clipPath id="background-mobile-2" clipPathUnits="objectBoundingBox">
+          <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
+        </clipPath>
+      </defs>
+    </svg>
+  </div>
+
+const BackgroundMobile3 = () =>
+  <div className='Background'>
+    <style jsx>{`
+      .Background {
+        position: absolute;
+        right: 0;
+        top: 1500px;
+        width: 100%;
+        z-index: -1;
+      }
+      .clip-borders {
+        height: 588px;
+        width: 100%;
+        background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
+        margin: 0 auto;
+        -webkit-clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        -webkit-clip-path: url("#background-mobile-3");
+        clip-path: url("#background-mobile-3");
+      }
+      @media screen and (min-width: 750px) {
+        .Background {
+          display: none;
+        }
+      }
+    `}</style>
+    <div className="clip-borders"></div>
+    <svg className="clip-svg">
+      <defs>
+        <clipPath id="background-mobile-3" clipPathUnits="objectBoundingBox">
           <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
         </clipPath>
       </defs>
