@@ -40,7 +40,7 @@ class UserExperience extends React.Component {
           main={{width: 460, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
           second={{width: 764, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
           title={{content: 'User Experience', color: '#1a2432'}}
@@ -109,6 +109,18 @@ const Persona = () =>
         width: 131px;
         height: 131px;
       }
+      @media screen and (max-width: 750px) {
+        .Persona {
+          height: 1105px;
+        }
+        .Cards {
+          width: 100%;
+        }
+        .Card:first-child {
+          margin-right: 0;
+          margin-bottom: 40px;
+        }
+      }
     `}</style>
     <div className='Background' />
     <TitleSecondary content='how DOES it’s work ?' style={{color: '#474f6f', margin: '0 auto', marginBottom: 60, position: 'relative', top: 60}} />
@@ -163,9 +175,6 @@ const Homepage = () =>
         margin: auto;
         height: 1485px;
       }
-      .Background {
-
-      }
       .Blue_background {
         display: inline-block;
         width: 100%;
@@ -212,23 +221,69 @@ const Homepage = () =>
         margin: auto;
         margin-top: 60px;
       }
+      .Description_container {
+        width: 320px;
+        margin-bottom: 50px;
+      }
+      .Right img:nth-child(2) {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Blue_background {
+          display: none;
+        }
+        .Homepage {
+          height: 1300px;
+          background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
+        }
+        .Content {
+          top: 40px;
+          width: 90%;
+          margin: auto;
+          text-align: center;
+        }
+        .Anim {
+          right: 50px;
+          display: block;
+          margin: auto;
+        }
+        .Description_container {
+          margin-bottom: 20px;
+        }
+        .Right {
+          width: 100%;
+        }
+        .Right img:nth-child(1) {
+          display: none;
+        }
+        .Right img:nth-child(2) {
+          display: inline-block;
+          position: relative;
+          right: 80px;
+        }
+        .Classes {
+          margin-top: 40px;
+        }
+      }
     `}</style>
     <img src='/static/projects/classe/4-user-experience/fond-3.svg' className='Blue_background' />
     <div className='Content'>
       <div className='Left'>
         <TitleSecondary content='homepage' style={{margin: '0 auto'}} />
-        <Description
-          content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.'
-          style={{marginBottom: 50, maxWidth: '320px'}} />
+        <div className='Description_container'>
+          <Description
+            content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.' />
+        </div>
         <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
       </div>
       <div className='Right'>
         <img width='794' alt='animation class card' src='/static/projects/classe/4-user-experience/mockup-home.png' />
+        <img height='486' alt='animation class card' src='/static/projects/classe/4-user-experience/mobile/smartphone-home-01.png' />
       </div>
     </div>
     <div className='Classes'>
       <div className='Header'>
-        <TitleSecondary content='on a classes' style={{margin: '0 auto'}} />
+        <TitleSecondary content='on a classe' style={{margin: '0 auto'}} />
         <SubtitlePart
           content='Manage your students, your homework and communicate with the class.'
           style={{lineHeight: '24px'}} />
@@ -330,6 +385,14 @@ class Classe extends React.Component {
             display: block;
             left: calc(50% - 155px);
           }
+          @media screen and (max-width: 750px) {
+            .Ipad {
+              display: none;
+            }
+            .Text {
+              bottom: -50px;
+            }
+          }
         `}</style>
         <div className='Slider transitions' style={{ left }}>
           <img
@@ -407,10 +470,45 @@ const Statistics = () =>
         width: 1174px;
         z-index: -1;
       }
+      .Title_container {
+        margin-top: 120px;
+      }
+      @media screen and (max-width: 750px) {
+        .Statistics {
+          margin-top: 250px;
+          background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
+          height: 770px;
+        }
+        .Blue_background {
+          display: none;
+        }
+        .Stats_background {
+          display: none;
+        }
+        .Title_container {
+          margin-top: 60px;
+        }
+        .Stats_background {
+          display: none;
+        }
+        .Mockup, .Anim_stats {
+          width: 310px;
+          height: auto;
+          display: block;
+          margin: auto;
+        }
+        .Anim_stats {
+          width: 350px;
+          position: relative;
+          bottom: auto;
+        }
+      }
     `}</style>
     <img src='/static/projects/classe/4-user-experience/fond-4.svg' className='Blue_background' />
     <div className='Header'>
-      <TitleSecondary content='statistics' style={{margin: '0 auto', marginTop: 120}} />
+      <div className='Title_container'>
+        <TitleSecondary content='statistics' style={{margin: '0 auto'}} />
+      </div>
       <SubtitlePart
         content={`Follow your students' progress.`} />
     </div>
@@ -441,6 +539,16 @@ const Homework = () =>
         top: 200px;
         left: 0;
         z-index: -1;
+      }
+      @media screen and (max-width: 750px) {
+        .Steps {
+          width: 100%;
+          background-image: linear-gradient(to top, #ffd69c 0%, #f04372 100%);
+          padding-top: 60px;
+        }
+        .Red_background {
+          display: none;
+        }
       }
     `}</style>
     <TitleSecondary content='create homework' style={{color: '#474f6f', margin: '0 auto', marginTop: 60}} />
@@ -474,12 +582,38 @@ const Step1 = () =>
         position: relative;
         top: 90px;
       }
+      .Title {
+        margin: 0;
+      }
+      @media screen and (max-width: 750px) {
+        .Title {
+          font-size: 66px!important;
+          line-height: 78px!important;
+        }
+        .Step {
+          width: 310px;
+          margin: auto;
+          height: 390px;
+        }
+        .Infos, .Mockup {
+          width: 100%;
+          display: block;
+          margin: auto;
+          text-align: center;
+        }
+        .Infos {
+          position: absolute;
+          top: 0px;
+        }
+        .Mockup {
+          position: absolute;
+          top: 240px;
+        }
+      }
     `}</style>
     <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework1.gif' />
     <div className='Infos'>
-      <TitlePrimary
-        content='01'
-        style={{margin: 0}} />
+      <div className='Global_title_primary Title'>01</div>
       <Subtitle
         content='choose the type of homework'
         style={{letterSpacing: 0.7, margin: 0}} />
@@ -509,11 +643,38 @@ const Step2 = () =>
         position: relative;
         top: 70px;
       }
+      .Title {
+        margin: 0;
+      }
+      @media screen and (max-width: 750px) {
+        .Title {
+          font-size: 66px!important;
+          line-height: 78px!important;
+        }
+        .Step {
+          width: 310px;
+          margin: auto;
+          height: 350px;
+          margin-top: 60px;
+        }
+        .Infos, .Mockup {
+          width: 100%;
+          display: block;
+          margin: auto;
+          text-align: center;
+        }
+        .Infos {
+          position: absolute;
+          top: 0px;
+        }
+        .Mockup {
+          position: absolute;
+          top: 200px;
+        }
+      }
     `}</style>
     <div className='Infos'>
-      <TitlePrimary
-        content='02'
-        style={{margin: 0}} />
+      <div className='Global_title_primary Title'>02</div>
       <Subtitle
         content='set the homework'
         style={{letterSpacing: 0.7, margin: 0}} />
@@ -544,12 +705,39 @@ const Step3 = () =>
         position: relative;
         top: 40px;
       }
+      .Title {
+        margin: 0;
+      }
+      @media screen and (max-width: 750px) {
+        .Title {
+          font-size: 66px!important;
+          line-height: 78px!important;
+        }
+        .Step {
+          width: 310px;
+          margin: auto;
+          height: 390px;
+          margin-top: 60px;
+        }
+        .Infos, .Mockup {
+          width: 100%;
+          display: block;
+          margin: auto;
+          text-align: center;
+        }
+        .Infos {
+          position: absolute;
+          top: 0px;
+        }
+        .Mockup {
+          position: absolute;
+          top: 180px;
+        }
+      }
     `}</style>
     <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework3.gif' />
     <div className='Infos'>
-      <TitlePrimary
-        content='03'
-        style={{margin: 0}} />
+      <div className='Global_title_primary Title'>03</div>
       <Subtitle
         content='EDIT the homework'
         style={{letterSpacing: 0.7, margin: 0}} />

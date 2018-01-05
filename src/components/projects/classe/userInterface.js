@@ -39,6 +39,11 @@ class UserInterface extends React.Component {
             top: 470px;
             left: calc(50% - 14px);
           }
+          @media screen and (max-width: 750px) {
+            .Call_wrapper {
+              display: none;
+            }
+          }
         `}</style>
 
         <Number content='01' color='#1a2432' borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
@@ -46,7 +51,7 @@ class UserInterface extends React.Component {
           main={{width: 363, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           second={{width: 850, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           location={{bottom: 100, right: 120}}
-          mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
           title={{content: 'User Interface', color: '#1a2432'}}
@@ -163,9 +168,45 @@ const Typography = () =>
         margin: auto;
         margin-top: 100px;
       }
+      .Suffix_mobile {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Box {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          height: 613px;
+        }
+        .Content {
+          width: 100%;
+        }
+        .Infos, .Typo_illu {
+          display: block;
+          margin: auto;
+        }
+        .Typo_illu {
+          margin-top: 60px;
+          width: 200px;
+        }
+        .Infos {
+          margin-top: 40px;
+          width: 90%;
+          text-align: left;
+        }
+        .Suffix {
+          display: none;
+        }
+        .Suffix_mobile {
+          display: inline;
+        }
+        .Typos {
+          display: none;
+        }
+      }
     `}</style>
     <TitleSecondary
-      content='Typeface'
+      content='TYPOGRAPHY'
       style={{color: '#474f6f'}} />
     <div className='Box' />
     <div className='Content'>
@@ -173,12 +214,12 @@ const Typography = () =>
       <div className='Infos'>
         <div className='Title Global_title_secondary futuralt_book'>Opens sans Regular</div>
         <div className='opensans Description'>
-          The quick brown fox jumps over the lazy dog<br />
+          The quick brown fox jumps over<span className='Suffix_mobile'>...</span><span className='Suffix'> the lazy dog</span><br />
           1234567890
         </div>
         <div className='Title Global_title_secondary futuralt_book'>Opens sans Bold</div>
         <div className='opensans_bold Description'>
-          The quick brown fox jumps over the lazy dog<br />
+          The quick brown fox jumps over<span className='Suffix_mobile'>...</span><span className='Suffix'> the lazy dog</span><br />
           1234567890
         </div>
       </div>
@@ -290,6 +331,14 @@ const Colors = () =>
         width: 800px;
         margin-top: 40px;
       }
+      @media screen and (max-width: 750px) {
+        .Big_colors {
+          width: 270px;
+        }
+        .Small_colors {
+          width: 310px;
+        }
+      }
     `}</style>
     <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '80px auto 0 auto'}} />
     <SubtitlePart
@@ -339,6 +388,17 @@ const BigColor = ({title, color}) =>
         line-height: 27px;
         margin-top: 20px;
       }
+      @media screen and (max-width: 750px) {
+        .Big_color {
+          margin-right: 40px;
+        }
+        .Big_color:nth-child(2) {
+          margin-right: 0px;
+        }
+        .Big_color:nth-child(3) {
+          margin-top: 30px;
+        }
+      }
     `}</style>
     <div className='Outer_circle'>
       <div className='Inner_circle'>
@@ -384,6 +444,17 @@ const SmallColor = ({title, color}) =>
         font-size: 11px;
         color: #474f6f;
       }
+      @media screen and (max-width: 750px) {
+        .Small_color {
+          margin-top: 20px;
+        }
+        .Small_color:nth-child(3) {
+          margin-right: 0;
+        }
+        .Small_color:nth-child(6) {
+          margin-right: 0;
+        }
+      }
     `}</style>
     <div className='Circle' />
     <div className='Infos opensans_bold'>
@@ -397,7 +468,7 @@ const SmallColor = ({title, color}) =>
   </div>
 
 
-const descriptionStyle = {verticalAlign: 'top', textAlign: 'left', display: 'inline-block', width: 170, margin: 0, marginLeft: 20, fontSize: 14, color: 'white', lineHeight: '18px'}
+const descriptionStyle = {verticalAlign: 'top', textAlign: 'left', display: 'inline-block', margin: 0, fontSize: 14, color: 'white', lineHeight: '18px'}
 const Icon = () =>
   <div className='Icon'>
     <style jsx>{`
@@ -459,45 +530,120 @@ const Icon = () =>
       .Description {
         width: 170px;
       }
-
+      .Mockups_mobile {
+        display: none;
+      }
+      .Description_container {
+        display: inline-block;
+        width: 170px;
+        margin-left: 20px;
+        vertical-align: top;
+      }
+      .Picto_list_mobile {
+        display: none;
+      }
+      .Blue_background_mobile {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Blue_background_mobile {
+          display: block;
+          position: absolute;
+          top: 200px;
+          width: 100%;
+          height: 1500px;
+          background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
+          z-index: -1;
+        }
+        .Mockups {
+          width: 110%;
+          margin: auto;
+          height: auto;
+        }
+        .Pictos {
+          width: 100%;
+        }
+        .Section_left, .Section_center, .Section_right {
+          display: block;
+          width: 300px;
+          margin: auto;
+        }
+        .Blue_background {
+          display: none;
+        }
+        .Mockups_mobile {
+          display: inline-block;
+        }
+        .Mockups_desktop {
+          display: none;
+        }
+        .Description_container {
+          width: 250px;
+          margin-bottom: 40px;
+        }
+        .Description_container_2 {
+          margin-bottom: 0;
+        }
+        .Section_right .Infos {
+          display: none;
+        }
+        .Picto_list_desktop {
+          display: none;
+        }
+        .Picto_list_mobile {
+          display: inline-block;
+          padding-bottom: 400px;
+        }
+      }
     `}</style>
-    <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/iphones-colors-01.png' className='Mockups' />
+    <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/mobile/iphones-colors-01.png' className='Mockups Mockups_mobile' />
+    <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/iphones-colors-01.png' className='Mockups Mockups_desktop' />
     <TitleSecondary content='icons' style={{color: 'white', margin: '50px auto 0 auto'}} />
     <SubtitlePart
       content='Guidelines' />
     <img src='/static/projects/classe/3-user-interface/fond-bleu1-01.svg' className='Blue_background' />
+    <div className='Blue_background_mobile' />
     <div className='Pictos'>
       <div className='Section_left'>
         <img height='229' alt='first picto exemple' src='/static/projects/classe/3-user-interface/picto1-01.png' />
         <div className='Infos'>
           <div className='Number_container futuralt_bold'><span className='Number'>1</span></div>
-          <Description
-            style={descriptionStyle}
-            content='The pictograms are drawn in an "inline" style, in lines and not in full. They are used in two versions, 32x32px, and 16x16px.' />
+          <div className='Description_container Description_container_1'>
+            <Description
+              style={descriptionStyle}
+              content='The pictograms are drawn in an "inline" style, in lines and not in full. They are used in two versions, 32x32px, and 16x16px.' />
+          </div>
         </div>
       </div>
       <div className='Section_center'>
         <img height='229' alt='second picto exemple' src='/static/projects/classe/3-user-interface/picto2-01.png' />
         <div className='Infos'>
           <div className='Number_container futuralt_bold'><span className='Number'>2</span></div>
-          <Description
-            style={descriptionStyle}
-            content='The contours and radius of angles makes 2px for a picto of 32x32.' />
+          <div className='Description_container Description_container_2'>
+            <Description
+              style={descriptionStyle}
+              content='The contours and radius of angles makes 2px for a picto of 32x32.' />
+          </div>
         </div>
         <div className='Infos' style={{marginTop: 10}}>
           <div className='Number_container futuralt_bold'><span className='Number'>3</span></div>
-          <Description
-            style={descriptionStyle}
-            content='The interior spaces make 2px.' />
+          <div className='Description_container Description_container_3'>
+            <Description
+              style={descriptionStyle}
+              content='The interior spaces make 2px.' />
+          </div>
         </div>
       </div>
       <div className='Section_right'>
-        <img height='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
+        <img className='Picto_list_desktop' height='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
+        <img className='Picto_list_mobile' width='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
         <div className='Infos'>
           <div className='Number_container futuralt_bold'><span className='Number'>4</span></div>
-          <Description
-            style={descriptionStyle}
-            content='Or a multiple of 2 like 4 or 6px.' />
+          <div className='Description_container Description_container_4'>
+            <Description
+              style={descriptionStyle}
+              content='Or a multiple of 2 like 4 or 6px.' />
+          </div>
         </div>
       </div>
     </div>
@@ -525,6 +671,10 @@ const Components = () =>
         background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
         background-size: cover;
       }
+      .Description_container {
+        width: 400px;
+        margin: 30px auto;
+      }
       @media screen and (max-width: 1280px) {
         .Illustration {
           background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
@@ -540,15 +690,30 @@ const Components = () =>
           background-image: url('/static/projects/classe/3-user-interface/fond-2-3000.png');
         }
       }
+      @media screen and (max-width: 750px) {
+        .Mockups {
+          width: 100%;
+          height: auto;
+        }
+        .Description_container {
+          width: 90%;
+        }
+        .Illustration {
+          height: 326px;
+          background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
+        }
+      }
     `}</style>
     <TitleSecondary content='Components' style={{color: '#474f6f', margin: '50px auto 0 auto'}} />
     <SubtitlePart
       content='Grid system for responsive'
       style={{color: '#a8adb9'}} />
     <img alt='component mockups' src='/static/projects/classe/3-user-interface/grid-01.png' className='Mockups' />
-    <Description
-            style={{width: 400, margin: 0, color: '#474f6f', lineHeight: '20px', margin: '30px auto'}}
-            content='For a layout between 840 and 1600px, the grid contains 12 columns. The first breaking point is at 840px (8 columns), the second at 600px (4 columns). At over 1600px, the grid aligns in the center and stops growing.' />
+    <div className='Description_container'>
+      <Description
+              style={{margin: 0, color: '#474f6f', lineHeight: '20px'}}
+              content='For a layout between 840 and 1600px, the grid contains 12 columns. The first breaking point is at 840px (8 columns), the second at 600px (4 columns). At over 1600px, the grid aligns in the center and stops growing.' />
+    </div>
     <div className='Illustration' />
   </div>
 

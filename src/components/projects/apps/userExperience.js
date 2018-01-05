@@ -49,7 +49,7 @@ class UserExperience extends React.Component {
           }
           @media screen and (max-width: 750px) {
             .User_experience {
-              height: 2685px;
+              height: 2452px;
             }
           }
         `}</style>

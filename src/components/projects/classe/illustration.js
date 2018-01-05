@@ -40,7 +40,7 @@ class Illustration extends React.Component {
           main={{width: 460, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
           second={{width: 764, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
           title={{content: 'Illustrations', color: '#1a2432'}}
@@ -49,6 +49,7 @@ class Illustration extends React.Component {
           />
         <Interfaces />
         <Classes />
+        <MobileClasses />
       </div>
     )
   }
@@ -98,13 +99,56 @@ const Interfaces = () =>
         width: 200px;
         height: 48px;
       }
+      .Drawing {
+        height: 291px;
+        marign-top: 10px;
+        margin-bottom: 20px;
+      }
+      .Right_mobile {
+        display: none;
+      }
+      @media screen and (max-width: 750px) {
+        .Interfaces {
+          width: 100%;
+        }
+        .Drawing {
+          width: 95%;
+          display: block;
+          margin: auto;
+        }
+        .Left, .Right {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+        .Colors {
+          width: 340px;
+          margin: auto;
+        }
+        .Right_desktop {
+          display: none;
+        }
+        .Right_mobile {
+          background-color: #f2f3f4;
+          display: block;
+          width: 100%;
+          margin: auto;
+          text-align: center;
+          margin-top: 40px;
+          padding: 40px 0;
+        }
+        .Right_mobile img {
+          display: block;
+          margin: 40px auto;
+        }
+      }
     `}</style>
     <div className='Left'>
       <TitleSecondary content='interface illustrations' style={{color: '#474f6f', margin: '0 auto'}} />
       <SubtitlePart
         content='Empty stats or pop-up'
         style={{color: '#a8adb9'}} />
-      <img style={{marginTop: 10, marginBottom: 20}} height='291' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/dessin-crabe.png' />
+      <img className='Drawing' style={{marginTop: 10, marginBottom: 20}} height='291' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/dessin-crabe.png' />
       <div className='Colors'>
         <div className='Square' style={{backgroundColor: '#f5f6f7'}} />
         <div className='Square' style={{backgroundColor: '#f2f3f4'}} />
@@ -121,10 +165,51 @@ const Interfaces = () =>
         <div className='Rectangle' style={{backgroundColor: '#00b3df'}} />
       </div>
     </div>
-    <div className='Right'>
+    <div className='Right_desktop'>
       <img alt='some interface related illustrations' src='/static/projects/classe/5-illustration/illu-interface-01.png' />
     </div>
+    <div className='Right_mobile'>
+      <img width='288' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/mobile/illu-interface-01.png' />
+      <img width='266' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/mobile/illu-interface-02.png' />
+      <img width='337' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/mobile/illu-interface-03.png' />
+    </div>
   </div>
+
+const MobileClasses = () =>
+  <div className='Classes'>
+    <style jsx>{`
+      .Classes {
+        position: relative;
+        margin: auto;
+        margin-top: 80px;
+        text-align: center;
+        z-index: 0;
+      }
+      .Banners {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+      }
+      .Banner {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+    `}</style>
+    <TitleSecondary content='illustrations of classes' style={{color: '#474f6f', margin: '0 auto'}} />
+    <SubtitlePart
+      content='7 possible themes'
+      style={{color: '#a6abb7'}} />
+    <div className='Banners'>
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/rouge.jpg' />
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/orange.jpg' />
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/vert.jpg' />
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/vert2.jpg' />
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/bleu.jpg' />
+      <img className='Banner' src='/static/projects/classe/5-illustration/mobile/violet.jpg' />
+    </div>
+  </div>
+
 
 class Classes extends React.Component {
   constructor(props) {
@@ -203,6 +288,11 @@ class Classes extends React.Component {
             bottom: 0px;
             left: 0;
             z-index: 2;
+          }
+          @media screen and (max-width: 750px) {
+            .Classes {
+              display: none;
+            }
           }
         `}</style>
         <TitleSecondary content='illustrations of classes' style={{color: '#474f6f', margin: '0 auto'}} />
