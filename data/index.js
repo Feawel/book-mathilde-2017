@@ -246,11 +246,11 @@ const data = {
             alt: "Background picture for project #2 : comet exposition",
             src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
           },
-          color: '#fb5e80',
+          color: '#579beb',
           gradient: {
-            dark: '#f04372',
-            light: '#ffd69c',
-            base: 'linear-gradient(-27deg, #11998e 0%, #38ef7d 100%)'
+            dark: '#5541d9',
+            light: '#59fcff',
+            base: 'linear-gradient(-27deg, #5541d9 0%, #59fcff 100%)'
           },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',

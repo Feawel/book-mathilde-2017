@@ -56,6 +56,9 @@ const Summary = ({ project }) =>
         .Call_top {
           display: none;
         }
+        .Footer_desktop {
+          display: none;
+        }
       }
     `}</style>
     <div className='Header'>
@@ -106,15 +109,123 @@ const Summary = ({ project }) =>
             marginTop: 0,
             marginBottom: 0
           }} />
-        <div className='Description'  />
-        <div className='Meta'>
-          <Meta label='CUSTOMER' value={project.customer} />
-          <Meta label='ROLE' value={project.role} />
-          <Meta label='YEAR' value={project.year} />
-        </div>
-        <div className='Stats'>
-          {project.stats.map((stat, i) => <Stat key={i} color={project.color} label={stat.label} value={stat.value} />)}
-        </div>
+        <FooterDesktop project={project} />
+      </div>
+      <FooterMobile project={project} />
+    </div>
+  </div>
+
+
+const FooterMobile = ({ project }) =>
+  <div className='Footer_mobile'>
+    <style jsx>{`
+      .Footer_mobile {
+        background-color: #dee2ed;
+        display: none;
+        width: 100%;
+        padding: 40px 0;
+        margin-top: 40px;
+      }
+      .Left {
+        display: inline-block;
+        width: calc(50% - 25px);
+        margin-left: 25px;
+        text-align: left;
+      }
+      .Right {
+        display: inline-block;
+        width: calc(50% - 50px);
+        margin-left: 25px;
+        text-align: left;
+      }
+      .Line {
+        width: 16px;
+        height: 2px;
+        display: inline-block;
+        background-image: ${project.gradient.base};
+        margin-right: 10px;
+        position: relative;
+        top: -3px;
+      }
+      .Label {
+        display: inline-block;
+        font-family: 'Futura - Bold';
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 27px;
+        color: #abb0bc;
+      }
+      .Value {
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        font-size: 12px;
+        font-style: italic;
+        line-height: 24px;
+        color: #474f6f;
+        position: relative;
+        left: 28px;
+      }
+      .Value_stat {
+        font-family: 'Playfair Display';
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 24px;
+        height: 54px;
+        margin-top: 35px;
+        position: relative;
+        left: 28px;
+      }
+      .Mobile_stats .Label {
+        width: calc(100% - 50px);
+        vertical-align: top;
+        position: relative;
+        top: -4px;
+      }
+      @media screen and (max-width: 1000px) {
+        .Footer_mobile {
+          display: block;
+        }
+      }
+    `}</style>
+    <div className='Left'>
+      <div className='Mobile_meta'>
+        <div className='Line' /> <div className='Label'>CLIENT</div>
+        <div className='Value'>{project.customer}</div>
+      </div>
+      <div className='Mobile_meta'>
+        <div className='Line' /> <div className='Label'>ROLE</div>
+        <div className='Value'>{project.role}</div>
+      </div>
+      <div className='Mobile_meta'>
+        <div className='Line' /> <div className='Label'>YEAR</div>
+        <div className='Value'>{project.year}</div>
+      </div>
+    </div>
+    <div className='Right'>
+      <div className='Mobile_stats'>
+        <div className='Line' /> <div className='Label'>{project.stats[0].label}</div>
+        <div className='Value_stat' style={{color: project.color }}>{project.stats[0].value}</div>
+      </div>
+    </div>
+  </div>
+
+const FooterDesktop = ({ project }) =>
+  <div className='Footer_desktop'>
+    <style jsx>{`
+      @media screen and (max-width: 1000px) {
+        .Footer_desktop {
+          display: none;
+        }
+      }
+    `}</style>
+    <div className='Footer_desktop'>
+      <div className='Meta'>
+        <Meta label='CUSTOMER' value={project.customer} />
+        <Meta label='ROLE' value={project.role} />
+        <Meta label='YEAR' value={project.year} />
+      </div>
+      <div className='Stats'>
+        {project.stats.map((stat, i) => <Stat key={i} color={project.color} label={stat.label} value={stat.value} />)}
       </div>
     </div>
   </div>
