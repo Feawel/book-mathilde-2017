@@ -165,7 +165,7 @@ const Interfaces = () =>
         <div className='Rectangle' style={{backgroundColor: '#00b3df'}} />
       </div>
     </div>
-    <div className='Right_desktop'>
+    <div className='Right Right_desktop'>
       <img alt='some interface related illustrations' src='/static/projects/classe/5-illustration/illu-interface-01.png' />
     </div>
     <div className='Right_mobile'>
@@ -194,6 +194,11 @@ const MobileClasses = () =>
         display: inline-block;
         width: 100%;
         margin-bottom: 40px;
+      }
+      @media screen and (min-width: 750px) {
+        .Classes {
+          display: none;
+        }
       }
     `}</style>
     <TitleSecondary content='illustrations of classes' style={{color: '#474f6f', margin: '0 auto'}} />
