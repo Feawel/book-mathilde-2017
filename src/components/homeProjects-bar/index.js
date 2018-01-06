@@ -111,7 +111,7 @@ class HomeProjects extends React.Component {
           <div className={`Background transitions ${projectAppear ? 'small' : ''}`}
             style={{backgroundImage: `url('${project.picture.src}')`, ...this.getBackgroundStyle(backgroundSize)}} />
         </div>
-        <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100}} onClick={() => this.props.closeProject()}>FERMER</div>
+        <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100}} onClick={() => this.closeProject()}>FERMER</div>
         <div className='Bars'>
           <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
           <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />
@@ -141,8 +141,8 @@ class HomeProjects extends React.Component {
   }
 
   closeProject() {
-    this.props.closeProject()
     this.activateUpdateHomeProject()
+    this.props.closeProject()
   }
 
   updateProject () {
@@ -183,6 +183,7 @@ class HomeProjects extends React.Component {
   }
 
   activateUpdateHomeProject() {
+    console.log('will activate udpate')
     this.updateWithDebounce = debounce(this.updateProject, 500, true)
     window.addEventListener('wheel', this.updateWithDebounce)
   }
