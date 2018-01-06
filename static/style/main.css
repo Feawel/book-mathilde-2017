@@ -221,3 +221,21 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
     margin: auto;
   }
 }
+
+/***** PROJECT STYLES ******/
+
+.Global_project {
+  position: relative;
+  top: calc(70% - 55px);
+  animation-duration: 2s;
+  animation-name: appear;
+}
+@keyframes appear {
+  from {
+    top: 130%;
+  }
+
+  to {
+    top: calc(70% + 10px);
+  }
+}

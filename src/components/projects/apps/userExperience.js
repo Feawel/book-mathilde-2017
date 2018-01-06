@@ -5,12 +5,14 @@ import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, Subtitle, SubtitlePart, Description } from '../common/texts'
+import { isMobile } from '../../../utils/responsive'
 
 class UserExperience extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      timer: 0
+      timer: 0,
+      isMobile: null
     }
     this.timer = this.timer.bind(this)
   }
@@ -24,7 +26,7 @@ class UserExperience extends React.Component {
       element: ReactDOM.findDOMNode(this)
     })
     const intervalId = setInterval(this.timer, 3000)
-    this.setState({ intervalId })
+    this.setState({ intervalId, isMobile: isMobile() })
   }
 
   componentWillUnmount() {
@@ -36,6 +38,7 @@ class UserExperience extends React.Component {
   }
 
   render() {
+    const { isMobile } = this.state
     return (
       <div className='User_experience'>
        <style jsx>{`
@@ -66,8 +69,8 @@ class UserExperience extends React.Component {
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'This app is a transcription of books for tablets. It is intended to be used by teachers and children in class. The user experience must therefore be as simple and instinctive as with the basic books, while adding tools such as the ability to documents in full screens, to draw and write on the pages, to put some of them side, or even to respond to exercises.'}}
           />
-        <ArchitectureMobile timer={this.state.timer} />
-        <Architecture timer={this.state.timer} />
+        { isMobile !== null && isMobile && <ArchitectureMobile timer={this.state.timer} /> }
+        { isMobile !== null && !isMobile && <Architecture timer={this.state.timer} /> }
         <Navbar />
         <Sidebar />
       </div>

@@ -61,15 +61,6 @@ const Summary = ({ project }) =>
         }
       }
     `}</style>
-    <div className='Header'>
-      <img
-        style={{backgroundImage: project.gradient.base}}
-        className='Illustration'
-        width='100%'
-        height='500'
-        src={project.picture.src}
-        alt='project header' />
-    </div>
     <div className='Summary_section'>
       <div className='Inner_left_section'>
         <TitlePrimary

@@ -43,41 +43,40 @@ class HomeProjects extends React.Component {
   }
 
   componentDidMount = () => {
-    this.updateWithDebounce = debounce(this.updateProject, 500, true)
-    window.addEventListener('wheel', this.updateWithDebounce)
-
-    // setInterval(() => {
-    //   const x = Math.round(Math.random()*30)
-    //   const xDir = Math.round(Math.random()) === 0
-
-    //   const y = Math.floor(Math.random()*30)
-    //   const yDir = Math.round(Math.random()) === 0
-    //   this.setState({ backgroundPos: {x, y, xDir, yDir}})
-    // }, 500)
+    this.activateUpdateHomeProject()
   }
 
   componentWillUnmount = () =>
-    window.removeEventListener('wheel', this.updateWithDebounce)
+    this.deactivateUpdateHomeProject()
 
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating,
-      bar1, bar2, bar3, bar4, bar5,
-      backgroundPos } = this.state
-    const project = data.projects[current%2]
+      bar1, bar2, bar3, bar4, bar5, backgroundPos } = this.state
+    const { projectAppear, backgroundSize, openProject } = this.props
 
-    const backgroundPositionX = backgroundPos ? `calc(0px ${backgroundPos.xDir === 0 ? '+' : '-'} ${backgroundPos.x}px)` : 0
-    const backgroundPositionY = backgroundPos ? `calc(0px ${backgroundPos.yDir === 0 ? '+' : '-'} ${backgroundPos.y}px)` : 0
+    const project = data.projects[current]
+
+    // const backgroundPositionX = backgroundPos ? `calc(0px ${backgroundPos.xDir === 0 ? '+' : '-'} ${backgroundPos.x}px)` : 0
+    // const backgroundPositionY = backgroundPos ? `calc(0px ${backgroundPos.yDir === 0 ? '+' : '-'} ${backgroundPos.y}px)` : 0
 
     return (
       <Wrapper >
         <style jsx>{`
-          .Background {
+          .Background_wrapper {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+          }
+          .Background {
+            width: 100%;
+            height: 100%;
             background-size: cover;
+
+          }
+          .Background.small {
+            height: 300px;
           }
 
           .Bars {
@@ -106,12 +105,13 @@ class HomeProjects extends React.Component {
           .Bar.active { height: 100%; }
         `}</style>
         <Lines  />
-        <ScrollDown move={animating} onClick={() => this.updateWithDebounce()} />
-        <Social />
-        {/*<Background hide={current !== 0} {...data.projects[0].picture} />
-        <Background hide={current !== 1} {...data.projects[1].picture} />*/}
-        <div style={{backgroundImage: `url('${project.picture.src}')`, backgroundPosition: `${backgroundPositionX} ${backgroundPositionY}`}}
-          className='Background' />
+        {!projectAppear && <ScrollDown move={animating} onClick={() => this.updateWithDebounce()} />}
+        {!projectAppear && <Social />}
+        <div className='Background_wrapper'>
+          <div className={`Background transitions ${projectAppear ? 'small' : ''}`}
+            style={{backgroundImage: `url('${project.picture.src}')`, ...this.getBackgroundStyle(backgroundSize)}} />
+        </div>
+        <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100}} onClick={() => this.props.closeProject()}>FERMER</div>
         <div className='Bars'>
           <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
           <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />
@@ -119,9 +119,30 @@ class HomeProjects extends React.Component {
           <div className={`Bar Bar_4 ${bar4 ? 'active' : ''}`} />
           <div className={`Bar Bar_5 ${bar5 ? 'active' : ''}`} />
         </div>
-        <Infos top={textTop} draw={draw} lineWidth={lineWidth} {...project}/>
+        {!projectAppear && <Infos openProject={() => this.openProject()} top={textTop} draw={draw} lineWidth={lineWidth} {...project}/>}
       </Wrapper>
     )
+  }
+
+  getBackgroundStyle(size) {
+    switch(size) {
+      case 'large':
+        return {height: '100%', width:'100%', position: 'relative', top: 0, left: 0, transition: 'all .5s'}
+      case 'medium':
+        return {height: '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 2s'}
+      case 'small':
+        return {height: '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
+    }
+  }
+
+  openProject() {
+    this.props.openProject()
+    this.deactivateUpdateHomeProject()
+  }
+
+  closeProject() {
+    this.props.closeProject()
+    this.activateUpdateHomeProject()
   }
 
   updateProject () {
@@ -144,14 +165,33 @@ class HomeProjects extends React.Component {
         lineWidth: 0,
         draw: false
       }, () => setTimeout(() => {
+        const current = this.nextProject(this.state.current)
         this.setState({
-          current: this.state.current === 0 ? 1 : 0,
+          current,
           animating: false,
           textTop: 0,
           lineWidth: 40,
           draw: true
         })
+        this.props.setCurrentProject(current)
       }, 1500))
+    }
+  }
+
+  deactivateUpdateHomeProject() {
+    window.removeEventListener('wheel', this.updateWithDebounce)
+  }
+
+  activateUpdateHomeProject() {
+    this.updateWithDebounce = debounce(this.updateProject, 500, true)
+    window.addEventListener('wheel', this.updateWithDebounce)
+  }
+
+  nextProject(current) {
+    if(current === data.projects.length) {
+      return 0
+    } else {
+      return current+1
     }
   }
 

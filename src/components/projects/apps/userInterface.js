@@ -55,7 +55,7 @@ class UserInterface extends React.Component {
           }
         `}</style>
 
-        <Number content='02' color='#004459' borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%);' />
+        <Number content='02' color='#004459' borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
         <DoubleIllustrations
           main={{width: 353, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           second={{width: 1060, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}

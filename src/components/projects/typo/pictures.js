@@ -1,18 +1,6 @@
 import React from 'react'
-import { isRetina } from '../../../utils/responsive'
 import { TitleSecondary, SubtitlePart } from '../common/texts'
-
-const getResponsiveDirectory = () => {
-  if(window.innerWidth > 1400 || (window.innerWidth > 750 && isRetina()))
-    return 'desktop-2800'
-  else if(window.innerWidth > 750)
-    return 'desktop-1400'
-  else if(window.innerWidth > 400 && isRetina())
-    return 'mobile-1400'
-  else
-    return 'mobile-720'
-}
-
+import { getResponsiveDirectory } from '../../../utils/responsive'
 
 class Pictures extends React.Component {
   constructor(props) {

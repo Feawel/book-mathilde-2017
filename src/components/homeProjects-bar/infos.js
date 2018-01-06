@@ -2,7 +2,7 @@ import DownUp from '../animations/downUp.js'
 import Call from './call'
 
 // src/componentqs/homeProjects/infos.js
-const Infos = ({ title, problematic, gradient, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35 }) => (
+const Infos = ({ title, problematic, gradient, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
   <div className='Project_infos'>
     <style jsx>{`
       div {
@@ -75,7 +75,7 @@ const Infos = ({ title, problematic, gradient, number, tags, top, draw, homeSubc
       <p style={{ color: colors.light }} className='Project_infos_problematic' dangerouslySetInnerHTML={{ __html: problematic }}/>
     </DownUp>
     <Tags top={top} />
-    <Call top={top} draw={draw} />
+    <Call openProject={() => openProject()} top={top} draw={draw} />
   </div>
 )
 

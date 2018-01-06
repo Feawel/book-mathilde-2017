@@ -6,6 +6,9 @@ import Menu from './menu'
 import About from './about'
 import HomeProject from './homeProjects-bar'
 import throttle from 'lodash/throttle'
+import Projects from './projects'
+
+import {enableScroll, disableScroll} from '../utils/scroll'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,14 +16,21 @@ class App extends React.Component {
     this.state = {
       openMenu: false,
       currentMenu: 0,
-      openAbout: false
+      openAbout: false,
+      currentProject: 0,
+      timeoutId: null,
+      backgroundSize: 'large',
+      projectAppear: null
     }
 
     this.onScrollMenu = this.onScrollMenu.bind(this)
+    this.firstProjectAnimation = this.firstProjectAnimation.bind(this)
+    this.secondProjectAnimation = this.secondProjectAnimation.bind(this)
   }
 
   render () {
-    const { openMenu, openAbout, currentMenu } = this.state
+    const { openMenu, openAbout, currentMenu, currentProject, projectAppear, backgroundSize } = this.state
+    const content = projectAppear ? <Projects current={currentProject} /> : null
     return [
       <About
         key='about'
@@ -34,7 +44,14 @@ class App extends React.Component {
         toggleOpen={() => this.toggleOpenMenu()}
         open={openMenu}
         openAbout={openAbout} />,
-      <HomeProject key='project' />
+      <HomeProject
+        projectAppear={projectAppear}
+        backgroundSize={backgroundSize}
+        setCurrentProject={current => this.setCurrentProject(current)}
+        openProject={current => this.openProject(current)}
+        closeProject={() => this.closeProject()}
+        key='project' />,
+      <div key='project-content' style={{position: 'absolute', top: 0, left:0, width: '100%', height: '100%'}}>{content}</div>
     ]
   }
 
@@ -44,8 +61,8 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
-
     window.removeEventListener('wheel', this.handleScrollMenu);
+    clearTimeout(this.state.timeoutId)
   }
 
   onScrollMenu (e) {
@@ -59,6 +76,28 @@ class App extends React.Component {
         currentMenu: currentMenu === 0 ? 0 : currentMenu - 1
       })
     }
+  }
+
+  openProject(){
+    this.firstProjectAnimation()
+    const timeoutId = setTimeout(this.secondProjectAnimation, 500)
+    this.setState({ timeoutId })
+  }
+
+  firstProjectAnimation() {
+    this.setState({  backgroundSize: 'small', projectAppear: true })
+  }
+
+  secondProjectAnimation() {
+    this.setState({ backgroundSize: 'medium' })
+  }
+
+  closeProject() {
+    this.setState({ projectAppear: false, backgroundSize: 'large' })
+  }
+
+  setCurrentProject(currentProject) {
+    this.setState({ currentProject })
   }
 
   toggleOpenMenu () {
