@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import App from '../src/components/app'
+import App from '../src/components/app-bar'
 export default () => (
   <div className='generic-text'>
     <Head>
