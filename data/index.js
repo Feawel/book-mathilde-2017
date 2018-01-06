@@ -8,6 +8,12 @@ const data = {
             index: 1,
             height: 60
           },
+          colors : {
+            gradient: 'linear-gradient(-27deg, #008d89 0%, #6ad7d9 100%)',
+            typo: '#004459',
+            primary: '#00B3DF',
+            light: '#94ECED'
+          },
           tags: [
             {
               title: "User Interface",
@@ -56,6 +62,12 @@ const data = {
             index: 2,
             height: 60
           },
+          colors : {
+            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            typo: '#221061',
+            primary: '#8061E7',
+            light: '#79CAFF'
+          },
           tags: [
             {
               title: "User Interface",
@@ -102,6 +114,12 @@ const data = {
           header: {
             illustration: '/static/projects/ornikar/ornikar_header.png',
             gradient: 'linear-gradient(-27deg, #d6181f 0%, #f5c253 100%)'
+          },
+          colors : {
+            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            typo: '#221061',
+            primary: '#8061E7',
+            light: '#79CAFF'
           },
           customer: 'Ornikar',
           role: 'Directrice artistique',
@@ -172,6 +190,12 @@ const data = {
             light: '#ffd69c',
             base: 'linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
           },
+          colors : {
+            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            typo: '#221061',
+            primary: '#8061E7',
+            light: '#79CAFF'
+          },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
           year: 2016,
@@ -218,6 +242,12 @@ const data = {
             light: '#38ef7d',
             base: 'linear-gradient(-27deg, #11998e 0%, #38ef7d 100%)'
           },
+          colors : {
+            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            typo: '#221061',
+            primary: '#8061E7',
+            light: '#79CAFF'
+          },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
           year: 2016,
@@ -252,6 +282,12 @@ const data = {
             light: '#59fcff',
             base: 'linear-gradient(-27deg, #5541d9 0%, #59fcff 100%)'
           },
+          colors : {
+            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            typo: '#221061',
+            primary: '#8061E7',
+            light: '#79CAFF'
+          },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
           year: 2016,
@@ -266,44 +302,7 @@ const data = {
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]
-        },
-        {
-          title: "PROJET 7",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          number: {
-            index: 3,
-            height: 70
-          },
-          tags: ["User Interface", "User Experience", "Illustration"],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
-          color: '#ee5b60',
-          gradient: {
-            dark: '#d6181f',
-            light: '#f5c253'
-          }
-        },
-        {
-          title: "PROJET 8",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          number: {
-            index: 4,
-            height: 67
-          },
-          tags: ["User Interface", "User Experience", "Illustration"],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
-          color: '#fb5e80',
-          gradient: {
-            dark: '#f04372',
-            light: '#ffd69c'
-          },
-        },
-
+        }
     ],
     animations: {
       switchProjects: {
