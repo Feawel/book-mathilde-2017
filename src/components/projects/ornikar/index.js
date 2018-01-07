@@ -6,7 +6,7 @@ import Footer from '../common/footer'
 import data from '../../../../data'
 
 const Ornikar = ({ project }) =>
-  <div className='Project Ornikar'>
+  <div className='Global_project Ornikar'>
     <Summary project={data.projects[2]} />
     <div style={{marginTop: 60}}>
       <BoysAds />

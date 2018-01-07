@@ -3,108 +3,158 @@ import Social from './social'
 import Call from './call'
 import { TitlePrimary, TitleSecondary, Description } from './texts'
 
-const Summary = ({ project }) =>
-  <div className='Project Summary'>
-    <style jsx>{`
-      .Summary {
-        margin-bottom: 50px;
-      }
-      .Header {
-        width: 100%;
-        height: 500px;
-      }
-      .Illustration {
-        position: relative;
-        top: 23px;
-      }
-      .Summary_section {
-        display: inline-block;
-        width: 50%;
-        margin-top: 10px;
-        vertical-align: top;
-      }
-      .Inner_left_section {
-        margin: auto;
-        width: calc(100% - 200px);
-      }
-      .Inner_right_section {
-        margin: auto;
-        width: calc(100% - 100px);
-      }
-      .Description_title {
-        margin-top: 80px;
-        font-family: 'Futura - Bold';
-        font-size: 10px;
-        line-height: 27px;
-        color: #abb0bc;
-      }
-      .Social_container {
-        margin-bottom: 40px;
-      }
-      @media screen and (max-width: 1000px) {
-        .Summary_section {
-          width: 100%;
-          text-align:center;
-        }
-        .Inner_left_section, .Inner_right_section {
-          margin: auto;
-          width: calc(100% - 50px);
-        }
-        .Description_title {
-          display: none;
-        }
-        .Call_top {
-          display: none;
-        }
-        .Footer_desktop {
-          display: none;
-        }
-      }
-    `}</style>
-    <div className='Summary_section'>
-      <div className='Inner_left_section'>
-        <TitlePrimary
-          content={project.title}
-          style={{
-            fontSize: 74,
-            color: '#260608',
-            marginTop: 80,
-            marginBottom: 20,
-            maxWidth: 420
-          }}/>
-        <TitleSecondary
-          content={project.problematic}
-          style={{
-            color: project.color,
-            fontSize: 23,
-            marginTop: 20,
-            maxWidth: 445
-          }}/>
-        <div className='Social_container'>
-          <Social />
+
+class Summary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      timeoutIds: [],
+      hideTitle: true,
+      hideBaseline: true,
+      hideSubtitle: true,
+      hideDescription: true
+    }
+  }
+  componentDidMount() {
+    const { timeoutIds } = this.state
+    setTimeout(() => this.setState({hideTitle: false}), 500)
+    setTimeout(() => this.setState({hideBaseline: false, hideSubtitle: false}), 750)
+    setTimeout(() => this.setState({hideDescription: false}), 1000)
+  }
+  componentWillUnmount() {
+    timeoutIds.forEach(t => clearTimeout(t))
+  }
+  render() {
+    const { hideTitle, hideBaseline, hideSubtitle, hideDescription } = this.state
+    const { project } = this.props
+    return (
+      <div className='Project Summary'>
+        <style jsx>{`
+          .Summary {
+            margin-bottom: 50px;
+          }
+
+          .Disappear {
+            opacity: 0!important;
+            top: 60px!important;
+          }
+          .Container {
+            position: relative;
+            top: 0;
+            opacity: 1;
+          }
+          .Transitions {
+            -webkit-transition      : all .8s  ;
+            -moz-transition       : all .8s  ;
+            -ms-transition        : all .8s  ;
+            -o-transition         : all .8s  ;
+            transition          : all .8s  ;
+          }
+          .Header {
+            width: 100%;
+            height: 500px;
+          }
+          .Illustration {
+            position: relative;
+            top: 23px;
+          }
+          .Summary_section {
+            display: inline-block;
+            width: 50%;
+            margin-top: 10px;
+            vertical-align: top;
+          }
+          .Inner_left_section {
+            margin: auto;
+            width: calc(100% - 200px);
+          }
+          .Inner_right_section {
+            margin: auto;
+            width: calc(100% - 100px);
+          }
+          .Description_title {
+            margin-top: 110px;
+            font-family: 'Futura - Bold';
+            font-size: 10px;
+            line-height: 27px;
+            color: #abb0bc;
+          }
+          .Social_container {
+            margin-bottom: 40px;
+          }
+          @media screen and (max-width: 1000px) {
+            .Summary_section {
+              width: 100%;
+              text-align:center;
+            }
+            .Inner_left_section, .Inner_right_section {
+              margin: auto;
+              width: calc(100% - 50px);
+            }
+            .Description_title {
+              display: none;
+            }
+            .Call_top {
+              display: none;
+            }
+            .Footer_desktop {
+              display: none;
+            }
+          }
+        `}</style>
+        <div className='Summary_section'>
+          <div className='Inner_left_section'>
+            <div className={`Container Transitions ${hideTitle ? 'Disappear' : ''}`}>
+              <TitlePrimary
+                content={project.title}
+                style={{
+                  fontSize: 74,
+                  color: '#260608',
+                  marginTop: 80,
+                  marginBottom: 20,
+                  maxWidth: 420
+                }}/>
+              </div>
+            <div className={`Container Transitions ${hideBaseline ? 'Disappear': ''}`}>
+              <TitleSecondary
+                content={project.problematic}
+                style={{
+                  color: project.color,
+                  fontSize: 23,
+                  marginTop: 20,
+                  maxWidth: 445
+                }}/>
+            </div>
+            <div className='Social_container'>
+              <Social />
+            </div>
+            <div className='Call_top'>
+              {project.website && <Call text='VIEW THE WEBSITE' />}
+            </div>
+          </div>
         </div>
-        <div className='Call_top'>
-          {project.website && <Call text='VIEW THE WEBSITE' />}
+        <div className='Summary_section'>
+          <div className='Inner_right_section'>
+            <div className={`Description_title Transitions Container ${hideSubtitle ? 'Disappear' : ''}`}>THE PROJECT</div>
+            <div className={`Container Transitions ${hideDescription ? 'Disappear' : ''}`}>
+              <Description
+                content={project.description}
+                style={{
+                  color: '#474f6f',
+                  fontSize: 16,
+                  lineHeight: '28px',
+                  marginTop: 0,
+                  marginBottom: 0
+                }} />
+            </div>
+            <FooterDesktop project={project} />
+          </div>
+          <FooterMobile project={project} />
         </div>
       </div>
-    </div>
-    <div className='Summary_section'>
-      <div className='Inner_right_section'>
-        <div className='Description_title'>THE PROJECT</div>
-        <Description
-          content={project.description}
-          style={{
-            color: '#474f6f',
-            fontSize: 16,
-            lineHeight: '28px',
-            marginTop: 0,
-            marginBottom: 0
-          }} />
-        <FooterDesktop project={project} />
-      </div>
-      <FooterMobile project={project} />
-    </div>
-  </div>
+    )
+  }
+}
 
 
 const FooterMobile = ({ project }) =>

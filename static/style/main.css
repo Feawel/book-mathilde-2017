@@ -126,6 +126,7 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   -o-transition         : all 1s  ;
   transition          : all 1s  ;
 }
+
 .hide {
   display: none;
 }
@@ -235,17 +236,18 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   position: relative;
   top: calc(70% - 55px);
   animation-duration: 2s;
-  animation-name: appear;
+  animation-name: appearBottom;
 }
-@keyframes appear {
+
+/*@keyframes appearBottom {
   from {
     top: 130%;
   }
 
   to {
-    top: calc(70% + 10px);
+    top: calc(70% - 55px);
   }
-}
+}*/
 
 
 /***** TRANSITIONS ******/
