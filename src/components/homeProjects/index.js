@@ -15,6 +15,7 @@ import data from '../../../data'
 
 // Utils
 import { debounce } from '../../utils/debounce'
+import { getBackgroundResponsiveDirectory } from '../../utils/responsive'
 
 class HomeProjects extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class HomeProjects extends React.Component {
       frames: data.animations.switchProjects.frames,
       opacityFrames: data.animations.switchProjects.opacityFrames,
       maskFrames: data.animations.switchProjects.maskFrames,
+      backgroundDirectory: null,
       width: 1,
       opacity: 0.5,
       animating: false,
@@ -61,6 +63,7 @@ class HomeProjects extends React.Component {
 
   componentDidMount = () => {
     this.activateUpdateHomeProject()
+    this.setState({backgroundDirectory: getBackgroundResponsiveDirectory()})
   }
 
   componentWillUnmount = () =>
@@ -68,15 +71,15 @@ class HomeProjects extends React.Component {
 
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating,
-      bar1, bar2, bar3, bar4, bar5, backgroundPos, infosAnimation, bars } = this.state
+      bar1, bar2, bar3, bar4, bar5, backgroundPos, infosAnimation, bars,
+      backgroundDirectory } = this.state
     const { projectAppear, backgroundSize, openProject } = this.props
 
     const project = data.projects[current]
 
     const mask = this.getInfosMaskAppear()
 
-    // const backgroundPositionX = backgroundPos ? `calc(0px ${backgroundPos.xDir === 0 ? '+' : '-'} ${backgroundPos.x}px)` : 0
-    // const backgroundPositionY = backgroundPos ? `calc(0px ${backgroundPos.yDir === 0 ? '+' : '-'} ${backgroundPos.y}px)` : 0
+    if(!backgroundDirectory) return <div />
 
     return (
       <Wrapper >
@@ -131,7 +134,7 @@ class HomeProjects extends React.Component {
         {!projectAppear && <Social />}
         <div className='Background_wrapper'>
           <div className={`Background transitions ${projectAppear ? 'small' : ''}`}
-            style={{backgroundImage: `url('${project.picture.src}')`, ...this.getBackgroundStyle(backgroundSize)}} />
+            style={{backgroundImage: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg')`, ...this.getBackgroundStyle(backgroundSize)}} />
         </div>
         {projectAppear && <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100, width: 200}} onClick={() => this.closeProject()}>FERMER</div>}
         <div style={{zIndex: bars ? 9 : 0}} className='Bars'>
