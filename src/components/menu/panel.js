@@ -13,11 +13,12 @@ class MenuPanel extends React.Component {
   }
 
   render () {
-    const {open, toggleOpen, projects, current} = this.props
+    const {open, toggleOpen, projects, current, projectAppear} = this.props
     return (
       <div style={{
         visibility: open ? '' : 'hidden',
-        height: open ? '100%' : 0
+        height: open ? '100%' : 0,
+        display: projectAppear ? 'none' : 'block'
       }} className='Menu_panel transitions'>
         <style jsx>{`
           .Menu_panel {

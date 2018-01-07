@@ -136,7 +136,7 @@ class Menu extends React.Component {
   componentDidMount() {
     this.handleScrollMenu = throttle(this.onScrollMenu, 30, { 'trailing': false });
     window.addEventListener('scroll', this.handleScrollMenu);
-    this.setState({offsetTop: ReactDOM.findDOMNode(this).offsetTop})
+    this.setState({offsetTop: ReactDOM.findDOMNode(this).offsetTop+380})
   }
 
   componentWillUnmount() {

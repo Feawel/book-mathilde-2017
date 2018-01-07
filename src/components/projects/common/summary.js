@@ -22,6 +22,8 @@ class Summary extends React.Component {
     setTimeout(() => this.setState({hideDescription: false}), 1000)
   }
   componentWillUnmount() {
+    const { timeoutIds } = this.state
+    this.setState({ hideTitle: true, hideBaseline: true, hideDescription: true })
     timeoutIds.forEach(t => clearTimeout(t))
   }
   render() {

@@ -41,7 +41,9 @@ class App extends React.Component {
         key='menu'
         projects={data.projects}
         currentMenu={currentMenu}
+        projectAppear={projectAppear}
         toggleOpen={() => this.toggleOpenMenu()}
+        closeProject={() => this.closeProject()}
         open={openMenu}
         openAbout={openAbout} />,
       <HomeProject
