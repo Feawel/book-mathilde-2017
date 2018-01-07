@@ -36,7 +36,23 @@ class HomeProjects extends React.Component {
       bar3: false,
       bar4: false,
       bar5: false,
-      backgroundPos: null
+      backgroundPos: null,
+      maskDisappear: [
+        {pos: 0, alpha: 1},
+        {pos: 0.5, alpha: 1},
+        {pos: 0.5, alpha: 1},
+        {pos: 0.5, alpha: 1},
+        {pos: 1, alpha: 1}
+      ],
+      maskAppear: null,
+      infosAnimation: {
+        number: '',
+        line: '',
+        title: '',
+        baseline: '',
+        tags: '',
+        call: ''
+      }
     }
 
     this.updateProject = this.updateProject.bind(this)
@@ -51,10 +67,12 @@ class HomeProjects extends React.Component {
 
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating,
-      bar1, bar2, bar3, bar4, bar5, backgroundPos } = this.state
+      bar1, bar2, bar3, bar4, bar5, backgroundPos, infosAnimation } = this.state
     const { projectAppear, backgroundSize, openProject } = this.props
 
     const project = data.projects[current]
+
+    const mask = this.getInfosMaskAppear()
 
     // const backgroundPositionX = backgroundPos ? `calc(0px ${backgroundPos.xDir === 0 ? '+' : '-'} ${backgroundPos.x}px)` : 0
     // const backgroundPositionY = backgroundPos ? `calc(0px ${backgroundPos.yDir === 0 ? '+' : '-'} ${backgroundPos.y}px)` : 0
@@ -80,8 +98,12 @@ class HomeProjects extends React.Component {
           }
 
           .Bars {
+            position: absolute;
             width: 100%;
-            z-index: 100;
+            height: 100%;
+            z-index: 9;
+            top: 0;
+            left: 0;
           }
           .Bar {
             width: 20%;
@@ -111,7 +133,7 @@ class HomeProjects extends React.Component {
           <div className={`Background transitions ${projectAppear ? 'small' : ''}`}
             style={{backgroundImage: `url('${project.picture.src}')`, ...this.getBackgroundStyle(backgroundSize)}} />
         </div>
-        <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100}} onClick={() => this.closeProject()}>FERMER</div>
+        <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100, width: 200}} onClick={() => this.closeProject()}>FERMER</div>
         <div className='Bars'>
           <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
           <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />
@@ -119,9 +141,37 @@ class HomeProjects extends React.Component {
           <div className={`Bar Bar_4 ${bar4 ? 'active' : ''}`} />
           <div className={`Bar Bar_5 ${bar5 ? 'active' : ''}`} />
         </div>
-        {!projectAppear && <Infos openProject={() => this.openProject()} top={textTop} draw={draw} lineWidth={lineWidth} {...project}/>}
+        {!projectAppear && <Infos infosAnimation={infosAnimation} mask={mask} openProject={() => this.openProject()} top={textTop} draw={draw} lineWidth={lineWidth} {...project}/>}
       </Wrapper>
     )
+  }
+
+  getInfosMaskAppear() {
+    const { maskAppear } = this.state
+    if(!maskAppear) return ''
+    return `-webkit-gradient(
+      linear,
+      left center, right center,
+      color-stop(${maskAppear[0].pos},  rgba(0,0,0,${maskAppear[0].alpha})),
+      color-stop(${maskAppear[1].pos},  rgba(0,0,0,${maskAppear[1].alpha})),
+      color-stop(${maskAppear[2].pos},  rgba(0,0,0,${maskAppear[2].alpha})),
+      color-stop(${maskAppear[3].pos},  rgba(0,0,0,${maskAppear[3].alpha})),
+      color-stop(${maskAppear[4].pos},  rgba(0,0,0,${maskAppear[4].alpha}))
+    )`
+  }
+
+  appearByMask() {
+    const { maskAppear } = this.state
+    if(!maskAppear) return null
+    this.setState({
+      maskAppear: [
+        {pos: 0, alpha: maskAppear[0].alpha + 0.009},
+        {pos: Math.max(maskAppear[1].pos - 0.015, 0), alpha: maskAppear[1].alpha + 0.009},
+        {pos: 0.5, alpha: Math.max(maskAppear[2].alpha + 0.5, 0)},
+        {pos: Math.min(maskAppear[3].pos + 0.015, 1), alpha: maskAppear[3].alpha + 0.009},
+        {pos: 1, alpha: maskAppear[4].alpha + 0.009}
+      ]
+    })
   }
 
   getBackgroundStyle(size) {
@@ -163,7 +213,15 @@ class HomeProjects extends React.Component {
         animating: true,
         textTop: 100,
         lineWidth: 0,
-        draw: false
+        draw: false,
+        infosAnimation: {
+          number: 'Global_disappear',
+          line: 'Global_disappear',
+          title: 'Global_disappear',
+          baseline: 'Global_disappear',
+          tags: 'Global_disappear',
+          call: 'Global_disappear'
+        }
       }, () => setTimeout(() => {
         const current = this.nextProject(this.state.current)
         this.setState({
@@ -171,9 +229,38 @@ class HomeProjects extends React.Component {
           animating: false,
           textTop: 0,
           lineWidth: 40,
-          draw: true
+          draw: true,
+          maskAppear: [
+            {pos: 0, alpha: 0},
+            {pos: 0.5, alpha: 0},
+            {pos: 0.5, alpha: 0},
+            {pos: 0.5, alpha: 0},
+            {pos: 1, alpha: 0}
+          ],
+          infosAnimation: {
+            ...this.state.infosAnimation,
+            line: 'Global_disappear Global_width_0'
+          }
         })
         this.props.setCurrentProject(current)
+        setTimeout(() => this.setState({infosAnimation: {...this.state.infosAnimation, title: ''}}), 500)
+        setTimeout(() => {
+          const intervalId = setInterval(() => this.appearByMask(), 50)
+          this.setState({ intervalId })
+          setTimeout(() => {
+            clearInterval(this.state.intervalId)
+            this.setState({maskAppear: null})
+          }, 2000)
+        }, 800)
+        setTimeout(() => this.setState({
+          infosAnimation: {
+            number: '',
+            line: '',
+            title: '',
+            baseline: '',
+            tags: '',
+            call: ''
+          }}), 1200)
       }, 1500))
     }
   }

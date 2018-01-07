@@ -55,7 +55,7 @@ const data = {
         },
         {
           title: "Comete Exhibition",
-          problematic: "HOW TO GET A LARGE AUDIENCE TO GO TO A SCIENTIFIC EXHIBITION ?",
+          problematic: "HOW TO GET A LARGE AUDIENCE TO GO<br/> TO A SCIENTIFIC EXHIBITION ?",
           website: "http://www.expo-cometes.fr/",
           description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
           number: {

@@ -119,6 +119,13 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   -o-transition         : all .5s  ;
   transition          : all .5s  ;
 }
+.transitions_1s {
+  -webkit-transition      : all 1s  ;
+  -moz-transition       : all 1s  ;
+  -ms-transition        : all 1s  ;
+  -o-transition         : all 1s  ;
+  transition          : all 1s  ;
+}
 .hide {
   display: none;
 }
@@ -238,4 +245,15 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   to {
     top: calc(70% + 10px);
   }
+}
+
+
+/***** TRANSITIONS ******/
+
+.Global_disappear {
+  opacity: 0!important;
+}
+
+.Global_width_0 {
+  width: 0!important;
 }
