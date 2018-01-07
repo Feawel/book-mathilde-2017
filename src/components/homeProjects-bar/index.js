@@ -36,6 +36,7 @@ class HomeProjects extends React.Component {
       bar3: false,
       bar4: false,
       bar5: false,
+      bars: false,
       backgroundPos: null,
       maskDisappear: [
         {pos: 0, alpha: 1},
@@ -67,7 +68,7 @@ class HomeProjects extends React.Component {
 
   render () {
     const { current, width, opacity, textTop, lineWidth, draw, maskWidth, animating,
-      bar1, bar2, bar3, bar4, bar5, backgroundPos, infosAnimation } = this.state
+      bar1, bar2, bar3, bar4, bar5, backgroundPos, infosAnimation, bars } = this.state
     const { projectAppear, backgroundSize, openProject } = this.props
 
     const project = data.projects[current]
@@ -101,7 +102,6 @@ class HomeProjects extends React.Component {
             position: absolute;
             width: 100%;
             height: 100%;
-            z-index: 9;
             top: 0;
             left: 0;
           }
@@ -134,7 +134,7 @@ class HomeProjects extends React.Component {
             style={{backgroundImage: `url('${project.picture.src}')`, ...this.getBackgroundStyle(backgroundSize)}} />
         </div>
         <div style={{color: 'white', position: 'relative', top: 200, left: 200, zIndex:100, width: 200}} onClick={() => this.closeProject()}>FERMER</div>
-        <div className='Bars'>
+        <div style={{zIndex: bars ? 9 : 0}} className='Bars'>
           <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
           <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />
           <div className={`Bar Bar_3 ${bar3 ? 'active' : ''}`} />
@@ -197,6 +197,9 @@ class HomeProjects extends React.Component {
 
   updateProject () {
     if(!this.state.animating) {
+
+      /***** BARS RELATED ANIMATIONS *****/
+      this.setState({bars: true})
       setTimeout(() => this.setState({ bar1: true }), 100)
       setTimeout(() => this.setState({ bar2: true }), 200)
       setTimeout(() => this.setState({ bar3: true }), 300)
@@ -207,6 +210,10 @@ class HomeProjects extends React.Component {
       setTimeout(() => this.setState({ bar3: false }), 1800)
       setTimeout(() => this.setState({ bar4: false }), 1900)
       setTimeout(() => this.setState({ bar5: false }), 2000)
+      setTimeout(() => this.setState({ bars: false }), 3000)
+      /*********************************/
+
+
       this.setState({
         opacity: 0.5,
         width: 1,
@@ -270,7 +277,6 @@ class HomeProjects extends React.Component {
   }
 
   activateUpdateHomeProject() {
-    console.log('will activate udpate')
     this.updateWithDebounce = debounce(this.updateProject, 500, true)
     window.addEventListener('wheel', this.updateWithDebounce)
   }
