@@ -54,7 +54,7 @@ class App extends React.Component {
         closeProject={() => this.closeProject()}
         key='project' />,
       <div key='project-content'
-        style={{display: projectAppear ? 'none' : 'block', position: 'absolute', top: 0, left:0, width: '100%', height: '100%'}}>
+        style={{display: projectAppear ? 'block' : 'none', position: 'absolute', top: 0, left:0, width: '100%', height: '100%'}}>
         {content}
       </div>
     ]
