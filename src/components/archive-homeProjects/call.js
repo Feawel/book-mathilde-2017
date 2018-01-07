@@ -1,8 +1,8 @@
 // src/componentqs/about/index.js
 import DownUp from '../animations/downUp.js'
 
-const Call = ({ draw, top, openProject }) => (
-  <div onClick={(e) => openProject(e)} className='Call_wrapper'>
+const Call = ({ draw, top }) => (
+  <div className='Call_wrapper'>
   <style jsx>{`
     .Call_wrapper {
       width: 100%;

@@ -1,9 +1,8 @@
-import DownUp from '../animations/downUp.js'
 import Call from './call'
 
 // src/componentqs/homeProjects/infos.js
-const Infos = ({ title, problematic, gradient, number, tags, top, draw, lineWidth = 35 }) => (
-  <div className='Project_infos'>
+const Infos = ({ infosAnimation, mask, title, problematic, gradient, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
+  <div className='Project_infos transitions'>
     <style jsx>{`
       div {
         color: white;
@@ -22,8 +21,12 @@ const Infos = ({ title, problematic, gradient, number, tags, top, draw, lineWidt
         text-align: center;
         position: absolute;
         top: calc(50% - 202px);
-        z-index: 9;
+        z-index: 8;
         zoom: 1;
+        opacity: 1;
+      }
+      .Project_infos_title {
+        opacity: 1;
       }
       .Project_infos_problematic {
         font-size: 16px;
@@ -66,22 +69,21 @@ const Infos = ({ title, problematic, gradient, number, tags, top, draw, lineWidt
         }
       }
     `}</style>
-    <Number top={top} number={number} />
-    <div style={{ width: lineWidth}} className='Line transitions' />
-    <DownUp top={top}>
-      <h2 className='Project_infos_title'>{title}</h2>
-    </DownUp>
-    <DownUp top={top}>
-      <p style={{ color: gradient.dark }} className='Project_infos_problematic' dangerouslySetInnerHTML={{ __html: problematic }}/>
-    </DownUp>
-    <Tags top={top} />
-    <Call top={top} draw={draw} />
+    <Number number={number} infosAnimation={infosAnimation} />
+    <div style={{ width: lineWidth}} className={`Line transitions ${infosAnimation.line}`} />
+    <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title transitions_1s ${infosAnimation.title}`}>{title}</h2>
+    <p style={{ color: colors.light }} className={`Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
+    <Tags top={top} infosAnimation={infosAnimation} />
+    <Call openProject={() => openProject()} infosAnimation={infosAnimation} draw={null} />
   </div>
 )
 
-const Number = ({ top, number }) =>
-  <DownUp top={top}>
+const Number = ({ number, infosAnimation }) =>
+  <div className={`Tags transitions_1s ${infosAnimation.number}`}>
     <style jsx>{`
+      .Tags {
+        opacity: 1;
+      }
       object svg {
         fill: white;
       }
@@ -97,36 +99,35 @@ const Number = ({ top, number }) =>
       className='Project_infos_number'
       height={number.height}>
     </object>
-  </DownUp>
+  </div>
 
-const Tags = ({ top }) =>
-  <DownUp top={top}>
-    <div className='Project_infos_tags'>
-      <style jsx>{`
+const Tags = ({ infosAnimation }) =>
+  <div className={`Project_infos_tags transitions_1s ${infosAnimation.tags}`}>
+    <style jsx>{`
+      .Project_infos_tags {
+        font-family: 'Playfair Display';
+        font-weight: bold;
+        font-size: 12px;
+        opacity: 1;
+      }
+      @media screen and (max-width: 1023px) {
         .Project_infos_tags {
-          font-family: 'Playfair Display';
-          font-weight: bold;
-          font-size: 12px;
+          display: none;
         }
-        @media screen and (max-width: 1023px) {
-          .Project_infos_tags {
-            display: none;
-          }
-        }
-        .Tag {
-          font-style: italic;
-          letter-spacing: 0.05em;
-        }
-        .Dot {
-          padding: 0 20px;
-        }
-      `}</style>
-      <span className='Tag'>User Interface</span>
-      <span className='Dot'>•</span>
-      <span className='Tag'>User Experience</span>
-      <span className='Dot' >•</span>
-      <span className='Tag'>Illustration</span>
-    </div>
-  </DownUp>
+      }
+      .Tag {
+        font-style: italic;
+        letter-spacing: 0.05em;
+      }
+      .Dot {
+        padding: 0 20px;
+      }
+    `}</style>
+    <span className='Tag'>User Interface</span>
+    <span className='Dot'>•</span>
+    <span className='Tag'>User Experience</span>
+    <span className='Dot' >•</span>
+    <span className='Tag'>Illustration</span>
+  </div>
 
 export default Infos

@@ -1,13 +1,13 @@
 // src/componentqs/about/index.js
-import DownUp from '../animations/downUp.js'
 
-const Call = ({ draw, top }) => (
-  <div className='Call_wrapper'>
+const Call = ({ draw, infosAnimation, openProject }) => (
+  <div onClick={(e) => openProject(e)} className={`Call_wrapper transitions ${infosAnimation.call}`}>
   <style jsx>{`
     .Call_wrapper {
       width: 100%;
       text-align: center;
       z-index: 8;
+      opacity: 1;
       height: 40px;
       color: white;
       margin-top: 40px;
@@ -88,9 +88,7 @@ const Call = ({ draw, top }) => (
           fill='none'
         />
       </svg>
-      <DownUp top={top}>
-        <div className='Call_text'>View the case</div>
-      </DownUp>
+      <div className='Call_text'>View the case</div>
     </div>
   </div>
 )
