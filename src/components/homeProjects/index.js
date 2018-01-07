@@ -8,7 +8,6 @@ import Wrapper from './wrapper'
 import Background from './background'
 
 import Lines from '../columns'
-import BackgroundMask from '../animations/backgroundMask'
 
 // Static data
 import data from '../../../data'
