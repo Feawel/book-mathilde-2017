@@ -19,8 +19,8 @@ class VideoGames extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'Video games',
-      icon: '/static/projects/comete/2-menu/picto-video-game-grey.svg',
-      activeIcon: '/static/projects/comete/2-menu/picto-video-game.svg',
+      icon: '/static/projects/menu/grey-game.svg',
+      activeIcon: '/static/projects/menu/comete-game.png',
       element: ReactDOM.findDOMNode(this)
     })
   }

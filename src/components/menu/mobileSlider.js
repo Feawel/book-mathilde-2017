@@ -46,7 +46,7 @@ const Item = ({ project, index, current }) =>
       }
     `}</style>
     <div className='Picture'>
-      <img height='64' alt={project.picture.alt} src={project.picture.src} />
+      <img height='64' alt='picture in menu' src='' />
     </div>
     <div className='Infos'>
       <div className='Title'>{project.title}</div>

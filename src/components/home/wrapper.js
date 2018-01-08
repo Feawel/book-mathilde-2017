@@ -1,4 +1,4 @@
-// src/componentqs/homeProjects/wrapper.js
+// src/componentqs/home/wrapper.js
 const WhiteBorderWrapper = ({ children }) =>
   <div className='Container_white_borders'>
     <style jsx>{`

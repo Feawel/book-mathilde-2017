@@ -1,6 +1,6 @@
 import Call from './call'
 
-// src/componentqs/homeProjects/infos.js
+// src/componentqs/home/infos.js
 const Infos = ({ infosAnimation, mask, title, problematic, gradient, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
   <div className='Project_infos transitions'>
     <style jsx>{`

@@ -26,8 +26,8 @@ class VisualIdentity extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'Visual identity',
-      icon: '/static/projects/comete/2-menu/picto-ID-grey.svg',
-      activeIcon: '/static/projects/comete/2-menu/picto-ID.svg',
+      icon: '/static/projects/menu/grey-id.svg',
+      activeIcon: '/static/projects/menu/comete-id.png',
       element: ReactDOM.findDOMNode(this)
     })
   }

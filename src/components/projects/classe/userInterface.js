@@ -17,8 +17,8 @@ class UserInterface extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User interface',
-      icon: '/static/projects/classe/2-menu/picto-UI-grey.svg',
-      activeIcon: '/static/projects/classe/2-menu/picto-UI.png',
+      icon: '/static/projects/menu/grey-ui.svg',
+      activeIcon: '/static/projects/menu/classe-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
   }

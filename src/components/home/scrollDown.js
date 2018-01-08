@@ -1,4 +1,4 @@
-// src/componentqs/homeProjects/scrollDown.js
+// src/componentqs/home/scrollDown.js
 import Down_arrow from '../pictos/down_arrow'
 
 const ScrollDown = ({ onClick, move = false }) => (

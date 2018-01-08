@@ -29,10 +29,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          picture: {
-            alt: "Background picture for project #1 : numeric books",
-            src: "/static/home-projects/background/accueil-numerique-book-3000x1600px.jpg"
-          },
           color: '#00b3df',
           gradient: {
             dark: '#008db9',
@@ -84,10 +80,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
           color: '#8061e7',
           gradient: {
             dark: '#5d1bb0',
@@ -151,10 +143,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
           color: '#ee5b60',
           gradient: {
             dark: '#d6181f',
@@ -184,10 +172,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
           color: '#fb5e80',
           gradient: {
             dark: '#f04372',
@@ -237,10 +221,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
           color: '#2cd582',
           gradient: {
             dark: '#11998e',
@@ -278,10 +258,6 @@ const data = {
             height: 67
           },
           tags: ["User Interface", "User Experience", "Illustration"],
-          picture: {
-            alt: "Background picture for project #2 : comet exposition",
-            src: "/static/home-projects/background/accueil-comete-3000x1600px.jpg"
-          },
           color: '#579beb',
           gradient: {
             dark: '#5541d9',

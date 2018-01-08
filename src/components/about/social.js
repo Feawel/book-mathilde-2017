@@ -1,4 +1,4 @@
-// src/componentqs/homeProjects/social.js
+// src/componentqs/home/social.js
 const Social = () => (
   <div className='Social'>
    <style jsx>{`

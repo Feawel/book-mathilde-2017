@@ -15,8 +15,8 @@ class Illustrations extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'Illustration',
-      icon: '/static/projects/comete/2-menu/picto-illu-grey.svg',
-      activeIcon: '/static/projects/comete/2-menu/picto-illu.svg',
+      icon: '/static/projects/menu/grey-illu.svg',
+      activeIcon: '/static/projects/menu/comete-illu.png',
       element: ReactDOM.findDOMNode(this)
     })
   }

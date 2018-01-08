@@ -21,8 +21,8 @@ class UserExperience extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User experience',
-      icon: '/static/projects/apps/2-menu/picto-UX-grey.svg',
-      activeIcon: '/static/projects/apps/2-menu/picto-UX.svg',
+      icon: '/static/projects/menu/grey-ux.svg',
+      activeIcon: '/static/projects/menu/apps-ux.png',
       element: ReactDOM.findDOMNode(this)
     })
     const intervalId = setInterval(this.timer, 3000)
@@ -357,6 +357,7 @@ const Navbar = () =>
           height: 284px;
           width: 100%;
           background-color: #dbdfea;
+          text-align: center;
         }
         .Mockup {
           display: inline-block;

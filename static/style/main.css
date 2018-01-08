@@ -239,15 +239,13 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   animation-name: appearBottom;
 }
 
-/*@keyframes appearBottom {
-  from {
-    top: 130%;
-  }
-
-  to {
-    top: calc(70% - 55px);
-  }
-}*/
+.Global_project_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 /***** TRANSITIONS ******/

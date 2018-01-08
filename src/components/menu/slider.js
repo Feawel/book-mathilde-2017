@@ -32,7 +32,7 @@ const Item = ({ project, index, current }) =>
 
 const MenuSlider = ({ projects = [], current }) => [
   <Button key='button' gradient={projects[current].gradient} />,
-  <Picture key='picture' picture={projects[current].picture} />,
+  <Picture key='picture' picture={projects[current].key} />,
   <div key='slider' className='Menu_slider transitions' style={{top: `calc(50% - ${80 + 70*current}px)`}}>
     <style jsx>{`
       .Menu_slider {
