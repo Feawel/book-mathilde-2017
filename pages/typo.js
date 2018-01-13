@@ -9,6 +9,7 @@ const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
       <meta charset="UTF-8" />
+      <meta name="google-site-verification" content="ttfHHfD2dU8BUV7DXBlA_ywxnQV_HCocu40xBGLmtVI" />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name="robots" content="index,follow" />
 
