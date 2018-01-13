@@ -4,6 +4,8 @@ exports.exportPathMap = () => ({
   "/comete": { page: "/comete" },
   "/ornikar": { page: "/ornikar" },
   "/apps": { page: "/apps" },
-  "/classe": { page: "/classe" }
+  "/classe": { page: "/classe" },
+  "/ganesha": { page: "/ganesha" },
+  "/typo": { page: "/typo" }
   //"/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } },
 })
