@@ -27,6 +27,9 @@ const Page = ({ url }) =>
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="2396" />
+      <meta property="og:image:height" content="2375" />
       <meta property="og:description" content="Hello ! I am an artistic director specialized in the realization of website, application, and web communication, especially in start-up.  I like to explore other forms of creation, such as illustration, typographic creation, video games or interactive installations." />
       <meta property="og:locale" content="fr_FR" />
 
