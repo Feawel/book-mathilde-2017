@@ -4,20 +4,22 @@ import Classe from './classe'
 import Ganesha from './ganesha'
 import Ornikar from './ornikar'
 import Typo from './typo'
+import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
+  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../../utils/project'
 
 const Projects = ({current}) => {
   switch(current) {
-    case 0:
+    case APPS_KEY:
       return <Apps />
-    case 1:
+    case COMETE_KEY:
       return <Comete />
-    case 2:
+    case ORNIKAR_KEY:
       return <Ornikar />
-    case 3:
+    case CLASSE_KEY:
       return <Classe />
-    case 4:
+    case GANESHA_KEY:
       return <Ganesha />
-    case 5:
+    case TYPO_KEY:
       return <Typo />
   }
 }

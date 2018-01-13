@@ -15,20 +15,18 @@ import data from '../../../data'
 const getBackgroundStyle = size => {
   switch(size) {
     case 'large':
-      return {height: '100%', width:'100%', position: 'relative', top: 0, left: 0, transition: 'all 1s'}
+      return {height: '100%', width:'100%', position: 'relative', top: 0, left: 0, transition: 'all .5s'}
     case 'medium':
-      return {height: '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 2s'}
+      return {height: '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 1s'}
     case 'small':
-      return {height: '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all 1s'}
+      return {height: '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
   }
 }
 
 const HomeProjects = (props) => {
-  const { projectAppear, backgroundSize, openProject, animating, current,
+  const { projectAppear, backgroundSize, openProject, animating, project,
     bar1, bar2, bar3, bar4, bar5, bars, infosAnimation, backgroundDirectory,
     mask, openProjectAnimation } = props
-
-  const project = data.projects[current]
 
   if(!backgroundDirectory) return <div />
 

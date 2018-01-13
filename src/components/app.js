@@ -1,26 +1,30 @@
 // src/components/app.js
 import React from 'react'
 import data from '../../data'
+import Router from 'next/router'
+
 // Components
 import Menu from './menu'
 import About from './about'
-import HomeProject from './home'
+import Home from './home'
 import throttle from 'lodash/throttle'
 import Projects from './projects'
 
 import {enableScroll, disableScroll} from '../utils/scroll'
 import { getBackgroundResponsiveDirectory } from '../utils/responsive'
+import {getNextProjectKey, getPrevProjectKey, getProjectByKey} from '../utils/project'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      preventUpdateProject: false,
       openMenu: false,
       backgroundDirectory: null,
       animating: false,
       currentMenu: 0,
       openAbout: false,
-      currentProject: 0,
+      currentProject: 'apps',
       timeoutIds: [],
       backgroundSize: 'large',
       projectAppear: null,
@@ -38,7 +42,8 @@ class App extends React.Component {
         baseline: '',
         tags: '',
         call: ''
-      }
+      },
+      ...props.initialState
     }
 
     this.onScrollMenu = this.onScrollMenu.bind(this)
@@ -47,6 +52,8 @@ class App extends React.Component {
     this.thirdProjectAnimation = this.thirdProjectAnimation.bind(this)
     this.updateProject = this.updateProject.bind(this)
     this.getInfosMaskAppear = this.getInfosMaskAppear.bind(this)
+    this.displayTypoAnimation = this.displayTypoAnimation.bind(this)
+    this.hideTypoAnimation = this.hideTypoAnimation.bind(this)
   }
 
   render () {
@@ -54,6 +61,8 @@ class App extends React.Component {
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
       animating, openProjectAnimation } = this.state
     const content = projectAppear ? <Projects current={currentProject} /> : null
+    const project = getProjectByKey(currentProject)
+
     return [
       <About
         key='about'
@@ -63,13 +72,14 @@ class App extends React.Component {
       <Menu
         key='menu'
         projects={data.projects}
+        project={project}
         currentMenu={currentMenu}
         projectAppear={projectAppear}
         toggleOpen={() => this.toggleOpenMenu()}
         closeProject={() => this.closeProject()}
         open={openMenu}
         openAbout={openAbout} />,
-      <HomeProject
+      <Home
         openProject={() => this.openProject()}
         closeProject={() => this.closeProject()}
         mask={this.getInfosMaskAppear()}
@@ -77,7 +87,7 @@ class App extends React.Component {
         projectAppear={projectAppear}
         backgroundSize={backgroundSize}
         animating={animating}
-        current={currentProject}
+        project={project}
         infosAnimation={infosAnimation}
         backgroundDirectory={backgroundDirectory}
         openProjectAnimation={openProjectAnimation}
@@ -89,11 +99,19 @@ class App extends React.Component {
     ]
   }
 
+  componentWillMount() {
+    if(this.props.launchTypoAnimation) {
+      this.hideTypoAnimation()
+      setTimeout(() => this.displayTypoAnimation(null, true), 0)
+    }
+  }
+
   componentDidMount() {
     this.handleScrollMenu = throttle(this.onScrollMenu, 500, { 'trailing': false });
     window.addEventListener('wheel', this.handleScrollMenu);
     this.setState({backgroundDirectory: getBackgroundResponsiveDirectory()})
     this.activateUpdateHomeProject()
+
   }
 
   componentWillUnmount() {
@@ -156,26 +174,11 @@ class App extends React.Component {
   }
 
   /******* RELATED TO PROJECT CHANGE ON HOME *********/
-  nextProject(current) {
-    if(current === data.projects.length) {
-      return 0
-    } else {
-      return current+1
-    }
-  }
-
-  prevProject(current) {
-    if(current === 0) {
-      return data.projects.length - 1
-    } else {
-      return current-1
-    }
-  }
 
   openProject(){
     this.firstProjectAnimation()
     const { timeoutIds } = this.state
-    timeoutIds.push(setTimeout(this.secondProjectAnimation, 620))
+    timeoutIds.push(setTimeout(this.secondProjectAnimation, 400))
     this.setState({ timeoutIds })
     this.deactivateUpdateHomeProject()
   }
@@ -186,7 +189,7 @@ class App extends React.Component {
   }
 
   firstProjectAnimation() {
-    this.setState({  backgroundSize: 'small', openProjectAnimation: true },)
+    this.setState({  backgroundSize: 'small', openProjectAnimation: true })
   }
 
   secondProjectAnimation() {
@@ -194,7 +197,10 @@ class App extends React.Component {
   }
 
   thirdProjectAnimation() {
-    this.setState({ projectAppear: true, openProjectAnimation: false })
+    // this.setState({ projectAppear: true, openProjectAnimation: false })
+    const { currentProject } = this.state
+    setTimeout(() => Router.push({ pathname: `/${currentProject}` }), 600)
+
   }
 
   deactivateUpdateHomeProject() {
@@ -206,75 +212,90 @@ class App extends React.Component {
     window.addEventListener('wheel', this.updateWithDebounce);
   }
 
+  launchBarAnimation () {
+    this.setState({bars: true})
+    setTimeout(() => this.setState({ bar1: true }), 100)
+    setTimeout(() => this.setState({ bar2: true }), 200)
+    setTimeout(() => this.setState({ bar3: true }), 300)
+    setTimeout(() => this.setState({ bar4: true }), 400)
+    setTimeout(() => this.setState({ bar5: true }), 500)
+    setTimeout(() => this.setState({ bar1: false }), 1600)
+    setTimeout(() => this.setState({ bar2: false }), 1700)
+    setTimeout(() => this.setState({ bar3: false }), 1800)
+    setTimeout(() => this.setState({ bar4: false }), 1900)
+    setTimeout(() => this.setState({ bar5: false }), 2000)
+    setTimeout(() => this.setState({ bars: false }), 3000)
+  }
+
+  hideTypoAnimation () {
+    this.setState({
+      animating: true,
+      infosAnimation: {
+        number: 'Global_disappear',
+        line: 'Global_disappear',
+        title: 'Global_disappear',
+        baseline: 'Global_disappear',
+        tags: 'Global_disappear',
+        call: 'Global_disappear'
+      }
+    })
+  }
+
+  displayTypoAnimation (e, same) {
+    const { currentProject: changingProject, infosAnimation } = this.state
+    const currentProject = same
+      ? changingProject
+      : (e.deltaY > 0 ? getNextProjectKey(changingProject) : getPrevProjectKey(changingProject))
+
+    this.setState({
+      currentProject,
+      animating: false,
+      maskAppear: [
+        {pos: 0, alpha: 0},
+        {pos: 0.5, alpha: 0},
+        {pos: 0.5, alpha: 0},
+        {pos: 0.5, alpha: 0},
+        {pos: 1, alpha: 0}
+      ],
+      infosAnimation: {
+        ...infosAnimation,
+        line: 'Global_disappear Global_width_0'
+      }
+    })
+    setTimeout(() => this.setState({infosAnimation: {...infosAnimation, title: ''}}), 500)
+    setTimeout(() => {
+      const intervalId = setInterval(() => this.appearByMask(), 50)
+      this.setState({ intervalId })
+      setTimeout(() => {
+        clearInterval(this.state.intervalId)
+        this.setState({maskAppear: null})
+      }, 1000)
+    }, 800)
+    setTimeout(() => this.setState({
+      infosAnimation: {
+        number: '',
+        line: '',
+        title: '',
+        baseline: '',
+        tags: '',
+        call: ''
+      }}), 1200)
+  }
+
+  launchHomeContentAnimation (e, same = null) {
+    this.hideTypoAnimation()
+    setTimeout(() => {
+      this.displayTypoAnimation(e, same)
+    }, 1500)
+  }
+
   updateProject (e) {
-    const { animating, maskAppear, currentProject: changingProject, infosAnimation } = this.state
-    if(!animating && maskAppear === null) {
+    const { animating, maskAppear, preventUpdateProject } = this.state
+    if(!animating && maskAppear === null && !preventUpdateProject) {
 
-      /***** BARS RELATED ANIMATIONS *****/
-      this.setState({bars: true})
-      setTimeout(() => this.setState({ bar1: true }), 100)
-      setTimeout(() => this.setState({ bar2: true }), 200)
-      setTimeout(() => this.setState({ bar3: true }), 300)
-      setTimeout(() => this.setState({ bar4: true }), 400)
-      setTimeout(() => this.setState({ bar5: true }), 500)
-      setTimeout(() => this.setState({ bar1: false }), 1600)
-      setTimeout(() => this.setState({ bar2: false }), 1700)
-      setTimeout(() => this.setState({ bar3: false }), 1800)
-      setTimeout(() => this.setState({ bar4: false }), 1900)
-      setTimeout(() => this.setState({ bar5: false }), 2000)
-      setTimeout(() => this.setState({ bars: false }), 3000)
-      /*********************************/
+      this.launchBarAnimation()
 
-
-      this.setState({
-        animating: true,
-        infosAnimation: {
-          number: 'Global_disappear',
-          line: 'Global_disappear',
-          title: 'Global_disappear',
-          baseline: 'Global_disappear',
-          tags: 'Global_disappear',
-          call: 'Global_disappear'
-        }
-      }, () => setTimeout(() => {
-        const currentProject = e.deltaY > 0
-          ? this.nextProject(changingProject)
-          : this.prevProject(changingProject)
-
-        this.setState({
-          currentProject,
-          animating: false,
-          maskAppear: [
-            {pos: 0, alpha: 0},
-            {pos: 0.5, alpha: 0},
-            {pos: 0.5, alpha: 0},
-            {pos: 0.5, alpha: 0},
-            {pos: 1, alpha: 0}
-          ],
-          infosAnimation: {
-            ...infosAnimation,
-            line: 'Global_disappear Global_width_0'
-          }
-        })
-        setTimeout(() => this.setState({infosAnimation: {...infosAnimation, title: ''}}), 500)
-        setTimeout(() => {
-          const intervalId = setInterval(() => this.appearByMask(), 50)
-          this.setState({ intervalId })
-          setTimeout(() => {
-            clearInterval(this.state.intervalId)
-            this.setState({maskAppear: null})
-          }, 1000)
-        }, 800)
-        setTimeout(() => this.setState({
-          infosAnimation: {
-            number: '',
-            line: '',
-            title: '',
-            baseline: '',
-            tags: '',
-            call: ''
-          }}), 1200)
-      }, 1500))
+      this.launchHomeContentAnimation(e)
     }
   }
 }

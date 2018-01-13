@@ -1,4 +1,5 @@
 import React from 'react'
+import data from '../../../data'
 
 import Credits from './credits'
 import Contact from './contact'
@@ -13,7 +14,7 @@ class MenuPanel extends React.Component {
   }
 
   render () {
-    const {open, toggleOpen, projects, current, projectAppear} = this.props
+    const {open, toggleOpen, current, projectAppear} = this.props
     return (
       <div style={{
         visibility: open ? '' : 'hidden',
@@ -51,10 +52,10 @@ class MenuPanel extends React.Component {
         <Contact />
         <Credits />
         <div className='Slider'>
-          <Slider projects={projects} current={current} />
+          <Slider projects={data.projects} current={current} />
         </div>
         <div className='Mobile_slider'>
-          <MobileSlider open={open} projects={projects} current={current} />
+          <MobileSlider open={open} projects={data.projects} current={current} />
         </div>
       </div>
     )

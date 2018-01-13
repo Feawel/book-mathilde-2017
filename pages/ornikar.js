@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import App from '../src/components/app'
-import Ornikar from '../src/components/projects/ornikar'
-export default () => (
+
+import get from 'lodash/get'
+import { getProjectInitialStateByKey, ORNIKAR_KEY } from '../src/utils/project'
+
+const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
       <title>Book 🤔</title>
@@ -21,27 +24,11 @@ export default () => (
         height: 100%;
         margin: 0;
       }
-      .clickable:hover {
-        cursor: pointer;
-      }
-      .transitions {
-        -webkit-transition      : all .5s  ;
-        -moz-transition       : all .5s  ;
-        -ms-transition        : all .5s  ;
-        -o-transition         : all .5s  ;
-        transition          : all .5s  ;
-      }
-      .hide {
-        display: none;
-      }
-      .generic-text{
-        text-rendering: optimizelegibility;
-        font-smooth: always;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: rgba(0,0,0,0.8);
-      }
     `}</style>
-    <Ornikar />
+    <App initialState={getProjectInitialStateByKey(ORNIKAR_KEY, get(url, 'query.notransition'))} />
   </div>
 )
+
+
+
+export default Page

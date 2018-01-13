@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import App from '../src/components/app'
-import Comete from '../src/components/projects/comete'
-export default () => (
+
+import get from 'lodash/get'
+import { getProjectInitialStateByKey, COMETE_KEY } from '../src/utils/project'
+
+const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
       <title>Book 🤔</title>
@@ -22,6 +25,10 @@ export default () => (
         margin: 0;
       }
     `}</style>
-    <Comete />
+    <App initialState={getProjectInitialStateByKey(COMETE_KEY, get(url, 'query.notransition'))} />
   </div>
 )
+
+
+
+export default Page

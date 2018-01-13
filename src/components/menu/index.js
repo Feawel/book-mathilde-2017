@@ -4,11 +4,11 @@ import MenuLogo from './logo'
 import MenuCloseProject from './closeProject'
 
 
-const Menu = ({ projectAppear, toggleOpen, open, openAbout, projects, currentMenu, closeProject }) =>
+const Menu = ({ projectAppear, toggleOpen, open, openAbout, currentMenu, closeProject, project }) =>
   [
-    <MenuPanel key='panel' projectAppear={projectAppear} toggleOpen={() => toggleOpen()} open={open} projects={projects} current={currentMenu} />,
+    <MenuPanel key='panel' projectAppear={projectAppear} toggleOpen={() => toggleOpen()} open={open} current={currentMenu} />,
     <MenuLogo key='logo' projectAppear={projectAppear} toggleOpen={() => toggleOpen()} open={open} openAbout={openAbout} />,
-    <MenuCloseProject key='close-project' closeProject={closeProject} projectAppear={projectAppear} />
+    <MenuCloseProject key='close-project' project={project} closeProject={closeProject} projectAppear={projectAppear} />
   ]
 
 

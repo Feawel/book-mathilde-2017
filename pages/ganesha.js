@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Ganesha from '../src/components/projects/ganesha'
-export default () => (
+import App from '../src/components/app'
+
+import get from 'lodash/get'
+import { getProjectInitialStateByKey, GANESHA_KEY } from '../src/utils/project'
+
+const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
       <title>Book 🤔</title>
@@ -21,6 +25,10 @@ export default () => (
         margin: 0;
       }
     `}</style>
-    <Ganesha />
+    <App initialState={getProjectInitialStateByKey(GANESHA_KEY, get(url, 'query.notransition'))} />
   </div>
 )
+
+
+
+export default Page

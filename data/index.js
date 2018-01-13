@@ -1,7 +1,10 @@
+import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
+  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../src/utils/project'
+
 const data = {
     projects: [
         {
-          key: "apps",
+          key: APPS_KEY,
           title: "Numeric books",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
@@ -52,7 +55,7 @@ const data = {
         },
         {
           title: "Comete Exhibition",
-          key: "comete",
+          key: COMETE_KEY,
           problematic: "HOW TO GET A LARGE AUDIENCE TO GO<br/> TO A SCIENTIFIC EXHIBITION ?",
           website: "http://www.expo-cometes.fr/",
           description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
@@ -103,7 +106,7 @@ const data = {
         },
         {
           title: "Ornikar’s advertisings",
-          key: "ornikar",
+          key: ORNIKAR_KEY,
           problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
           description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
           header: {
@@ -152,7 +155,7 @@ const data = {
         },
         {
           title: "Classe numérique",
-          key: "classe",
+          key: CLASSE_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           number: {
             index: 4,
@@ -201,7 +204,7 @@ const data = {
         },
         {
           title: "Ganesha Drawing",
-          key: "ganesha",
+          key: GANESHA_KEY,
           problematic: "EXPERIMENTAL DRAW",
           number: {
             index: 3,
@@ -250,7 +253,7 @@ const data = {
         },
         {
           title: "Typography project",
-          key: "typo",
+          key: TYPO_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
           description: "Lelivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers. To increase their notoriety and reinforce the community of teachers, I created for them a series of ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. Here is a selection of three of them",
           number: {
