@@ -6,7 +6,6 @@ import App from '../src/components/app'
 const Page = ({ url }) =>
   <div className='generic-text'>
     <Head>
-      <title>Book 🤔</title>
       <meta charset="UTF-8" />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name="robots" content="index,follow" />
