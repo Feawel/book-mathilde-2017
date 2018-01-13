@@ -1,7 +1,7 @@
 import Call from './call'
 
 // src/componentqs/home/infos.js
-const Infos = ({ infosAnimation, mask, title, problematic, gradient, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
+const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
   <div className='Project_infos transitions'>
     <style jsx>{`
       div {
@@ -40,7 +40,6 @@ const Infos = ({ infosAnimation, mask, title, problematic, gradient, number, tag
       }
       .Line {
         height: 4px;
-        background-color: #94eced;
         margin: 37px auto 20px auto;
       }
       @media screen and (max-width: 1023px) {
@@ -70,7 +69,7 @@ const Infos = ({ infosAnimation, mask, title, problematic, gradient, number, tag
       }
     `}</style>
     <Number number={number} infosAnimation={infosAnimation} />
-    <div style={{ width: lineWidth}} className={`Line transitions ${infosAnimation.line}`} />
+    <div style={{ width: lineWidth, backgroundColor: colors.light}} className={`Line transitions ${infosAnimation.line}`} />
     <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title transitions_1s ${infosAnimation.title}`}>{title}</h2>
     <p style={{ color: colors.light }} className={`Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
     <Tags top={top} infosAnimation={infosAnimation} />

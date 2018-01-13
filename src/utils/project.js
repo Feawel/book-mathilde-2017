@@ -26,7 +26,7 @@ export const getPrevProjectKey = key => {
 export const getProjectByKey = key =>
   find(data.projects, p => p.key === key)
 
-const getIndexByProjectKey = key =>
+export const getIndexByProjectKey = key =>
   findIndex(data.projects, p => p.key === key)
 
 export const APPS_KEY = 'apps'

@@ -12,7 +12,7 @@ import Projects from './projects'
 
 import {enableScroll, disableScroll} from '../utils/scroll'
 import { getBackgroundResponsiveDirectory } from '../utils/responsive'
-import {getNextProjectKey, getPrevProjectKey, getProjectByKey} from '../utils/project'
+import {getNextProjectKey, getPrevProjectKey, getProjectByKey, getIndexByProjectKey} from '../utils/project'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +22,6 @@ class App extends React.Component {
       openMenu: false,
       backgroundDirectory: null,
       animating: false,
-      currentMenu: 0,
       openAbout: false,
       currentProject: 'apps',
       timeoutIds: [],
@@ -57,12 +56,11 @@ class App extends React.Component {
   }
 
   render () {
-    const { openMenu, openAbout, currentMenu, currentProject, projectAppear, backgroundSize,
+    const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
       animating, openProjectAnimation } = this.state
     const content = projectAppear ? <Projects current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
-
     return [
       <About
         key='about'
@@ -73,10 +71,11 @@ class App extends React.Component {
         key='menu'
         projects={data.projects}
         project={project}
-        currentMenu={currentMenu}
+        currentMenu={getIndexByProjectKey(currentProject)}
         projectAppear={projectAppear}
         toggleOpen={() => this.toggleOpenMenu()}
         closeProject={() => this.closeProject()}
+        setProject={project => this.setProject(project)}
         open={openMenu}
         openAbout={openAbout} />,
       <Home
@@ -107,34 +106,55 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.handleScrollMenu = throttle(this.onScrollMenu, 500, { 'trailing': false });
-    window.addEventListener('wheel', this.handleScrollMenu);
     this.setState({backgroundDirectory: getBackgroundResponsiveDirectory()})
     this.activateUpdateHomeProject()
+  }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.initialState) {
+      this.setState({...this.state, ...nextProps.initialState})
+    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('wheel', this.handleScrollMenu);
+    this.deactivateScrollMenu()
     this.deactivateUpdateHomeProject()
     const { timeoutIds } = this.state
     timeoutIds.forEach(timeoutId => clearTimeout(timeoutId))
   }
 
   onScrollMenu (e) {
-    const {currentMenu} = this.state
+    disableScroll()
+    const {currentProject} = this.state
     if(e.deltaY > 0) {
       this.setState({
-        currentMenu: currentMenu === data.projects.length - 1 ? currentMenu : currentMenu + 1
+        currentProject: getNextProjectKey(currentProject)
       })
+      setTimeout(() => enableScroll(), 800)
     } else {
       this.setState({
-        currentMenu: currentMenu === 0 ? 0 : currentMenu - 1
+        currentProject: getPrevProjectKey(currentProject)
       })
+      setTimeout(() => enableScroll(), 800)
     }
   }
 
+  activateScrollMenu() {
+    this.handleScrollMenu = throttle(this.onScrollMenu, 1000, {trailing: false});
+    window.addEventListener('wheel', this.handleScrollMenu);
+  }
+  deactivateScrollMenu() {
+    window.removeEventListener('wheel', this.handleScrollMenu);
+  }
+
   toggleOpenMenu () {
+    if(this.state.openMenu) {
+      this.deactivateScrollMenu()
+      this.activateUpdateHomeProject()
+    } else {
+      this.activateScrollMenu()
+      this.deactivateUpdateHomeProject()
+    }
     this.setState({openMenu: !this.state.openMenu})
   }
   toggleOpenAbout () {
@@ -244,8 +264,8 @@ class App extends React.Component {
   displayTypoAnimation (e, same) {
     const { currentProject: changingProject, infosAnimation } = this.state
     const currentProject = same
-      ? changingProject
-      : (e.deltaY > 0 ? getNextProjectKey(changingProject) : getPrevProjectKey(changingProject))
+        ? changingProject
+        : (e.deltaY > 0 ? getNextProjectKey(changingProject) : getPrevProjectKey(changingProject))
 
     this.setState({
       currentProject,
@@ -280,6 +300,10 @@ class App extends React.Component {
         tags: '',
         call: ''
       }}), 1200)
+  }
+
+  setProject(project) {
+    this.setState({currentProject: project})
   }
 
   launchHomeContentAnimation (e, same = null) {

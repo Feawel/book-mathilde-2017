@@ -1,63 +1,66 @@
 // src/componentqs/menu/slider.js
+import Link from 'next/link'
 
 const Item = ({ project, index, current }) =>
-   <div className='Item'>
-    <style jsx>{`
-      .Item {
-        width: 100%;
-        height: 64px;
-        color: white;
-        margin: 25px 0;
-      }
-      .Picture {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: inline-block;
-        margin-right: 20px;
-      }
-      .Infos {
-        width: calc(100% - 150px);
-        max-width: 400px;
-        font-family: 'Playfair Display';
-        display: inline-block;
-        vertical-align: top;
-        position: relative;
-        top: 5px;
-      }
-      .Title {
-        font-size: 18px;
-        font-weight: 900;
-        line-height: 22px;
-      }
-      .Tags {
-        font-weight: 700;
-        line-height: 18px;
-        font-size: 10px;
-        font-style: italic;
-      }
-      .Arrow {
-        display: inline-block;
-        font-size: 30px;
-        vertical-align: top;
-        position: relative;
-        left: 20px;
-      }
-    `}</style>
-    <div className='Picture'>
-      <img height='64' alt='picture in menu' src='' />
+  <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
+    <div className='Item'>
+      <style jsx>{`
+        .Item {
+          width: 100%;
+          height: 64px;
+          color: white;
+          margin: 25px 0;
+        }
+        .Picture {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: inline-block;
+          margin-right: 20px;
+        }
+        .Infos {
+          width: calc(100% - 150px);
+          max-width: 400px;
+          font-family: 'Playfair Display';
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+          top: 5px;
+        }
+        .Title {
+          font-size: 18px;
+          font-weight: 900;
+          line-height: 22px;
+        }
+        .Tags {
+          font-weight: 700;
+          line-height: 18px;
+          font-size: 10px;
+          font-style: italic;
+        }
+        .Arrow {
+          display: inline-block;
+          font-size: 30px;
+          vertical-align: top;
+          position: relative;
+          left: 20px;
+        }
+      `}</style>
+      <div className='Picture'>
+        <img height='64' alt='picture in menu' src='' />
+      </div>
+      <div className='Infos'>
+        <div className='Title'>{project.title}</div>
+        <div className='Tags' style={{color: project.colors.primary}}>{project.tags.map(tag => tag.title).join(' • ')}</div>
+      </div>
+      <div className='Arrow'>
+      ›
+      </div>
     </div>
-    <div className='Infos'>
-      <div className='Title'>{project.title}</div>
-      <div className='Tags' style={{color: project.color}}>{project.tags.map(tag => tag.title).join(' • ')}</div>
-    </div>
-    <div className='Arrow'>
-    ›
-    </div>
-   </div>
+  </Link>
 
-const MobileSlider = ({ projects = [], current, open }) =>
+const MobileSlider = ({ projects = [], current, open, toggleOpen }) =>
   <div className='Menu_slider transitions'>
     <style jsx>{`
       .Menu_slider {

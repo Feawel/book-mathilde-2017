@@ -13,7 +13,9 @@ const data = {
             height: 60
           },
           colors : {
-            gradient: 'linear-gradient(-27deg, #008d89 0%, #6ad7d9 100%)',
+            gradient: 'linear-gradient(-220deg, #008d89 0%, #6ad7d9 100%)',
+            darkGradient: '#008d89',
+            lightGradient: '#6ad7d9',
             typo: '#004459',
             primary: '#00B3DF',
             light: '#94ECED'
@@ -33,11 +35,6 @@ const data = {
             }
           ],
           color: '#00b3df',
-          gradient: {
-            dark: '#008db9',
-            light: '#6ad7d9',
-            base: 'background-image: linear-gradient(-27deg, #008db9 0%, #6ad7d9 100%)'
-          },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
           year: 2015,
@@ -65,6 +62,8 @@ const data = {
           },
           colors : {
             gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
+            darkGradient: '#4dd0ff',
+            lightGradient: '#5d1bb0',
             typo: '#221061',
             primary: '#8061E7',
             light: '#79CAFF'
@@ -83,12 +82,6 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          color: '#8061e7',
-          gradient: {
-            dark: '#5d1bb0',
-            light: '#4dd0ff',
-            base: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)'
-          },
           customer: 'The Air and Space museum <br/>of Paris',
           role: 'Directrice artistique',
           year: 2015,
@@ -109,15 +102,13 @@ const data = {
           key: ORNIKAR_KEY,
           problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
           description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
-          header: {
-            illustration: '/static/projects/ornikar/ornikar_header.png',
-            gradient: 'linear-gradient(-27deg, #d6181f 0%, #f5c253 100%)'
-          },
           colors : {
-            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
-            typo: '#221061',
-            primary: '#8061E7',
-            light: '#79CAFF'
+            gradient: 'linear-gradient(-220deg, #d6181f 0%, #f5c253 100%)',
+            darkGradient: '#d6181f',
+            lightGradient: '#f5c253',
+            typo: '#260608',
+            primary: '#EE5B60',
+            light: '#FFD98F'
           },
           customer: 'Ornikar',
           role: 'Directrice artistique',
@@ -146,17 +137,13 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          color: '#ee5b60',
-          gradient: {
-            dark: '#d6181f',
-            light: '#f5c253'
-          },
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "Classe numérique",
           key: CLASSE_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
+          description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
           number: {
             index: 4,
             height: 67
@@ -175,17 +162,13 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          color: '#fb5e80',
-          gradient: {
-            dark: '#f04372',
-            light: '#ffd69c',
-            base: 'linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
-          },
           colors : {
-            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
-            typo: '#221061',
-            primary: '#8061E7',
-            light: '#79CAFF'
+            gradient: 'linear-gradient(-220deg, #f04372 0%, #ffd69c 100%)',
+            darkGradient: '#f04372',
+            lightGradient: '#ffd69c',
+            typo: '#1a2432',
+            primary: '#fb5e80',
+            light: '#ffcfae'
           },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
@@ -224,17 +207,13 @@ const data = {
               icon: "picto-illu"
             }
           ],
-          color: '#2cd582',
-          gradient: {
-            dark: '#11998e',
-            light: '#38ef7d',
-            base: 'linear-gradient(-27deg, #11998e 0%, #38ef7d 100%)'
-          },
           colors : {
-            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
-            typo: '#221061',
-            primary: '#8061E7',
-            light: '#79CAFF'
+            gradient: 'linear-gradient(-220deg, #11998E 0%, #38EF7D 100%)',
+            darkGradient: '#11998E',
+            lightGradient: '#38EF7D',
+            typo: '#0F261B',
+            primary: '#2CD582',
+            light: '#CCFFE0'
           },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
@@ -261,17 +240,13 @@ const data = {
             height: 67
           },
           tags: ["User Interface", "User Experience", "Illustration"],
-          color: '#579beb',
-          gradient: {
-            dark: '#5541d9',
-            light: '#59fcff',
-            base: 'linear-gradient(-27deg, #5541d9 0%, #59fcff 100%)'
-          },
           colors : {
-            gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
-            typo: '#221061',
-            primary: '#8061E7',
-            light: '#79CAFF'
+            gradient: 'linear-gradient(-220deg, #5541D9 0%, #59FCFF 100%)',
+            darkGradient: '#5541D9',
+            lightGradient: '#59FCFF',
+            typo: '#0A284C',
+            primary: '#579BEB',
+            light: '#99FCFF'
           },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
@@ -288,15 +263,7 @@ const data = {
           ],
           linkedProjects: [0, 1, 2, 3, 4]
         }
-    ],
-    animations: {
-      switchProjects: {
-        frames: [1, '2%', '3%', '4%', '5%', '6%', '7%', '8%', '9%', '10%', '11%', '12%', '13%', '14%', '15%', '16%', '17%', '18%', '19%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '20%', '19%', '18%', '17%', '16%', '15%', '14%', '13%', '12%', '11%', '10%', '9%', '8%', '7%', '6%', '5%', '4%', '3%', '2%', 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        //frames: [1, '2%', '3%', '4%', '5%', '6%', '7%', '8%', '9%', '10%', '11%', '12%', '13%', '14%', '15%', '16%', '17%', '18%', '19%', '20%', '21%', '22%', '23%', '24%', '25%', '26%', '27%', '28%', '29%', '30%', '31%', '32%', '33%', '34%', '35%', '36%', '37%', '38%', '39%', '40%', '41%', '42%', '43%', '44%', '45%', '46%', '47%', '48%', '49%', '50%', '50%', '50%', '50%', '50%', '50%', '50%', '50%', '50%', '50%'],
-        opacityFrames: [0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.975, 0.95, 0.925, 0.9, 0.875, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.7, 0.675, 0.65, 0.625, 0.6, 0.575, 0.55, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
-        maskFrames: ['1%', '2%', '3%', '4%', '5%', '6%', '7%', '8%', '9%', '10%', '11%', '12%', '13%', '14%', '15%', '16%', '17%', '18%', '19%', '20%'],
-      }
-    }
+    ]
 }
 
 export const skills = [

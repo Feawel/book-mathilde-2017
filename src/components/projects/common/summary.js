@@ -121,7 +121,7 @@ class Summary extends React.Component {
               <TitleSecondary
                 content={project.problematic}
                 style={{
-                  color: project.color,
+                  color: project.colors.primary,
                   fontSize: 23,
                   marginTop: 20,
                   maxWidth: 445
@@ -185,7 +185,7 @@ const FooterMobile = ({ project }) =>
         width: 16px;
         height: 2px;
         display: inline-block;
-        background-image: ${project.gradient.base};
+        background-image: ${project.colors.gradient};
         margin-right: 10px;
         position: relative;
         top: -3px;
@@ -247,7 +247,7 @@ const FooterMobile = ({ project }) =>
     <div className='Right'>
       <div className='Mobile_stats'>
         <div className='Line' /> <div className='Label'>{project.stats[0].label}</div>
-        <div className='Value_stat' style={{color: project.color }}>{project.stats[0].value}</div>
+        <div className='Value_stat' style={{color: project.colors.primary }}>{project.stats[0].value}</div>
       </div>
     </div>
   </div>
@@ -268,7 +268,7 @@ const FooterDesktop = ({ project }) =>
         <Meta label='YEAR' value={project.year} />
       </div>
       <div className='Stats'>
-        {project.stats.map((stat, i) => <Stat key={i} color={project.color} label={stat.label} value={stat.value} />)}
+        {project.stats.map((stat, i) => <Stat key={i} color={project.colors.primary} label={stat.label} value={stat.value} />)}
       </div>
     </div>
   </div>

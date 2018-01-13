@@ -54,8 +54,11 @@ const Page = ({ url }) =>
         margin: 0;
       }
     `}</style>
+
     <App launchTypoAnimation={get(url, 'query.typo')} initialState={{
       currentProject: get(url, 'query.project', 'apps'),
+      openMenu: false,
+      openAbout: false
     }} />
   </div>
 
