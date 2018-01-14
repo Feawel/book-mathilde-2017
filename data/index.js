@@ -7,7 +7,7 @@ const data = {
           key: APPS_KEY,
           title: "Numeric books",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
+          description: "Lelivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online.<br /> In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 1,
             height: 60
@@ -325,6 +325,16 @@ export const ads = {
     thirdPic: '/static/projects/ornikar/desktop/youngs-third.jpg'
   }
 }
+
+export const SHARE_TWITTER = (url, content) =>
+  `https://twitter.com/intent/tweet?url=${url}&text=${content}`
+
+export const SHARE_LINKEDIN = (url) =>
+  `http://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=https://www.matserra.design.com`
+
+export const RS_TWITTER = 'https://twitter.com/mathilde__serra'
+export const RS_LINKEDIN = 'https://www.linkedin.com/in/mathilde-serra-37946aa9/'
+export const RS_BEHANCE = 'https://www.behance.net/mathildese8e32'
 
 
 

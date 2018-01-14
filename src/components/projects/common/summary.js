@@ -70,7 +70,7 @@ class Summary extends React.Component {
           }
           .Inner_left_section {
             margin: auto;
-            width: calc(100% - 200px);
+            width: calc(100% - 100px);
           }
           .Inner_right_section {
             margin: auto;
@@ -82,6 +82,7 @@ class Summary extends React.Component {
             font-size: 10px;
             line-height: 27px;
             color: #abb0bc;
+            letter-spacing: 1.1px;
           }
           .Social_container {
             margin-bottom: 40px;
@@ -114,9 +115,8 @@ class Summary extends React.Component {
                 style={{
                   fontSize: 74,
                   color: project.colors.typo,
-                  marginTop: 80,
-                  marginBottom: 20,
-                  maxWidth: 420
+                  marginTop: 95,
+                  marginBottom: 20
                 }}/>
               </div>
             <div className={`Container Transitions ${hideBaseline ? 'Disappear': ''}`}>
@@ -124,9 +124,9 @@ class Summary extends React.Component {
                 content={project.problematic}
                 style={{
                   color: project.colors.primary,
-                  fontSize: 23,
-                  marginTop: 20,
-                  maxWidth: 445
+                  fontSize: 24,
+                  lineHeight: '36px',
+                  marginTop: 20
                 }}/>
             </div>
             <div className='Social_container'>
@@ -139,9 +139,8 @@ class Summary extends React.Component {
         </div>
         <div className='Summary_section'>
           <div className='Inner_right_section'>
-            <div className={`Description_title Transitions Container ${hideSubtitle ? 'Disappear' : ''}`}>THE PROJECT</div>
+            <div className={`Description_title Transitions Container ${hideSubtitle ? 'Disappear' : ''}`}>THE QUESTION</div>
             <div className={`Container Transitions ${hideDescription ? 'Disappear' : ''}`}>
-              {console.log('project', project, project.description)}
               <Description
                 content={project.description}
                 style={{
@@ -271,7 +270,7 @@ const FooterDesktop = ({ project }) =>
         {project.year && <Meta label='YEAR' value={project.year} />}
       </div>
       <div className='Stats'>
-        {project.stats && project.stats.map((stat, i) => <Stat key={i} color={project.colors.primary} label={stat.label} value={stat.value} />)}
+        {project.stats && project.stats.map((stat, i) => <Stat key={i} colors={project.colors} label={stat.label} value={stat.value} />)}
       </div>
     </div>
   </div>
@@ -306,18 +305,16 @@ const Meta = ({label, value}) =>
     <div className='Value' dangerouslySetInnerHTML={{__html: String(value)}} />
   </div>
 
-const Stat = ({ label, value, color }) =>
+const Stat = ({ label, value, colors }) =>
   <div className='Stat'>
     <style jsx>{`
       .Stat {
         display: inline-block;
-        margin-top: 40px;
+        margin-top: 32px;
         width: 40%;
         vertical-align: top;
       }
       .Label {
-        font-family: Futura;
-        font-weight: bold;
         font-size: 10px;
         line-height: 14px;
         color: #abb0bc;
@@ -326,13 +323,16 @@ const Stat = ({ label, value, color }) =>
         font-family: 'Playfair Display';
         font-weight: bold;
         font-size: 72px;
-        line-height: 24px;
-        height: 54px;
-        margin-top: 35px;
+        height: 84px;
+        margin-top: 20px;
+        vertical-align: bottom;
+        background: linear-gradient(330deg, ${colors.darkGradient} 0%, ${colors.primary} 50%, ${colors.lightGradient} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     `}</style>
-    <div className='Label' dangerouslySetInnerHTML={{__html: label}} />
-    <div style={{color}} className='Value'>{value}</div>
+    <div className='Label futuralt_bold' dangerouslySetInnerHTML={{__html: label}} />
+    <div style={{colors: colors.primary}} className='Value'>{value}</div>
   </div>
 
 export default Summary

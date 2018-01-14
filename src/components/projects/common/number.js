@@ -2,17 +2,15 @@
 import React from 'react'
 
 const Number = ({content, color, borderBackground}) =>
-  <div className='Number_container' style={{color}}>
+  <div className='Number_container playfairdisplay_black' style={{color}}>
     <style jsx>{`
       .Number_container {
-        font-family: 'Playfair Display';
-        font-weight: 900;
         font-size: 48px;
-        line-height: 32px;
+        line-height: 29px;
         text-transform: uppercase;
         height: 65px;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 50px;
         position: relative;
         text-align: center;
       }

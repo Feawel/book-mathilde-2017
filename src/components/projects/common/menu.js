@@ -44,13 +44,12 @@ class Menu extends React.Component {
             width: 170px;
             display: inline-block;
             vertical-align: top;
-            font-family: Futura;
-            font-weight: bold;
             font-size: 10px;
             color: #abb0bc;
             text-transform: uppercase;
             position: relative;
-            top: 20px;
+            top: 14px;
+            letter-spacing: 1.1px;
           }
           .Menu_item.active {
             color: ${color};
@@ -66,7 +65,7 @@ class Menu extends React.Component {
           .Icon {
             position: relative;
             top: 4px;
-            margin-right: 12px;
+            margin-right: 16px;
           }
           .Menu_inner {
             height: 100%;
@@ -91,7 +90,7 @@ class Menu extends React.Component {
           <div className='Scroll'>
             {
               sections.map((item, i) =>
-                <div onClick={() => this.changeCurrent(i)} key={i} className={`Menu_item transitions clickable ${current === i ? 'active' : ''}`}>
+                <div onClick={() => this.changeCurrent(i)} key={i} className={`Menu_item futuralt_bold transitions clickable ${current === i ? 'active' : ''}`}>
                   <img width='18' src={current === i ? item.activeIcon : item.icon} className='Icon' alt={`Icon for ${item.title}`}/>
                   <span className='Text'>{item.title}</span>
                 </div>

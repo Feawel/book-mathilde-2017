@@ -48,7 +48,7 @@ class UserExperience extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 0;
-            height: 2700px;
+            height: 2800px;
           }
           @media screen and (max-width: 750px) {
             .User_experience {
@@ -88,7 +88,7 @@ const Architecture = ({ timer }) =>
         margin: auto;
         text-align: center;
         z-index: 1;
-        padding-bottom: 100px;
+        padding-bottom: 85px;
       }
       .Slider {
         width: 100%;
@@ -106,9 +106,10 @@ const Architecture = ({ timer }) =>
       }
       .Text {
         position: absolute;
-        bottom: -70px;
+        bottom: -80px;
         width: 260px;
         text-align: center;
+        letter-spacing: 1.05px;
       }
       .Line {
         width: 1px;
@@ -134,7 +135,7 @@ const Architecture = ({ timer }) =>
       .Ipad {
         width: 308px;
         position: absolute;
-        top: 123px;
+        top: 118px;
         z-index: 10;
         display: block;
       }
@@ -153,10 +154,10 @@ const Architecture = ({ timer }) =>
         }
       }
     `}</style>
-    <TitleSecondary content='Architecture' style={{color: '#004459', margin: '80px auto 0 auto'}} />
+    <TitleSecondary content='Architecture' style={{color: '#004459', margin: '65px auto 0 auto', letterSpacing: 1.05}} />
     <SubtitlePart
       content='How does it work ?'
-      style={{color: '#abb0bc', margin: '25px 0 60px 0'}} />
+      style={{color: '#abb0bc', margin: '5px 0 75px 0', letterSpacing: 1.05}} />
     <div className='Slider'>
       <img
         className={`Screen Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}
@@ -324,9 +325,11 @@ const Navbar = () =>
       .Illustration {
         display: inline-block;
         background: url('/static/projects/apps/3-user-experience/navbar-illu.png');
-        height: 644px;
-        width: 872px;
-        background-size: contain;
+        height: 770px;
+        width: 1151px;
+        background-size: cover;
+        position: relative;
+        top: -45px;
       }
       .Infos {
         position: absolute;
@@ -385,10 +388,10 @@ const Navbar = () =>
     `}</style>
     <div className='Illustration' />
     <div className='Infos'>
-      <TitleSecondary content='Navbar' style={{color: '#004459', margin: '40px auto 0 auto'}} />
+      <TitleSecondary content='Navbar' style={{color: '#004459', margin: '40px auto 0 auto', letterSpacing: 1.05}} />
       <SubtitlePart
         content='iOS version'
-        style={{color: '#abb0bc'}} />
+        style={{color: '#abb0bc', margin: '5px 0'}} />
     </div>
     <div className='Mobile_grey_part'>
       <img src='/static/projects/apps/3-user-experience/smartphone/ipad-navbar.png' alt='responsive navbar image' className='Mockup' />
@@ -450,17 +453,17 @@ class Sidebar extends React.Component {
             width: 100%;
             text-align: center;
             background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
-            height: 800px;
+            height: 860px;
             top: -150px;
             z-index: -1;
           }
           .Infos {
-            display: block;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            display: inline-block;
             max-width: 290px;
             text-align: left;
-            position: absolute;
-            top: 100px;
-            left: calc(50% - 524px);
           }
           .Pictos {
             display: inline-block;
@@ -469,17 +472,18 @@ class Sidebar extends React.Component {
             width: 368px;
             background-size: contain;
             position: absolute;
-            top: 300px;
-            left: calc(100% - 705px - 368px + 20px);
+            top: 400px;
+            left: 150px;
+            zoom: 0.8;
           }
           .Screens {
             display: inline-block;
             background: url('/static/projects/apps/3-user-experience/sidebar-screens.png');
-            height: 601px;
-            width: 705px;
-            background-size: contain;
+            height: 705px;
+            width: 767px;
+            background-size: cover;
             position: absolute;
-            right: 0;
+            right: -130px;
             top: 100px;
           }
           .Mobile_screens {
@@ -558,26 +562,28 @@ class Sidebar extends React.Component {
             }
           }
         `}</style>
-        <div className='Infos'>
-          <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto'}} />
-          <SubtitlePart
-            content='iOS version' />
-          <Description
-            content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
-            style={{color: 'white', margin: '20px 0'}} />
-        </div>
-        <div className='Pictos' />
-        <div className='Screens' />
-        <div className='Mobile_screens'>
-          <img className={`transitions Screen Screen_pages ${first ? 'active' : 'inactive'}`} alt='pages screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar1.jpg' />
-          <img className={`transitions Screen Screen_notes ${first ? 'inactive' : 'active'}`} alt='notes screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar2.jpg' />
-        </div>
-        <div className='Switch'>
-          <div className={`Left clickable ${first ? 'active' : 'inactive'}`} onClick={() => this.toggleMobileScreen(true)}>
-            <Description content='Pages' style={{color: leftColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+        <div className='Global_content_wrapper'>
+          <div className='Infos'>
+            <TitleSecondary content='Sidebar' style={{color: 'white', margin: '40px auto 0 auto', letterSpacing: 1.05}} />
+            <SubtitlePart
+              content='iOS version' style={{opacity: 0.8}} />
+            <Description
+              content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
+              style={{color: 'white', margin: '20px 0', opacity: 0.8}} />
           </div>
-          <div className={`Right clickable ${first ? 'inactive' : 'active'}`} onClick={() => this.toggleMobileScreen(false)}>
-            <Description content='Notes' style={{color: rightColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+          <div className='Pictos' />
+          <div className='Screens' />
+          <div className='Mobile_screens'>
+            <img className={`transitions Screen Screen_pages ${first ? 'active' : 'inactive'}`} alt='pages screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar1.jpg' />
+            <img className={`transitions Screen Screen_notes ${first ? 'inactive' : 'active'}`} alt='notes screen' src='/static/projects/apps/3-user-experience/smartphone/sidebar2.jpg' />
+          </div>
+          <div className='Switch'>
+            <div className={`Left clickable ${first ? 'active' : 'inactive'}`} onClick={() => this.toggleMobileScreen(true)}>
+              <Description content='Pages' style={{color: leftColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+            </div>
+            <div className={`Right clickable ${first ? 'inactive' : 'active'}`} onClick={() => this.toggleMobileScreen(false)}>
+              <Description content='Notes' style={{color: rightColor, margin: 0, display: 'inline', position: 'relative', top: 7}} />
+            </div>
           </div>
         </div>
       </div>

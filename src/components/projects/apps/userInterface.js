@@ -96,17 +96,28 @@ const Typeface = () =>
         width: 100%;
         position: relative;
         height: 472px;
-        background: #eaecf2;
         margin-top: 80px;
       }
       .Title_wrapper {
-        position: absolute;
+        position: relative;
         top: 45px;
-        left: calc(20% - 125px);
+        left: 0;
+      }
+      .Background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #eaecf2;
+        height: 100%;
+        opacity: 0.4;
       }
       @media screen and (max-width: 750px) {
         .Typeface {
           height: 525px;
+        }
+        .Background {
+          width: 100%;
         }
         .Title_wrapper {
           display: inline-block;
@@ -117,10 +128,13 @@ const Typeface = () =>
         }
       }
     `}</style>
-    <div className='Title_wrapper'>
-      <TitleSecondary content='Typeface' style={{color: '#004459', margin: 0}} />
+    <div className='Background' />
+    <div className='Global_content_wrapper'>
+      <div className='Title_wrapper'>
+        <TitleSecondary content='Typeface' style={{color: '#004459', margin: 0, letterSpacing: 1.05}} />
+      </div>
+      {typos.map((font, i) => <Typo key={i} index={i} font={font} />)}
     </div>
-    {typos.map((font, i) => <Typo key={i} index={i} font={font} />)}
   </div>
 
 const Typo = ({ font, index }) =>
@@ -129,11 +143,11 @@ const Typo = ({ font, index }) =>
       .Typo {
         position: absolute;
         top: 120px;
-        left: 20%;
+        left: 130px;
       }
       .Typo_1 {
-        top: 232px;
-        left: 40%;
+        top: 242px;
+        left: 380px;
       }
       .Typo_2 {
         top: 343px;
@@ -149,15 +163,16 @@ const Typo = ({ font, index }) =>
       .Content {
         position: relative;
         left: 30px;
+        top: -7px;
       }
       .Font {
         height: 55px;
-        margin-top: 10px;
+        margin-top: 5px;
       }
       .Exemple {
         height: 33px;
         position: absolute;
-        left: 230px;
+        left: 200px;
       }
       @media screen and (max-width: 750px) {
         .Typo {
