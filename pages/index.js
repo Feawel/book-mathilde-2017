@@ -13,9 +13,9 @@ const Page = ({ url }) =>
 
       <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
       <link rel="canonical" href="https://www.matserra.design" />
-      <title>Mathilde SERRA - Directrice artistique</title>
+      <title>Mathilde SERRA - Artistic Director</title>
 
-      <meta itemprop="name" content="Mathilde SERRA - Directrice artistique" />
+      <meta itemprop="name" content="Mathilde SERRA - Artistic Director" />
       <meta itemprop="description" content="Hello ! I am an artistic director specialized in the realization of website, application, and web communication, especially in start-up.  I like to explore other forms of creation, such as illustration, typographic creation, video games or interactive installations." />
       <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
@@ -23,7 +23,7 @@ const Page = ({ url }) =>
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
       <meta name="author" content="Mathilde SERRA" />
 
-      <meta property="og:title" content="Mathilde SERRA - Directrice artistique" />
+      <meta property="og:title" content="Mathilde SERRA - Artistic Director" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
@@ -35,7 +35,7 @@ const Page = ({ url }) =>
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Mathilde__serra" />
-      <meta name="twitter:title" content="Mathilde SERRA - Directrice artistique" />
+      <meta name="twitter:title" content="Mathilde SERRA - Artistic Director" />
       <meta name="twitter:description" content="Hello ! I am an artistic director specialized in the realization of website, application, and web communication, especially in start-up.  I like to explore other forms of creation, such as illustration, typographic creation, video games or interactive installations." />
       <meta name="twitter:creator" content="@Mathilde__serra" />
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />
