@@ -29,7 +29,11 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
         position: relative;
         top: 110px;
         width: 780px;
-        box-shadow: 9px 9px 10px 7px rgba(1, 1, 1, 0.2);
+        border: 10px solid white;
+        -moz-box-shadow: 10px 7px 35px 0px rgba(1, 1, 1, 0.6);
+        -webkit-box-shadow: 10px 7px 35px 0px rgba(1, 1, 1, 0.6);
+        -o-box-shadow: 10px 7px 35px 0px rgba(1, 1, 1, 0.6);
+        box-shadow: 10px 7px 35px 0px rgba(1, 1, 1, 0.6);
       }
       .Low_picture {
         display: inline-block;
@@ -66,9 +70,9 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
 
     `}</style>
     <div className='Infos'>
-      <TitleSecondary content={title} style={{color: '#260608', margin: '0 auto'}} />
+      <TitleSecondary content={title} style={{color: '#260608', margin: '0 auto', letterSpacing: 1.05}} />
       <Description
-          style={{color: '#474f6f', marginTop: 40, marginBottom: 60, maxWidth: '440px'}}
+          style={{color: '#474f6f', marginTop: 25, marginBottom: 54, maxWidth: '440px'}}
           content={description} />
     </div>
     <div

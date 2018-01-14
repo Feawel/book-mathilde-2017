@@ -68,7 +68,7 @@ class Pictures extends React.Component {
         `}</style>
         <div className='H_separator' />
         <div className='Infos'>
-          <TitleSecondary content='Typography 1' style={{color: '#474f6f', margin: '10px auto'}} />
+          <TitleSecondary content='Typography 1' style={{color: '#474f6f', margin: '10px auto', letterSpacing: 1.05}} />
           <SubtitlePart
             content='Ciceron'
             style={{color: '#a6abb7', margin: '10px auto'}} />
@@ -84,7 +84,7 @@ class Pictures extends React.Component {
           <img className='Picture_inline' src={`/static/projects/typo/${directory}/3.jpg`} alt='fourth typo picture' />
         </div>
         <div className='H_separator' />
-        <div className='Infos'>
+        <div className='Infos' style={{marginTop: 30}}>
           <TitleSecondary content='Typography 2' style={{color: '#474f6f', margin: '10px auto'}} />
           <SubtitlePart
             content='John Powell'
@@ -101,7 +101,7 @@ class Pictures extends React.Component {
           <img className='Picture_inline' src={`/static/projects/typo/${directory}/6.jpg`} alt='fourth typo picture' />
         </div>
         <div className='H_separator' />
-        <div className='Infos'>
+        <div className='Infos' style={{marginTop: 30}}>
           <TitleSecondary content='Typography 3' style={{color: '#474f6f', margin: '10px auto'}} />
           <SubtitlePart
             content='Thomas Edison'

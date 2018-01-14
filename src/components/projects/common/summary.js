@@ -1,4 +1,6 @@
 import React from 'react'
+
+import get from 'lodash/get'
 import Social from './social'
 import Call from './call'
 import { TitlePrimary, TitleSecondary, Description } from './texts'
@@ -33,7 +35,7 @@ class Summary extends React.Component {
       <div className='Project Summary'>
         <style jsx>{`
           .Summary {
-            margin-bottom: 50px;
+            margin-bottom: 10px;
           }
 
           .Disappear {
@@ -111,7 +113,7 @@ class Summary extends React.Component {
                 content={project.title}
                 style={{
                   fontSize: 74,
-                  color: '#260608',
+                  color: project.colors.typo,
                   marginTop: 80,
                   marginBottom: 20,
                   maxWidth: 420
@@ -139,6 +141,7 @@ class Summary extends React.Component {
           <div className='Inner_right_section'>
             <div className={`Description_title Transitions Container ${hideSubtitle ? 'Disappear' : ''}`}>THE PROJECT</div>
             <div className={`Container Transitions ${hideDescription ? 'Disappear' : ''}`}>
+              {console.log('project', project, project.description)}
               <Description
                 content={project.description}
                 style={{
@@ -231,23 +234,23 @@ const FooterMobile = ({ project }) =>
       }
     `}</style>
     <div className='Left'>
-      <div className='Mobile_meta'>
+      <div className={`Mobile_meta ${project.customer ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>CLIENT</div>
         <div className='Value'>{project.customer}</div>
       </div>
-      <div className='Mobile_meta'>
+      <div className={`Mobile_meta ${project.role ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>ROLE</div>
         <div className='Value'>{project.role}</div>
       </div>
-      <div className='Mobile_meta'>
+      <div className={`Mobile_meta ${project.year ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>YEAR</div>
         <div className='Value'>{project.year}</div>
       </div>
     </div>
     <div className='Right'>
-      <div className='Mobile_stats'>
-        <div className='Line' /> <div className='Label'>{project.stats[0].label}</div>
-        <div className='Value_stat' style={{color: project.colors.primary }}>{project.stats[0].value}</div>
+      <div className={`Mobile_stats ${project.stats ? '' : 'hide'}`}>
+        <div className='Line' /> <div className='Label'>{get(project, 'stats[0].label')}</div>
+        <div className='Value_stat' style={{color: project.colors.primary }}>{get(project, 'stats[0].value')}</div>
       </div>
     </div>
   </div>
@@ -263,12 +266,12 @@ const FooterDesktop = ({ project }) =>
     `}</style>
     <div className='Footer_desktop'>
       <div className='Meta'>
-        <Meta label='CUSTOMER' value={project.customer} />
-        <Meta label='ROLE' value={project.role} />
-        <Meta label='YEAR' value={project.year} />
+        {project.customer && <Meta label='CUSTOMER' value={project.customer} />}
+        {project.role && <Meta label='ROLE' value={project.role} />}
+        {project.year && <Meta label='YEAR' value={project.year} />}
       </div>
       <div className='Stats'>
-        {project.stats.map((stat, i) => <Stat key={i} color={project.colors.primary} label={stat.label} value={stat.value} />)}
+        {project.stats && project.stats.map((stat, i) => <Stat key={i} color={project.colors.primary} label={stat.label} value={stat.value} />)}
       </div>
     </div>
   </div>
@@ -300,7 +303,7 @@ const Meta = ({label, value}) =>
       }
     `}</style>
     <div className='Label'>{label}</div>
-    <div className='Value' dangerouslySetInnerHTML={{__html: value}} />
+    <div className='Value' dangerouslySetInnerHTML={{__html: String(value)}} />
   </div>
 
 const Stat = ({ label, value, color }) =>

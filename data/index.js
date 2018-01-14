@@ -101,7 +101,7 @@ const data = {
           title: "Ornikar’s advertisings",
           key: ORNIKAR_KEY,
           problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
-          description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
+          description: "Ornikar is a start-up that offers to handle driving licenses as an online service. To increase sales of online training, we used three facebook ads to each a different target: young boys 16-20 years old, young girls 16-20 years old and 20-26 years adults.",
           colors : {
             gradient: 'linear-gradient(-220deg, #d6181f 0%, #f5c253 100%)',
             darkGradient: '#d6181f',
@@ -188,6 +188,7 @@ const data = {
         {
           title: "Ganesha Drawing",
           key: GANESHA_KEY,
+          description: "One big draw experimentation, made in 2017 for decorate a client appartment.<br />It is 6ft by 6ft (180cmX180cm) only made with posca markers.",
           problematic: "EXPERIMENTAL DRAW",
           number: {
             index: 3,
@@ -215,26 +216,14 @@ const data = {
             primary: '#2CD582',
             light: '#CCFFE0'
           },
-          customer: 'Lelivrescolaire.fr',
-          role: 'Directrice artistique',
           year: 2016,
-          stats: [
-            {
-              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
-              value: 1200
-            },
-            {
-              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
-              value: 589
-            }
-          ],
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
           title: "Typography project",
           key: TYPO_KEY,
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "Lelivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers. To increase their notoriety and reinforce the community of teachers, I created for them a series of ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. Here is a selection of three of them",
+          problematic: "Typographic work to<br/> increase brand visibility",
+          description: "Lelivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers.<br /> To increase their notoriety and <strong>reinforce the community of teachers</strong>, I created for them a series of <strong>ten typographical works based on famous quotes</strong>. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. <br />Here is a selection of three of them",
           number: {
             index: 4,
             height: 67
@@ -250,7 +239,7 @@ const data = {
           },
           customer: 'Lelivrescolaire.fr',
           role: 'Directrice artistique',
-          year: 2016,
+          year: 2017,
           stats: [
             {
               label: 'NUMBER OF TYPOS <br/>REALIZED',
@@ -258,7 +247,7 @@ const data = {
             },
             {
               label: 'NUMBER OF POSTERS <br/>DISTRIBUTED',
-              value: 600
+              value: '10,000'
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]
@@ -313,7 +302,7 @@ export const skills = [
 export const ads = {
   boys: {
     title: 'boys between 16 anD 20',
-    description: 'his advertisement targets boys between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to use a service more entertaining and less restrictive than the traditional driving schools.',
+    description: 'This advertisement targets boys between the ages of 16 and 20. Their main motivation for passing the code of the road with Ornikar is to use a service more entertaining and less restrictive than the traditional driving schools.',
     gradient: {light: '#d6181f', dark: '#f5c253'},
     firstPic: '/static/projects/ornikar/desktop/boys-first.png',
     secondPic: '/static/projects/ornikar/desktop/boys-second.jpg',

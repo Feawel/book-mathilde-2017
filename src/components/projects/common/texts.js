@@ -8,9 +8,7 @@ export const TitlePrimary = ({content, style, mobile}) =>
   </h2>
 
 export const TitleSecondary = ({content, style, mobile}) =>
-  <h3 className='Global_title_secondary' style={{...style}}>
-    {content}
-  </h3>
+  <h3 className='Global_title_secondary' style={{...style}} dangerouslySetInnerHTML={{__html: String(content)}} />
 
 export const SubtitlePart = ({content, style, mobile}) =>
   <h4 className='Global_subtitle_part' style={{...style}}>
@@ -23,5 +21,5 @@ export const Subtitle = ({content, style, mobile}) =>
   </h4>
 
 export const Description = ({content, style, mobile}) =>
-  <div className='Global_description' style={{...style}} dangerouslySetInnerHTML={{__html: content}} />
+  <div className='Global_description' style={{...style}} dangerouslySetInnerHTML={{__html: String(content)}} />
 
