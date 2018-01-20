@@ -31,7 +31,11 @@ const Social = ({ grey = true, centered = false}) => (
       }
       @media screen and (max-width: 1000px) {
         .Social_inner_container {
+          width: 115px;
           margin: auto;
+        }
+        img {
+          width: 21px;
         }
       }
     `}</style>

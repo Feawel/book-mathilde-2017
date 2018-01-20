@@ -12,22 +12,22 @@ import Lines from '../columns'
 // Static data
 import data from '../../../data'
 
-const getBackgroundStyle = size => {
+const getBackgroundStyle = (size, isMobile) => {
   switch(size) {
     case 'large':
       return {height: '100%', width:'100%', position: 'relative', top: 0, left: 0, transition: 'all .5s'}
     case 'medium':
-      return {height: '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 1s'}
+      return {height: isMobile ? '35%' : '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 1s'}
     case 'small':
-      return {height: '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
+      return {height: isMobile ? '35%' : '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
   }
 }
 
 const HomeProjects = (props) => {
   const { projectAppear, backgroundSize, openProject, animating, project,
     bar1, bar2, bar3, bar4, bar5, bars, infosAnimation, backgroundDirectory,
-    mask, openProjectAnimation } = props
-
+    mask, openProjectAnimation, isMobile } = props
+    console.log('backgroundDirectory', backgroundDirectory, isMobile)
   if(!backgroundDirectory) return <div />
 
   return (
@@ -79,7 +79,7 @@ const HomeProjects = (props) => {
       {!(projectAppear || openProjectAnimation) && <Social />}
       <div className='Background_wrapper'>
         <div className='Background transitions'
-          style={{backgroundImage: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg')`, ...getBackgroundStyle(backgroundSize)}} />
+          style={{backgroundImage: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg')`, ...getBackgroundStyle(backgroundSize, isMobile)}} />
       </div>
       <div style={{zIndex: bars ? 9 : 0}} className='Bars'>
         <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />

@@ -1,20 +1,21 @@
 import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
   ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../src/utils/project'
 
-const data = {
+export const data = {
     projects: [
         {
           key: APPS_KEY,
           title: "Numeric books",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "Lelivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online.<br /> In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
+          description: "Lelivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online. In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 1,
             height: 60
           },
+          callSummary: 'https://itunes.apple.com/fr/developer/lelivrescolaire-fr/id650862611',
           colors : {
-            gradient: 'linear-gradient(-220deg, #008d89 0%, #6ad7d9 100%)',
-            darkGradient: '#008d89',
+            gradient: 'linear-gradient(-220deg, #008dB9 0%, #6ad7d9 100%)',
+            darkGradient: '#008dB9',
             lightGradient: '#6ad7d9',
             typo: '#004459',
             primary: '#00B3DF',
@@ -53,6 +54,7 @@ const data = {
         {
           title: "Comete Exhibition",
           key: COMETE_KEY,
+          callSummary: 'http://www.expo-cometes.fr/',
           problematic: "HOW TO GET A LARGE AUDIENCE TO GO<br/> TO A SCIENTIFIC EXHIBITION ?",
           website: "http://www.expo-cometes.fr/",
           description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
@@ -336,6 +338,7 @@ export const RS_TWITTER = 'https://twitter.com/mathilde__serra'
 export const RS_LINKEDIN = 'https://www.linkedin.com/in/mathilde-serra-37946aa9/'
 export const RS_BEHANCE = 'https://www.behance.net/mathildese8e32'
 
+export const JO_LINKEDIN = 'https://www.linkedin.com/in/jonathanbanon/'
 
 
 export default data

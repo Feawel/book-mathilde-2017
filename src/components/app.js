@@ -11,7 +11,7 @@ import throttle from 'lodash/throttle'
 import Projects from './projects'
 
 import {enableScroll, disableScroll} from '../utils/scroll'
-import { getBackgroundResponsiveDirectory } from '../utils/responsive'
+import { getBackgroundResponsiveDirectory, isMobile } from '../utils/responsive'
 import {getNextProjectKey, getPrevProjectKey, getProjectByKey, getIndexByProjectKey} from '../utils/project'
 
 class App extends React.Component {
@@ -42,6 +42,7 @@ class App extends React.Component {
         tags: '',
         call: ''
       },
+      isMobile: false,
       ...props.initialState
     }
 
@@ -58,7 +59,7 @@ class App extends React.Component {
   render () {
     const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
-      animating, openProjectAnimation } = this.state
+      animating, openProjectAnimation, isMobile } = this.state
     const content = projectAppear ? <Projects current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
     return [
@@ -85,6 +86,7 @@ class App extends React.Component {
         bar1={bar1} bar2={bar2} bar3={bar3} bar4={bar4} bar5={bar5} bars={bars}
         projectAppear={projectAppear}
         backgroundSize={backgroundSize}
+        isMobile={isMobile}
         animating={animating}
         project={project}
         infosAnimation={infosAnimation}
@@ -106,7 +108,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({backgroundDirectory: getBackgroundResponsiveDirectory()})
+    this.setState({backgroundDirectory: getBackgroundResponsiveDirectory(), isMobile: isMobile()})
     this.activateUpdateHomeProject()
   }
 

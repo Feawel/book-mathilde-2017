@@ -2,7 +2,7 @@
 import React from 'react'
 import Call from './call'
 import Social from './social'
-import data from '../../../../data'
+import {data, JO_LINKEDIN} from '../../../../data'
 
 const Footer = ({ project, background = '#001732', projectsBackground = 'linear-gradient(to right, #61daff 0%, #941c91 100%)'}) =>
   <div style={{background}} className='Footer'>
@@ -22,21 +22,27 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         overflow: hidden;
       }
       .Title {
-        font-family: Futura;
         text-transform: uppercase;
         font-size: 18px;
         color: white;
         line-height: 32px;
         display: inline-block;
-        margin: 80px auto;
+        margin: 70px auto;
       }
       .Project {
         display: inline-block;
         width: calc(20% - 3px);
         border-right: 3px solid #001732;
-        height: 100%
+        height: 100%;
         vertical-align: top;
         position: relative;
+      }
+      .Project_container {
+        width: 140px;
+        height: calc(100% - 40px);
+        position: absolute;
+        top: 34px;
+        left: calc(50% - 70px);
       }
       .Project_title {
         font-family: Playfair Display;
@@ -53,7 +59,7 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         top: 320px;
         text-align: center;
       }
-      .Project:hover .Project_card {
+      .Project .Project_card {
         top: 0;
       }
       .Project_card_title {
@@ -70,19 +76,15 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
       .Infos {
         width: 100%;
         margin: auto;
-        padding-top: 30px;
+        padding-top: 40px;
       }
       .Contact {
-        font-family: Futura;
-        font-weight: bold;
         font-size: 11px;
         line-height: 22px;
         color: #8554b2;
         text-transform: uppercase;
       }
       .Contact, .Contact_dev {
-        font-family: Futura;
-        font-weight: bold;
         font-size: 11px;
         line-height: 22px;
         color: #8554b2;
@@ -92,6 +94,8 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         text-decoration: none;
         text-align: left;
         margin-left: 40px;
+        letter-spacing: 1.1px;
+        vertical-align: top;
       }
       .Contact_dev {
         color: #abb0bc;
@@ -106,9 +110,10 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         display:inline-block;
         width: 33%;
         text-align: center;
+        vertical-align: top;
       }
     `}</style>
-    <div className='Title'>
+    <div className='Title futuralt_book'>
       If you love that project
       <br /><strong>those can interest you :</strong>
     </div>
@@ -117,18 +122,19 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         project.linkedProjects.map(index =>
           <div className='Project clickable' key={index}>
             <div style={{
-              top: data.projects[index].title.length > 20 ? 126 : 142
+              top: 130
             }} className='Project_title'>{data.projects[index].title}</div>
             <div className='Project_card transitions'>
-              <div className='Project_card_title' style={{
-                marginBottom:data.projects[index].title.length > 20 ? 20 : 30,
-                marginTop:data.projects[index].title.length > 20 ? 20 : 40
-              }}>
-                {data.projects[index].title}
-              </div>
-              <Tags tags={data.projects[index].tags}/>
-              <div className='Call_wrapper'>
-                <Call text='TRY THE CASE' />
+              <div className='Project_container'>
+                <div className='Project_card_title' style={{
+                  marginBottom: 20
+                }}>
+                  {data.projects[index].title}
+                </div>
+                <Tags tags={data.projects[index].tags}/>
+                <div className='Call_wrapper'>
+                  <Call href={`/${data.projects[index].key}`} text='TRY THE CASE' />
+                </div>
               </div>
             </div>
           </div>
@@ -136,11 +142,11 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
       }
     </div>
     <div className='Infos'>
-      <a href='' className='Contact'>mathilde.serra01@gmail.com</a>
+      <a href='' className='Contact futuralt_bold'>mathilde.serra01@gmail.com</a>
       <div className='Social_wrapper'>
         <Social centered={true} grey={false} />
       </div>
-      <a href='' className='Contact_dev'>
+      <a href={JO_LINKEDIN} className='Contact_dev futuralt_bold'>
         developped by <span className='Name'>jonathan banon</span>
       </a>
     </div>
@@ -158,14 +164,13 @@ const Tags = ({tags}) =>
   </div>
 
 const Tag = ({tag}) =>
-  <div className='Tag'>
+  <div className='Tag futuralt_book'>
     <style jsx>{`
       .Tag {
         color: #abb0bc;
-        font-family: Futura;
         font-size: 12px;
         line-height: 22px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
       }
       .Tag_icon {
         height: 18px;

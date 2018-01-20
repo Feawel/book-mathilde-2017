@@ -101,6 +101,11 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   font-weight:400;
 }
 
+.futuralt_book strong {
+  font-family: 'Futura - Bold';
+  font-weight:400;
+}
+
 .playfairdisplay_black {
   font-family: 'Playfair Display - Black';
   font-weight:400;
@@ -224,6 +229,10 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
     font-size: 18px!important;
     line-height: 36px!important;
   }
+  .Global_summary_title_secondary {
+    font-size: 12px!important;
+    line-height: 21px!important;
+  }
 
   .Global_description {
     margin: auto;
@@ -234,10 +243,17 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 
 .Global_project {
   position: relative;
+  overflow: hidden;
   top: calc(70% - 55px);
   animation-duration: 2s;
   animation-name: appearBottom;
   z-index: 10;
+}
+
+@media screen and (max-width: 750px) {
+  .Global_project {
+    top: calc(35% - 55px);
+  }
 }
 
 .Global_project_container {

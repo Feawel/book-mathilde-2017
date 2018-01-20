@@ -7,8 +7,8 @@ export const TitlePrimary = ({content, style, mobile}) =>
     {content}
   </h2>
 
-export const TitleSecondary = ({content, style, mobile}) =>
-  <h3 className='Global_title_secondary' style={{...style}} dangerouslySetInnerHTML={{__html: String(content)}} />
+export const TitleSecondary = ({content, style, mobile, summary = false}) =>
+  <h3 className={`Global_title_secondary ${summary ? 'Global_summary_title_secondary' : ''}`} style={{...style}} dangerouslySetInnerHTML={{__html: String(content)}} />
 
 export const SubtitlePart = ({content, style, mobile}) =>
   <h4 className='Global_subtitle_part' style={{...style}}>

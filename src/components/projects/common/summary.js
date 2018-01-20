@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import Social from './social'
 import Call from './call'
 import { TitlePrimary, TitleSecondary, Description } from './texts'
+import { isMobile } from '../../../utils/responsive'
 
 
 class Summary extends React.Component {
@@ -14,7 +15,8 @@ class Summary extends React.Component {
       hideTitle: true,
       hideBaseline: true,
       hideSubtitle: true,
-      hideDescription: true
+      hideDescription: true,
+      isMobile: null
     }
   }
   componentDidMount() {
@@ -22,6 +24,7 @@ class Summary extends React.Component {
     setTimeout(() => this.setState({hideTitle: false}), 500)
     setTimeout(() => this.setState({hideBaseline: false, hideSubtitle: false}), 750)
     setTimeout(() => this.setState({hideDescription: false}), 1000)
+    this.setState({ isMobile: isMobile() })
   }
   componentWillUnmount() {
     const { timeoutIds } = this.state
@@ -29,13 +32,16 @@ class Summary extends React.Component {
     timeoutIds.forEach(t => clearTimeout(t))
   }
   render() {
-    const { hideTitle, hideBaseline, hideSubtitle, hideDescription } = this.state
+    const { hideTitle, hideBaseline, hideSubtitle, hideDescription, isMobile } = this.state
     const { project } = this.props
     return (
       <div className='Project Summary'>
         <style jsx>{`
           .Summary {
             margin-bottom: 10px;
+            width: 1020px;
+            margin: auto;
+            position: relative;
           }
 
           .Disappear {
@@ -64,17 +70,17 @@ class Summary extends React.Component {
           }
           .Summary_section {
             display: inline-block;
-            width: 50%;
             margin-top: 10px;
             vertical-align: top;
           }
           .Inner_left_section {
             margin: auto;
-            width: calc(100% - 100px);
+            width: 430px;
           }
           .Inner_right_section {
             margin: auto;
-            width: calc(100% - 100px);
+            width: 480px;
+            margin-left: 110px;
           }
           .Description_title {
             margin-top: 110px;
@@ -84,17 +90,29 @@ class Summary extends React.Component {
             color: #abb0bc;
             letter-spacing: 1.1px;
           }
+          .Description:first-letter {
+            font-family: 'Futura - Bold';
+            font-size: 56px;
+            line-height: 55px;
+            letter-spacing: 11px;
+            color: ${project.colors.primary};
+            float: left;
+            height: 56px;
+          }
           .Social_container {
             margin-bottom: 40px;
           }
           @media screen and (max-width: 1000px) {
+            .Summary {
+              width: 100%;
+            }
             .Summary_section {
               width: 100%;
               text-align:center;
             }
             .Inner_left_section, .Inner_right_section {
               margin: auto;
-              width: calc(100% - 50px);
+              width: 310px;
             }
             .Description_title {
               display: none;
@@ -122,10 +140,11 @@ class Summary extends React.Component {
             <div className={`Container Transitions ${hideBaseline ? 'Disappear': ''}`}>
               <TitleSecondary
                 content={project.problematic}
+                summary={true}
                 style={{
                   color: project.colors.primary,
                   fontSize: 24,
-                  lineHeight: '36px',
+                  lineHeight:'36px',
                   marginTop: 20
                 }}/>
             </div>
@@ -133,14 +152,14 @@ class Summary extends React.Component {
               <Social />
             </div>
             <div className='Call_top'>
-              {project.website && <Call text='VIEW THE WEBSITE' />}
+              {project.callSummary && <Call newWindow={true} color={project.colors.primary} background={project.colors.gradient} href={project.callSummary} text='VIEW THE WEBSITE' />}
             </div>
           </div>
         </div>
         <div className='Summary_section'>
           <div className='Inner_right_section'>
             <div className={`Description_title Transitions Container ${hideSubtitle ? 'Disappear' : ''}`}>THE QUESTION</div>
-            <div className={`Container Transitions ${hideDescription ? 'Disappear' : ''}`}>
+            <div className={`Description Container Transitions ${hideDescription ? 'Disappear' : ''}`}>
               <Description
                 content={project.description}
                 style={{
@@ -148,7 +167,8 @@ class Summary extends React.Component {
                   fontSize: 16,
                   lineHeight: '28px',
                   marginTop: 0,
-                  marginBottom: 0
+                  marginBottom: 0,
+                  textAlign: isMobile ? 'left' : 'inherit'
                 }} />
             </div>
             <FooterDesktop project={project} />
@@ -165,17 +185,22 @@ const FooterMobile = ({ project }) =>
   <div className='Footer_mobile'>
     <style jsx>{`
       .Footer_mobile {
-        background-color: #dee2ed;
+        background-color: rgba(222, 226, 237, 0.3);
         display: none;
         width: 100%;
         padding: 40px 0;
         margin-top: 40px;
       }
+      .Mobile_meta {
+        margin: 5px 0;
+      }
+      .Mobile_meta:first-child {margin-top: 0;}
       .Left {
         display: inline-block;
         width: calc(50% - 25px);
         margin-left: 25px;
         text-align: left;
+        vertical-align: top;
       }
       .Right {
         display: inline-block;
@@ -197,7 +222,7 @@ const FooterMobile = ({ project }) =>
         font-family: 'Futura - Bold';
         font-weight: bold;
         font-size: 10px;
-        line-height: 27px;
+        line-height: 18px;
         color: #abb0bc;
       }
       .Value {
@@ -214,17 +239,24 @@ const FooterMobile = ({ project }) =>
         font-family: 'Playfair Display';
         font-weight: bold;
         font-size: 72px;
-        line-height: 24px;
+        line-height: 56px;
         height: 54px;
-        margin-top: 35px;
+        margin-top: 10px;
         position: relative;
-        left: 28px;
+        right: 10px;
+        width: 150px;
+        background: linear-gradient(330deg, ${project.colors.darkGradient} 0%, ${project.colors.primary} 50%, ${project.colors.lightGradient} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       .Mobile_stats .Label {
         width: calc(100% - 50px);
         vertical-align: top;
         position: relative;
         top: -4px;
+      }
+      .Call_wrapper {
+        margin-top: 25px;
       }
       @media screen and (max-width: 1000px) {
         .Footer_mobile {
@@ -248,9 +280,12 @@ const FooterMobile = ({ project }) =>
     </div>
     <div className='Right'>
       <div className={`Mobile_stats ${project.stats ? '' : 'hide'}`}>
-        <div className='Line' /> <div className='Label'>{get(project, 'stats[0].label')}</div>
-        <div className='Value_stat' style={{color: project.colors.primary }}>{get(project, 'stats[0].value')}</div>
+        <div className='Line' /> <div className='Label' dangerouslySetInnerHTML={{__html: get(project, 'stats[0].label')}} />
+        <div className='Value_stat' >{get(project, 'stats[0].value')}</div>
       </div>
+    </div>
+    <div className='Call_wrapper'>
+      {project.callSummary && <Call newWindow={true} color='white' colorHover={project.colors.primary} width={210} background='white' backgroundInner={project.colors.gradient} href={project.callSummary} text='DOWNLOAD THE APP' />}
     </div>
   </div>
 
