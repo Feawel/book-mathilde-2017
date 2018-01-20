@@ -2,7 +2,7 @@
 import React from 'react'
 import Call from './call'
 import Social from './social'
-import {data, JO_LINKEDIN} from '../../../../data'
+import {data, JO_LINKEDIN, RS_LINKEDIN} from '../../../../data'
 
 const Footer = ({ project, background = '#001732', projectsBackground = 'linear-gradient(to right, #61daff 0%, #941c91 100%)'}) =>
   <div style={{background}} className='Footer'>
@@ -39,7 +39,7 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
       }
       .Project_container {
         width: 140px;
-        height: calc(100% - 40px);
+        height: calc(100% - 34px);
         position: absolute;
         top: 34px;
         left: calc(50% - 70px);
@@ -59,7 +59,7 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         top: 320px;
         text-align: center;
       }
-      .Project .Project_card {
+      .Project:hover .Project_card {
         top: 0;
       }
       .Project_card_title {
@@ -112,6 +112,51 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         text-align: center;
         vertical-align: top;
       }
+      .Mobile {display: none;}
+      @media screen and (max-width: 750px) {
+        .Footer {
+          height: 1950px;
+        }
+        .Projects {
+          height: 1450px;
+        }
+        .Project {
+          display: block;
+          width: 310px;
+          margin: auto;
+          height: 273px;
+          background: white;
+          position: relative;
+          margin-bottom: 20px;
+        }
+        .Project_container {
+          width: 220px;
+          left: calc(50% - 110px);
+        }
+        .Project_card {
+          top: 0;
+        }
+        .Projects {
+          background: #001732;
+        }
+        .Infos {
+          background: #001732;
+          padding-top: 30px;
+        }
+        .Contact, .Contact_dev, .Social_wrapper {
+          display: block;
+          width: 310px;
+          margin: auto;
+          text-align: center;
+        }
+        .Contact_dev {
+          margin-top: 6px;
+          margin-bottom: 10px;
+          text-transform: none;
+        }
+        .Desktop {display: none;}
+        .Mobile {display: block;}
+      }
     `}</style>
     <div className='Title futuralt_book'>
       If you love that project
@@ -141,13 +186,22 @@ const Footer = ({ project, background = '#001732', projectsBackground = 'linear-
         )
       }
     </div>
-    <div className='Infos'>
-      <a href='' className='Contact futuralt_bold'>mathilde.serra01@gmail.com</a>
+    <div className='Infos Mobile'>
+      <a href={RS_LINKEDIN} target='_blank' className='Contact futuralt_bold'>mathilde.serra01@gmail.com</a>
+      <a href={JO_LINKEDIN} target='_blank' className='Contact_dev futuralt_bold'>
+        Developped by <span className='Name'>Jonathan Banon</span>
+      </a>
       <div className='Social_wrapper'>
         <Social centered={true} grey={false} />
       </div>
-      <a href={JO_LINKEDIN} className='Contact_dev futuralt_bold'>
-        developped by <span className='Name'>jonathan banon</span>
+    </div>
+    <div className='Infos Desktop'>
+      <a href={RS_LINKEDIN} target='_blank' className='Contact futuralt_bold'>mathilde.serra01@gmail.com</a>
+      <div className='Social_wrapper'>
+        <Social centered={true} grey={false} />
+      </div>
+      <a href={JO_LINKEDIN} target='_blank' className='Contact_dev futuralt_bold'>
+        Developped by <span className='Name'>jonathan banon</span>
       </a>
     </div>
 
