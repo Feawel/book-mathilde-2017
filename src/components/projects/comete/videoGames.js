@@ -36,7 +36,11 @@ class VideoGames extends React.Component {
             position: relative;
           }
         `}</style>
-        <Number content='03' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+        <Number
+          content='03'
+          color='#221061'
+          responsivePicto='/static/projects/comete/5-video-games/picto-video-game.png'
+          borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
         <DoubleIllustrations
             main={{width: 462, src: '/static/projects/comete/5-video-games/picto-video-game.png'}}
             second={{width: 850, src: '/static/projects/comete/5-video-games/picto-video-game.png'}}

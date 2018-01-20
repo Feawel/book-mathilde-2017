@@ -54,7 +54,11 @@ class Illustrations extends React.Component {
             }
           }
         `}</style>
-        <Number content='04' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+        <Number
+          content='04'
+          color='#221061'
+          responsivePicto='/static/projects/comete/6-illustrations/picto-illu.png'
+          borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
         <DoubleIllustrations
           main={{width: 462, src: '/static/projects/comete/6-illustrations/picto-illu.png'}}
           second={{width: 851, src: '/static/projects/comete/6-illustrations/picto-illu.png'}}

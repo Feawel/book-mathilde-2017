@@ -128,7 +128,11 @@ class UserInterface extends React.Component {
           <div className='Background_5' />
         </div>
         <div className='Part_1'>
-          <Number content='02' color='white' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+          <Number
+            content='02'
+            color='white'
+            responsivePicto='/static/projects/comete/4-user-interface/picto-UI.png'
+            borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
           <DoubleIllustrations
             main={{width: 462, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
             second={{width: 1001, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}

@@ -46,7 +46,11 @@ class UserInterface extends React.Component {
           }
         `}</style>
 
-        <Number content='01' color='#1a2432' borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
+        <Number
+          content='01'
+          color='#1a2432'
+          responsivePicto='/static/projects/classe/3-user-interface/picto-UI.png'
+          borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <DoubleIllustrations
           main={{width: 363, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           second={{width: 850, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
@@ -493,25 +497,46 @@ const Icon = () =>
         z-index: -1;
       }
       .Pictos {
-        width: 1040px;
+        width: 1020px;
         margin: auto;
         margin-top: 60px;
-        text-align: center;
-      }
-      .Section_left, .Section_center {
-        display: inline-block;
-        width: 230px;
-        margin-right: 25px;
-        vertical-align: top;
-      }
-      .Section_right {
-        display: inline-block;
-        width: 530px;
-        vertical-align: top;
+        text-align: left;
+        height: 380px;
+        position: relative;
       }
       .Infos {
         text-align: left;
-        margin-top: 40px;
+      }
+      .Illustration, .Infos {
+        position: absolute;
+      }
+      .Illustration_1 {
+        top: 0;
+        left: 0
+      }
+      .Infos_1 {
+        top: 269px;
+        left: 0;
+      }
+      .Illustration_2 {
+        top: 0;
+        left: 252px;
+      }
+      .Infos_2 {
+        left: 252px;
+        top: 269px;
+      }
+      .Infos_3 {
+        left: 252px;
+        top: 329px;
+      }
+      .Illustration_3 {
+        right: 0;
+        top: 0;
+      }
+      .Infos_4 {
+        right: 304px;
+        top: 269px;
       }
       .Number_container {
         width: 20px;
@@ -551,7 +576,7 @@ const Icon = () =>
           position: absolute;
           top: 200px;
           width: 100%;
-          height: 1500px;
+          height: 1520px;
           background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
           z-index: -1;
         }
@@ -562,11 +587,35 @@ const Icon = () =>
         }
         .Pictos {
           width: 100%;
+          height: 1230px;
         }
-        .Section_left, .Section_center, .Section_right {
+        .Infos, .Illustration {
           display: block;
-          width: 300px;
+          position: relative;
+          top: 0;
+          left: 0;
           margin: auto;
+        }
+        .Illustration {
+          width: 229px;
+        }
+        .Infos {
+          width: 310px;
+        }
+        .Infos_1 {
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+        .Infos_2 {
+          margin-top: 20px;
+          margin-bottom: 0;
+        }
+        .Infos_3 {
+          margin-top: 0;
+          margin-bottom: 35px;
+        }
+        .Infos_4 {
+          display: none;
         }
         .Blue_background {
           display: none;
@@ -578,21 +627,16 @@ const Icon = () =>
           display: none;
         }
         .Description_container {
-          width: 250px;
-          margin-bottom: 40px;
+          width: 260px;
         }
         .Description_container_2 {
           margin-bottom: 0;
-        }
-        .Section_right .Infos {
-          display: none;
         }
         .Picto_list_desktop {
           display: none;
         }
         .Picto_list_mobile {
-          display: inline-block;
-          padding-bottom: 400px;
+          display: block;
         }
       }
     `}</style>
@@ -604,46 +648,41 @@ const Icon = () =>
     <img src='/static/projects/classe/3-user-interface/fond-bleu1-01.svg' className='Blue_background' />
     <div className='Blue_background_mobile' />
     <div className='Pictos'>
-      <div className='Section_left'>
-        <img height='229' alt='first picto exemple' src='/static/projects/classe/3-user-interface/picto1-01.png' />
-        <div className='Infos'>
-          <div className='Number_container futuralt_bold'><span className='Number'>1</span></div>
-          <div className='Description_container Description_container_1'>
-            <Description
-              style={descriptionStyle}
-              content='The pictograms are drawn in an "inline" style, in lines and not in full. They are used in two versions, 32x32px, and 16x16px.' />
-          </div>
+      <img className='Illustration Illustration_1' height='229' alt='first picto exemple' src='/static/projects/classe/3-user-interface/picto1-01.png' />
+      <div className='Infos Infos_1'>
+        <div className='Number_container futuralt_bold'><span className='Number'>1</span></div>
+        <div className='Description_container Description_container_1'>
+          <Description
+            style={descriptionStyle}
+            content='The pictograms are drawn in an "inline" style, in lines and not in full. They are used in two versions, 32x32px, and 16x16px.' />
         </div>
       </div>
-      <div className='Section_center'>
-        <img height='229' alt='second picto exemple' src='/static/projects/classe/3-user-interface/picto2-01.png' />
-        <div className='Infos'>
-          <div className='Number_container futuralt_bold'><span className='Number'>2</span></div>
-          <div className='Description_container Description_container_2'>
-            <Description
-              style={descriptionStyle}
-              content='The contours and radius of angles makes 2px for a picto of 32x32.' />
-          </div>
-        </div>
-        <div className='Infos' style={{marginTop: 10}}>
-          <div className='Number_container futuralt_bold'><span className='Number'>3</span></div>
-          <div className='Description_container Description_container_3'>
-            <Description
-              style={descriptionStyle}
-              content='The interior spaces make 2px.' />
-          </div>
+
+      <img className='Illustration Illustration_2' height='229' alt='second picto exemple' src='/static/projects/classe/3-user-interface/picto2-01.png' />
+      <div className='Infos Infos_2'>
+        <div className='Number_container futuralt_bold'><span className='Number'>2</span></div>
+        <div className='Description_container Description_container_2'>
+          <Description
+            style={descriptionStyle}
+            content='The contours and radius of angles makes 2px for a picto of 32x32.' />
         </div>
       </div>
-      <div className='Section_right'>
-        <img className='Picto_list_desktop' height='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
-        <img className='Picto_list_mobile' width='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
-        <div className='Infos'>
-          <div className='Number_container futuralt_bold'><span className='Number'>4</span></div>
-          <div className='Description_container Description_container_4'>
-            <Description
-              style={descriptionStyle}
-              content='Or a multiple of 2 like 4 or 6px.' />
-          </div>
+      <div className='Infos Infos_3' style={{marginTop: 10}}>
+        <div className='Number_container futuralt_bold'><span className='Number'>3</span></div>
+        <div className='Description_container Description_container_3'>
+          <Description
+            style={descriptionStyle}
+            content='The interior spaces make 2px.' />
+        </div>
+      </div>
+      <img className='Illustration Illustration_3 Picto_list_desktop' height='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/picto3-01.png' />
+      <img className='Illustration Illustration_3 Picto_list_mobile' width='229' alt='third picto exemple' src='/static/projects/classe/3-user-interface/mobile/picto3-01.png' />
+      <div className='Infos Infos_4'>
+        <div className='Number_container futuralt_bold'><span className='Number'>4</span></div>
+        <div className='Description_container Description_container_4'>
+          <Description
+            style={descriptionStyle}
+            content='Or a multiple of 2 like 4 or 6px.' />
         </div>
       </div>
     </div>
@@ -670,6 +709,7 @@ const Components = () =>
         height: 634px;
         background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
         background-size: cover;
+        background-position: center;
       }
       .Description_container {
         width: 400px;

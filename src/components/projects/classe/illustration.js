@@ -35,7 +35,11 @@ class Illustration extends React.Component {
           }
         `}</style>
 
-        <Number content='03' color='#1a2432' borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
+        <Number
+          content='03'
+          color='#1a2432'
+          responsivePicto='/static/projects/classe/5-illustration/picto-illu.png'
+          borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <DoubleIllustrations
           main={{width: 460, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
           second={{width: 764, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
@@ -333,16 +337,22 @@ const Screen = ({banner, active}) =>
   </div>
 
 const Banner = ({banner, active}) =>
-  <div style={{opacity: active ?  1 : 0}} className=' transitions Banner'>
+  <div style={{
+    opacity: active ?  1 : 0,
+    backgroundImage: `url('/static/projects/classe/5-illustration/bandeau-${banner.index}.png'`
+  }} className=' ransitions Banner'>
     <style jsx>{`
       .Banner {
         position: absolute;
+        width: 100%;
         top: 0;
         left:0;
+        background-size: cover;
+        height: 166px;
+        background-position: center;
       }
 
     `}</style>
-    <img height='166' alt={`bandeau ${banner.index}`} src={`/static/projects/classe/5-illustration/bandeau-${banner.index}.png`} />
   </div>
 
 const Circle = ({banner, active, setActive, index}) =>

@@ -63,7 +63,11 @@ class VisualIdentity extends React.Component {
             }
           }
         `}</style>
-        <Number content='01' color='#221061' borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+        <Number
+          content='01'
+          color='#221061'
+          responsivePicto='/static/projects/comete/3-visual-identity/picto-ID.png'
+          borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
         <DoubleIllustrations
             main={{width: 462, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}
             second={{width: 1001, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}

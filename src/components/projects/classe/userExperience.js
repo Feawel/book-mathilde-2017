@@ -35,7 +35,11 @@ class UserExperience extends React.Component {
           }
         `}</style>
 
-        <Number content='02' color='#1a2432' borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
+        <Number
+          content='02'
+          color='#1a2432'
+          responsivePicto='/static/projects/classe/4-user-experience/picto-UX.png'
+          borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <DoubleIllustrations
           main={{width: 460, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
           second={{width: 764, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
@@ -185,20 +189,10 @@ const Homepage = () =>
         z-index: -1;
       }
       .Content {
-        width: 1165px;
-        margin: 0 0 120px 100px;
+        width: 1020px;
+        margin: 0 auto 120px;
         position: relative;
         top: 80px;
-      }
-      .Left {
-        display: inline-block;
-        width: 330px;
-        margin-right: 30px;
-      }
-      .Right {
-        display: inline-block;
-        width: 800px;
-        text-align: right;
       }
       .Anim {
         width: 357px;
@@ -225,8 +219,13 @@ const Homepage = () =>
         width: 320px;
         margin-bottom: 50px;
       }
-      .Right img:nth-child(2) {
+      .Mockup_home_mobile {
         display: none;
+      }
+      .Mockup_home_desktop {
+        position: absolute;
+        right: -130px;
+        top: 0;
       }
       @media screen and (max-width: 750px) {
         .Blue_background {
@@ -253,10 +252,10 @@ const Homepage = () =>
         .Right {
           width: 100%;
         }
-        .Right img:nth-child(1) {
+        .Mockup_home_desktop {
           display: none;
         }
-        .Right img:nth-child(2) {
+        .Mockup_home_mobile {
           display: inline-block;
           position: relative;
           right: 80px;
@@ -268,18 +267,14 @@ const Homepage = () =>
     `}</style>
     <img src='/static/projects/classe/4-user-experience/fond-3.svg' className='Blue_background' />
     <div className='Content'>
-      <div className='Left'>
-        <TitleSecondary content='homepage' style={{margin: '0 auto'}} />
-        <div className='Description_container'>
-          <Description
-            content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.' />
-        </div>
-        <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
+      <TitleSecondary content='homepage' style={{margin: '0 auto'}} />
+      <div className='Description_container'>
+        <Description
+          content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.' />
       </div>
-      <div className='Right'>
-        <img width='794' alt='animation class card' src='/static/projects/classe/4-user-experience/mockup-home.png' />
-        <img height='486' alt='animation class card' src='/static/projects/classe/4-user-experience/mobile/smartphone-home-01.png' />
-      </div>
+      <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
+      <img className='Mockup_home_desktop' width='794' alt='animation class card' src='/static/projects/classe/4-user-experience/mockup-home.png' />
+      <img className='Mockup_home_mobile' height='486' alt='animation class card' src='/static/projects/classe/4-user-experience/mobile/smartphone-home-01.png' />
     </div>
     <div className='Classes'>
       <div className='Header'>
@@ -444,6 +439,12 @@ const Statistics = () =>
         left: 0;
         z-index: -1;
       }
+      .Statistics_wrapper {
+        width: 1020px;
+        height: 100%;
+        position: relative;
+        margin: auto;
+      }
       .Header {
         display: inline-block;
         position: relative;
@@ -466,7 +467,7 @@ const Statistics = () =>
       .Stats_background {
         position: absolute;
         top: 300px;
-        left: 70px;
+        left: -75px;
         width: 1174px;
         z-index: -1;
       }
@@ -478,6 +479,9 @@ const Statistics = () =>
           margin-top: 250px;
           background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
           height: 770px;
+        }
+        .Statistics_wrapper {
+          width: 100%;
         }
         .Blue_background {
           display: none;
@@ -505,17 +509,18 @@ const Statistics = () =>
       }
     `}</style>
     <img src='/static/projects/classe/4-user-experience/fond-4.svg' className='Blue_background' />
-    <div className='Header'>
-      <div className='Title_container'>
-        <TitleSecondary content='statistics' style={{margin: '0 auto'}} />
+    <div className='Statistics_wrapper'>
+      <div className='Header'>
+        <div className='Title_container'>
+          <TitleSecondary content='statistics' style={{margin: '0 auto'}} />
+        </div>
+        <SubtitlePart
+          content={`Follow your students' progress.`} />
       </div>
-      <SubtitlePart
-        content={`Follow your students' progress.`} />
+      <img className='Stats_background' alt='statistics mockup' src='/static/projects/classe/4-user-experience/stat-fond.png' />
+      <img className='Mockup' alt='statistics mockup' src='/static/projects/classe/4-user-experience/ecran-stat.jpg' />
+      <img className='Anim_stats' alt='statistics animation' src='/static/projects/classe/4-user-experience/anim-stat.gif' />
     </div>
-    <img className='Stats_background' alt='statistics mockup' src='/static/projects/classe/4-user-experience/stat-fond.png' />
-    <img className='Mockup' alt='statistics mockup' src='/static/projects/classe/4-user-experience/ecran-stat.jpg' />
-    <img className='Anim_stats' alt='statistics animation' src='/static/projects/classe/4-user-experience/anim-stat.gif' />
-
   </div>
 
 const Homework = () =>
@@ -529,7 +534,7 @@ const Homework = () =>
       .Steps {
         margin: auto;
         position: relative;
-        width: 1050px;
+        width: 1020px;
       }
       .Red_background {
         display: inline-block;
@@ -571,8 +576,8 @@ const Step1 = () =>
       }
       .Mockup {
         display: inline-block;
-        width: 610px;
-        margin-right: 80px;
+        width: 592px;
+        margin-right: 70px;
       }
       .Infos {
         display: inline-block;
@@ -632,14 +637,14 @@ const Step2 = () =>
       }
       .Mockup {
         display: inline-block;
-        width: 610px;
+        width: 592px;
       }
       .Infos {
         display: inline-block;
         width: 350px;
         text-align: left;
         vertical-align: top;
-        margin-right: 80px;
+        margin-right: 70px;
         position: relative;
         top: 70px;
       }
@@ -694,8 +699,8 @@ const Step3 = () =>
       }
       .Mockup {
         display: inline-block;
-        width: 610px;
-        margin-right: 80px;
+        width: 592px;
+        margin-right: 70px;
       }
       .Infos {
         display: inline-block;
