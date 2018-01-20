@@ -3,6 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import throttle from 'lodash/throttle'
 import get from 'lodash/get'
+import Link from 'next/link'
+
+const TOP_DIFF_VALUE = 245
 
 class Menu extends React.Component {
   constructor(props) {
@@ -10,7 +13,8 @@ class Menu extends React.Component {
     this.state = {
       current: 0,
       fixed: false,
-      offsetTop: 0
+      offsetTop: 0,
+      projectOffsetTop: 0
     }
 
     this.onScrollMenu = this.onScrollMenu.bind(this)
@@ -18,7 +22,7 @@ class Menu extends React.Component {
 
   render () {
     const { items, current, fixed } = this.state
-    const { section, sections, borderImage, color } = this.props
+    const { section, sections, borderImage, color, project } = this.props
     const leftBorder = current < sections.length/2
       ? 170*((sections.length/2)-current)
       : 170*(current-sections.length/2)
@@ -77,6 +81,25 @@ class Menu extends React.Component {
             height: 100%;
             overflow: auto;
           }
+          .Close {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+          }
+          .Close_text {
+            font-size: 10px;
+            font-color: #000000;
+            position: relative;
+            right: 10px;
+            vertical-align: top;
+            top: 2px;
+            text-transform: uppercase;
+          }
+          .Close_icon {
+            position: relative;
+            top: 1px;
+            width: 14px;
+          }
           @media screen and (max-width: 750px) {
             .Menu_inner {
               width: 100%;
@@ -84,6 +107,7 @@ class Menu extends React.Component {
             .Scroll {
               width: ${sections.length*180}px!important;
             }
+            .Close { display: none }
           }
         `}</style>
         <div className='Menu_inner'>
@@ -101,6 +125,12 @@ class Menu extends React.Component {
               className='Border transitions'>
             </div>
           </div>
+            <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
+              <div className='Close clickable transitions'>
+                <span className='Close_text futuralt_bold transitions'>close project</span>
+                <img src='/static/pictos/picto-croix.svg' className='Close_icon transitions' />
+              </div>
+          </Link>
         </div>
       </div>
     )
@@ -109,13 +139,14 @@ class Menu extends React.Component {
   changeCurrent(current) {
     this.setState({ current })
     window.scroll({
-      top: this.props.sections[current].element.offsetTop,
+      top: this.props.sections[current].element.offsetTop+(this.state.projectOffsetTop - 40),
       behavior: 'smooth'
     })
   }
 
   onScrollMenu(e) {
-    const { offsetTop } = this.state
+    const { offsetTop, projectOffsetTop } = this.state
+    const offset = offsetTop+projectOffsetTop
     const { sections } = this.props
     const scrollY = window.scrollY
 
@@ -127,7 +158,7 @@ class Menu extends React.Component {
       }
     }, 0)
     this.setState({
-      fixed: scrollY >= offsetTop,
+      fixed: scrollY >= offset,
       current
     })
   }
@@ -135,7 +166,10 @@ class Menu extends React.Component {
   componentDidMount() {
     this.handleScrollMenu = throttle(this.onScrollMenu, 30, { 'trailing': false });
     window.addEventListener('scroll', this.handleScrollMenu);
-    this.setState({offsetTop: ReactDOM.findDOMNode(this).offsetTop+380})
+    this.setState({
+      offsetTop: ReactDOM.findDOMNode(this).offsetTop,
+      projectOffsetTop: window.document.getElementById('project').offsetTop
+    })
   }
 
   componentWillUnmount() {

@@ -6,12 +6,14 @@ import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 import Call from '../common/call'
-import { responsive } from '../../../utils/responsive'
+import { responsive, isMobile } from '../../../utils/responsive'
 
 class UserInterface extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      isMobile: null
+    }
   }
 
   componentDidMount() {
@@ -22,9 +24,11 @@ class UserInterface extends React.Component {
       activeIcon: '/static/projects/menu/apps-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
+    this.setState({ isMobile: isMobile() })
   }
 
   render() {
+    const { isMobile } = this.state
     return (
       <div className='User_interface'>
        <style jsx>{`
@@ -41,9 +45,10 @@ class UserInterface extends React.Component {
           }
           .Call_wrapper {
             position: absolute;
-            top: 470px;
+            top: 490px;
             left: calc(50% - 14px);
           }
+          .Mobile { display: none; }
           @media screen and (max-width: 750px) {
             .Call_wrapper {
               position: relative;
@@ -52,33 +57,49 @@ class UserInterface extends React.Component {
               left: 0;
               top: 30px;
             }
+            .Desktop { display: none; }
+            .Mobile { display: block; }
           }
         `}</style>
 
-        <Number content='02' color='#004459' borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
+        <Number
+          content='02'
+          color='#004459'
+          borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)'
+          responsivePicto='/static/projects/apps/4-user-interface/picto-UI.png' />
         <DoubleIllustrations
-          main={{width: 353, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
+          main={{width: 402, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           second={{width: 1060, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           location={{bottom: 50, right: 100}}
-          mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -2315, zoom: 0.6}} />
         <SectionInfos
-          marginTop={90}
+          isMobile={isMobile}
+          marginTop={115}
           title={{content: 'User Interface', color: '#004459'}}
           baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'The user interface has been designed to appeal to college students. So I decided to use a lot of colors is to leave an important place to the picture. However, the interface must also remain clear and uncluttered. I have created an ui kit so that the whole 8 book can be implemented in the app.'}}
           />
-        <div className='Call_wrapper'>
+        <div className='Call_wrapper Desktop'>
           <Call
             color='#00b3df'
             colorHover='white'
             background='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
             backgroundInner='white'
-            width={170}
+            width={182}
+            text='VIEW ALL THE CHARTE' />
+        </div>
+        <div className='Call_wrapper Mobile'>
+          <Call
+            color='white'
+            colorHover='white'
+            background='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
+            backgroundInner='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
+            width={230}
             text='VIEW ALL THE CHARTE' />
         </div>
         <Typeface />
         <Colors />
-        <Picto />
+        <Picto isMobile={isMobile} />
         <Illustration />
         <Types />
         <More />
@@ -226,19 +247,19 @@ const Colors = () =>
   <div className='Color_wrapper'>
     <style jsx>{`
       .Color_wrapper {
-        width: 100%;
+        width: 1020px;
         position: relative;
-        height: 551px;
+        margin: auto;
+        height: 540px;
       }
       .Title_wrapper {
         position: relative;
-        top: 45px;
-        left: calc(20% - 125px);
+        margin-top: 45px;
       }
       .Colors {
         position: relative;
         margin-top: 60px;
-        margin-left: calc(20% - 125px);
+        margin-left: 0;
       }
       .Main_colors {
         display: inline-block;
@@ -247,9 +268,9 @@ const Colors = () =>
       }
       .Secondary_colors {
         display: inline-block;
-        margin-left: 250px;
+        margin-left: 200px;
         vertical-align: top;
-        width: 700px;
+        width: 650px;
       }
       .Font_colors,.Additional_colors {
         width: 700px;
@@ -257,7 +278,8 @@ const Colors = () =>
       }
       @media screen and (max-width: 750px) {
         .Color_wrapper {
-          height: 952px;
+          width: 100%;
+          height: 967px;
         }
         .Title_wrapper {
           display: inline-block;
@@ -289,26 +311,26 @@ const Colors = () =>
       }
     `}</style>
     <div className='Title_wrapper'>
-      <TitleSecondary content='Color' style={{color: '#004459', margin: 0}} />
+      <TitleSecondary content='Color' style={{color: '#004459', margin: 0, letterSpacing: 1.05}} />
     </div>
     <div className='Colors'>
       <div className='Main_colors'>
         <SubtitlePart
           content='Main colors'
-          style={{color: '#abb0bc', margin: '0 0 20px 0'}} />
+          style={{color: '#abb0bc', lineHeight: '18px', margin: '0 0 20px 0'}} />
         {mainColors.map((color, i) => <MainColor color={color} key={i} />)}
       </div>
       <div className='Secondary_colors'>
         <div className='Font_colors'>
           <SubtitlePart
             content='Font colors'
-            style={{color: '#abb0bc', margin: '20px 0'}} />
-            {fontColors.map((color, i) => <SecondaryColor color={color} key={i} />)}
+            style={{color: '#abb0bc', lineHeight: '18px', margin: '20px 0'}} />
+            {fontColors.map((color, i) => <SecondaryColor marginBottom={5} color={color} key={i} />)}
         </div>
         <div className='Additional_colors'>
           <SubtitlePart
             content='Additional colors'
-            style={{color: '#abb0bc', margin: '20px 0'}} />
+            style={{color: '#abb0bc', lineHeight: '18px', margin: '20px 0'}} />
           {additionalColors1.map((color, i) => <SecondaryColor color={color} key={i} />)}
           {additionalColors2.map((color, i) => <SecondaryColor color={color} key={i} />)}
         </div>
@@ -342,6 +364,10 @@ const MainColor = ({color, big = false}) =>
         width: 20px;
         background: ${color.code};
         margin-bottom: 10px;
+      }
+      .Description {
+        color: #474f6f;
+        line-height: 18px;
       }
       @media screen and (max-width: 750px) {
         .Main_color {
@@ -377,7 +403,7 @@ const MainColor = ({color, big = false}) =>
     </div>
   </div>
 
-const SecondaryColor = ({color, big = false}) =>
+const SecondaryColor = ({color, big = false, marginBottom}) =>
   <div className='Secondary_color'>
     <style jsx>{`
       .Secondary_color {
@@ -406,6 +432,10 @@ const SecondaryColor = ({color, big = false}) =>
         background: ${color.code};
         margin-bottom: 10px;
       }
+      .Description {
+        color: #474f6f;
+        line-height: 18px;
+      }
       @media screen and (max-width: 750px) {
         .Secondary_color {
           width: 100px;
@@ -427,7 +457,7 @@ const SecondaryColor = ({color, big = false}) =>
         }
       }
     `}</style>
-    <img className='Illustration' alt='lls picto' src={`/static/projects/apps/4-user-interface/color/${color.src}.svg`} />
+    <img style={{marginBottom}} className='Illustration' alt='lls picto' src={`/static/projects/apps/4-user-interface/color/${color.src}.svg`} />
     <div className='Infos'>
       <div className='Border' />
       <div className='Description futuralt_bold'>
@@ -437,7 +467,7 @@ const SecondaryColor = ({color, big = false}) =>
   </div>
 
 
-const Picto = () =>
+const Picto = ({ isMobile }) =>
   <div className='Picto'>
    <style jsx>{`
       .Picto {
@@ -449,120 +479,128 @@ const Picto = () =>
         display: inline-block;
         position: relative;
       }
+      .Picto_container {
+        width: 1020px;
+        height: 100%;
+        margin: auto;
+      }
       .Picto_list {
         width: 100%;
         margin: auto;
-        text-align: center;
-        position: absolute;
-        bottom: 80px;
+        margin-top: 60px;
       }
       .Pictograms {
-        width: 1050px;
+        width: 100%;
         margin: auto;
-        margin-top: 40px;
+        margin-top: 70px;
+        text-align: left;
+        position: relative;
+        height: 290px;
       }
-      .Picto_big_left {
+      .Illustration {
         display: inline-block;
-        width: 358px;
-        vertical-align: top;
+        position: absolute;
       }
-      .Picto_text {
-        display: inline-block;
-        width: 404px;
+      .Illustration_1 {
+        top: 0;
+        left: 0;
       }
-      .Picto_big_right {
-        display: inline-block;
-        width: 288px;
-        vertical-align: top;
+      .Illustration_2 {
+        top: 0;
+        left: 328px;
+      }
+      .Illustration_3 {
+        top: 0;
+        right: 0;
       }
       .Description_container_1 {
+        position: absolute;
         display: inline-block;
-        width: 150px;
-        margin-left: 50px;
-        vertical-align: top;
+        width: 175px;
+        top: 174px;
+        left: 328px;
       }
       .Description_container_2 {
+        position: absolute;
         display: inline-block;
         width: 155px;
-        vertical-align: top;
-        position: relative;
-        right: 96px;
-        top: 20px;
+        top: 0;
+        left: 539px;
       }
       .Picto_list_responsive {
         display: none;
       }
       @media screen and (max-width: 750px) {
         .Picto {
-          height: 1272px;
+          height: 1345px;
         }
         .Picto_list {
           display: none;
         }
+        .Picto_container {
+          width: 310px;
+        }
         .Pictograms {
-          width: 100%;
+          height: 772px;
         }
-        .Picto_big_left {
-          display: block;
+        .Illustration {
+          height: 310px!important;
         }
-        .Picto_text {
-          display: block;
-          width: 100%;
-          margin: auto;
-        }
-        .Picto_text img {
-          display: none;
-        }
-        .Description_container_1, .Description_container_2 {
-          width: 300px;
-          margin: auto;
+        .Illustration_1 {
           top: 0;
           left: 0;
-          margin-top: 20px;
         }
-        .Description_container_2 {
-          margin-bottom: 20px;
+        .Illustration_2 {
+          display: none;
         }
-        .Picto_big_right {
-          display: block;
+        .Illustration_3 {
+          top: 410px;
+          left: 0;
+        }
+        .Description_container_1 {
+          top: 330px;
+          left: 0;
+        }
+        .Description_container_1 {
+          top: 740px;
+          left: 0;
+        }
+        .Description_container_1, .Description_container_2 {
+          width: 305px;
           margin: auto;
         }
         .Picto_list_responsive {
           display: block;
-          margin-top: 30px;
+          margin-top: 40px;
         }
       }
     `}</style>
-    <TitleSecondary content='PICTOGRAMME' style={{color: 'white', margin: '80px auto 0 auto'}} />
-    <SubtitlePart
-      content='Guidelines'
-      style={{opacity: 0.6}} />
-    <div className='Pictograms'>
-      <div className='Picto_big_left'>
-        <img height='288' src='/static/projects/apps/4-user-interface/picto/picto-grand.svg' alt='picto-grand' />
-      </div>
-      <div className='Picto_text'>
-        <img height='144px' src='/static/projects/apps/4-user-interface/picto/picto-petit.svg' alt='picto-petit' />
+    <div className='Picto_container'>
+      <TitleSecondary content='PICTOGRAMME' style={{color: 'white', letterSpacing: 1.05, margin: '69px auto 0 auto'}} />
+      <SubtitlePart
+        content='Guidelines'
+        style={{opacity: 0.6}} />
+      <div className='Pictograms'>
+        <img className='Illustration Illustration_1' height='288' src='/static/projects/apps/4-user-interface/picto/picto-grand.svg' alt='picto-grand' />
         <div className='Description_container_1'>
           <Description
-            style={{verticalAlign: 'top', textAlign: 'left', display: 'inline-block', fontSize: 12, marginTop: 0}}
+            style={{verticalAlign: 'top', opacity: 0.8, lineHeight: '18px', textAlign: isMobile ? 'center' : 'left', display: 'inline-block', fontSize: 12, marginTop: 0}}
             content='The contours and radius of Angles makes 2px for a picto Of 44x44. The interior spaces make 2px or a multiple.' />
         </div>
+        <img className='Illustration Illustration_2' height='144px' src='/static/projects/apps/4-user-interface/picto/picto-petit.svg' alt='picto-petit' />
         <div className='Description_container_2'>
           <Description
-            style={{textAlign: 'left', display: 'block', fontSize: 12, marginTop: 0}}
+            style={{textAlign: isMobile ? 'center' : 'left', opacity: 0.8, lineHeight: '18px',  display: 'block', fontSize: 12, marginTop: 0}}
             content='The pictograms are drawn In an "inline" style, in lines And not in full. They are used In two versions, 44px X 44px, and 22px X 22px.' />
         </div>
+        <img className='Illustration Illustration_3' height='288' src='/static/projects/apps/4-user-interface/picto/picto-guidelines.svg' alt='picto-guidelines' />
       </div>
-      <div className='Picto_big_right'>
-        <img height='288' src='/static/projects/apps/4-user-interface/picto/picto-guidelines.svg' alt='picto-guidelines' />
+      <div className='Picto_list'>
+        <img height='121' src='/static/projects/apps/4-user-interface/picto/pictos.svg' alt='picto list' />
       </div>
-    </div>
-    <div className='Picto_list'>
-      <img height='121' src='/static/projects/apps/4-user-interface/picto/pictos.svg' alt='picto list' />
-    </div>
-    <div className='Picto_list_responsive'>
-      <img height='252' src='/static/projects/apps/4-user-interface/smartphone/picto.svg' alt='picto list' />
+      <div className='Picto_list_responsive'>
+        <img height='252' src='/static/projects/apps/4-user-interface/smartphone/picto.svg' alt='picto list' />
+      </div>
     </div>
   </div>
 
@@ -573,12 +611,12 @@ const Illustration = () =>
         width: 100%;
         position: relative;
         height: 575px;
-        background-size: contain;
+        background-size: cover;
+        background-position: center center;
       }
       @media screen and (max-width: 750px) {
         .Illustration {
           height: 450px;
-          background-size: cover;
           background-image: url('/static/projects/apps/4-user-interface/smartphone/ipad-photo-600.jpg');
         }
       }
@@ -606,20 +644,34 @@ const Types = () =>
       .Types {
         width: 100%;
         position: relative;
-        height: 2850px;
+        height: 2790px;
         margin: auto;
         text-align: center;
+      }
+      .Title_container {
+        margin: 70px auto 0 auto;
       }
       @media screen and (max-width: 750px) {
         .Types {
           height: 3600px;
         }
+        .Title_container {
+          margin: 50px auto 0 auto;
+        }
+        .Subtitle_container {
+          width: 250px;
+          margin: auto;
+        }
       }
     `}</style>
-    <TitleSecondary content='Types of pages' style={{color: '#004459', margin: '80px auto 0 auto'}} />
-    <SubtitlePart
-      content='We create a template for every type of page'
-      style={{color: '#abb0bc'}} />
+    <div className='Title_container'>
+      <TitleSecondary content='Types of pages' style={{color: '#004459', letterSpacing: 1.05, margin: 0}} />
+    </div>
+    <div className='Subtitle_container'>
+      <SubtitlePart
+        content='We create a template for every type of page'
+        style={{color: '#abb0bc', lineHeight: '22px'}} />
+    </div>
     <Background />
     <BackgroundMobile1 />
     <BackgroundMobile2 />
@@ -632,9 +684,9 @@ const Templates = () =>
   <div className='Templates'>
     <style jsx>{`
       .Templates {
-        width: 1050px;
+        width: 1020px;
         margin: auto;
-        margin-top: 80px;
+        margin-top: 73px;
         z-index: 1
       }
       .Template {
@@ -643,8 +695,16 @@ const Templates = () =>
         margin-right: 30px;
         vertical-align: top;
       }
+      .Template:nth-child(3) {
+        margin-right: 0;
+      }
       .Template img {
+        width: 320px;
         height: 425px;
+        -moz-box-shadow: 0px 7px 15px 0px rgba(1,1,1,0.35);
+        -webkit-box-shadow: 0px 7px 15px 0px rgba(1,1,1,0.35);
+        -o-box-shadow: 0px 7px 15px 0px rgba(1,1,1,0.35);
+        box-shadow: 0px 7px 15px 0px rgba(1,1,1,0.35);
       }
       .Description {
         font-size: 12px;
@@ -660,6 +720,9 @@ const Templates = () =>
         .Template {
           display: block;
           margin: 40px auto;
+        }
+        .Template:nth-child(3) {
+          margin-right: auto;
         }
       }
     `}</style>
@@ -683,17 +746,17 @@ const Background = () =>
       .Background {
         position: absolute;
         right: 0;
-        top: 200px;
+        top: 40px;
         width: 100%;
         z-index: -1;
       }
       .clip-borders {
-        height: 1250px;
+        height: 1410px;
         width: 100%;
         background-image: linear-gradient(to right, #6ad7d9 0%, #008db9 100%);
         margin: 0 auto;
-        -webkit-clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
-        clip-path: polygon(0% 100%,0% 15%,100% 0%,100% 85%);
+        -webkit-clip-path: polygon(0% 100%,0% 28%,100% 0%,100% 88%);
+        clip-path: polygon(0% 100%,0% 28%,100% 0%,100% 88%);
         -webkit-clip-path: url("#rhomboid-clip");
         clip-path: url("#rhomboid-clip");
       }
@@ -707,7 +770,7 @@ const Background = () =>
     <svg className="clip-svg">
       <defs>
         <clipPath id="rhomboid-clip" clipPathUnits="objectBoundingBox">
-          <polygon points="0 1, 0 0.15, 1 0, 1 0.85" />
+          <polygon points="0 1, 0 0.28, 1 0, 1 0.88" />
         </clipPath>
       </defs>
     </svg>
@@ -826,9 +889,9 @@ class Tools extends React.Component {
     super(props)
     this.state = {
       screen1Title: {letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: 'white', margin: 0},
-      screen1Desc: {textAlign: 'left', marginTop: 20},
+      screen1Desc: {textAlign: 'left', marginTop: 20, fontSize: 12, opacity: 0.8, lineHeight: '18px'},
       screen2Title: {textAlign: 'left', letterSpacing: 1.05, fontFamily: '\'Futura LT - Book\'', textTransform: 'none', color: '#00b3df', margin: 0},
-      screen2Desc: {textAlign: 'left', marginTop: 20, color: '#474f6f'}
+      screen2Desc: {textAlign: 'left', marginTop: 20, color: '#474f6f', fontSize: 12, opacity: 0.8, lineHeight: '18px'}
     }
   }
   componentDidMount() {
@@ -852,8 +915,11 @@ class Tools extends React.Component {
             text-align: center;
           }
           .Screen {
-            margin-top: 60px;
+            width: 1020px;
+            margin: auto;
+            margin-top: 50px;
             position: relative;
+            text-align: left;
           }
           .Infos {
             text-align: left;
@@ -864,6 +930,9 @@ class Tools extends React.Component {
             margin-left: 130px;
             top: 120px;
           }
+          .Title_container {
+            margin: 70px 0 0 0;
+          }
           .Border {
             height: 22px;
             width: 2px;
@@ -873,30 +942,46 @@ class Tools extends React.Component {
             background-color: white;
           }
           .Screen_1 img, .Screen_2 img {
-            height: 616px;
+            height: 609px;
           }
           .Screen_2 {
             margin-top: 0;
-            top: -200px;
+            top: -100px;
             text-align: right;
           }
           .Screen_2 .Infos {
-            margin-right: 130px;
+            margin-right: 120px;
             margin-left: 0;
-            top: 250px;
+            top: 290px;
           }
           .Screen_2 .Border {
             background-color: #00b3df;
           }
+          .Andmore_container {
+            display: inline-block;
+            position: relative;
+            margin: 0;
+            top: -40px;
+          }
           @media screen and (max-width: 750px) {
             .Border {
               display: none;
+            }
+            .Screen {
+              width: 100%;
+            }
+            .Title_container {
+              margin: 50px 0 0 0;
             }
             .Screen_1 img, .Screen_2 img {
               display: block;
               margin: auto;
               width: 328px;
               height: auto;
+            }
+            .Andmore_container {
+              top: 0;
+              margin-top: 40px;
             }
             .Infos {
               text-align: center;
@@ -911,10 +996,12 @@ class Tools extends React.Component {
             }
           }
         `}</style>
-        <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: '80px 0 0 0'}} />
-        <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+        <div className='Title_container'>
+          <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: 0}} />
+          <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+        </div>
         <div className='Screen Screen_1'>
-          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-1.png' />
           <div className='Infos'>
             <div className='Border' />
             <TitleSecondary content='Answer to the question' style={screen1Title} />
@@ -931,9 +1018,12 @@ class Tools extends React.Component {
               style={screen2Desc}
               content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
           </div>
-          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul.png' />
+          <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-2.png' />
         </div>
-        <TitleSecondary content='and more ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+        <div className='Andmore_container'>
+          <TitleSecondary content='and more ...'
+            style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+        </div>
       </div>
     )
   }
@@ -948,6 +1038,7 @@ const More = () =>
         bottom: 0;
         height: 700px;
         background-size: cover;
+        background-position: center center;
       }
       @media screen and (max-width: 750px) {
         .Illustration {

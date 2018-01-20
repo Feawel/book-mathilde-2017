@@ -6,7 +6,7 @@ import Pictures from './pictures'
 import data from '../../../../data'
 
 const Typo = ({ project }) =>
-  <div className='Global_project Typo'>
+  <div id='project' className='Global_project Typo'>
     <Summary project={data.projects[5]} />
     <Pictures />
     <Footer project={data.projects[5]}/>

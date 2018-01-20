@@ -22,7 +22,7 @@ class Comete extends React.Component {
     const {section, sections} = this.state
     const project = data.projects[0]
     return (
-      <div className='Global_project Comete'>
+      <div id='project' className='Global_project Comete'>
         <Summary project={project} />
         <Menu sections={sections} section={section} project={project} color='#00b3df' borderImage='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
         <UserExperience

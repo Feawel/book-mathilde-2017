@@ -6,7 +6,7 @@ import Pictures from './pictures'
 import data from '../../../../data'
 
 const Ganesha = ({ project }) =>
-  <div className='Global_project Ganesha'>
+  <div id='project' className='Global_project Ganesha'>
     <Summary project={data.projects[4]} />
     <Pictures />
     <Footer project={data.projects[4]}/>

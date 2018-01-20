@@ -25,13 +25,12 @@ const Call = ({text, color = '#8061e7', colorHover = 'white', width = 150,
         top: 8px;
         left: 0;
         text-align: center;
-        font-family: Futura;
-        font-weight: bold;
         text-transform: uppercase;
         line-height: 22px;
         font-size: 10px;
         display: inline-block;
         width: ${width-2}px;
+        letter-spacing: 1.1px;
       }
       .Call:hover .Call_inner {
         top: -50px;
@@ -47,7 +46,7 @@ const Call = ({text, color = '#8061e7', colorHover = 'white', width = 150,
     `}</style>
     <div style={{background: backgroundInner}} className='Call_inner transitions'>
     </div>
-    <div style={{color}} className='Call_text transitions'>
+    <div style={{color}} className='Call_text transitions futuralt_bold'>
       {text}
     </div>
   </div>
