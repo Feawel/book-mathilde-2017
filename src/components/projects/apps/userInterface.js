@@ -557,7 +557,7 @@ const Picto = ({ isMobile }) =>
           top: 410px;
           left: 0;
         }
-        .Description_container_1 {
+        .Description_container_2 {
           top: 330px;
           left: 0;
         }

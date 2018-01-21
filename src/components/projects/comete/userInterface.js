@@ -70,6 +70,7 @@ class UserInterface extends React.Component {
           .Content_illustration {
             background-image: url('/static/projects/comete/4-user-interface/illu-content-page-1200px.png');
             background-size: cover;
+            background-position: center;
             width: 100%;
             height: 680px;
           }
@@ -164,14 +165,20 @@ const Content = () =>
       background-color: white;
       margin: auto;
     }
+    .Infos {
+      position: relative;
+      top: 73px;
+    }
   `}</style>
-    <TitleSecondary content='CONTENT PAGE' style={{color: '#221061', margin: 0, marginTop: 80}} />
-    <SubtitlePart
-      content='Scientific pages for a scientific exhibition'
-      style={{color: '#abb0bc', maxWidth: '450px'}} />
-    <Description
-      content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
-      style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: 'calc(100% - 50px)'}} />
+    <div className='Infos'>
+      <TitleSecondary content='CONTENT PAGE' style={{color: '#221061', margin: 0}} />
+      <SubtitlePart
+        content='Scientific pages for a scientific exhibition'
+        style={{color: '#abb0bc', maxWidth: '450px', margin: 'auto'}} />
+      <Description
+        content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+        style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: 450}} />
+    </div>
   </div>
 
 const Homepage = () =>
@@ -188,7 +195,7 @@ const Homepage = () =>
       display: block;
       margin: auto;
     }
-    .Smartphone_home.responsive {
+    .Mobile {
       display: none;
     }
     .Home_screen {
@@ -209,10 +216,10 @@ const Homepage = () =>
       text-shadow: 0px 5px 237px rgba(128, 97, 231, 0.8);
     }
     @media screen and (max-width: 750px) {
-      .Smartphone_home.desktop {
+      .Desktop {
         display: none;
       }
-      .Smartphone_home.responsive {
+      .Mobile {
         display: block;
       }
       .Home_typo {
@@ -226,13 +233,18 @@ const Homepage = () =>
 
   `}</style>
     <TitleSecondary content='Homepage' style={{color: '#8061e7', margin: 'auto auto 40px auto'}} />
-    <Description
-      content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
-      style={{opacity: 0.6, margin: 'auto', width: '315px', textAlign: 'center'}} />
-    <div className='Title'></div>
-    <div className='Description'>The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.</div>
-    <img className='Smartphone_home desktop' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
-    <img className='Smartphone_home responsive' width='100%' alt='tablet smartphone homepage comete' src='/static/projects/comete/responsive/4-user-interface/illu-iphone-homepage-01.png' />
+    <div className='Desktop'>
+      <Description
+        content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+        style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
+    </div>
+    <div className='Mobile'>
+      <Description
+        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.'
+        style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
+    </div>
+    <img className='Smartphone_home Desktop' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
+    <img className='Smartphone_home Mobile' width='100%' alt='tablet smartphone homepage comete' src='/static/projects/comete/responsive/4-user-interface/illu-iphone-homepage-01.png' />
     <div className='Home_screen'>
       <img className='Home_typo' alt='homepage typo' src='/static/projects/comete/4-user-interface/typo-homepage.svg' />
       <img className='Home_screen_image' alt='homepage comete' src='/static/projects/comete/4-user-interface/page_accueil_final_3.jpg' />

@@ -61,9 +61,14 @@ const FirstVideoGame = () =>
   <div className='First_video_game'>
     <style jsx>{`
       .First_video_game {
-        width: calc(100% - 260px);
+        width: 100%;
         background-image: linear-gradient(to bottom, #0d0136 0%, #230f66 100%);
-        padding: 80px 130px;
+        margin-top: 80px;
+        padding-bottom: 80px;
+      }
+      .First_video_game_container {
+        width: 1020px;
+        margin: auto;
       }
       .Details {
         width: 100%;
@@ -75,8 +80,14 @@ const FirstVideoGame = () =>
       }
       @media screen and (max-width: 750px) {
         .First_video_game {
-          width: calc(100% - 100px);
-          padding: 40px 50px 0 50px;;
+          width: 100%;
+          padding-top: 40px;
+        }
+        .Titles_container {
+          margin-left: 25px;
+        }
+        .First_video_game_container {
+          width: 100%;
         }
         .Call_wrapper {
           display: none;
@@ -91,32 +102,38 @@ const FirstVideoGame = () =>
         }
         .Description_wrapper {
           position: relative;
-          top: -100px;
+          width: 300px;
+          margin: auto;
+          text-align: center;
         }
       }
     `}</style>
-    <div className='Infos'>
-      <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
-      <TitleSecondary content='VIDEO GAME' style={{color: '#8061e7', marginTop: 0, marginBottom: 40}} />
-      <div className='Details responsive'>
-        <img className='Detail_screen' height='500' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/smartphone-jeux1-01.png' />
-      </div>
-      <div className='Description_wrapper'>
-        <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', maxWidth: 310}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
-      </div>
-      <div className='Call_wrapper'>
-        <Call
-          color='white'
-          colorHover='#0d0136'
-          background='white'
-          backgroundInner='#0d0136'
-          text='Try the game' />
+    <div className='First_video_game_container'>
+      <div className='Infos'>
+        <div className='Titles_container'>
+          <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+          <TitleSecondary content='VIDEO GAME' style={{color: '#8061e7', marginTop: 0, marginBottom: 40}} />
         </div>
+        <div className='Details responsive'>
+          <img className='Detail_screen' height='500' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/smartphone-jeux1-01.png' />
+        </div>
+        <div className='Description_wrapper'>
+          <Description style={{marginBottom: 40, opacity: 0.6, color: 'white'}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
+        </div>
+        <div className='Call_wrapper'>
+          <Call
+            color='white'
+            colorHover='#0d0136'
+            background='white'
+            backgroundInner='#0d0136'
+            text='Try the game' />
+          </div>
+      </div>
+      <div className='Details desktop'>
+        <img className='Detail_screen' height='539' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear.png' />
+      </div>
+      <Screens screens={firstGameScreens} />
     </div>
-    <div className='Details desktop'>
-      <img className='Detail_screen' height='539' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear.png' />
-    </div>
-    <Screens screens={firstGameScreens} />
   </div>
 
 const SecondVideoGame = () =>
@@ -127,12 +144,19 @@ const SecondVideoGame = () =>
         background-color: white;
       }
       .First_part {
-        width: calc(100% - 260px);
-        padding: 80px 130px;
+        width: 1020px;
+        margin: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
       }
       .Second_part {
+        width: 100%;
         padding: 0;
         background-image: linear-gradient(to bottom, #0d0136 0%, #230f66 100%);
+      }
+      .Second_part_container {
+        width: 1020px;
+        margin: auto;
       }
       .Details {
         display: inline-block;
@@ -142,7 +166,7 @@ const SecondVideoGame = () =>
         margin-top: 250px;
       }
       .Screens_container {
-        padding: 0px 130px;
+        padding: 0px auto;
       }
       .Infos {
         float: right;
@@ -182,23 +206,27 @@ const SecondVideoGame = () =>
         }
       }
     `}</style>
-    <div className='First_part'>
-      <div className='Details desktop'>
-        <img className='Detail_screen' height='361' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear-violet.png' />
-      </div>
-      <div className='Infos'>
-        <TitleSecondary content='THE SECOND' style={{width: '100%', color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
-        <TitleSecondary content='VIDEO GAME' style={{width: '100%', color: '#240868', marginTop: 0, marginBottom: 20}} />
-        <div className='Details responsive'>
-          <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
+    <div className='Second_video_game_container'>
+      <div className='First_part'>
+        <div className='Details desktop'>
+          <img className='Detail_screen' height='361' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear-violet.png' />
         </div>
-        <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
-        <div className='Call_wrapper'><Call text='Try the game' /></div>
+        <div className='Infos'>
+          <TitleSecondary content='THE SECOND' style={{width: '100%', color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+          <TitleSecondary content='VIDEO GAME' style={{width: '100%', color: '#240868', marginTop: 0, marginBottom: 20}} />
+          <div className='Details responsive'>
+            <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
+          </div>
+          <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
+          <div className='Call_wrapper'><Call text='Try the game' /></div>
+        </div>
       </div>
-    </div>
-    <div className='Second_part'>
-      <div className='Screens_container'>
-        <Screens paddingTop={55} dashTop={-40} screens={secondGameScreens} />
+      <div className='Second_part'>
+        <div className='Second_part_container'>
+          <div className='Screens_container'>
+            <Screens paddingTop={55} dashTop={-40} screens={secondGameScreens} />
+          </div>
+        </div>
       </div>
     </div>
   </div>
