@@ -6,14 +6,14 @@ const Social = () => (
         z-index: 10;
         width: 20px;
         position: absolute;
-        bottom: 8px;
-        right: 30px;
+        bottom: 0px;
+        right: 35px;
       }
       img {
         width: 16px;
       }
       a {
-        margin-bottom: 25px;
+        margin-bottom: 24px;
         display: inline-block;
       }
       a:hover {
@@ -26,7 +26,7 @@ const Social = () => (
       }
     `}</style>
     <a target='_blank' title='Twitter @Mathilde__Serra' href='/'><img src='/static/pictos/picto-twitter.svg' alt={`Mathilde Serra's twitter`} /></a>
-    <a target='_blank' title='Behance @MathildeSerra' href='/'><img src='/static/pictos/picto-behance.svg' alt={`Mathilde Serra's behance`} /></a>
+    <a target='_blank' title='Behance @MathildeSerra' href='/'><img src='/static/pictos/picto-behance-white.svg' alt={`Mathilde Serra's behance`} /></a>
     <a target='_blank' title='Linkedin @MathildeSerra'href='/'><img src='/static/pictos/picto-linkedin.svg' alt={`Mathilde Serra's linkeding`} /></a>
   </div>
 )

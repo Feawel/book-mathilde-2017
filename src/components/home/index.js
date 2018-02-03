@@ -26,8 +26,8 @@ const getBackgroundStyle = (size, isMobile) => {
 const HomeProjects = (props) => {
   const { projectAppear, backgroundSize, openProject, animating, project,
     bar1, bar2, bar3, bar4, bar5, bars, infosAnimation, backgroundDirectory,
-    mask, openProjectAnimation, isMobile } = props
-    console.log('backgroundDirectory', backgroundDirectory, isMobile)
+    mask, openProjectAnimation, isMobile, updateProject } = props
+
   if(!backgroundDirectory) return <div />
 
   return (
@@ -75,7 +75,7 @@ const HomeProjects = (props) => {
         .Bar.active { height: 100%; }
       `}</style>
       <Lines  />
-      {!(projectAppear || openProjectAnimation) && <ScrollDown move={animating} onClick={() => this.updateWithDebounce()} />}
+      {!(projectAppear || openProjectAnimation) && <ScrollDown move={animating} onClick={() => updateProject({deltaY: 1})} />}
       {!(projectAppear || openProjectAnimation) && <Social />}
       <div className='Background_wrapper'>
         <div className='Background transitions'

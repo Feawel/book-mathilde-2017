@@ -1,7 +1,7 @@
 import Call from './call'
 
 // src/componentqs/home/infos.js
-const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, draw, homeSubcolor, colors, lineWidth = 35, openProject }) => (
+const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, homeSubcolor, colors, lineWidth = 40, openProject }) => (
   <div className='Project_infos transitions'>
     <style jsx>{`
       div {
@@ -10,8 +10,6 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, dr
       h2 {
         color: white;
         font-size: 66px;
-        font-family: 'Playfair Display';
-        font-weight: 900;
         margin: 0;
       }
       .Project_infos {
@@ -30,13 +28,16 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, dr
       }
       .Project_infos_problematic {
         font-size: 16px;
-        font-family: Futura;
-        font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.15em;
-        margin-bottom: 30px;
         color: #94eced;
         line-height: 30px;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        margin-top: 20px;
+        margin-bottom: 22px;
       }
       .Line {
         height: 4px;
@@ -50,7 +51,7 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, dr
           font-size:44px;
         }
         .Line {
-          margin: 17px auto 0 auto;
+          margin: 27px auto 0 auto;
         }
         .Project_infos_problematic {
           font-size:12px;
@@ -67,13 +68,22 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, dr
           zoom: 0.9;
         }
       }
+      @media screen and (max-width: 750px) {
+        .Project_infos_title {
+          padding-top: 20px;
+        }
+        .Project_infos_problematic {
+          line-height: 21px;
+          letter-spacing: 1.8px;
+        }
+      }
     `}</style>
     <Number number={number} infosAnimation={infosAnimation} />
     <div style={{ width: lineWidth, backgroundColor: colors.light}} className={`Line transitions ${infosAnimation.line}`} />
-    <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title transitions_1s ${infosAnimation.title}`}>{title}</h2>
-    <p style={{ color: colors.light }} className={`Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
+    <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title playfairdisplay_black transitions_1s ${infosAnimation.title}`}>{title}</h2>
+    <p style={{ color: colors.light }} className={`futuralt_bold Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
     <Tags top={top} infosAnimation={infosAnimation} />
-    <Call openProject={() => openProject()} infosAnimation={infosAnimation} draw={null} />
+    <Call colors={colors} openProject={() => openProject()} infosAnimation={infosAnimation} />
   </div>
 )
 
@@ -101,11 +111,9 @@ const Number = ({ number, infosAnimation }) =>
   </div>
 
 const Tags = ({ infosAnimation }) =>
-  <div className={`Project_infos_tags transitions_1s ${infosAnimation.tags}`}>
+  <div className={`Project_infos_tags playfairdisplay_black transitions_1s ${infosAnimation.tags}`}>
     <style jsx>{`
       .Project_infos_tags {
-        font-family: 'Playfair Display';
-        font-weight: bold;
         font-size: 12px;
         opacity: 1;
       }

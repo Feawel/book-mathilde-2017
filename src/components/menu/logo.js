@@ -1,15 +1,15 @@
 import SVGMenuIcon from '../pictos/menu'
 import SVGCloseIcon from '../pictos/close'
 
-const MenuLogo = ({open, toggleOpen, openAbout, projectAppear}) =>
+const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
   <div style={{
-    top: openAbout ? '625px' : '40px',
+    top: openAbout ? 625 : (isMobile ? 25 : 40),
     display: projectAppear ? 'none' : 'block'
   }} onClick={() => toggleOpen()} className={`Menu_dots_container ${open ? 'Open' : ''}`} >
     <style jsx>{`
       .Menu_dots_container {
         position: absolute;
-        right: 30px;
+        right: 40px;
         width: 40px;
         height: 40px;
         z-index: 11;
@@ -86,6 +86,11 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear}) =>
       }
       .Menu_text_close.Menu_text_e {
         right: 10px;
+      }
+      @media screen and (max-width: 750px) {
+        .Menu_dots_container {
+          right: 25px;
+        }
       }
     `}</style>
     <div key='menu-dots' className='Menu_dots'>

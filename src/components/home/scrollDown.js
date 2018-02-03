@@ -6,20 +6,24 @@ const ScrollDown = ({ onClick, move = false }) => (
     <style jsx>{`
       .Scroll_down {
         position: absolute;
-        bottom: 45px;
-        left: 34px;
+        bottom: 40px;
+        left: 33px;
         font-size: 10px;
-        font-family: Futura;
-        font-weight: bold;
         z-index: 10;
       }
       .Scroll_down_text {
         text-orientation: upright;
+        position: relative;
+        top: 5px;
       }
       .Scroll_down_letter {
         display:block;
         color: white;
         position: relative;
+      }
+      .Down_arrow_container {
+        transform: scale(1.2);
+        -moz-transform: scale(1.2);
       }
       .Scroll_down:hover > .Down_arrow_container {
         top: 10px!important;
@@ -27,16 +31,18 @@ const ScrollDown = ({ onClick, move = false }) => (
       @media screen and (max-width: 1023px) {
         .Scroll_down {
           width: 100%;
-          bottom: 35px;
+          bottom: 60px;
           left: 6px;
           text-align: center;
+          transform: scale(2);
+          -moz-transform: scale(2);
         }
         .Scroll_down_text {
           display: none;
         }
       }
     `}</style>
-    <div className='Scroll_down_text'>
+    <div className='Scroll_down_text futuralt_bold'>
       <span className='Scroll_down_letter' style={{left: 1}}>S</span>
       <span className='Scroll_down_letter' style={{left: 1}}>C</span>
       <span className='Scroll_down_letter' style={{left: 1}}>R</span>

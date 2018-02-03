@@ -1,6 +1,6 @@
 // src/componentqs/about/index.js
 
-const Call = ({ draw, infosAnimation, openProject }) => (
+const Call = ({ colors, infosAnimation, openProject }) => (
   <div onClick={(e) => openProject(e)} className={`Call_wrapper transitions ${infosAnimation.call}`}>
   <style jsx>{`
     .Call_wrapper {
@@ -10,85 +10,45 @@ const Call = ({ draw, infosAnimation, openProject }) => (
       opacity: 1;
       height: 40px;
       color: white;
-      margin-top: 40px;
+      margin-top: 47px;
     }
     .Call {
       display: inline-block;
       position: relative;
-      width: 218px;
+      width: 175px;
       height: 40px;
       z-index: 12;
+      border: 1px solid white;
+      border-radius: 20px;
+    }
+    .Call:hover {
+      background-color: white;
     }
     .Call_text {
       text-transform: uppercase;
       font-size: 12px;
-      font-family: Futura;
-      font-weight: bold;
       text-align: center;
       position: absolute;
       top: 14px;
       left: 0;
       height: 45px;
-      width: 218px;
-      letter-spacing: 0.1em;
-    }
-    svg {
-      height: 45px;
-      width: 218px;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .Call:hover path {
-      fill: white;
+      width: 175px;
+      letter-spacing: 1.2px;
     }
     .Call:hover .Call_text {
-      color: #008db9;
-    }
-    .path {
-      stroke-dasharray: 2000;
-      animation: dash 3s linear forwards;
-    }
-    .path2 {
-      stroke-dasharray: 2000;
-      animation: dash2 3s linear forwards;
-    }
-    @keyframes dash {
-      from {
-        stroke-dashoffset: 2000;
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    @keyframes dash2 {
-      from {
-        stroke-dashoffset: 0;
-      }
-      to {
-        stroke-dashoffset: -2000;
-      }
+      color: ${colors.primary};
     }
     @media screen and (max-width: 1023px) {
-      svg path {
-        fill: white;
+      .Call {
+        background-color: white;
       }
       .Call_text {
-        color: #008db9;
+        color: ${colors.primary};
       }
     }
   `}</style>
-    <div className='Call transitions clickable'>
-      <svg>
-
-        <path d={'M25 2 L 195 2 A 5 5 0 0 1 195 42 L 25 42 A 5 5 0 0 1 25 2'}
-          stroke='white'
-          className={`transitions ${draw === null ? '' : (draw === false ? 'path2' : 'path')}`}
-          strokeWidth={1}
-          fill='none'
-        />
-      </svg>
-      <div className='Call_text'>View the case</div>
+    <div className='Call clickable'>
+      <div className='Call_text futuralt_bold'>View the case</div>
     </div>
   </div>
 )

@@ -65,11 +65,13 @@ class App extends React.Component {
     return [
       <About
         key='about'
+        isMobile={isMobile}
         toggleOpen={() => this.toggleOpenAbout()}
         open={openAbout}
         openMenu={openMenu} />,
       <Menu
         key='menu'
+        isMobile={isMobile}
         projects={data.projects}
         project={project}
         currentMenu={getIndexByProjectKey(currentProject)}
@@ -88,6 +90,7 @@ class App extends React.Component {
         backgroundSize={backgroundSize}
         isMobile={isMobile}
         animating={animating}
+        updateProject={(e) => this.updateProject(e)}
         project={project}
         infosAnimation={infosAnimation}
         backgroundDirectory={backgroundDirectory}
@@ -191,13 +194,20 @@ class App extends React.Component {
     if(!maskAppear) return null
     this.setState({
       maskAppear: [
-        {pos: 0, alpha: maskAppear[0].alpha + 0.009},
-        {pos: Math.max(maskAppear[1].pos - 0.015, 0), alpha: maskAppear[1].alpha + 0.009},
+        {pos: 0, alpha: maskAppear[0].alpha + 0.053},
+        {pos: Math.max(maskAppear[1].pos - 0.015, 0), alpha: maskAppear[1].alpha + 0.053},
         {pos: 0.5, alpha: Math.max(maskAppear[2].alpha + 0.5, 0)},
-        {pos: Math.min(maskAppear[3].pos + 0.015, 1), alpha: maskAppear[3].alpha + 0.009},
-        {pos: 1, alpha: maskAppear[4].alpha + 0.009}
+        {pos: Math.min(maskAppear[3].pos + 0.015, 1), alpha: maskAppear[3].alpha + 0.053},
+        {pos: 1, alpha: maskAppear[4].alpha + 0.053}
       ]
     })
+
+    // Previous anim version
+    // {pos: 0, alpha: maskAppear[0].alpha + 0.009},
+    // {pos: Math.max(maskAppear[1].pos - 0.015, 0), alpha: maskAppear[1].alpha + 0.009},
+    // {pos: 0.5, alpha: Math.max(maskAppear[2].alpha + 0.5, 0)},
+    // {pos: Math.min(maskAppear[3].pos + 0.015, 1), alpha: maskAppear[3].alpha + 0.009},
+    // {pos: 1, alpha: maskAppear[4].alpha + 0.009}
   }
 
   /******* RELATED TO PROJECT CHANGE ON HOME *********/
@@ -237,6 +247,7 @@ class App extends React.Component {
   activateUpdateHomeProject() {
     this.updateWithDebounce = throttle(this.updateProject, 500, { 'trailing': false });
     window.addEventListener('wheel', this.updateWithDebounce);
+    document.addEventListener('swipe-down', this.updateWithDebounce);
   }
 
   launchBarAnimation () {
@@ -321,9 +332,9 @@ class App extends React.Component {
   }
 
   updateProject (e) {
+    console.log('updateProject', e)
     const { animating, maskAppear, preventUpdateProject } = this.state
     if(!animating && maskAppear === null && !preventUpdateProject) {
-
       this.launchBarAnimation()
 
       this.launchHomeContentAnimation(e)
