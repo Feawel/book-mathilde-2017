@@ -15,17 +15,17 @@ const Page = ({ url }) => (
 
       <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
       <link rel="canonical" href="https://www.matserra.design/classe/" />
-      <title>Mathilde SERRA - Digital Classroom | Edtech</title>
+      <title>Mat SERRA - Digital Classroom | Edtech</title>
 
-      <meta itemprop="name" content="Mathilde SERRA - Digital Classroom | Edtech" />
+      <meta itemprop="name" content="Mat SERRA - Digital Classroom | Edtech" />
       <meta itemprop="description" content="Conception, UX & UI of a digital classroom use by 100K+ students across France." />
       <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="Conception, UX & UI of a digital classroom use by 100K+ students across France." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
-      <meta name="author" content="Mathilde SERRA" />
+      <meta name="author" content="Mat SERRA" />
 
-      <meta property="og:title" content="Mathilde SERRA - Digital Classroom | Edtech" />
+      <meta property="og:title" content="Mat SERRA - Digital Classroom | Edtech" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design/classe/" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
@@ -37,7 +37,7 @@ const Page = ({ url }) => (
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Mathilde__serra" />
-      <meta name="twitter:title" content="Mathilde SERRA - Digital Classroom | Edtech" />
+      <meta name="twitter:title" content="Mat SERRA - Digital Classroom | Edtech" />
       <meta name="twitter:description" content="Conception, UX & UI of a digital classroom use by 100K+ students across France." />
       <meta name="twitter:creator" content="@Mathilde__serra" />
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />
