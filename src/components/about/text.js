@@ -1,8 +1,7 @@
 const Text = () =>
-  <div className='About_text_wrapper'>
+  <div className='futuralt_book About_text_wrapper'>
     <style jsx>{`
       .About_text_wrapper {
-        font-family: Futura;
         color: white;
         font-size: 12px;
         font-weight: 100;
@@ -11,7 +10,7 @@ const Text = () =>
         margin: 60px 0 0 60px;
       }
       .About_text {
-        width: 327px;
+        width: 350px;
       }
       .About_text_mobile {
         display: none;
@@ -23,18 +22,20 @@ const Text = () =>
         width: 352px;
       }
       .Description {
-        margin-top: 60px;
+        margin-top: 53px;
         opacity: 0.6;
+        line-height: 26px;
       }
       .Goal {
+        margin: 0;
         margin-top: 20px;
-        font-weight: bold;
+        line-height: 26px;
       }
       .Email {
-        font-weight: bold;
         color: #941c91;
         text-transform:uppercase;
-        margin-top: 40px;
+        margin-top: 30px;
+        letter-spacing: 0.6px;
       }
       @media screen and (max-width: 750px) {
         .About_text_wrapper {
@@ -61,6 +62,12 @@ const Text = () =>
           margin-top: 40px;
           width: calc(100% - 100px);
         }
+        .Goal {
+          margin-top: 10px;
+        }
+        .Email {
+          margin-top: 10px;
+        }
         .About_img_mask_mobile {
           position: absolute;
           top: 150px;
@@ -85,16 +92,16 @@ const Text = () =>
       realization of website, application, and web
       communication, especially in start-up.
     </div>
-    <div className='About_text Goal'>
+    <div className='About_text futuralt_bold Goal'>
       I’m looking for challenging design work, if you have a particulary tricky one, no doubt,
       i’m the girl for you !
     </div>
-    <div className='About_text_mobile Goal'>
+    <div className='About_text_mobile futuralt_bold Goal'>
       I’m looking for challenging design work, if you have a particulary tricky one, no doubt,
       i’m the girl for you !
     </div>
-    <div className='About_text Email transitions'>mathilde.serra01@gmail.com</div>
-    <div className='About_text_mobile Email transitions'>mathilde.serra01@gmail.com</div>
+    <div className='About_text Email futuralt_bold transitions'>mathilde.serra01@gmail.com</div>
+    <div className='About_text_mobile futuralt_bold Email transitions'>mathilde.serra01@gmail.com</div>
   </div>
 
 export default Text

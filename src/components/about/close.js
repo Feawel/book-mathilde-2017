@@ -5,20 +5,19 @@ const CloseAbout = ({toggleOpen}) =>
     <style jsx>{`
       .About_close {
         position: absolute;
-        top: 40px;
-        right: 20px;
-        font-family: Futura;
-        font-weight: bold;
+        top: 30px;
+        right: 27px;
         line-height: 22px;
         font-size: 12px;
         text-transform: uppercase;
         color: white;
         display: inline-block;
+        letter-spacing: 2.4px;
+        width: 110px;
+        z-index: 5;
       }
-      .Circle {
-        position: absolute;
-        bottom: 7px;
-        right: 10px;
+      .About_close:hover .Circle_container {
+        opacity: 0.8;
       }
       svg {
         fill: white;
@@ -28,31 +27,49 @@ const CloseAbout = ({toggleOpen}) =>
         position: relative;
         z-index: 1;
       }
-      .Cross {
-        zoom: 0.7;
-        position: relative;
-        right: 15px;
-      }
       circle {
         opacity: 0.5;
+      }
+      .Close_container {
+        width: 45px;
+        height: 45px;
+        vertical-align: top;
+        display: inline-block;
+        position: relative;
+      }
+      .Circle_container {
+        position: absolute;
+        top: -5px;
+      }
+      .Cross_container {
+        position: absolute;
+        top: 1px;
+        transform: scale(0.7);
+        -moz-transform: scale(0.7);
+        left: 7px;
       }
       .Close_text {
         display: inline-block;
         vertical-align: top;
         position: relative;
-        top: 0px;
-        right: 35px;
+        right: 7px;
+        top: 10px;
         z-index: 0;
       }
     `}</style>
-    <div className='Close_text'>CLOSE</div>
-    <svg className='Circle'>
-      <circle cx="26" cy="26" r="20" stroke="white" strokeWidth="1" fill="none" />
-    </svg>
-
-    <svg className='Cross'>
-      <polygon points="26.1,8.8 23.2,5.9 16,13.2 8.9,6.1 6.1,9 13.2,16 5.9,23.3 8.7,26.1 16,18.8 23,25.9 25.9,23.1 18.8,16 "/>
-    </svg>
+    <div className='Close_text futuralt_bold'>CLOSE</div>
+    <div className='Close_container'>
+      <div className='Circle_container'>
+        <svg className='Circle'>
+          <circle cx="26" cy="26" r="20" stroke="white" strokeWidth="1" fill="none" />
+        </svg>
+      </div>
+      <div className='Cross_container'>
+        <svg className='Cross'>
+          <polygon points="26.1,8.8 23.2,5.9 16,13.2 8.9,6.1 6.1,9 13.2,16 5.9,23.3 8.7,26.1 16,18.8 23,25.9 25.9,23.1 18.8,16 "/>
+        </svg>
+      </div>
+    </div>
   </div>
 
 

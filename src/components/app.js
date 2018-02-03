@@ -161,6 +161,11 @@ class App extends React.Component {
   }
   toggleOpenAbout () {
     const { openAbout, openMenu } = this.state
+    if(openAbout) {
+      this.activateUpdateHomeProject()
+    } else  {
+      this.deactivateUpdateHomeProject()
+    }
     this.setState({
       openAbout: !openAbout,
       openMenu: !openAbout ? false : openMenu

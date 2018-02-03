@@ -29,11 +29,11 @@ class Skills extends React.Component {
           }
           .Skill_container_Photoshop {
             top: 68px;
-            left: 811px;
+            left: 813px;
           }
           .Skill_container_Illustrator {
             top: 118px;
-            left: 874px;
+            left: 876px;
           }
           .Skill_container_Sketch {
             top: 180px;
@@ -48,13 +48,12 @@ class Skills extends React.Component {
             left: 944px;
           }
           .Skill {
-            width: 42px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             color: #001732;
             opacity: 0.1;
             background-image: linear-gradient(to left, #fff 0%, #fff 100%);
-            font-family: Futura;
             -webkit-transition      : all  .5s  ;
             -moz-transition       : all .5s  ;
             -ms-transition        : all .5s  ;
@@ -88,28 +87,26 @@ class Skills extends React.Component {
             color: #2fbdae;
           }
           .Skill_content_title {
-            font-family: 'Playfair Display';
-            font-weight: 900;
             font-size: 16px;
             line-height: 22px;
           }
           .Skill_content_level {
-            font-family: 'Futura';
-            font-weight: bold;
             font-size: 10px;
             text-transform: uppercase;
             color: #ffffff;
-            line-height: 27px;
+            line-height: 23px;
+            letter-spacing: 1.5px;
+            opacity: 0.6;
           }
           .Skill_content_description {
-            font-family: 'Futura';
             font-size: 10px;
             color: #ffffff;
             line-height: 16px;
+            opacity: 0.6;
           }
           .Inner_skill {
             position: relative;
-            top: 6px;
+            top: 10px;
             font-size: 20px;
             left: 11px;
           }
@@ -159,14 +156,14 @@ class Skills extends React.Component {
         {
           skills.map((skill, index) =>
             <div key={index} className={`Skill_container Skill_container_${skill.className}`}>
-              <div key={`icon-${index}`} onMouseEnter={() => this.changeCurrent(index)} className={`Skill clickable ${skill.className} ${current===index ? 'active' : ''}`}>
-                <span className='Inner_skill'>{skill.icon}</span>
+              <div key={`icon-${index}`} onMouseEnter={() => this.changeCurrent(index)} className={`Skill futuralt_book clickable ${skill.className} ${current===index ? 'active' : ''}`}>
+                <img width='16px' className='Inner_skill' src={skill.icon} />
               </div>
               <SkillLine key={`line-${index}`} lineLength={skill.lineLength} isCurrent={current===index} />
               <div key={`content-${index}`} className={`Skill_content Skill_content_${skill.className} ${current===index ? 'withHeight' : 'noHeight'}`}>
-                <div className='Skill_content_title'>{skill.title}</div>
-                <div className='Skill_content_level'>{skill.level}</div>
-                <div className='Skill_content_description'>{skill.description}</div>
+                <div className='Skill_content_title playfairdisplay_black'>{skill.title}</div>
+                <div className='Skill_content_level futuralt_bold'>{skill.level}</div>
+                <div className='Skill_content_description futuralt_book'>{skill.description}</div>
               </div>
             </div>
           )

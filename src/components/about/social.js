@@ -19,7 +19,7 @@ const Social = () => (
       a:hover {
         opacity: 0.6;
       }
-      @media screen and (min-width: 750px) and (max-width: 1023px) {
+      @media screen and (min-width: 750px) {
         .Social {
           display: none;
         }
@@ -39,7 +39,7 @@ const Social = () => (
         }
         a {
           margin-right: 25px;
-          margin-top: 40px;
+          margin-top: 30px;
         }
         a:last-child {
           margin-right: 0;

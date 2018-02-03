@@ -5,6 +5,7 @@ import Social from './social'
 import AboutText from './text'
 import AboutSkills from './skills'
 import Close from './close'
+import Columns from '../columns'
 
 class Panel extends React.Component {
   constructor(props) {
@@ -33,23 +34,65 @@ class Panel extends React.Component {
             -o-transition         : all 1.5s  ;
             transition          : all 1.5s  ;
           }
+          .Container {
+            z-index: 1;
+          }
+          .Line {
+            width: 1px;
+            background-color: rgba(255,255,255,0.1);
+            height: 100%
+            position: absolute;
+            top: 0;
+            z-index: 2;
+          }
+
+          .Line_1 { left: 20%;}
+          .Line_2 { left: 40%;}
+          .Line_3 { left: 60%;}
+          .Line_4 { left: 80%;}
 
           // Desktop > 1200px
           @media screen and (min-width: 1200px) {
-            zoom: 1;
+            .Container {
+              transform: scale(1);
+            }
           }
           // 1000 < Screen < 1200 : mini texte skill + pas de trait + animation successive
           @media screen and (min-width: 1000px) and (max-width: 1200px) {
-            zoom: 0.8;
+            .Container {
+              zoom: 0.8;
+              -ms-zoom: 0.8;
+              -webkit-zoom: 0.8;
+              -moz-transform:  scale(0.8,0.8);
+              -moz-transform-origin: left center;
+            }
           }
           // 750 < Screen < 1000 (tablette portrait) : plus de texte, animation successive
           @media screen and (min-width: 750px) and (max-width: 1000px) {
-            zoom: 0.7;
+            .Container {
+              zoom: 0.7;
+              -ms-zoom: 0.7;
+              -webkit-zoom: 0.7;
+              -moz-transform:  scale(0.7,0.7);
+              -moz-transform-origin: left center;
+             }
+          }
+          @media screen and (max-width: 750px) {
+            .Line_1 { left: 33.3%!important;}
+            .Line_2 { left: 66.6%!important;}
+            .Line_3 { display: none;}
+            .Line_4 { display: none;}
           }
         `}</style>
+        <div className='Line Line_1' style={{left: '20%'}} />
+        <div className='Line Line_2' style={{left: '40%'}} />
+        <div className='Line Line_3' style={{left: '60%'}} />
+        <div className='Line Line_4' style={{left: '80%'}} />
         <Close toggleOpen={() => toggleOpen()} />
-        <AboutText />
-        <AboutSkills />
+        <div className='Container'>
+          <AboutText />
+          <AboutSkills />
+        </div>
         <Social />
       </div>
     )

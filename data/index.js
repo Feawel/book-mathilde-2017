@@ -260,7 +260,7 @@ export const data = {
 export const skills = [
   {
     title: 'Adobe Photoshop',
-    icon: 'Ps',
+    icon: '/static/about/picto-photoshop.svg',
     level: '5 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
     className: 'Photoshop',
@@ -268,7 +268,7 @@ export const skills = [
   },
   {
     title: 'Adobe Illustrator',
-    icon: 'Ai',
+    icon: '/static/about/picto-illustrator.svg',
     level: '8 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
     className: 'Illustrator',
@@ -276,7 +276,7 @@ export const skills = [
   },
   {
     title: 'Sketch',
-    icon: 'Sk',
+    icon: '/static/about/picto-sketch.svg',
     level: '3 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
     className: 'Sketch',
@@ -284,7 +284,7 @@ export const skills = [
   },
   {
     title: 'Adobe AfterEffect',
-    icon: 'Ae',
+    icon: '/static/about/picto-aftereffect.svg',
     level: '3 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
     className: 'Aftereffect',
@@ -292,7 +292,7 @@ export const skills = [
   },
   {
     title: 'Drawing',
-    icon: 'Dr',
+    icon: '/static/about/picto-illu-skills.svg',
     level: '20 years experienced',
     description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
     className: 'Drawing',
