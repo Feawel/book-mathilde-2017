@@ -23,6 +23,7 @@ class UserInterface extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='User_interface'>
        <style jsx>{`
@@ -74,24 +75,24 @@ class UserInterface extends React.Component {
             width: 100%;
             height: 680px;
           }
-          @media screen and (max-width: 1200px) {
+          @media screen and (max-width: 1400px) {
             .Content_illustration {
               background-image: url('/static/projects/comete/4-user-interface/illu-content-page-1200px.png');
             }
           }
-          @media screen and (min-width: 1201px) and (max-width: 2000px) {
+          @media screen and (min-width: 1401px) and (max-width: 2300px) {
             .Content_illustration {
               background-image: url('/static/projects/comete/4-user-interface/illu-content-page-2000px.png');
             }
           }
-          @media screen and (min-width: 2001px) {
+          @media screen and (min-width: 2301px) {
             .Content_illustration {
               background-image: url('/static/projects/comete/4-user-interface/illu-content-page-3000px.png');
             }
           }
-          @media screen and (max-width: 750px) { {
+          @media screen and (max-width: 750px) {
             .User_interface {
-              height: 2910px;
+              height: 3075px;
             }
             .Background_1 {
               height: 815px;
@@ -116,8 +117,10 @@ class UserInterface extends React.Component {
             .Content_illustration {
               background-image: url('/static/projects/comete/responsive/4-user-interface/content-page-smartphone-01.png');
               background-size: cover;
+              background-color: white;
               width: 100%;
               height: 280px;
+              opacity: 1;
             }
           }
         `}</style>
@@ -140,20 +143,21 @@ class UserInterface extends React.Component {
             location={{bottom: 150, right: 160}}
             mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
           <SectionInfos
+            isMobile={isMobile}
             title={{content: 'User Interface', color: 'white'}}
             baseline={{content: 'Create an interface able to please to children', color: 'white'}}
-            description={{color: 'white', content: 'To feat to the strategique choice, we creat a visual identity colorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
+            description={{opacity: 0.6, color: 'white', content: 'To feat to the strategique choice, we creat a visual identity colorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
             />
         </div>
         <Homepage />
-        <Content />
+        <Content isMobile={isMobile} />
         <div className='Content_illustration' />
       </div>
     )
   }
 }
 
-const Content = () =>
+const Content = ({isMobile}) =>
   <div className='Content'>
    <style jsx>{`
     .Content {
@@ -169,15 +173,20 @@ const Content = () =>
       position: relative;
       top: 73px;
     }
+    @media screen and (max-width: 750px) {
+      .Content {
+        height 390px;
+      }
+    }
   `}</style>
     <div className='Infos'>
       <TitleSecondary content='CONTENT PAGE' style={{color: '#221061', margin: 0}} />
       <SubtitlePart
         content='Scientific pages for a scientific exhibition'
-        style={{color: '#abb0bc', maxWidth: '450px', margin: 'auto'}} />
+        style={{color: '#abb0bc', width: isMobile ? 300 : 450, margin: 'auto'}} />
       <Description
         content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
-        style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: 450}} />
+        style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: isMobile ? 300 : 450}} />
     </div>
   </div>
 
@@ -202,6 +211,7 @@ const Homepage = () =>
       display: block;
       margin: auto;
       margin-top: 30px;
+      padding-bottom: 80px;
     }
     .Home_typo {
       vertical-align: top;
@@ -235,7 +245,7 @@ const Homepage = () =>
     <TitleSecondary content='Homepage' style={{color: '#8061e7', margin: 'auto auto 40px auto'}} />
     <div className='Desktop'>
       <Description
-        content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.'
         style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
     </div>
     <div className='Mobile'>

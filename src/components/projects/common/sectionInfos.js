@@ -46,7 +46,8 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
       style={{
         color: description.color,
         marginTop: 0,
-        maxWidth: isMobile ? 310 : maxWidth
+        maxWidth: isMobile ? 310 : maxWidth,
+        opacity: description.opacity || 1
       }} />
   </div>
 

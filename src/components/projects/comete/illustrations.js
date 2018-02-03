@@ -22,6 +22,7 @@ class Illustrations extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='Illustrations'>
        <style jsx>{`
@@ -34,15 +35,20 @@ class Illustrations extends React.Component {
           .First_row_illustrations {
             display: inline-block;
             width: 50%;
+            position: relative;
+            top: 8px;
           }
           .Second_row {
             position: relative;
-            top: -4px;
+            top: 4px;
           }
           .First_row.responsive, .Second_row.responsive {
             display: none;
           }
           @media screen and (max-width: 750px) {
+            .First_row.responsive {
+              margin-top: 30px;
+            }
             .First_row.responsive, .Second_row.responsive {
               display: block;
             }
@@ -64,6 +70,7 @@ class Illustrations extends React.Component {
           second={{width: 851, src: '/static/projects/comete/6-illustrations/picto-illu.png'}}
           location={{bottom: 200, right: 100}} />
         <SectionInfos
+          isMobile={isMobile}
           title={{content: 'Illustrations', color: '#221061'}}
           baseline={{content: 'pedagogical illustrations', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'In addition to the site, the communication and the interractive games, I made for the exhibition illustrations with pedagogical purpose in addition to the photographs presented.'}}

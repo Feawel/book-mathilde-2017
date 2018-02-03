@@ -33,6 +33,7 @@ class VisualIdentity extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='Visual_identity'>
        <style jsx>{`
@@ -49,7 +50,7 @@ class VisualIdentity extends React.Component {
             text-align: center;
             margin: auto;
             margin-top: 80px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
           }
           .Logo {
             position: relative;
@@ -60,6 +61,7 @@ class VisualIdentity extends React.Component {
               text-align: left;
               padding-left: 25px;
               zoom: 0.8;
+              margin-bottom: 35px;
             }
           }
         `}</style>
@@ -74,6 +76,7 @@ class VisualIdentity extends React.Component {
             location={{bottom: 150, right: 160}}
             mobileLocation={{top: -800, right: -215, zoom: 0.7}} />
         <SectionInfos
+          isMobile={isMobile}
           title={{content: 'Visual Identity', color: '#221061'}}
           baseline={{content: 'Create a visual identity able to please to a large audience', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'To feat to the strategique choice, we creat a visual identity æcolorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
@@ -92,7 +95,7 @@ class Color extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      titleStyle: {color: '#8061e7', textAlign: 'left'},
+      titleStyle: {color: '#8061e7', textAlign: 'left', marginBottom: 0, letterSpacing: 1.05},
       subtitle1Style: {color: '#abb0bc', margin: '0 0 20px 0'},
       subtitle2Style: {textAlign: 'right', color: '#abb0bc', margin: '0 0 20px 0'}
     }
@@ -213,26 +216,30 @@ class Color extends React.Component {
               left: 190px;
               zoom: 0.8;
             }
+            .Picture {
+              right: 50px;
+            }
             .Main_colors {
+              top: 55px;
               left: 25px;
             }
             .Main_color {
-              margin-right: 18px;
+              margin-right: 28px;
             }
             .Add_colors {
-              top: 200px;
+              top: 180px;
               left: 25px;
             }
             .Add_color {
-              margin-right: 15px;
+              margin-right: 14px;
             }
             .Add_colors_2 {
               left: 25px;
-              top: 300px;
+              top: 280px;
             }
             .Add_colors_3 {
               left: 25px;
-              top: 350px;
+              top: 330px;
             }
             .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
               display: inline-block;
@@ -289,7 +296,7 @@ class Color extends React.Component {
             )
           }
         </div>
-        <div className='Add_colors_2 response'>
+        <div className='Add_colors_2 responsive'>
           {
             respAddColors2.map((color, i) =>
               <div key={i} style={{borderColor: color}} className='Add_color clickable'>
@@ -298,7 +305,7 @@ class Color extends React.Component {
             )
           }
         </div>
-        <div className='Add_colors_3 response'>
+        <div className='Add_colors_3 responsive'>
           {
             respAddColors3.map((color, i) =>
               <div key={i} style={{borderColor: color}} className='Add_color clickable'>
@@ -321,7 +328,7 @@ class Typography extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      titleStyle: {color: '#8061e7', textAlign: 'left'}
+      titleStyle: {color: '#8061e7', textAlign: 'left', letterSpacing: 1.05, marginTop: 0, marginBottom: 0}
     }
   }
   componentDidMount() {
@@ -337,11 +344,11 @@ class Typography extends React.Component {
             max-width: 1020px;
             text-align: center;
             margin: auto;
-            margin-top: 60px;
+            margin-top: 0px;
             margin-bottom: 80px;
           }
           .Picture {
-            margin-top: 40px;
+            margin-top: 35px;
             display: inline-block;
           }
           .Picture_responsive {
@@ -355,7 +362,7 @@ class Typography extends React.Component {
               display:none;
             }
             .Picture_responsive {
-              margin-top: 40px;
+              margin-top: 30px;
               display: inline-block;
             }
           }

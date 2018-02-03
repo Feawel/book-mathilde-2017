@@ -26,6 +26,7 @@ class VideoGames extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='Video_games'>
         <style jsx>{`
@@ -46,24 +47,26 @@ class VideoGames extends React.Component {
             second={{width: 850, src: '/static/projects/comete/5-video-games/picto-video-game.png'}}
             location={{bottom: 200, right: 100}} />
         <SectionInfos
+          isMobile={isMobile}
           title={{content: 'Video Games', color: '#221061'}}
           baseline={{content: 'Make funny and educational videos games', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'We made two games first to ensure traffic to the site, but also to do a scientific mediation work with the general public.'}}
           />
-        <FirstVideoGame />
-        <SecondVideoGame />
+        <FirstVideoGame isMobile={isMobile} />
+        <SecondVideoGame isMobile={isMobile} />
       </div>
     )
   }
 }
 
-const FirstVideoGame = () =>
+const FirstVideoGame = ({ isMobile }) =>
   <div className='First_video_game'>
     <style jsx>{`
       .First_video_game {
         width: 100%;
         background-image: linear-gradient(to bottom, #0d0136 0%, #230f66 100%);
         margin-top: 80px;
+        padding-top: 80px;
         padding-bottom: 80px;
       }
       .First_video_game_container {
@@ -82,6 +85,7 @@ const FirstVideoGame = () =>
         .First_video_game {
           width: 100%;
           padding-top: 40px;
+          padding-bottom: 1px;
         }
         .Titles_container {
           margin-left: 25px;
@@ -111,14 +115,14 @@ const FirstVideoGame = () =>
     <div className='First_video_game_container'>
       <div className='Infos'>
         <div className='Titles_container'>
-          <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+          <TitleSecondary content='THE FIRST' style={{color: '#00f1cc', marginBottom: isMobile ? 0 : 5, marginTop: 0}} />
           <TitleSecondary content='VIDEO GAME' style={{color: '#8061e7', marginTop: 0, marginBottom: 40}} />
         </div>
         <div className='Details responsive'>
           <img className='Detail_screen' height='500' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/smartphone-jeux1-01.png' />
         </div>
         <div className='Description_wrapper'>
-          <Description style={{marginBottom: 40, opacity: 0.6, color: 'white'}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
+          <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', width: 300}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
         </div>
         <div className='Call_wrapper'>
           <Call
@@ -136,7 +140,7 @@ const FirstVideoGame = () =>
     </div>
   </div>
 
-const SecondVideoGame = () =>
+const SecondVideoGame = ({ isMobile }) =>
   <div className='Second_video_game'>
     <style jsx>{`
       .Second_video_game {
@@ -212,12 +216,12 @@ const SecondVideoGame = () =>
           <img className='Detail_screen' height='361' alt='question screen comete' src='/static/projects/comete/5-video-games/illu-ipad-linear-violet.png' />
         </div>
         <div className='Infos'>
-          <TitleSecondary content='THE SECOND' style={{width: '100%', color: '#00f1cc', marginBottom: 5, marginTop: 0}} />
+          <TitleSecondary content='THE SECOND' style={{width: '100%', color: '#00f1cc', marginBottom: isMobile ? 0 : 5, marginTop: 0}} />
           <TitleSecondary content='VIDEO GAME' style={{width: '100%', color: '#240868', marginTop: 0, marginBottom: 20}} />
           <div className='Details responsive'>
             <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
           </div>
-          <Description style={{marginBottom: 40, opacity: 0.6, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
+          <Description style={{marginBottom: 40, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
           <div className='Call_wrapper'><Call text='Try the game' /></div>
         </div>
       </div>
@@ -237,6 +241,7 @@ const Screens = ({screens, dashTop = 0, paddingTop = 110}) =>
       .Screens {
         position: relative;
         overflow: hidden;
+        padding-bottom: 80px;
       }
       .Dash {
         position: absolute;
@@ -253,7 +258,7 @@ const Screens = ({screens, dashTop = 0, paddingTop = 110}) =>
         }
       }
     `}</style>
-    <img style={{top: dashTop}} height='2182' width='100' className='Dash' alt='poitilles vert comete' src='/static/projects/comete/5-video-games/ligne-pointiller-vert.svg' />
+    <img style={{top: dashTop}} height='2400' width='100' className='Dash' alt='poitilles vert comete' src='/static/projects/comete/5-video-games/ligne-pointiller-vert.svg' />
     <div style={{paddingTop}} className='Screen_container'>
       {
         screens.map((screen, i) =>
@@ -296,8 +301,8 @@ const LeftScreen = ({screen}) =>
     <img height='439' className='Screen' alt='screen comete' src={`/static/projects/comete/5-video-games/${screen.src}.png`} />
     <div className='Infos'>
       <div className='Line' />
-      <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0}} />
-      <Description content={screen.description} style={{fontSize: 12, margin: 0}} />
+      <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0, fontFamily: `'Futura LT - Book'`}} />
+      <Description content={screen.description} style={{fontSize: 12, margin: 0, lineHeight: '18px', marginTop: 15}} />
     </div>
   </div>
 
@@ -325,13 +330,19 @@ const RightScreen = ({screen}) =>
         background-color: #00c1ff;
         position: absolute;
         top: 5px;
-        left: -20px;
+        left: 0px;
+      }
+      .Text_container {
+        position: relative;
+        left: 20px;
       }
     `}</style>
     <div className='Infos'>
       <div className='Line' />
-      <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0}} />
-      <Description content={screen.description} style={{fontSize: 12, margin: 0}} />
+      <div className='Text_container'>
+        <TitleSecondary content={screen.title} style={{color: '#00c1ff', letterSpacing: 1.05, margin: 0, fontFamily: `'Futura LT - Book'`}} />
+        <Description content={screen.description} style={{fontSize: 12, margin: 0, lineHeight: '18px', marginTop: 15}} />
+      </div>
     </div>
     <img height='439' className='Screen' alt='screen comete' src={`/static/projects/comete/5-video-games/${screen.src}.png`} />
   </div>

@@ -258,6 +258,7 @@ const FooterMobile = ({ project }) =>
       }
       .Call_wrapper {
         margin-top: 25px;
+        margin-bottom: 25px;
       }
       @media screen and (max-width: 1000px) {
         .Footer_mobile {
@@ -286,7 +287,7 @@ const FooterMobile = ({ project }) =>
       </div>
     </div>
     <div className='Call_wrapper'>
-      {project.callSummary && <Call newWindow={true} color='white' colorHover={project.colors.primary} width={210} background='white' backgroundInner={project.colors.gradient} href={project.callSummary} text='DOWNLOAD THE APP' />}
+      {project.callSummary && <Call newWindow={true} color='white' colorHover={project.colors.primary} width={210} background='white' backgroundInner={project.colors.gradient} href={project.callSummary} text={project.callSummaryText || 'VIEW THE WEBSITE'} />}
     </div>
   </div>
 
