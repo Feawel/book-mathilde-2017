@@ -21,16 +21,20 @@ class Comete extends React.Component {
 
   render() {
     const {section, sections} = this.state
+    const {isMobile} = this.props
     const project = data.projects[3]
     return (
       <div id='project' className='Global_project Comete'>
         <Summary project={project} />
         <Menu sections={sections} section={section} project={project} color='#fb5e80' borderImage='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <UserInterface
+          isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(0, metadata)} />
         <UserExperience
+          isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(1, metadata)} />
         <Illustration
+          isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(2, metadata)} />
         <Footer project={project}/>
       </div>

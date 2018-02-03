@@ -17,9 +17,9 @@ const getBackgroundStyle = (size, isMobile) => {
     case 'large':
       return {height: '100%', width:'100%', position: 'relative', top: 0, left: 0, transition: 'all .5s'}
     case 'medium':
-      return {height: isMobile ? '35%' : '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 1s'}
+      return {height: isMobile ? '50%' : '70%', width:'100%', position: 'relative', left: 0, top: 0, transition: 'all 1s'}
     case 'small':
-      return {height: isMobile ? '35%' : '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
+      return {height: isMobile ? '50%' : '70%', width:'80%', position: 'relative', left: '10%', top: 100, transition: 'all .5s'}
   }
 }
 

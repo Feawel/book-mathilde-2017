@@ -60,7 +60,7 @@ class App extends React.Component {
     const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
       animating, openProjectAnimation, isMobile } = this.state
-    const content = projectAppear ? <Projects current={currentProject} /> : null
+    const content = projectAppear ? <Projects isMobile={isMobile} current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
     return [
       <About

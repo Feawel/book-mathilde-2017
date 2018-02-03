@@ -23,6 +23,7 @@ class UserExperience extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='User_experience'>
        <style jsx>{`
@@ -47,6 +48,7 @@ class UserExperience extends React.Component {
           mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
+          isMobile={isMobile}
           title={{content: 'User Experience', color: '#1a2432'}}
           baseline={{content: 'A simple and fun interface', color: '#a8adb9'}}
           description={{color: '#474f6f', content: 'The digital class interface offers a large number of complex functionnalities. The design work consisted of making it simple enough and playful for teachers and students.'}}
@@ -78,14 +80,14 @@ const Persona = () =>
         position: relative;
         margin: auto;
         width: 100%;
-        height: 651px;
+        height: 663px;
         text-align: center;
         margin-top: 80px;
       }
       .Background {
         margin: auto;
         width: 100%;
-        height: 651px;
+        height: 663px;
         background-color: #e7e9ef;
         position: absolute;
         top: 0;
@@ -177,7 +179,7 @@ const Homepage = () =>
       .Homepage {
         position: relative;
         margin: auto;
-        height: 1485px;
+        height: 1400px;
       }
       .Blue_background {
         display: inline-block;
@@ -192,7 +194,7 @@ const Homepage = () =>
         width: 1020px;
         margin: 0 auto 120px;
         position: relative;
-        top: 80px;
+        top: 100px;
       }
       .Anim {
         width: 357px;
@@ -270,7 +272,8 @@ const Homepage = () =>
       <TitleSecondary content='homepage' style={{margin: '0 auto'}} />
       <div className='Description_container'>
         <Description
-          content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.' />
+          content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.'
+          style={{marginTop: 15}} />
       </div>
       <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
       <img className='Mockup_home_desktop' width='794' alt='animation class card' src='/static/projects/classe/4-user-experience/mockup-home.png' />
@@ -281,7 +284,7 @@ const Homepage = () =>
         <TitleSecondary content='on a classe' style={{margin: '0 auto'}} />
         <SubtitlePart
           content='Manage your students, your homework and communicate with the class.'
-          style={{lineHeight: '24px'}} />
+          style={{lineHeight: '24px', opacity: 0.6}} />
       </div>
       <Classe />
     </div>
@@ -322,7 +325,7 @@ class Classe extends React.Component {
             margin: auto;
             text-align: center;
             z-index: 1;
-            margin-top: 60px;
+            margin-top: 70px;
           }
           .Slider {
             width: 100%;
@@ -358,13 +361,13 @@ class Classe extends React.Component {
             margin: auto;
           }
           .Left {
-            left: calc(50% - 262px - 131px - 80px);
+            left: calc(50% - 262px - 132px - 80px);
           }
           .Center {
-            left: calc(50% - 131px);
+            left: calc(50% - 132px);
           }
           .Right {
-            left: calc(50% + 131px + 80px);
+            left: calc(50% + 132px + 80px);
           }
           .Screen.active {
             zoom: 1;
@@ -373,7 +376,7 @@ class Classe extends React.Component {
             zoom: 0.9;
           }
           .Ipad {
-            width: 308px;
+            width: 307px;
             position: absolute;
             top: -25px;
             z-index: 10;
@@ -395,7 +398,7 @@ class Classe extends React.Component {
             src='/static/projects/classe/4-user-experience/anim-classe-1.png' />
           <div className={`Text Left transitions ${timer%3 === 0 ? 'active' : 'inactive'}`}>
             <div className='Line' />
-            <Subtitle content='INVITE STUDENTS AND SEE THEIR STATS' style={{color: '#00b3df', margin: 0}} />
+            <Subtitle content='INVITE STUDENTS AND SEE THEIR STATS' style={{color: '#00b3df', margin: 0, letterSpacing: 0.7}} />
           </div>
 
           <img
@@ -403,7 +406,7 @@ class Classe extends React.Component {
             src='/static/projects/classe/4-user-experience/anim-classe-2.png' />
           <div className={`Text Center transitions ${timer%3 === 1 ? 'active' : 'inactive'}`}>
             <div className='Line' />
-            <Subtitle content='MANAGE THE HOMEWORK YOU CREATED' style={{color: '#00b3df', margin: 0}} />
+            <Subtitle content='MANAGE THE HOMEWORK YOU CREATED' style={{color: '#00b3df', margin: 0, letterSpacing: 0.7}} />
           </div>
 
           <img
@@ -411,7 +414,7 @@ class Classe extends React.Component {
             src='/static/projects/classe/4-user-experience/anim-classe-3.png' />
           <div className={`Text Right transitions ${timer%3 === 2 ? 'active' : 'inactive'}`}>
             <div className='Line' />
-            <Subtitle content='CHAT WITH YOUR STUDENTS ACROSS CLASSES' style={{color: '#00b3df', margin: 0}} />
+            <Subtitle content='CHAT WITH YOUR STUDENTS ACROSS CLASSES' style={{color: '#00b3df', margin: 0, letterSpacing: 0.7}} />
           </div>
         </div>
         <img className='Ipad transitions'
@@ -427,13 +430,13 @@ const Statistics = () =>
       .Statistics {
         position: relative;
         margin: auto;
-        height: 1288px;
+        height: 1308px;
         text-align: center;
       }
       .Blue_background {
         display: inline-block;
         width: 100%;
-        height: 1288px;
+        height: 1308px;
         position: absolute;
         top: 0;
         left: 0;
@@ -472,7 +475,7 @@ const Statistics = () =>
         z-index: -1;
       }
       .Title_container {
-        margin-top: 120px;
+        margin-top: 110px;
       }
       @media screen and (max-width: 750px) {
         .Statistics {
@@ -515,7 +518,8 @@ const Statistics = () =>
           <TitleSecondary content='statistics' style={{margin: '0 auto'}} />
         </div>
         <SubtitlePart
-          content={`Follow your students' progress.`} />
+          content={`Follow your students' progress.`}
+          style={{opacity: 0.7}} />
       </div>
       <img className='Stats_background' alt='statistics mockup' src='/static/projects/classe/4-user-experience/stat-fond.png' />
       <img className='Mockup' alt='statistics mockup' src='/static/projects/classe/4-user-experience/ecran-stat.jpg' />
@@ -556,10 +560,10 @@ const Homework = () =>
         }
       }
     `}</style>
-    <TitleSecondary content='create homework' style={{color: '#474f6f', margin: '0 auto', marginTop: 60}} />
+    <TitleSecondary content='create homework' style={{color: '#474f6f', margin: '0 auto', marginTop: 50}} />
     <SubtitlePart
       content='In three steps'
-      style={{color: '#a8adb9', marginBottom: 60}} />
+      style={{color: '#a8adb9', marginBottom: 50}} />
     <div className='Steps'>
       <Step1 />
       <Step2 />
@@ -624,7 +628,7 @@ const Step1 = () =>
         style={{letterSpacing: 0.7, margin: 0}} />
       <Description
         content={`Choose to create an assignment by picking exercises yourself from books, and then correct each student's copy, or choose to generate a session of autocorrected exercises.`}
-        style={{margin: 0}} />
+        style={{margin: 0, fontSize: 12}} />
     </div>
   </div>
 
@@ -685,7 +689,7 @@ const Step2 = () =>
         style={{letterSpacing: 0.7, margin: 0}} />
       <Description
         content={`Choose the subject, the chapter, and the students to whom you intend this duty`}
-        style={{margin: 0}} />
+        style={{margin: 0, fontSize: 12}} />
     </div>
     <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework2.gif' />
   </div>
@@ -748,7 +752,7 @@ const Step3 = () =>
         style={{letterSpacing: 0.7, margin: 0}} />
       <Description
         content={`Give a name and instruction to the assignment, and choose exercises among those proposed.`}
-        style={{margin: 0}} />
+        style={{margin: 0, fontSize: 12}} />
     </div>
   </div>
 

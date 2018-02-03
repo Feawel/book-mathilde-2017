@@ -41,6 +41,16 @@ export const getBackgroundResponsiveDirectory = () => {
   }
 }
 
+export const DEVICE_MOBILE = 'mobile'
+export const DEVICE_TABLET = 'tablet'
+export const DEVICE_DESKTOP = 'desktop'
+
 export const isMobile = () =>
   window.innerWidth <= 750
+
+export const isTablet = () =>
+  window.innerWidth > 750 && window.innerWidth <= 1000
+
+export const getDevice = () =>
+  isMobile ? DEVICE_MOBILE : (isTablet ? DEVICE_TABLET : DEVICE_DESKTOP)
 

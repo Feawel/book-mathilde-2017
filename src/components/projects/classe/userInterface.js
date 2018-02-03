@@ -24,6 +24,7 @@ class UserInterface extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='User_interface'>
         <style jsx>{`
@@ -36,7 +37,7 @@ class UserInterface extends React.Component {
           }
           .Call_wrapper {
             position: absolute;
-            top: 470px;
+            top: 440px;
             left: calc(50% - 14px);
           }
           @media screen and (max-width: 750px) {
@@ -52,12 +53,13 @@ class UserInterface extends React.Component {
           responsivePicto='/static/projects/classe/3-user-interface/picto-UI.png'
           borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <DoubleIllustrations
-          main={{width: 363, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
+          main={{width: 400, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           second={{width: 850, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           location={{bottom: 100, right: 120}}
           mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
+          isMobile={isMobile}
           title={{content: 'User Interface', color: '#1a2432'}}
           baseline={{content: 'creation of a UI kit', color: '#a8adb9'}}
           description={{color: '#474f6f', content: 'I developed a system to unify the experience on all screens and devices for users, and simplify the work of developers. With this specification, the implementation of current and future features is both clean and easy.'}}
@@ -66,9 +68,9 @@ class UserInterface extends React.Component {
             <Call
               color='#fb5e80'
               colorHover='white'
-              background='#fb5e80'
+              background='linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
               backgroundInner='white'
-              width={170}
+              width={200}
               text='VIEW ALL THE CHARTE' />
           </div>
           <Typography />
@@ -94,9 +96,9 @@ const typo2 = {
   title: 'Subtitles',
   number: 2,
   rows: [
-    {title: 'Subtitle 1', cn: 'opensans_bold', fontSize: 13, color: '#828DA7', font: 'Bold'},
-    {title: 'Subtitle 2', cn: 'opensans_bold', fontSize: 13, color: '#BDC2CE', font: 'Bold'},
-    {title: 'Subtitle 3', cn: 'opensans_bold', fontSize: 11, color: '#828DA7', font: 'Bold'}
+    {title: 'SUBTITLE 1', cn: 'opensans_bold', fontSize: 13, color: '#828DA7', font: 'Bold'},
+    {title: 'SUBTITLE 2', cn: 'opensans_bold', fontSize: 13, color: '#BDC2CE', font: 'Bold'},
+    {title: 'SUBTITLE 3', cn: 'opensans_bold', fontSize: 11, color: '#828DA7', font: 'Bold'}
   ]
 }
 
@@ -159,13 +161,23 @@ const Typography = () =>
       }
       .Title {
         color: #00b3df;
-        letter-spacing: 1.05;
+        letter-spacing: 1.05px;
         text-transform: none;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 32px;
+        text-transform: uppercase;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        margin: 30px 0;
         margin-bottom: 10px;
       }
       .Description {
         font-size: 16px;
         line-height: 24px;
+        color: #474f6f;
       }
       .Typos {
         width: 1050px;
@@ -211,17 +223,17 @@ const Typography = () =>
     `}</style>
     <TitleSecondary
       content='TYPOGRAPHY'
-      style={{color: '#474f6f'}} />
+      style={{color: '#474f6f', letterSpacing: 1.05}} />
     <div className='Box' />
     <div className='Content'>
       <img className='Typo_illu' alt='typo illustration' src='/static/projects/classe/3-user-interface/typo.png' />
       <div className='Infos'>
-        <div className='Title Global_title_secondary futuralt_book'>Opens sans Regular</div>
+        <div className='Title futuralt_book'>Opens sans Regular</div>
         <div className='opensans Description'>
           The quick brown fox jumps over<span className='Suffix_mobile'>...</span><span className='Suffix'> the lazy dog</span><br />
           1234567890
         </div>
-        <div className='Title Global_title_secondary futuralt_book'>Opens sans Bold</div>
+        <div className='Title futuralt_book'>Opens sans Bold</div>
         <div className='opensans_bold Description'>
           The quick brown fox jumps over<span className='Suffix_mobile'>...</span><span className='Suffix'> the lazy dog</span><br />
           1234567890
@@ -262,7 +274,7 @@ const Typo = ({typo: {title, number, rows}}) =>
     <div className='Number_circle'>
       <TitleSecondary
         content={number}
-        style={{fontFamily: `'Futura LT - Book'`, textTransform: 'none', position: 'relative', margin: 0, top: 0, left: 0, color: 'white', display: 'inline-block'}} />
+        style={{fontFamily: `'Futura LT - Book'`, textTransform: 'none', position: 'relative', margin: 0, top: 0, left: 0, color: 'white', fontSize: 16, display: 'inline-block'}} />
     </div>
     <TitleSecondary
       content={title}
@@ -288,7 +300,10 @@ const Row = ({title, cn, fontSize, color, font}) =>
         font-size: 13px;
         color: #828da7;
         line-height: 27px;
-        letter-spacing: 0.65;
+        letter-spacing: 0.65px;
+      }
+      .Title {
+        letter-spacing: 0.65px;
       }
     `}</style>
     <div className={`Title ${cn}`} style={{fontSize, color}}>
@@ -344,10 +359,10 @@ const Colors = () =>
         }
       }
     `}</style>
-    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '80px auto 0 auto'}} />
+    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '80px auto 0 auto', letterSpacing: 1.05}} />
     <SubtitlePart
       content='Colors to find there'
-      style={{color: '#a8adb9'}} />
+      style={{color: '#a8adb9', marginTop: 0}} />
     <div className='Big_colors'>
       {bigColors.map((color, i) => <BigColor key={i} {...color} />)}
     </div>
@@ -391,6 +406,10 @@ const BigColor = ({title, color}) =>
         font-size: 13px;
         line-height: 27px;
         margin-top: 20px;
+      }
+      .Color {
+        letter-spacing: 0.65px;
+        color: #474f6f;
       }
       @media screen and (max-width: 750px) {
         .Big_color {
@@ -447,6 +466,7 @@ const SmallColor = ({title, color}) =>
       .Color {
         font-size: 11px;
         color: #474f6f;
+        letter-spacing: 0.65px;
       }
       @media screen and (max-width: 750px) {
         .Small_color {
@@ -480,7 +500,7 @@ const Icon = () =>
         margin: auto;
         position: relative;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 0px;
         z-index: 1;
       }
       .Mockups {
@@ -642,7 +662,7 @@ const Icon = () =>
     `}</style>
     <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/mobile/iphones-colors-01.png' className='Mockups Mockups_mobile' />
     <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/iphones-colors-01.png' className='Mockups Mockups_desktop' />
-    <TitleSecondary content='icons' style={{color: 'white', margin: '50px auto 0 auto'}} />
+    <TitleSecondary content='icons' style={{color: 'white', margin: '0px auto 0 auto'}} />
     <SubtitlePart
       content='Guidelines' />
     <img src='/static/projects/classe/3-user-interface/fond-bleu1-01.svg' className='Blue_background' />

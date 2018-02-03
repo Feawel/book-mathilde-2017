@@ -252,7 +252,7 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 
 @media screen and (max-width: 750px) {
   .Global_project {
-    top: calc(35% - 55px);
+    top: calc(50% - 55px);
   }
 }
 
@@ -286,4 +286,17 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 
 .Global_width_0 {
   width: 0!important;
+}
+
+
+/***** PROJECT SPECIFIC ******/
+.Global_ul_classenumerique {
+  padding-left: 5px;
+}
+.Global_ul_classenumerique li {
+  list-style-type: none; /* on annule la puce par défaut */
+  background-image: url('/static/dot.png'); /* on affiche l'image souhaitée */
+  background-repeat: no-repeat; /* on annule la répétition par défaut */
+  background-position: left center; /* on positionne où l'on veut */
+  padding-left: 20px; /* pour éviter la superposition du contenu */
 }

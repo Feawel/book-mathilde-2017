@@ -142,10 +142,10 @@ export const data = {
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
-          title: "Classe numérique",
+          title: "Digital class",
           key: CLASSE_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "Ornikar is a start-up that offers to take the exam of driving licenses and road traffic on the basis of an online service. To increase sales of online training in the Highway Code, we conducted three facebook advertising to each a different target: the young boys of 16-20 years, girls of 16-20 years, and young adults 20-26 years.",
+          description: "Lelivrescolaire.fr is a start-up specialized in online education. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>create classes</strong> by registering their students,</li><li>tracking their results <strong>using statistics</strong>,</li><li>creating <strong>online assignments</strong></li><li><strong>communicating</strong> with them via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
           number: {
             index: 4,
             height: 67
@@ -177,12 +177,12 @@ export const data = {
           year: 2016,
           stats: [
             {
-              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
-              value: 1200
+              label: 'NUMBER OF USERS OF THE<BR /> DIGITAL CLASS',
+              value: '100K'
             },
             {
-              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
-              value: 589
+              label: 'NUMBER OF CLASSES CREATED DURING FIRST YEAR',
+              value: 3500
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]

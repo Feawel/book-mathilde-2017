@@ -16,7 +16,7 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
         .Infos {
           width: calc(100% - 40px);
           text-align:center;
-          margin-top: 20px;
+          margin-top: 25px;
           padding: 0 20px;
         }
       }
@@ -25,16 +25,18 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
       content={title.content}
       style={{
         color: title.color,
-        marginBottom: 22,
+        marginBottom: isMobile ? 27 : 22,
         marginTop: 0,
-        maxWidth: isMobile ? 310 : maxWidth
+        maxWidth: isMobile ? 250 : maxWidth,
+        marginLeft: isMobile ? 'auto' : undefined,
+        marginRight: isMobile ? 'auto' : undefined
       }} />
     <Subtitle
       content={baseline.content}
       style={{
         color: baseline.color,
         marginTop: 0,
-        marginBottom: 15,
+        marginBottom: isMobile ? 20 : 15,
         fontSize: isMobile ? 12 : 14,
         letterSpacing: isMobile ? 1.2 : 0.7,
         maxWidth: isMobile ? 310 : maxWidth

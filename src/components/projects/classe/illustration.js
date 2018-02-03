@@ -23,6 +23,7 @@ class Illustration extends React.Component {
   }
 
   render() {
+    const {isMobile} = this.props
     return (
       <div className='Illustration'>
         <style jsx>{`
@@ -47,6 +48,7 @@ class Illustration extends React.Component {
           mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
         <SectionInfos
           marginTop={90}
+          isMobile={isMobile}
           title={{content: 'Illustrations', color: '#1a2432'}}
           baseline={{content: 'brighten up the interface', color: '#a8adb9'}}
           description={{color: '#474f6f', content: 'I have produced two types of illustrations for the interface: drawings to populate even empty interfaces, and illustrations that serve to identify the classes.'}}
@@ -151,7 +153,7 @@ const Interfaces = () =>
       <TitleSecondary content='interface illustrations' style={{color: '#474f6f', margin: '0 auto'}} />
       <SubtitlePart
         content='Empty stats or pop-up'
-        style={{color: '#a8adb9'}} />
+        style={{color: '#a8adb9', marginTop: 0}} />
       <img className='Drawing' style={{marginTop: 10, marginBottom: 20}} height='291' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/dessin-crabe.png' />
       <div className='Colors'>
         <div className='Square' style={{backgroundColor: '#f5f6f7'}} />
@@ -272,7 +274,7 @@ class Classes extends React.Component {
           .Banners {
             position: relative;
             height: 400px;
-            margin-top: 200px;
+            margin-top: 180px;
             z-index: 2;
           }
           .Iphone {
@@ -356,7 +358,7 @@ const Banner = ({banner, active}) =>
   </div>
 
 const Circle = ({banner, active, setActive, index}) =>
-  <div onMouseEnter={() => setActive(index)} className={`transitions Circle clickable ${active ? 'active' : ''}`}>
+  <div onMouseEnter={() => setActive(index)} className={`Circle clickable ${active ? 'active' : ''}`}>
     <style jsx>{`
       .Circle {
         position: relative;
@@ -380,6 +382,8 @@ const Circle = ({banner, active, setActive, index}) =>
       .Image.active {
         width: 90px;
         height: 90px;
+        top: 2px;
+        left: 2px;
       }
       .Container {
         width: 110px;
@@ -395,7 +399,7 @@ const Circle = ({banner, active, setActive, index}) =>
         height: 90px;
         border-radius: 50%;
         z-index: -1;
-        border: 1px solid ${banner.color};
+        border: 2px solid ${banner.color};
         position: relative;
         top: 0px;
       }
@@ -407,7 +411,7 @@ const Circle = ({banner, active, setActive, index}) =>
       }
     `}</style>
     <div className='Container'>
-      <img className={`Image transitions ${active ? 'active' : ''}`} alt={`rond ${banner.index}`} src={`/static/projects/classe/5-illustration/rond-${banner.index}.png`} />
+      <img className={`Image transitions  ${active ? 'active' : ''}`} alt={`rond ${banner.index}`} src={`/static/projects/classe/5-illustration/rond-${banner.index}.png`} />
     </div>
     <div className='Container'>
       <div className={`Radius transitions ${active ? 'active' : ''}`}  />

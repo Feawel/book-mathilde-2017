@@ -94,6 +94,7 @@ class Menu extends React.Component {
             vertical-align: top;
             top: 2px;
             text-transform: uppercase;
+            letter-spacing: 1.1px;
           }
           .Close_icon {
             position: relative;

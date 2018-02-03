@@ -42,6 +42,7 @@ class Summary extends React.Component {
             width: 1020px;
             margin: auto;
             position: relative;
+            padding-bottom: 45px;
           }
 
           .Disappear {
@@ -149,7 +150,7 @@ class Summary extends React.Component {
                 }}/>
             </div>
             <div className='Social_container'>
-              <Social />
+              <Social summary={true}/>
             </div>
             <div className='Call_top'>
               {project.callSummary && <Call newWindow={true} color={project.colors.primary} background={project.colors.gradient} href={project.callSummary} text='VIEW THE WEBSITE' />}
@@ -188,7 +189,7 @@ const FooterMobile = ({ project }) =>
         background-color: rgba(222, 226, 237, 0.3);
         display: none;
         width: 100%;
-        padding: 40px 0;
+        padding: 40px 0 1px 0;
         margin-top: 40px;
       }
       .Mobile_meta {
@@ -220,10 +221,10 @@ const FooterMobile = ({ project }) =>
       .Label {
         display: inline-block;
         font-family: 'Futura - Bold';
-        font-weight: bold;
         font-size: 10px;
         line-height: 18px;
         color: #abb0bc;
+        letter-spacing: 1.1px;
       }
       .Value {
         font-family: 'Playfair Display';
@@ -322,10 +323,10 @@ const Meta = ({label, value}) =>
       }
       .Label {
         font-family: 'Futura - Bold';
-        font-weight: bold;
         font-size: 10px;
         line-height: 27px;
         color: #abb0bc;
+        letter-spacing: 1.1px;
       }
       .Value {
         font-family: 'Playfair Display';
