@@ -53,7 +53,7 @@ class Illustration extends React.Component {
           baseline={{content: 'brighten up the interface', color: '#a8adb9'}}
           description={{color: '#474f6f', content: 'I have produced two types of illustrations for the interface: drawings to populate even empty interfaces, and illustrations that serve to identify the classes.'}}
           />
-        <Interfaces />
+        <Interfaces isMobile={isMobile} />
         <Classes />
         <MobileClasses />
       </div>
@@ -61,7 +61,7 @@ class Illustration extends React.Component {
   }
 }
 
-const Interfaces = () =>
+const Interfaces = ({isMobile}) =>
   <div className='Interfaces'>
     <style jsx>{`
       .Interfaces {
@@ -116,6 +116,7 @@ const Interfaces = () =>
       @media screen and (max-width: 750px) {
         .Interfaces {
           width: 100%;
+          margin-top: 40px;
         }
         .Drawing {
           width: 95%;
@@ -130,6 +131,7 @@ const Interfaces = () =>
         .Colors {
           width: 340px;
           margin: auto;
+          margin-bottom: 15px;
         }
         .Right_desktop {
           display: none;
@@ -142,6 +144,7 @@ const Interfaces = () =>
           text-align: center;
           margin-top: 40px;
           padding: 40px 0;
+          padding-bottom: 1px;
         }
         .Right_mobile img {
           display: block;
@@ -154,7 +157,7 @@ const Interfaces = () =>
       <SubtitlePart
         content='Empty stats or pop-up'
         style={{color: '#a8adb9', marginTop: 0}} />
-      <img className='Drawing' style={{marginTop: 10, marginBottom: 20}} height='291' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/dessin-crabe.png' />
+      <img className='Drawing' style={{marginTop: isMobile ? 30 : 10, marginBottom: 20}} height='291' alt='some interface related illustrations' src='/static/projects/classe/5-illustration/dessin-crabe.png' />
       <div className='Colors'>
         <div className='Square' style={{backgroundColor: '#f5f6f7'}} />
         <div className='Square' style={{backgroundColor: '#f2f3f4'}} />
@@ -187,7 +190,7 @@ const MobileClasses = () =>
       .Classes {
         position: relative;
         margin: auto;
-        margin-top: 80px;
+        margin-top: 50px;
         text-align: center;
         z-index: 0;
       }
@@ -210,7 +213,7 @@ const MobileClasses = () =>
     <TitleSecondary content='illustrations of classes' style={{color: '#474f6f', margin: '0 auto'}} />
     <SubtitlePart
       content='7 possible themes'
-      style={{color: '#a6abb7'}} />
+      style={{color: '#a6abb7', marginBottom: 30}} />
     <div className='Banners'>
       <img className='Banner' src='/static/projects/classe/5-illustration/mobile/rouge.jpg' />
       <img className='Banner' src='/static/projects/classe/5-illustration/mobile/orange.jpg' />

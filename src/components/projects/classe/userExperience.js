@@ -56,7 +56,7 @@ class UserExperience extends React.Component {
         <Persona />
         <Homepage />
         <Statistics />
-        <Homework />
+        <Homework isMobile={isMobile} />
       </div>
     )
   }
@@ -117,7 +117,10 @@ const Persona = () =>
       }
       @media screen and (max-width: 750px) {
         .Persona {
-          height: 1105px;
+          height: 1125px;
+        }
+        .Background {
+          height: 1125px;
         }
         .Cards {
           width: 100%;
@@ -390,6 +393,9 @@ class Classe extends React.Component {
             .Text {
               bottom: -50px;
             }
+            .Screen {
+              box-shadow: 0px 5px 20px 0px rgba(1,1,1,0.35);
+            }
           }
         `}</style>
         <div className='Slider transitions' style={{ left }}>
@@ -452,7 +458,7 @@ const Statistics = () =>
         display: inline-block;
         position: relative;
         margin: auto;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
       }
       .Mockup {
         display: block;
@@ -479,7 +485,7 @@ const Statistics = () =>
       }
       @media screen and (max-width: 750px) {
         .Statistics {
-          margin-top: 250px;
+          margin-top: 290px;
           background-image: linear-gradient(to top, #008ab6 0%, #73e4e6 100%);
           height: 770px;
         }
@@ -527,7 +533,7 @@ const Statistics = () =>
     </div>
   </div>
 
-const Homework = () =>
+const Homework = ({ isMobile }) =>
   <div className='Homework'>
    <style jsx>{`
       .Homework {
@@ -565,14 +571,14 @@ const Homework = () =>
       content='In three steps'
       style={{color: '#a8adb9', marginBottom: 50}} />
     <div className='Steps'>
-      <Step1 />
-      <Step2 />
-      <Step3 />
+      <Step1 isMobile={isMobile} />
+      <Step2 isMobile={isMobile} />
+      <Step3 isMobile={isMobile} />
     </div>
     <img src='/static/projects/classe/4-user-experience/fond-5.svg' className='Red_background' />
   </div>
 
-const Step1 = () =>
+const Step1 = ({ isMobile }) =>
   <div className='Step'>
     <style jsx>{`
       .Step {
@@ -582,6 +588,7 @@ const Step1 = () =>
         display: inline-block;
         width: 592px;
         margin-right: 70px;
+        box-shadow: 0px 5px 8px 0px rgba(1,1,1,0.35);
       }
       .Infos {
         display: inline-block;
@@ -598,6 +605,7 @@ const Step1 = () =>
         .Title {
           font-size: 66px!important;
           line-height: 78px!important;
+          margin-bottom: 5px;
         }
         .Step {
           width: 310px;
@@ -616,7 +624,7 @@ const Step1 = () =>
         }
         .Mockup {
           position: absolute;
-          top: 240px;
+          top: 190px;
         }
       }
     `}</style>
@@ -625,14 +633,14 @@ const Step1 = () =>
       <div className='Global_title_primary Title'>01</div>
       <Subtitle
         content='choose the type of homework'
-        style={{letterSpacing: 0.7, margin: 0}} />
+        style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Choose to create an assignment by picking exercises yourself from books, and then correct each student's copy, or choose to generate a session of autocorrected exercises.`}
-        style={{margin: 0, fontSize: 12}} />
+        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
     </div>
   </div>
 
-const Step2 = () =>
+const Step2 = ({ isMobile }) =>
   <div className='Step'>
     <style jsx>{`
       .Step {
@@ -642,6 +650,7 @@ const Step2 = () =>
       .Mockup {
         display: inline-block;
         width: 592px;
+        box-shadow: 0px 5px 8px 0px rgba(1,1,1,0.35);
       }
       .Infos {
         display: inline-block;
@@ -659,12 +668,13 @@ const Step2 = () =>
         .Title {
           font-size: 66px!important;
           line-height: 78px!important;
+          margin-bottom: 5px;
         }
         .Step {
           width: 310px;
           margin: auto;
           height: 350px;
-          margin-top: 60px;
+          margin-top: 0px;
         }
         .Infos, .Mockup {
           width: 100%;
@@ -678,7 +688,7 @@ const Step2 = () =>
         }
         .Mockup {
           position: absolute;
-          top: 200px;
+          top: 180px;
         }
       }
     `}</style>
@@ -686,15 +696,15 @@ const Step2 = () =>
       <div className='Global_title_primary Title'>02</div>
       <Subtitle
         content='set the homework'
-        style={{letterSpacing: 0.7, margin: 0}} />
+        style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Choose the subject, the chapter, and the students to whom you intend this duty`}
-        style={{margin: 0, fontSize: 12}} />
+        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
     </div>
     <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework2.gif' />
   </div>
 
-const Step3 = () =>
+const Step3 = ({ isMobile }) =>
   <div className='Step'>
     <style jsx>{`
       .Step {
@@ -705,6 +715,7 @@ const Step3 = () =>
         display: inline-block;
         width: 592px;
         margin-right: 70px;
+        box-shadow: 0px 5px 8px 0px rgba(1,1,1,0.35);
       }
       .Infos {
         display: inline-block;
@@ -721,12 +732,13 @@ const Step3 = () =>
         .Title {
           font-size: 66px!important;
           line-height: 78px!important;
+          margin-bottom: 5px;
         }
         .Step {
           width: 310px;
           margin: auto;
           height: 390px;
-          margin-top: 60px;
+          margin-top: 30px;
         }
         .Infos, .Mockup {
           width: 100%;
@@ -749,10 +761,10 @@ const Step3 = () =>
       <div className='Global_title_primary Title'>03</div>
       <Subtitle
         content='EDIT the homework'
-        style={{letterSpacing: 0.7, margin: 0}} />
+        style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Give a name and instruction to the assignment, and choose exercises among those proposed.`}
-        style={{margin: 0, fontSize: 12}} />
+        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
     </div>
   </div>
 

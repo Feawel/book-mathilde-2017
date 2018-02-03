@@ -74,9 +74,9 @@ class UserInterface extends React.Component {
               text='VIEW ALL THE CHARTE' />
           </div>
           <Typography />
-          <Colors />
+          <Colors isMobile={isMobile} />
           <Icon />
-          <Components />
+          <Components isMobile={isMobile} />
       </div>
     )
   }
@@ -331,7 +331,7 @@ const smallColors = [
   {title: 'class theme 7', color: '#e74c3c'}
 ]
 
-const Colors = () =>
+const Colors = ({ isMobile }) =>
   <div className='Colors'>
     <style jsx>{`
       .Colors {
@@ -359,10 +359,10 @@ const Colors = () =>
         }
       }
     `}</style>
-    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '80px auto 0 auto', letterSpacing: 1.05}} />
+    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '120px auto 0 auto', letterSpacing: 1.05}} />
     <SubtitlePart
       content='Colors to find there'
-      style={{color: '#a8adb9', marginTop: 0}} />
+      style={{color: '#a8adb9', marginTop: 0, display: isMobile ? 'none' : 'inline-block'}} />
     <div className='Big_colors'>
       {bigColors.map((color, i) => <BigColor key={i} {...color} />)}
     </div>
@@ -431,7 +431,7 @@ const BigColor = ({title, color}) =>
       <div className='Title'>
         {title}
       </div>
-      <div className='Color'>
+      <div className='opensans Color'>
         {color}
       </div>
     </div>
@@ -519,7 +519,7 @@ const Icon = () =>
       .Pictos {
         width: 1020px;
         margin: auto;
-        margin-top: 60px;
+        margin-top: 50px;
         text-align: left;
         height: 380px;
         position: relative;
@@ -608,6 +608,7 @@ const Icon = () =>
         .Pictos {
           width: 100%;
           height: 1230px;
+          margin-top: 30px;
         }
         .Infos, .Illustration {
           display: block;
@@ -652,6 +653,10 @@ const Icon = () =>
         .Description_container_2 {
           margin-bottom: 0;
         }
+        .Description_container_3 {
+          position: relative;
+          top: 5px;
+        }
         .Picto_list_desktop {
           display: none;
         }
@@ -664,7 +669,8 @@ const Icon = () =>
     <img alt='iphone mockups' src='/static/projects/classe/3-user-interface/iphones-colors-01.png' className='Mockups Mockups_desktop' />
     <TitleSecondary content='icons' style={{color: 'white', margin: '0px auto 0 auto'}} />
     <SubtitlePart
-      content='Guidelines' />
+      content='Guidelines'
+      style={{opacity: 0.7}} />
     <img src='/static/projects/classe/3-user-interface/fond-bleu1-01.svg' className='Blue_background' />
     <div className='Blue_background_mobile' />
     <div className='Pictos'>
@@ -708,7 +714,7 @@ const Icon = () =>
     </div>
   </div>
 
-const Components = () =>
+const Components = ({ isMobile }) =>
   <div className='Components'>
     <style jsx>{`
       .Components {
@@ -767,7 +773,7 @@ const Components = () =>
     <TitleSecondary content='Components' style={{color: '#474f6f', margin: '50px auto 0 auto'}} />
     <SubtitlePart
       content='Grid system for responsive'
-      style={{color: '#a8adb9'}} />
+      style={{color: '#a8adb9', display: isMobile ? 'none' : 'inline-block'}} />
     <img alt='component mockups' src='/static/projects/classe/3-user-interface/grid-01.png' className='Mockups' />
     <div className='Description_container'>
       <Description
