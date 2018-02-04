@@ -50,6 +50,8 @@ class App extends React.Component {
     this.firstProjectAnimation = this.firstProjectAnimation.bind(this)
     this.secondProjectAnimation = this.secondProjectAnimation.bind(this)
     this.thirdProjectAnimation = this.thirdProjectAnimation.bind(this)
+    this.updateProjectUp = this.updateProjectUp.bind(this)
+    this.updateProjectDown = this.updateProjectDown.bind(this)
     this.updateProject = this.updateProject.bind(this)
     this.getInfosMaskAppear = this.getInfosMaskAppear.bind(this)
     this.displayTypoAnimation = this.displayTypoAnimation.bind(this)
@@ -96,7 +98,7 @@ class App extends React.Component {
         backgroundDirectory={backgroundDirectory}
         openProjectAnimation={openProjectAnimation}
         key='project' />,
-      <div key='project-content' className='Global_project_container'
+      <div key='project-content' className={`Global_project_container ${openAbout ? 'Global_about_open' : ''}`}
         style={{display: projectAppear ? 'block' : 'none'}}>
         {content}
       </div>
@@ -247,7 +249,12 @@ class App extends React.Component {
   activateUpdateHomeProject() {
     this.updateWithDebounce = throttle(this.updateProject, 500, { 'trailing': false });
     window.addEventListener('wheel', this.updateWithDebounce);
-    document.addEventListener('swipe-down', this.updateWithDebounce);
+
+    this.updateDownWithDebounce = throttle(this.updateProjectDown, 500, { 'trailing': false });
+    document.addEventListener('swiped-down', this.updateDownWithDebounce);
+
+    this.updateUpWithDebounce = throttle(this.updateProjectUp, 500, { 'trailing': false });
+    document.addEventListener('swiped-up', this.updateUpWithDebounce);
   }
 
   launchBarAnimation () {
@@ -331,8 +338,15 @@ class App extends React.Component {
     }, 1500)
   }
 
+  updateProjectDown () {
+    this.updateProject({deltaY: -1})
+  }
+
+  updateProjectUp () {
+    this.updateProject({deltaY: 1})
+  }
+
   updateProject (e) {
-    console.log('updateProject', e)
     const { animating, maskAppear, preventUpdateProject } = this.state
     if(!animating && maskAppear === null && !preventUpdateProject) {
       this.launchBarAnimation()

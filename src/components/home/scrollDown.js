@@ -30,12 +30,11 @@ const ScrollDown = ({ onClick, move = false }) => (
       }
       @media screen and (max-width: 1023px) {
         .Scroll_down {
-          width: 100%;
           bottom: 60px;
-          left: 6px;
           text-align: center;
           transform: scale(2);
           -moz-transform: scale(2);
+          left: 50%;
         }
         .Scroll_down_text {
           display: none;

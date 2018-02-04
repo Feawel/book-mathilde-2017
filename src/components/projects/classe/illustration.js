@@ -45,7 +45,7 @@ class Illustration extends React.Component {
           main={{width: 460, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
           second={{width: 764, src: '/static/projects/classe/5-illustration/picto-illu.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
           marginTop={90}
           isMobile={isMobile}
@@ -373,20 +373,20 @@ const Circle = ({banner, active, setActive, index}) =>
         top: 0;
       }
       .Circle.active {
-        top: 10px;
       }
       .Image {
         display: inline-block;
         position: relative;
         width: 110px;
         height: 110px;
+        transform: scale(1, 1);
+        transform-origin: left center;
         z-index: 2;
+        left: 19px;
+        top: -7px;
       }
       .Image.active {
-        width: 90px;
-        height: 90px;
-        top: 2px;
-        left: 2px;
+        transform: scale(0.81, 0.81);
       }
       .Container {
         width: 110px;
@@ -396,10 +396,12 @@ const Circle = ({banner, active, setActive, index}) =>
         position: absolute;
       }
       .Radius {
-        display: inline-block;
+        display: none;
         position: relative;
         width: 90px;
         height: 90px;
+        transform: scale(1, 1);
+        transform-origin: left center;
         border-radius: 50%;
         z-index: -1;
         border: 2px solid ${banner.color};
@@ -407,10 +409,9 @@ const Circle = ({banner, active, setActive, index}) =>
         top: 0px;
       }
       .Radius.active {
+        display: inline-block;
         position: relative;
-        top: -10px;
-        width: 110px;
-        height: 110px;
+        transform: scale(1.2, 1.2);
       }
     `}</style>
     <div className='Container'>

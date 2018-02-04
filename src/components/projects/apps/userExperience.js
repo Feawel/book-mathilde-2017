@@ -5,7 +5,6 @@ import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, Subtitle, SubtitlePart, Description } from '../common/texts'
-import { isMobile } from '../../../utils/responsive'
 
 class UserExperience extends React.Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class UserExperience extends React.Component {
       element: ReactDOM.findDOMNode(this)
     })
     const intervalId = setInterval(this.timer, 3000)
-    this.setState({ intervalId, isMobile: isMobile() })
+    this.setState({ intervalId })
   }
 
   componentWillUnmount() {
@@ -38,7 +37,7 @@ class UserExperience extends React.Component {
   }
 
   render() {
-    const { isMobile } = this.state
+    const { isMobile } = this.props
     return (
       <div className='User_experience'>
        <style jsx>{`
@@ -66,7 +65,7 @@ class UserExperience extends React.Component {
           main={{width: 460, src: '/static/projects/apps/3-user-experience/picto-UX.png'}}
           second={{width: 764, src: '/static/projects/apps/3-user-experience/picto-UX.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
           isMobile={isMobile}
           marginTop={90}
@@ -235,7 +234,7 @@ const ArchitectureMobile = ({ timer }) => {
             top: -22px;
             display: inline-block;
             height: 349px;
-            zoom: 1;
+            transform: scale(1, 1);
           }
           .Text {
             position: absolute;
@@ -260,10 +259,10 @@ const ArchitectureMobile = ({ timer }) => {
             left: calc(50% + 131px + 80px);
           }
           .Screen.active {
-            zoom: 1;
+            transform: scale(1, 1);
           }
           .Screen.inactive {
-            zoom: 0.9;
+            transform: scale(0.9, 0.9);
           }
           .Squares {
             width: 80px;
@@ -492,9 +491,10 @@ class Sidebar extends React.Component {
             width: 368px;
             background-size: contain;
             position: absolute;
-            top: 400px;
+            top: 280px;
             left: 150px;
-            zoom: 0.8;
+            transform: scale(0.8, 0.8);
+            transform-origin: left center;
           }
           .Screens {
             display: inline-block;

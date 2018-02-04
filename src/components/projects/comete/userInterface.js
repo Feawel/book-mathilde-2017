@@ -141,7 +141,7 @@ class UserInterface extends React.Component {
             main={{width: 462, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
             second={{width: 1001, src: '/static/projects/comete/4-user-interface/picto-UI.png'}}
             location={{bottom: 150, right: 160}}
-            mobileLocation={{top: -675, right: -315, zoom: 0.6}} />
+            mobileLocation={{top: -675, right: -315}} />
           <SectionInfos
             isMobile={isMobile}
             title={{content: 'User Interface', color: 'white'}}

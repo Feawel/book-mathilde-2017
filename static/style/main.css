@@ -262,6 +262,14 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-transition      : all 1.5s  ;
+  -moz-transition       : all 1.5s  ;
+  -ms-transition        : all 1.5s  ;
+  -o-transition         : all 1.5s  ;
+  transition          : all 1.5s  ;
+}
+.Global_project_container.Global_about_open {
+  top: 575px;
 }
 
 .Global_content_wrapper {
@@ -276,6 +284,22 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
     width: 100%;
   }
 }
+
+
+.Global_first_letter {
+  font-family: 'Futura - Bold';
+  font-size: 56px;
+  line-height: 55px;
+  letter-spacing: 11px;
+  float: left;
+  height: 56px;
+}
+.Global_first_letter_apps { color: #00B3DF; }
+.Global_first_letter_comete { color: #8061E7; }
+.Global_first_letter_classe { color: #fb5e80; }
+.Global_first_letter_ornikar { color: #EE5B60; }
+.Global_first_letter_ganesha { color: #2CD582; }
+.Global_first_letter_typo { color: #579BEB; }
 
 
 /***** TRANSITIONS ******/

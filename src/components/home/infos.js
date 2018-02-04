@@ -20,7 +20,7 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, ho
         position: absolute;
         top: calc(50% - 202px);
         z-index: 8;
-        zoom: 1;
+        transform: scale(1, 1);
         opacity: 1;
       }
       .Project_infos_title {
@@ -65,7 +65,7 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, ho
       // Media Query to handle dezoom effect on centered typo when small height
       @media screen and (max-height: 700px) {
         .Project_infos {
-          zoom: 0.9;
+          transform: scale(0.9, 0.9);
         }
       }
       @media screen and (max-width: 750px) {

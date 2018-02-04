@@ -91,15 +91,6 @@ class Summary extends React.Component {
             color: #abb0bc;
             letter-spacing: 1.1px;
           }
-          .Description:first-letter {
-            font-family: 'Futura - Bold';
-            font-size: 56px;
-            line-height: 55px;
-            letter-spacing: 11px;
-            color: ${project.colors.primary};
-            float: left;
-            height: 56px;
-          }
           .Social_container {
             margin-bottom: 40px;
           }

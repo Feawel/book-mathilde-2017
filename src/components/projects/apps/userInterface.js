@@ -6,13 +6,12 @@ import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
 import Call from '../common/call'
-import { responsive, isMobile } from '../../../utils/responsive'
+import { responsive } from '../../../utils/responsive'
 
 class UserInterface extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: null
     }
   }
 
@@ -24,11 +23,10 @@ class UserInterface extends React.Component {
       activeIcon: '/static/projects/menu/apps-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
-    this.setState({ isMobile: isMobile() })
   }
 
   render() {
-    const { isMobile } = this.state
+    const { isMobile } = this.props
     return (
       <div className='User_interface'>
        <style jsx>{`
@@ -46,7 +44,7 @@ class UserInterface extends React.Component {
           .Call_wrapper {
             position: absolute;
             top: 490px;
-            left: calc(50% - 14px);
+            left: calc(50% + 50px);
           }
           .Mobile { display: none; }
           @media screen and (max-width: 750px) {
@@ -71,7 +69,7 @@ class UserInterface extends React.Component {
           main={{width: 402, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           second={{width: 1060, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           location={{bottom: 50, right: 100}}
-          mobileLocation={{top: -675, right: -2315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -2315}} />
         <SectionInfos
           isMobile={isMobile}
           marginTop={115}

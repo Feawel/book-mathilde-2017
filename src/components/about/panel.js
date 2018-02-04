@@ -60,21 +60,21 @@ class Panel extends React.Component {
           // 1000 < Screen < 1200 : mini texte skill + pas de trait + animation successive
           @media screen and (min-width: 1000px) and (max-width: 1200px) {
             .Container {
-              zoom: 0.8;
-              -ms-zoom: 0.8;
-              -webkit-zoom: 0.8;
+              transform: scale(0.8, 0.8);
+              transform-origin: left center;
+              -ms-transform: scale(0.8, 0.8);
+              -webkit-transform: scale(0.8, 0.8);
               -moz-transform:  scale(0.8,0.8);
-              -moz-transform-origin: left center;
             }
           }
           // 750 < Screen < 1000 (tablette portrait) : plus de texte, animation successive
           @media screen and (min-width: 750px) and (max-width: 1000px) {
             .Container {
-              zoom: 0.7;
-              -ms-zoom: 0.7;
-              -webkit-zoom: 0.7;
+              transform: scale(0.7, 0.7);
+              transform-origin: left center;
+              -ms-transform: scale(0.7, 0.7);
+              -webkit-transform: scale(0.7, 0.7);
               -moz-transform:  scale(0.7,0.7);
-              -moz-transform-origin: left center;
              }
           }
           @media screen and (max-width: 750px) {

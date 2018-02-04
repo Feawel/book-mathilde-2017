@@ -41,7 +41,7 @@ const Page = ({ url }) =>
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <link href="/static/style/main.css" rel="stylesheet" />
-      <link rel="preload" href="/static/pure-swipe.min.js" as="script" />
+      <script src="/static/pure-swipe.min.js"></script>
     </Head>
     <style jsx global>{`
       html, body {

@@ -152,7 +152,7 @@ class Skills extends React.Component {
             }
           }
         `}</style>
-        <img alt='avatar mathilde serra' src='/static/about/illustration.png' width='575px' />
+        <img style={{position: 'absolute'}} alt='avatar mathilde serra' src='/static/about/illustration.png' width='575px' />
         {
           skills.map((skill, index) =>
             <div key={index} className={`Skill_container Skill_container_${skill.className}`}>

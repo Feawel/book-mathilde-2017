@@ -7,12 +7,12 @@ const DoubleIllustrations = ({main, second, location, mobileLocation = {}}) =>
       .Illustration {
         position: relative;
         display: inline-block;
-        width: 46%;
+        width: 50%;
         margin-top: 60px;
         z-index: -2;
       }
       .Illustration .Main {
-        padding-right: 60px;
+        padding-right: 50px;
         float: right;
         z-index: 1;
         position: relative;
@@ -32,7 +32,6 @@ const DoubleIllustrations = ({main, second, location, mobileLocation = {}}) =>
         .Illustration .Second {
           top: ${mobileLocation.top}px!important;
           right: ${mobileLocation.right}px!important;
-          zoom: ${mobileLocation.zoom}!important;
           opacity: 0.2;
         }
       }

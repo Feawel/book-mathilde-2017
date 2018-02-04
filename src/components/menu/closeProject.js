@@ -21,11 +21,14 @@ class CloseProject extends React.Component {
   }
 
   render () {
-    const { projectAppear, closeProject, project } = this.props
+    const { projectAppear, closeProject, project, openAbout, isMobile } = this.props
     const { hide } = this.state
     return (
       <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
-        <div style={{display: projectAppear && !hide ? 'block' : 'none'}}
+        <div style={{
+            top: openAbout ? 625 : (isMobile ? 25 : 40),
+            display: projectAppear && !hide ? 'block' : 'none'
+          }}
           className='Menu_close_project clickable'
           onClick={() => closeProject()}>
           <style jsx>{`
@@ -36,6 +39,11 @@ class CloseProject extends React.Component {
               top: 52px;
               height: 40px;
               z-index: 11;
+              -webkit-transition      : all 1.5s  ;
+              -moz-transition       : all 1.5s  ;
+              -ms-transition        : all 1.5s  ;
+              -o-transition         : all 1.5s  ;
+              transition          : all 1.5s  ;
             }
             .Circle {
               position: absolute;
@@ -51,10 +59,11 @@ class CloseProject extends React.Component {
               z-index: 1;
             }
             .Cross {
-              zoom: 0.7;
+              transform: scale(0.7, 0.7);
+              transform-origin: left center;
               position: relative;
-              right: 8px;
-              bottom: 3px;
+              right: 5px;
+              bottom: 9px;
             }
             circle {
               opacity: 0.5;

@@ -15,7 +15,7 @@ const DesktopLines = ({ width = 1, opacity = 0.5 }) =>
       .Desktop_lines {
         display:none;
       }
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1000px) {
         .Desktop_lines {
           display: inline-block;
         }
@@ -34,7 +34,7 @@ const TabletLines = ({ width = 1, opacity = 0.5 }) =>
       .Tablet_lines {
         display: none;
       }
-      @media screen and (min-width: 640px) and (max-width: 1024px) {
+      @media screen and (min-width: 640px) and (max-width: 1000px) {
         .Tablet_lines {
           display: inline-block;
         }

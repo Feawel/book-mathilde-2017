@@ -7,7 +7,7 @@ export const data = {
           key: APPS_KEY,
           title: "Numeric books",
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "Lelivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online. In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
+          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>elivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online. In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 1,
             height: 60
@@ -58,7 +58,7 @@ export const data = {
           callSummary: 'http://www.expo-cometes.fr/',
           problematic: "HOW TO GET A LARGE AUDIENCE FOR A SCIENTIFIC EXHIBITION ?",
           website: "http://www.expo-cometes.fr/",
-          description: "After having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
+          description: "<span class='Global_first_letter Global_first_letter_comete'>A</span>fter having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
           number: {
             index: 2,
             height: 60
@@ -104,7 +104,7 @@ export const data = {
           title: "Ornikar’s advertisings",
           key: ORNIKAR_KEY,
           problematic: "HOW TOUCH A CIBLE THAT YOU DON’T KNOW",
-          description: "Ornikar is a start-up that offers to handle driving licenses as an online service. To increase sales of online training, we used three facebook ads to each a different target: young boys 16-20 years old, young girls 16-20 years old and 20-26 years adults.",
+          description: "<span class='Global_first_letter Global_first_letter_ornikar'>O</span>rnikar is a start-up that offers to handle driving licenses as an online service. To increase sales of online training, we used three facebook ads to each a different target: young boys 16-20 years old, young girls 16-20 years old and 20-26 years adults.",
           colors : {
             gradient: 'linear-gradient(-220deg, #d6181f 0%, #f5c253 100%)',
             darkGradient: '#d6181f',
@@ -146,7 +146,7 @@ export const data = {
           title: "Digital class",
           key: CLASSE_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "Lelivrescolaire.fr is a start-up specialized in online education. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>create classes</strong> by registering their students,</li><li>tracking their results <strong>using statistics</strong>,</li><li>creating <strong>online assignments</strong></li><li><strong>communicating</strong> with them via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
+          description: "<span class='Global_first_letter Global_first_letter_classe'>L</span>elivrescolaire.fr is a start-up specialized in online education. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>create classes</strong> by registering their students,</li><li>tracking their results <strong>using statistics</strong>,</li><li>creating <strong>online assignments</strong></li><li><strong>communicating</strong> with them via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
           number: {
             index: 4,
             height: 67
@@ -191,7 +191,7 @@ export const data = {
         {
           title: "Ganesha Drawing",
           key: GANESHA_KEY,
-          description: "One big draw experimentation, made in 2017 for decorate a client appartment.<br />It is 6ft by 6ft (180cmX180cm) only made with posca markers.",
+          description: "<span class='Global_first_letter Global_first_letter_ganesha'>O</span>ne big draw experimentation, made in 2017 for decorate a client appartment.<br />It is 6ft by 6ft (180cmX180cm) only made with posca markers.",
           problematic: "EXPERIMENTAL DRAW",
           number: {
             index: 3,
@@ -226,7 +226,7 @@ export const data = {
           title: "Typography project",
           key: TYPO_KEY,
           problematic: "Typographic work to<br/> increase brand visibility",
-          description: "Lelivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers.<br /> To increase their notoriety and <strong>reinforce the community of teachers</strong>, I created for them a series of <strong>ten typographical works based on famous quotes</strong>. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. <br />Here is a selection of three of them",
+          description: "<span class='Global_first_letter Global_first_letter_typo'>L</span>elivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers.<br /> To increase their notoriety and <strong>reinforce the community of teachers</strong>, I created for them a series of <strong>ten typographical works based on famous quotes</strong>. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. <br />Here is a selection of three of them",
           number: {
             index: 4,
             height: 67

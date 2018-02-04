@@ -7,10 +7,10 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
     <style jsx>{`
       .Infos {
         display: inline-block;
-        width: calc(50% - 40px);
+        width: calc(50% - 90px);
         vertical-align: top;
         margin-top: ${marginTop}px;
-        padding: 0 40px;
+        padding-left: 50px;
       }
       @media screen and (max-width: 750px) {
         .Infos {
@@ -25,7 +25,7 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
       content={title.content}
       style={{
         color: title.color,
-        marginBottom: isMobile ? 27 : 22,
+        marginBottom: isMobile ? 35 : 22,
         marginTop: 0,
         maxWidth: isMobile ? 250 : maxWidth,
         marginLeft: isMobile ? 'auto' : undefined,

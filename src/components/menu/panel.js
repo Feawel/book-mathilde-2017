@@ -25,10 +25,6 @@ const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
       .Mobile_slider {
         display: none;
       }
-      // 750 < Screen < 1000 (tablette portrait)
-      @media screen and (min-width: 750px) and (max-width: 1000px) {
-        zoom: 0.75;
-      }
       @media screen and (max-width: 750px) {
         .Menu_panel {
           overflow: auto;

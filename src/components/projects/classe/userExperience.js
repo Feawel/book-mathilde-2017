@@ -45,7 +45,7 @@ class UserExperience extends React.Component {
           main={{width: 460, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
           second={{width: 764, src: '/static/projects/classe/4-user-experience/picto-UX.png'}}
           location={{bottom: 150, right: 120}}
-          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
           marginTop={90}
           isMobile={isMobile}
@@ -199,16 +199,28 @@ const Homepage = () =>
         position: relative;
         top: 100px;
       }
+      .Anim_container {
+        display: inline-block;
+        position: relative;
+      }
       .Anim {
-        width: 357px;
+        width: 464px;
         display: inline-block;
         position: relative;
         right: 100px;
       }
+      .Background_shadow {
+        position: absolute;
+        box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.4);
+        width: 313px;
+        height: 237px;
+        top: 36px;
+        left: 29px;
+      }
       .Classes {
         text-align: center;
         margin: auto;
-        margin-top: 290px;
+        margin-top: 250px;
       }
       .Header {
         width: 320px;
@@ -229,9 +241,10 @@ const Homepage = () =>
       }
       .Mockup_home_desktop {
         position: absolute;
-        right: -130px;
+        right: -230px;
         top: 0;
       }
+
       @media screen and (max-width: 750px) {
         .Blue_background {
           display: none;
@@ -278,7 +291,10 @@ const Homepage = () =>
           content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.'
           style={{marginTop: 15}} />
       </div>
-      <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
+      <div className='Anim_container'>
+        <div className='Background_shadow' />
+        <img className='Anim'alt='animation class card' src='/static/projects/classe/4-user-experience/anim-carte.gif' />
+      </div>
       <img className='Mockup_home_desktop' width='794' alt='animation class card' src='/static/projects/classe/4-user-experience/mockup-home.png' />
       <img className='Mockup_home_mobile' height='486' alt='animation class card' src='/static/projects/classe/4-user-experience/mobile/smartphone-home-01.png' />
     </div>
@@ -342,7 +358,8 @@ class Classe extends React.Component {
             top: 19px;
             display: inline-block;
             height: 349px;
-            zoom: 1;
+            transform: scale(1,1);
+            transform-origin: left center;
           }
           .Text {
             position: absolute;
@@ -373,10 +390,10 @@ class Classe extends React.Component {
             left: calc(50% + 132px + 80px);
           }
           .Screen.active {
-            zoom: 1;
+            transform: scale(1,1);
           }
           .Screen.inactive {
-            zoom: 0.9;
+            transform: scale(0.9,0.9);
           }
           .Ipad {
             width: 307px;
@@ -466,11 +483,22 @@ const Statistics = () =>
         width: 800px;
         z-index: 5;
       }
-      .Anim_stats {
+      .Anim_container {
+        display: block;
         position: absolute;
         bottom: 270px;
-        display: block;
         height: 360px;
+      }
+      .Background_shadow {
+        position: absolute;
+        box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.4);
+        width: 700px;
+        height: 317px;
+        top: 43px;
+        left: 42px;
+      }
+      .Anim_stats {
+        display: block;
         z-index: 8;
       }
       .Stats_background {
@@ -529,7 +557,10 @@ const Statistics = () =>
       </div>
       <img className='Stats_background' alt='statistics mockup' src='/static/projects/classe/4-user-experience/stat-fond.png' />
       <img className='Mockup' alt='statistics mockup' src='/static/projects/classe/4-user-experience/ecran-stat.jpg' />
-      <img className='Anim_stats' alt='statistics animation' src='/static/projects/classe/4-user-experience/anim-stat.gif' />
+      <div className='Anim_container'>
+        <div className='Background_shadow' />
+        <img className='Anim_stats' alt='statistics animation' src='/static/projects/classe/4-user-experience/anim-stat.gif' />
+      </div>
     </div>
   </div>
 

@@ -11,6 +11,7 @@ const WhiteBorderWrapper = ({ children }) =>
         left: 0;
         margin: 0;
         padding: 0;
+        z-index: 10;
       }
     `}</style>
     {children}

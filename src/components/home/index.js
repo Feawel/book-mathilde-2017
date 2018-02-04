@@ -27,7 +27,6 @@ const HomeProjects = (props) => {
   const { projectAppear, backgroundSize, openProject, animating, project,
     bar1, bar2, bar3, bar4, bar5, bars, infosAnimation, backgroundDirectory,
     mask, openProjectAnimation, isMobile, updateProject } = props
-
   if(!backgroundDirectory) return <div />
 
   return (

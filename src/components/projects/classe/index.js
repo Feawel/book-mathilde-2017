@@ -5,6 +5,7 @@ import data from '../../../../data'
 import Summary from '../common/summary'
 import Menu from '../common/menu'
 import Footer from '../common/footer'
+import Lines from '../common/lines'
 
 import UserExperience from './userExperience'
 import UserInterface from './userInterface'
@@ -24,7 +25,8 @@ class Comete extends React.Component {
     const {isMobile} = this.props
     const project = data.projects[3]
     return (
-      <div id='project' className='Global_project Comete'>
+      <div id='project' className='Global_project'>
+        <Lines />
         <Summary project={project} />
         <Menu sections={sections} section={section} project={project} color='#fb5e80' borderImage='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <UserInterface

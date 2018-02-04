@@ -60,7 +60,8 @@ class VisualIdentity extends React.Component {
             .Logo_header {
               text-align: left;
               padding-left: 25px;
-              zoom: 0.8;
+              transform: scale(0.8, 0.8);
+              transform-origin: left center;
               margin-bottom: 35px;
             }
           }
@@ -74,7 +75,7 @@ class VisualIdentity extends React.Component {
             main={{width: 462, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}
             second={{width: 1001, src: '/static/projects/comete/3-visual-identity/picto-ID.png'}}
             location={{bottom: 150, right: 160}}
-            mobileLocation={{top: -800, right: -215, zoom: 0.7}} />
+            mobileLocation={{top: -800, right: -215}} />
         <SectionInfos
           isMobile={isMobile}
           title={{content: 'Visual Identity', color: '#221061'}}
@@ -214,7 +215,8 @@ class Color extends React.Component {
             .Outer_circle {
               position: relative;
               left: 190px;
-              zoom: 0.8;
+              transform: scale(0.8, 0.8);
+              transform-origin: left center;
             }
             .Picture {
               right: 50px;

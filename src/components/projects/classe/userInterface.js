@@ -56,7 +56,7 @@ class UserInterface extends React.Component {
           main={{width: 400, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           second={{width: 850, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           location={{bottom: 100, right: 120}}
-          mobileLocation={{top: -675, right: -1315, zoom: 0.6}} />
+          mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
           marginTop={90}
           isMobile={isMobile}
