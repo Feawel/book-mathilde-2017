@@ -64,12 +64,10 @@ class App extends React.Component {
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
       animating, openProjectAnimation, isMobile, initialAnimation } = this.state
 
-    if(initialAnimation)
-        return <InitialAnimation />
-
     const content = projectAppear ? <Projects isMobile={isMobile} current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
     return [
+      <InitialAnimation initialAnimation={initialAnimation} />,
       <About
         key='about'
         isMobile={isMobile}

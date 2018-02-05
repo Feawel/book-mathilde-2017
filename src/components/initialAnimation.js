@@ -1,6 +1,10 @@
 import React from 'react'
-import Lottie from 'react-lottie'
-import * as animationData from '../..//static/data.json'
+import * as animationData from '../../static/data.json'
+import dynamic from 'next/dynamic'
+
+const Lottie = dynamic(import('react-lottie'), {
+  ssr: false
+})
 
 export default class InitialAnimation extends React.Component {
 
@@ -14,9 +18,11 @@ export default class InitialAnimation extends React.Component {
   }
 
   render() {
+
     const {isMount} = this.state
-    if(!isMount)
-      return <div />
+    if (!isMount) return null;
+    const {initialAnimation} = this.props
+
     const buttonStyle = {
       display: 'block',
       margin: '10px auto'
@@ -31,19 +37,22 @@ export default class InitialAnimation extends React.Component {
       // }
     };
 
-    return <div className='Initial_animation'>
+    return <div className='Initial_animation transitions'>
       <style jsx>{`
       .Initial_animation {
         width: 100%;
-        height: 100%;
+        height: ${initialAnimation ? '100%' : 0};
         background-color: #001732;
+        z-index: 1000;
+      }
+      .Anim_wrapper {
+        position: relative;
+        top: 50px;
       }
     `}</style>
-      <Lottie options={defaultOptions}
-        height={400}
-        width={400}
-        isStopped={this.state.isStopped}
-        isPaused={this.state.isPaused}/>
+      <div className='Anim_wrapper'>
+        <Lottie options={defaultOptions} height={400} width={400} isStopped={this.state.isStopped} isPaused={this.state.isPaused}/>
+      </div>
     </div>
   }
 }
