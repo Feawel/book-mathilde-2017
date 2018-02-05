@@ -5,6 +5,7 @@ import Credits from './credits'
 import Contact from './contact'
 import Slider from './slider'
 import MobileSlider from './mobileSlider'
+import Lines from './lines'
 import {enableScroll, disableScroll} from '../../utils/scroll'
 
 const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
@@ -23,6 +24,8 @@ const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
         overflow: hidden;
       }
       .Mobile_slider {
+        width: 100%;
+        height: 100%;
         display: none;
       }
       @media screen and (max-width: 750px) {
@@ -37,6 +40,7 @@ const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
         }
       }
     `}</style>
+    <Lines />
     <Contact />
     <Credits />
     <div className='Slider'>

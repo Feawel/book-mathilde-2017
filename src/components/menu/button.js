@@ -9,7 +9,7 @@ const MenuButton = ({ color, gradient, project, toggleOpen }) =>
         .Menu_button {
           position: absolute;
           top: calc(50% - 40px);
-          right: calc(50% - 470px);
+          right: calc(50% - 550px);
           width: 200px;
           height: 52px;
           border-radius: 25px;

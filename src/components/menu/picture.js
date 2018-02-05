@@ -1,7 +1,7 @@
 // src/componentqs/menu/slider.js
 
 const MenuPicture = ({ picture }) =>
-  <div className='Menu_picture'>
+  <div className='Menu_picture transitions'>
     <style jsx>{`
       .Menu_picture {
         position: absolute;

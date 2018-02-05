@@ -20,11 +20,9 @@ const Item = ({ project, index, current, setProject }) =>
   </div>
 
 const Tags = () =>
-  <div className="Project_infos_tags">
+  <div className="Project_infos_tags playfairdisplay_black">
     <style jsx>{`
       .Project_infos_tags {
-        font-family: 'Playfair Display';
-        font-weight: bold;
         font-size: 12px;
         opacity: 1;
         margin-top: 10px;
@@ -52,23 +50,22 @@ const Tags = () =>
 
 const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
   <Button key='button' project={projects[current]} toggleOpen={toggleOpen} gradient={projects[current].colors} />,
-  <Picture key='picture' picture={projects[current].key} />,
-  <div key='slider' className='Menu_slider transitions' style={{top: `calc(50% - ${80 + 70*current}px)`}}>
+  <Picture key='picture' picture={{src: `/static/menu/rond-${projects[current].key}.jpg`, alt: 'rond menu'}} />,
+  <div key='slider' className='Menu_slider playfairdisplay_black transitions' style={{top: `calc(50% - ${80 + 70*current}px)`}}>
     <style jsx>{`
       .Menu_slider {
         position: absolute;
         top: calc(50% - 80px);
-        width: 350px;
+        width: 400px;
         left: calc(50% - 150px);
         height: 100%;
         color: white;
-        font-family: 'Playfair Display';
       }
       .active {
         color: red;
       }
       .Items {
-        width: 350px;
+        width: 400px;
       }
     `}</style>
 

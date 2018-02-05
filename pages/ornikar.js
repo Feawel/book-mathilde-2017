@@ -15,17 +15,17 @@ const Page = ({ url }) => (
 
       <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
       <link rel="canonical" href="https://www.matserra.design/ornikar/" />
-      <title>Mat SERRA - Ornikar communication campaign | Ads | Communication</title>
+      <title>Mathilde SERRA - Ornikar communication campaign | Ads | Communication</title>
 
-      <meta itemprop="name" content="Mat SERRA - Ornikar communication campaign | Ads | Communication" />
+      <meta itemprop="name" content="Mathilde SERRA - Ornikar communication campaign | Ads | Communication" />
       <meta itemprop="description" content="Facebook advertising for an online driving license startup, Ornikar, to reach 3 targets: boys 16-20 years old, girls 16-20 years old and adults 20-26 years old." />
       <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="Facebook advertising for an online driving license startup, Ornikar, to reach 3 targets: boys 16-20 years old, girls 16-20 years old and adults 20-26 years old." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
-      <meta name="author" content="Mat SERRA" />
+      <meta name="author" content="Mathilde SERRA" />
 
-      <meta property="og:title" content="Mat SERRA - Ornikar communication campaign | Ads | Communication" />
+      <meta property="og:title" content="Mathilde SERRA - Ornikar communication campaign | Ads | Communication" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design/ornikar/" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
@@ -37,7 +37,7 @@ const Page = ({ url }) => (
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Mathilde__serra" />
-      <meta name="twitter:title" content="Mat SERRA - Ornikar communication campaign | Ads | Communication" />
+      <meta name="twitter:title" content="Mathilde SERRA - Ornikar communication campaign | Ads | Communication" />
       <meta name="twitter:description" content="Facebook advertising for an online driving license startup, Ornikar, to reach 3 targets: boys 16-20 years old, girls 16-20 years old and adults 20-26 years old." />
       <meta name="twitter:creator" content="@Mathilde__serra" />
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />

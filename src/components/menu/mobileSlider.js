@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Item = ({ project, index, current }) =>
   <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
-    <div className='Item'>
+    <div className='Item clickable'>
       <style jsx>{`
         .Item {
           width: 100%;
@@ -48,7 +48,7 @@ const Item = ({ project, index, current }) =>
         }
       `}</style>
       <div className='Picture'>
-        <img height='64' alt='picture in menu' src='' />
+        <img height='64' alt='picture in menu' src={`/static/menu/rond-${project.key}.jpg`} />
       </div>
       <div className='Infos'>
         <div className='Title'>{project.title}</div>
@@ -70,17 +70,17 @@ const MobileSlider = ({ projects = [], current, open, toggleOpen }) =>
         font-family: 'Playfair Display';
       }
       .Items {
-        position: absolute;
+        position: relative;
         padding: 20px;
         overflow: hidden;
-        top: 100px;
+        top: 55px;
         z-index: 0;
       }
       .Mask {
         position: fixed;
         top: 0;
         width: 100%;
-        height: 100px;
+        height: 55px;
         background-color: #001732;
         z-index: 1;
       }

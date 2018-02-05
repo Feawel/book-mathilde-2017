@@ -155,13 +155,19 @@ class App extends React.Component {
   }
 
   toggleOpenMenu () {
-    if(this.state.openMenu) {
+    if(this.state.openMenu && this.state.isMobile) {
+      this.activateUpdateHomeProject()
+    } else if (this.state.openMenu) {
       this.deactivateScrollMenu()
       this.activateUpdateHomeProject()
+    } else if (!this.state.openMenu && this.state.isMobile) {
+      this.deactivateUpdateHomeProject()
     } else {
       this.activateScrollMenu()
       this.deactivateUpdateHomeProject()
     }
+
+
     this.setState({openMenu: !this.state.openMenu})
   }
   toggleOpenAbout () {

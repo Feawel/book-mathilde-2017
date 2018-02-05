@@ -15,17 +15,17 @@ const Page = ({ url }) => (
 
       <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
       <link rel="canonical" href="https://www.matserra.design/typo/" />
-      <title>Mat SERRA - Typography posters | Illustration | Typo | Inspiration</title>
+      <title>Mathilde SERRA - Typography posters | Illustration | Typo | Inspiration</title>
 
-      <meta itemprop="name" content="Mat SERRA - Typography posters | Illustration | Typo | Inspiration" />
+      <meta itemprop="name" content="Mathilde SERRA - Typography posters | Illustration | Typo | Inspiration" />
       <meta itemprop="description" content="To increase an edtech startup notoriety, I created ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms." />
       <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="To increase an edtech startup notoriety, I created ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
-      <meta name="author" content="Mat SERRA" />
+      <meta name="author" content="Mathilde SERRA" />
 
-      <meta property="og:title" content="Mat SERRA - Typography posters | Illustration | Typo | Inspiration" />
+      <meta property="og:title" content="Mathilde SERRA - Typography posters | Illustration | Typo | Inspiration" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design/typo/" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
@@ -37,7 +37,7 @@ const Page = ({ url }) => (
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Mathilde__serra" />
-      <meta name="twitter:title" content="Mat SERRA - Typography posters | Illustration | Typo | Inspiration" />
+      <meta name="twitter:title" content="Mathilde SERRA - Typography posters | Illustration | Typo | Inspiration" />
       <meta name="twitter:description" content="To increase an edtech startup notoriety, I created ten typographical works based on famous quotes. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms." />
       <meta name="twitter:creator" content="@Mathilde__serra" />
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />

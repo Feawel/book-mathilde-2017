@@ -15,17 +15,17 @@ const Page = ({ url }) => (
 
       <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
       <link rel="canonical" href="https://www.matserra.design/apps/" />
-      <title>Mat SERRA - Tablet applications | Edtech | Textbook</title>
+      <title>Mathilde SERRA - Tablet applications | Edtech | Textbook</title>
 
-      <meta itemprop="name" content="Mat SERRA - Tablet applications | Edtech | Textbook" />
+      <meta itemprop="name" content="Mathilde SERRA - Tablet applications | Edtech | Textbook" />
       <meta itemprop="description" content="Conception, UX & UI of ipad / android / windows textbooks applications for tablet." />
       <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="Conception, UX & UI of ipad / android / windows textbooks applications for tablet." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
-      <meta name="author" content="Mat SERRA" />
+      <meta name="author" content="Mathilde SERRA" />
 
-      <meta property="og:title" content="Mat SERRA - Tablet applications | Edtech | Textbook" />
+      <meta property="og:title" content="Mathilde SERRA - Tablet applications | Edtech | Textbook" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.matserra.design/apps/" />
       <meta property="og:image" content="https://www.matserra.design/static/seo/homepage.png" />
@@ -37,7 +37,7 @@ const Page = ({ url }) => (
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Mathilde__serra" />
-      <meta name="twitter:title" content="Mat SERRA - Tablet applications | Edtech | Textbook" />
+      <meta name="twitter:title" content="Mathilde SERRA - Tablet applications | Edtech | Textbook" />
       <meta name="twitter:description" content="Conception, UX & UI of ipad / android / windows textbooks applications for tablet." />
       <meta name="twitter:creator" content="@Mathilde__serra" />
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />
