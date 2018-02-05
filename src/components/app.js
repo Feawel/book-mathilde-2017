@@ -9,7 +9,7 @@ import About from './about'
 import Home from './home'
 import throttle from 'lodash/throttle'
 import Projects from './projects'
-
+import InitialAnimation from './initialAnimation'
 import {enableScroll, disableScroll} from '../utils/scroll'
 import { getBackgroundResponsiveDirectory, isMobile } from '../utils/responsive'
 import {getNextProjectKey, getPrevProjectKey, getProjectByKey, getIndexByProjectKey} from '../utils/project'
@@ -26,6 +26,7 @@ class App extends React.Component {
       currentProject: 'apps',
       timeoutIds: [],
       backgroundSize: 'large',
+      initialAnimation: true,
       projectAppear: null,
       bar1: false,
       bar2: false,
@@ -61,7 +62,11 @@ class App extends React.Component {
   render () {
     const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
-      animating, openProjectAnimation, isMobile } = this.state
+      animating, openProjectAnimation, isMobile, initialAnimation } = this.state
+
+    if(initialAnimation)
+        return <InitialAnimation />
+
     const content = projectAppear ? <Projects isMobile={isMobile} current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
     return [
@@ -115,6 +120,7 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({backgroundDirectory: getBackgroundResponsiveDirectory(), isMobile: isMobile()})
     this.activateUpdateHomeProject()
+    setTimeout(() => this.setState({initialAnimation: false}), 7000)
   }
 
   componentWillReceiveProps(nextProps) {

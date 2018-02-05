@@ -2,7 +2,7 @@ import React from 'react'
 import Lottie from 'react-lottie'
 import * as animationData from '../..//static/data.json'
 
-export default class LottieControl extends React.Component {
+export default class InitialAnimation extends React.Component {
 
   constructor(props) {
     super(props);
@@ -31,15 +31,19 @@ export default class LottieControl extends React.Component {
       // }
     };
 
-    return <div>
+    return <div className='Initial_animation'>
+      <style jsx>{`
+      .Initial_animation {
+        width: 100%;
+        height: 100%;
+        background-color: #001732;
+      }
+    `}</style>
       <Lottie options={defaultOptions}
-              height={400}
-              width={400}
-              isStopped={this.state.isStopped}
-              isPaused={this.state.isPaused}/>
-      <button style={buttonStyle} onClick={() => this.setState({isStopped: true})}>stop</button>
-      <button style={buttonStyle} onClick={() => this.setState({isStopped: false})}>play</button>
-      <button style={buttonStyle} onClick={() => this.setState({isPaused: !this.state.isPaused})}>pause</button>
+        height={400}
+        width={400}
+        isStopped={this.state.isStopped}
+        isPaused={this.state.isPaused}/>
     </div>
   }
 }
