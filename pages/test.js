@@ -12,7 +12,7 @@ const Page = ({ url }) => (
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name="robots" content="index,follow" />
 
-      <link rel="icon" href="https://www.matserra.design/static/about/logo-part1.svg" />
+      <link rel="icon" href="https://www.matserra.design/static/favicon/favicon-02.png" />
       <link rel="canonical" href="https://www.matserra.design/ornikar/" />
       <title>Mathilde SERRA - Ornikar communication campaign | Ads | Communication</title>
 
