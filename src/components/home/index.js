@@ -72,6 +72,23 @@ const HomeProjects = (props) => {
         .Bar_5 { left: 80%; }
 
         .Bar.active { height: 100%; }
+
+        @media screen and (max-width: 1000px) {
+          .Bar { width: 25%; }
+          .Bar_1 { left: 0; }
+          .Bar_2 { left: 25%; }
+          .Bar_3 { left: 50%; }
+          .Bar_4 { left: 75%; }
+          .Bar_5 { display: none; }
+        }
+        @media screen and (max-width: 640px) {
+          .Bar { width: 33.3%; }
+          .Bar_1 { left: 0; }
+          .Bar_2 { left: 33.3%; }
+          .Bar_3 { left: 66.6%; }
+          .Bar_4 { display: none; }
+          .Bar_5 { display: none; }
+        }
       `}</style>
       <Lines  />
       {!(projectAppear || openProjectAnimation) && <ScrollDown move={animating} onClick={() => updateProject({deltaY: 1})} />}
