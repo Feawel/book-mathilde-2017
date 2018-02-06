@@ -2,7 +2,7 @@ export const firstGameScreens = [
   {
     src: 'game1s1',
     title: 'First screen',
-    description: 'The first screen explains the rules and the purpose of the games: to make pause Rosetta on the Comet !'
+    description: 'The first screen explains the rules and the purpose of the game: to land Rosetta on the comet !'
   },
   {
     src: 'game1s2',
@@ -12,12 +12,12 @@ export const firstGameScreens = [
   {
     src: 'game1s3',
     title: 'Question 7',
-    description: 'What is the first probe to have photographed a comet?'
+    description: 'What is the first probe to have recorded a comet?'
   },
   {
     src: 'game1s4',
     title: 'The last screen',
-    description: 'An animation shows Rosetta landing, player have is score and a congratulation sentences.'
+    description: 'An animation shows Rosetta landing, and the player has his score & congratulations.'
   }
 ]
 
@@ -25,12 +25,12 @@ export const secondGameScreens = [
   {
     src: 'game2s1',
     title: 'First screen',
-    description: 'The first screen explains the rules and the purpose of the games: findall the tools embedded on Rosetta !'
+    description: 'The first screen explains the rules and the purpose of the game: match all the instruments carrying by Rosetta.'
   },
   {
     src: 'game2s2',
     title: 'Select a tool',
-    description: 'More detail on the tool on the hover or the click'
+    description: 'More details on the tool on the hover or the click.'
   },
   {
     src: 'game2s3',

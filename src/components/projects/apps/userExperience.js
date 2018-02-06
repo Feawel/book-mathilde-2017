@@ -20,7 +20,7 @@ class UserExperience extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User experience',
-      icon: '/static/projects/menu/grey-ux.svg',
+      icon: '/static/projects/menu/grey-ux.png',
       activeIcon: '/static/projects/menu/apps-ux.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -71,7 +71,7 @@ class UserExperience extends React.Component {
           marginTop={90}
           title={{content: 'User Experience', color: '#004459'}}
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'This app is a transcription of books for tablets. It is intended to be used by teachers and children in class. The user experience must therefore be as simple and instinctive as with the basic books, while adding tools such as the ability to documents in full screens, to draw and write on the pages, to put some of them side, or even to respond to exercises.'}}
+          description={{color: '#474f6f', content: "This app is a transcription of books for tablets. It is intended to be used by teachers and students in a class.<br/>The UX must remain as simple and instinctive than with books, even if we'll add tools such as fullscreen documents, drawing, comments, or answering exercises."}}
           />
         { isMobile !== null && isMobile && <ArchitectureMobile timer={this.state.timer} /> }
         { isMobile !== null && !isMobile && <Architecture timer={this.state.timer} /> }

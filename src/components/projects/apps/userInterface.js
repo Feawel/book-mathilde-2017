@@ -19,7 +19,7 @@ class UserInterface extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User interface',
-      icon: '/static/projects/menu/grey-ui.svg',
+      icon: '/static/projects/menu/grey-ui.png',
       activeIcon: '/static/projects/menu/apps-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -75,7 +75,7 @@ class UserInterface extends React.Component {
           marginTop={115}
           title={{content: 'User Interface', color: '#004459'}}
           baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'The user interface has been designed to appeal to college students. So I decided to use a lot of colors is to leave an important place to the picture. However, the interface must also remain clear and uncluttered. I have created an ui kit so that the whole 8 book can be implemented in the app.'}}
+          description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create a UI kit to make it easy for developers to implement the 8 books needed."}}
           />
         <div className='Call_wrapper Desktop'>
           <Call
@@ -583,13 +583,13 @@ const Picto = ({ isMobile }) =>
         <div className='Description_container_1'>
           <Description
             style={{verticalAlign: 'top', opacity: 0.8, lineHeight: '18px', textAlign: isMobile ? 'center' : 'left', display: 'inline-block', fontSize: 12, marginTop: 0}}
-            content='The contours and radius of Angles makes 2px for a picto Of 44x44. The interior spaces make 2px or a multiple.' />
+            content="The contours and angle's radius is 2px for a picto of 44x44. The interior spaces are 2px or a multiple." />
         </div>
         <img className='Illustration Illustration_2' height='144px' src='/static/projects/apps/4-user-interface/picto/picto-petit.svg' alt='picto-petit' />
         <div className='Description_container_2'>
           <Description
             style={{textAlign: isMobile ? 'center' : 'left', opacity: 0.8, lineHeight: '18px',  display: 'block', fontSize: 12, marginTop: 0}}
-            content='The pictograms are drawn In an "inline" style, in lines And not in full. They are used In two versions, 44px X 44px, and 22px X 22px.' />
+            content='The pictograms are drawn in an "inline" style, in lines and not in full. They are used in two versions, 44px x 44px, and 22px x 22px.' />
         </div>
         <img className='Illustration Illustration_3' height='288' src='/static/projects/apps/4-user-interface/picto/picto-guidelines.svg' alt='picto-guidelines' />
       </div>
@@ -730,11 +730,11 @@ const Templates = () =>
     </div>
     <div className='Template'>
       <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template2.jpg' />
-      <div className='Description futuralt_book'>A page with a principal document like a text and severall documents less important.</div>
+      <div className='Description futuralt_book'>A page with a main document (here a text) and some others less important.</div>
     </div>
     <div className='Template'>
       <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template3.jpg' />
-      <div className='Description futuralt_book'>A page with document of equal importance.</div>
+      <div className='Description futuralt_book'>A page with documents of equal importance.</div>
     </div>
   </div>
 
@@ -961,6 +961,18 @@ class Tools extends React.Component {
             margin: 0;
             top: -40px;
           }
+          .Video_1 {
+            position: absolute;
+            top: 44px;
+            left: 38px;
+            width: 388px;
+          }
+          .Video_2 {
+            position: absolute;
+            width: 388px;
+            top: 44px;
+            right: 38px;
+          }
           @media screen and (max-width: 750px) {
             .Border {
               display: none;
@@ -1000,6 +1012,7 @@ class Tools extends React.Component {
         </div>
         <div className='Screen Screen_1'>
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-1.png' />
+          <video autoPlay loop className='Video_1' src='/static/projects/apps/4-user-interface/types/exo.mp4' />
           <div className='Infos'>
             <div className='Border' />
             <TitleSecondary content='Answer to the question' style={screen1Title} />
@@ -1016,6 +1029,7 @@ class Tools extends React.Component {
               style={screen2Desc}
               content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
           </div>
+          <video autoPlay loop className='Video_2' src='/static/projects/apps/4-user-interface/types/dessin.mp4' />
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-2.png' />
         </div>
         <div className='Andmore_container'>

@@ -26,7 +26,7 @@ class VisualIdentity extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'Visual identity',
-      icon: '/static/projects/menu/grey-id.svg',
+      icon: '/static/projects/menu/grey-id.png',
       activeIcon: '/static/projects/menu/comete-id.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -80,7 +80,7 @@ class VisualIdentity extends React.Component {
           isMobile={isMobile}
           title={{content: 'Visual Identity', color: '#221061'}}
           baseline={{content: 'Create a visual identity able to please to a large audience', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'To feat to the strategique choice, we creat a visual identity æcolorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
+          description={{color: '#474f6f', content: "To feat to the strategic choice, we created a visual identity colorful and with a lot of illustrations. The colors are brightful and refer to 90's video games."}}
           />
         <div className='Logo_header'>
           <img className='Logo' width='410' src='/static/projects/comete/3-visual-identity/logo.svg' alt='comete header' />
@@ -267,7 +267,7 @@ class Color extends React.Component {
         </div>
         <div className='Add_colors desktop'>
           <SubtitlePart
-            content='Additional colors'
+            content='Secondary colors'
             style={subtitle2Style} />
           {
             addColors.map((color, i) =>

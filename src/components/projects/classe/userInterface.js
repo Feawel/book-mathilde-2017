@@ -17,7 +17,7 @@ class UserInterface extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User interface',
-      icon: '/static/projects/menu/grey-ui.svg',
+      icon: '/static/projects/menu/grey-ui.png',
       activeIcon: '/static/projects/menu/classe-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -318,7 +318,7 @@ const Row = ({title, cn, fontSize, color, font}) =>
 const bigColors = [
   {title: 'brand color', color: '#00b3df'},
   {title: 'EXERCICES color', color: '#fe5778'},
-  {title: 'STAT color', color: '#94de00'}
+  {title: 'STATS color', color: '#94de00'}
 ]
 
 const smallColors = [

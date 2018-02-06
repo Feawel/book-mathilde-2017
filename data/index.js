@@ -5,9 +5,9 @@ export const data = {
     projects: [
         {
           key: APPS_KEY,
-          title: "Numeric books",
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>elivrescolaire.fr is a start-up specialized in the collaborative creation of textbooks for the French market. All manuals are fully available for free online. In 2016, I supervised the creation of new online manuals, from user experience to finalization.<br /> These digital manuals offer a real design challenge, since thousands of pages have to be adapted, including texts, documents, and interactive exercises, which can be easily used by teachers and students, both at home and in the classroom.",
+          title: "Digital books",
+          problematic: "How to turn textbooks into applications ?",
+          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>Lelivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All manuals are available online for free.<br/>In 2016, I supervised the creation of new applications for tablets - all OS - from user experience to finalization.<br/>Those digital books offered a real challenge, since thousands of pages had to be adapted, including texts, documents and interactive exercises. We had to build them to be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 1,
             height: 60
@@ -42,12 +42,12 @@ export const data = {
           year: 2015,
           stats: [
             {
-              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
-              value: 1200
+              label: 'Application download',
+              value: '100,000'
             },
             {
-              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
-              value: 589
+              label: "Textbooks' users",
+              value: '400,000'
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]
@@ -56,9 +56,9 @@ export const data = {
           title: "Comete Exhibition",
           key: COMETE_KEY,
           callSummary: 'http://www.expo-cometes.fr/',
-          problematic: "HOW TO GET A LARGE AUDIENCE FOR A SCIENTIFIC EXHIBITION ?",
+          problematic: "How to get maximum of people going to a scientific exhibition ?",
           website: "http://www.expo-cometes.fr/",
-          description: "<span class='Global_first_letter Global_first_letter_comete'>A</span>fter having collected the first information on the comet Churyumov-Gerasimenko using the Rosetta space probe , the European Space Agency decided to hold <strong>an exhibition to present these findings</strong> to the general public at the Air and Space Museum of Paris. <br />With my team, we create <strong>the website of the exhibition</strong>, web contennu, the communication campaign on social networks and some illustrations for the exhibition.",
+          description: "<span class='Global_first_letter Global_first_letter_comete'>T</span>o open to the public the breakthrough of the Rosetta space probe, which landed upon the Churyumov-Gerasimenko comet, the European Space Agency (ESA) decided to hold an exhibition.<br/>It took place at the Air and Space Museum of Paris. With my team, we created one website, two videos games, some illustrations for the exhibition and a communication campaign on the social networks.",
           number: {
             index: 2,
             height: 60
@@ -146,7 +146,7 @@ export const data = {
           title: "Digital class",
           key: CLASSE_KEY,
           problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "<span class='Global_first_letter Global_first_letter_classe'>L</span>elivrescolaire.fr is a start-up specialized in online education. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>create classes</strong> by registering their students,</li><li>tracking their results <strong>using statistics</strong>,</li><li>creating <strong>online assignments</strong></li><li><strong>communicating</strong> with them via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
+          description: "<span class='Global_first_letter Global_first_letter_classe'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All books are available online for free. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>Create classes</strong> by registering their students,</li><li>Track their student's results <strong>using statistics</strong>,</li><li>Create and correct <strong>online assignments</strong></li><li><strong>Communicate </strong>with their students via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
           number: {
             index: 4,
             height: 67

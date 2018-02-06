@@ -16,7 +16,7 @@ class UserExperience extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User experience',
-      icon: '/static/projects/menu/grey-ux.svg',
+      icon: '/static/projects/menu/grey-ux.png',
       activeIcon: '/static/projects/menu/classe-ux.png',
       element: ReactDOM.findDOMNode(this)
     })

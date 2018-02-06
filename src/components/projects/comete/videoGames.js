@@ -19,7 +19,7 @@ class VideoGames extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'Video games',
-      icon: '/static/projects/menu/grey-game.svg',
+      icon: '/static/projects/menu/grey-game.png',
       activeIcon: '/static/projects/menu/comete-game.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -50,7 +50,7 @@ class VideoGames extends React.Component {
           isMobile={isMobile}
           title={{content: 'Video Games', color: '#221061'}}
           baseline={{content: 'Make funny and educational videos games', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'We made two games first to ensure traffic to the site, but also to do a scientific mediation work with the general public.'}}
+          description={{color: '#474f6f', content: 'We built two games to ensure traffic to the website, but also as a scientific mediation to the public.'}}
           />
         <FirstVideoGame isMobile={isMobile} />
         <SecondVideoGame isMobile={isMobile} />
@@ -122,7 +122,7 @@ const FirstVideoGame = ({ isMobile }) =>
           <img className='Detail_screen' height='500' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/smartphone-jeux1-01.png' />
         </div>
         <div className='Description_wrapper'>
-          <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', width: 300}} content='The first game is a quiz presented one-page scroll that test the knowledge about the spaceship Rosetta travel. In responding to 20 question, you land Rosetta on the comet.' />
+          <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', width: 300}} content='The first game is a one-page scroll quiz which tests your knowledge about Rosetta spaceship. Answering the 20 questions will make you land Rosetta on the comet.' />
         </div>
         <div className='Call_wrapper'>
           <Call
@@ -221,7 +221,7 @@ const SecondVideoGame = ({ isMobile }) =>
           <div className='Details responsive'>
             <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
           </div>
-          <Description style={{marginBottom: 40, color: '#474f6f', maxWidth: 300}} content='The second game allows to learn more about the instruments embedded on the probe Rosetta. The game works on the principle of Drag and Drop. The scientist describes an instrument, the user must catch it in the list placed at his disposal, and the dropper on Rosetta. If it is he, he fixes himself there.' />
+          <Description style={{marginBottom: 40, color: '#474f6f', maxWidth: 300}} content="The second game is about drag and drop Rosetta's instruments on the probe. The scientist on the top describes the needed instrument, and the user chooses one corresponding to the description in the list below." />
           <div className='Call_wrapper'><Call text='Try the game' /></div>
         </div>
       </div>

@@ -66,8 +66,8 @@ class App extends React.Component {
 
     const content = projectAppear ? <Projects isMobile={isMobile} current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
+      /*<InitialAnimation initialAnimation={initialAnimation} />,*/
     return [
-      <InitialAnimation initialAnimation={initialAnimation} />,
       <About
         key='about'
         isMobile={isMobile}

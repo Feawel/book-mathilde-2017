@@ -16,7 +16,7 @@ class UserInterface extends React.Component {
     const {setSectionMetadata} = this.props
     setSectionMetadata({
       title: 'User interface',
-      icon: '/static/projects/menu/grey-ui.svg',
+      icon: '/static/projects/menu/grey-ui.png',
       activeIcon: '/static/projects/menu/comete-ui.png',
       element: ReactDOM.findDOMNode(this)
     })
@@ -145,8 +145,8 @@ class UserInterface extends React.Component {
           <SectionInfos
             isMobile={isMobile}
             title={{content: 'User Interface', color: 'white'}}
-            baseline={{content: 'Create an interface able to please to children', color: 'white'}}
-            description={{opacity: 0.6, color: 'white', content: 'To feat to the strategique choice, we creat a visual identity colorful and with a lot of illustrations. The color are brightful and refere to 90’s videogames.'}}
+            baseline={{content: 'Create a fun and immersive interface', color: 'white'}}
+            description={{opacity: 0.6, color: 'white', content: 'While presenting the exhibition as well as important scientific content, we have designed a fun site, using animations, videos, diagrams or illustrations.'}}
             />
         </div>
         <Homepage />
@@ -185,7 +185,7 @@ const Content = ({isMobile}) =>
         content='Scientific pages for a scientific exhibition'
         style={{color: '#abb0bc', width: isMobile ? 300 : 450, margin: 'auto'}} />
       <Description
-        content='The curators of the exhibition wished to have an important scientific content. We have grouped them in two pages, one on the Rosetta mission and one on the comets. The information was presented as much as possible in the form of diagrams and graphics to make them more accessible.'
+        content='The exhibition presented a large scientific content. We grouped this content into two pages, one focus on Rosetta mission and the other one on comets. Information was presented as much as possible with diagrams and graphics, making them more understandable.'
         style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: isMobile ? 300 : 450}} />
     </div>
   </div>
@@ -245,12 +245,12 @@ const Homepage = () =>
     <TitleSecondary content='Homepage' style={{color: '#8061e7', margin: 'auto auto 40px auto'}} />
     <div className='Desktop'>
       <Description
-        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.'
+        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parallax and opens a teasing video.'
         style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
     </div>
     <div className='Mobile'>
       <Description
-        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parrallax and opens on a video of teaser.'
+        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parallax and opens a teasing video.'
         style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
     </div>
     <img className='Smartphone_home Desktop' height='638' alt='tablet smartphone homepage comete' src='/static/projects/comete/4-user-interface/home-smartphone+tablette.png' />
