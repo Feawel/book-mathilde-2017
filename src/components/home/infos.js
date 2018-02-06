@@ -1,7 +1,8 @@
-import Call from './call'
+// import Call from './call'
+import {ButtonHome} from '../button'
 
 // src/componentqs/home/infos.js
-const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, homeSubcolor, colors, lineWidth = 40, openProject }) => (
+const Infos = ({ projectKey, infosAnimation, mask, title, problematic, number, tags, top, homeSubcolor, colors, lineWidth = 40, openProject }) => (
   <div className='Project_infos transitions'>
     <style jsx>{`
       div {
@@ -43,6 +44,16 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, ho
         height: 4px;
         margin: 37px auto 20px auto;
       }
+      .Call_wrapper {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        z-index: 8;
+        opacity: 1;
+        height: 40px;
+        color: white;
+        margin-top: 47px;
+      }
       @media screen and (max-width: 1023px) {
         .Project_infos {
           top: calc(50% - 170px);
@@ -83,7 +94,9 @@ const Infos = ({ infosAnimation, mask, title, problematic, number, tags, top, ho
     <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title playfairdisplay_black transitions_1s ${infosAnimation.title}`}>{title}</h2>
     <p style={{ color: colors.light }} className={`futuralt_bold Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
     <Tags top={top} infosAnimation={infosAnimation} />
-    <Call colors={colors} openProject={() => openProject()} infosAnimation={infosAnimation} />
+    <div className='Call_wrapper'>
+      <ButtonHome href={`/${projectKey}`} colors={colors} openProject={() => openProject()} infosAnimation={infosAnimation} />
+    </div>
   </div>
 )
 

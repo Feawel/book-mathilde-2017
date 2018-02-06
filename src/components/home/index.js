@@ -104,7 +104,7 @@ const HomeProjects = (props) => {
         <div className={`Bar Bar_4 ${bar4 ? 'active' : ''}`} />
         <div className={`Bar Bar_5 ${bar5 ? 'active' : ''}`} />
       </div>
-      {!(projectAppear || openProjectAnimation) && <Infos infosAnimation={infosAnimation} mask={mask} openProject={() => openProject()} {...project}/>}
+      {!(projectAppear || openProjectAnimation) && <Infos infosAnimation={infosAnimation} mask={mask} openProject={() => openProject()} projectKey={project.key} {...project}/>}
     </Wrapper>
   )
 }
