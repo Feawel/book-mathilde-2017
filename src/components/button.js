@@ -66,3 +66,90 @@ export const ButtonHome = ({infosAnimation, openProject, href, colors, height = 
     <i className="fa fa-dribbble"></i> <span className='Inner_text'>VIEW THE CASE</span>
   </a>
 
+export const ButtonProject = ({text = 'Hello', href, target, height = 38, width = 200, textColor = '#8061e7', textColorHover = '#fff', gradient = 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)', background = 'white'}) =>
+  <a href={href} target={target} className='button_wrapper'>
+    <style jsx>{`
+      .button_wrapper {
+        display: inline-block;
+        position: relative;
+        margin: 20px 0 20px 0;
+        height: ${height+2}px;
+        width: ${width+2}px;
+        text-decoration: none;
+        z-index: 1;
+      }
+      .button {
+        display: inline-flex;
+        height: ${height}px;
+        width: ${width}px;
+        text-transform: uppercase;
+        font-size: .8em;
+        letter-spacing: 1.5px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        top: 1px;
+        left: 1px;
+        cursor: pointer;
+        border-radius: 20px;
+        background: ${background};
+        font-size: 10px;
+        z-index: 10;
+      }
+
+      .button_container {
+        width: ${width+2}px;
+        height: ${height+2}px;
+        background-image: ${gradient};
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 20px;
+      }
+
+      .button_text {
+        color: ${textColor};
+        text-decoration: none;
+        letter-spacing: 1.2px;
+      }
+
+      .button .button_text {
+        position: relative;
+        transition: all .2s ease-Out;
+      }
+
+      .circle {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+        line-height: ${height}px;
+        border-radius: 50%;
+        background-image: ${gradient};
+        position: absolute;
+        transition: all .25s ease-Out;
+        top: ${(height/2)}px;
+        left: ${width/2}px;
+      }
+
+      .button:hover .circle {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        border-radius: 20px;
+      }
+
+      .button:hover .button_text {
+        color: ${textColorHover};
+      }
+    `}</style>
+    <div className='button_container' />
+    <div className='button futuralt_bold'>
+      <div className='circle'></div>
+      <span className='button_text'>{text}</span>
+    </div>
+  </a>
+

@@ -2,10 +2,10 @@ import React from 'react'
 
 import get from 'lodash/get'
 import Social from './social'
-import Call from './call'
 import { TitlePrimary, TitleSecondary, Description } from './texts'
 import { isMobile } from '../../../utils/responsive'
 
+import {ButtonProject} from '../../button'
 
 class Summary extends React.Component {
   constructor(props) {
@@ -141,10 +141,10 @@ class Summary extends React.Component {
                 }}/>
             </div>
             <div className='Social_container'>
-              <Social summary={true}/>
+              <Social behance={project.behance} summary={true}/>
             </div>
             <div className='Call_top'>
-              {project.callSummary && <Call newWindow={true} color={project.colors.primary} background={project.colors.gradient} href={project.callSummary} text='VIEW THE WEBSITE' />}
+              {project.callSummary && <ButtonProject target='_blank' textColor={project.colors.primary} gradient={project.colors.gradient} href={project.callSummary} text={project.callSummaryText} />}
             </div>
           </div>
         </div>
@@ -278,7 +278,7 @@ const FooterMobile = ({ project }) =>
       </div>
     </div>
     <div className='Call_wrapper'>
-      {project.callSummary && <Call newWindow={true} color='white' colorHover={project.colors.primary} width={210} background='white' backgroundInner={project.colors.gradient} href={project.callSummary} text={project.callSummaryText || 'VIEW THE WEBSITE'} />}
+      {project.callSummary && <ButtonProject target='_blank' textColor={project.colors.primary} gradient={project.colors.gradient} href={project.callSummary} text={project.callSummaryText} />}
     </div>
   </div>
 

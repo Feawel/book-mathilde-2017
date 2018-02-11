@@ -3,8 +3,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { firstGameScreens,  secondGameScreens } from '../../../../data/comete'
-import Call from '../common/call'
+
+import {ButtonProject} from '../../button'
 import Number from '../common/number'
+import Call from '../common/call'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary,  Description } from '../common/texts'
@@ -125,12 +127,15 @@ const FirstVideoGame = ({ isMobile }) =>
           <Description style={{marginBottom: 40, opacity: 0.6, color: 'white', width: 300}} content='The first game is a one-page scroll quiz which tests your knowledge about Rosetta spaceship. Answering the 20 questions will make you land Rosetta on the comet.' />
         </div>
         <div className='Call_wrapper'>
-          <Call
-            color='white'
-            colorHover='#0d0136'
-            background='white'
-            backgroundInner='#0d0136'
-            text='Try the game' />
+          <ButtonProject
+            textColor='white'
+            textColorHover='#0d0136'
+            gradient='linear-gradient(-220deg, #fff 0%, #fff 100%)'
+            background='#0d0136'
+            width={140}
+            href='http://www.expo-cometes.fr/jeux/quiz/'
+            target='_blank'
+            text='Try the game'/>
           </div>
       </div>
       <div className='Details desktop'>
@@ -222,7 +227,15 @@ const SecondVideoGame = ({ isMobile }) =>
             <img className='Detail_screen' height='309' alt='question screen comete' src='/static/projects/comete/responsive/5-video-games/ordi-jeux2-01.png' />
           </div>
           <Description style={{marginBottom: 40, color: '#474f6f', maxWidth: 300}} content="The second game is about drag and drop Rosetta's instruments on the probe. The scientist on the top describes the needed instrument, and the user chooses one corresponding to the description in the list below." />
-          <div className='Call_wrapper'><Call text='Try the game' /></div>
+          <div className='Call_wrapper'>
+            <ButtonProject
+              textColor='#8061E7'
+              gradient='linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)'
+              width={140}
+              href='http://www.expo-cometes.fr/jeux/rosetta-a-la-loupe/'
+              target='_blank'
+              text='Try the game'/>
+          </div>
         </div>
       </div>
       <div className='Second_part'>

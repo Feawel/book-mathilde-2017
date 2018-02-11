@@ -5,7 +5,6 @@ import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, SubtitlePart, Description } from '../common/texts'
-import Call from '../common/call'
 import { responsive } from '../../../utils/responsive'
 
 class UserInterface extends React.Component {
@@ -41,23 +40,6 @@ class UserInterface extends React.Component {
             display: inline-block;
             width: calc(100% - 20px);
           }
-          .Call_wrapper {
-            position: absolute;
-            top: 490px;
-            left: calc(50% + 50px);
-          }
-          .Mobile { display: none; }
-          @media screen and (max-width: 750px) {
-            .Call_wrapper {
-              position: relative;
-              width: 100%;
-              margin: auto;
-              left: 0;
-              top: 30px;
-            }
-            .Desktop { display: none; }
-            .Mobile { display: block; }
-          }
         `}</style>
 
         <Number
@@ -77,24 +59,6 @@ class UserInterface extends React.Component {
           baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
           description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create a UI kit to make it easy for developers to implement the 8 books needed."}}
           />
-        <div className='Call_wrapper Desktop'>
-          <Call
-            color='#00b3df'
-            colorHover='white'
-            background='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
-            backgroundInner='white'
-            width={182}
-            text='VIEW ALL THE CHARTE' />
-        </div>
-        <div className='Call_wrapper Mobile'>
-          <Call
-            color='white'
-            colorHover='white'
-            background='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
-            backgroundInner='linear-gradient(to right, #6ad4d6 0%, #008ab6 100%)'
-            width={230}
-            text='VIEW ALL THE CHARTE' />
-        </div>
         <Typeface />
         <Colors />
         <Picto isMobile={isMobile} />

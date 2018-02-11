@@ -2,7 +2,7 @@
 import React from 'react'
 import {RS_TWITTER, RS_BEHANCE, RS_LINKEDIN} from '../../../../data'
 
-const Social = ({ grey = true, centered = false, summary = false}) => (
+const Social = ({ grey = true, centered = false, summary = false, behance}) => (
   <div className='Social'>
    <style jsx>{`
       img {
@@ -42,7 +42,7 @@ const Social = ({ grey = true, centered = false, summary = false}) => (
     `}</style>
     <div className='Social_inner_container'>
       <a className='Link' target='_blank' title='Twitter @Mathilde__Serra' href={RS_TWITTER}><img src={`/static/pictos/picto-twitter${grey ? '-grey.png' : '.svg'}`} alt={`Mathilde Serra's twitter`} /></a>
-      <a className='Link' target='_blank' title='Behance @MathildeSerra' href={RS_BEHANCE}><img style={{position: 'relative', top: 2}} src={`/static/pictos/picto-behance${grey ? '-grey.png' : '.svg'}`} alt={`Mathilde Serra's behance`} /></a>
+      <a className='Link' target='_blank' title='Behance @MathildeSerra' href={behance}><img style={{position: 'relative', top: 2}} src={`/static/pictos/picto-behance${grey ? '-grey.png' : '.svg'}`} alt={`Mathilde Serra's behance`} /></a>
       <a className='Link' target='_blank' title='Dribble @MathildeSerra'href='/'><img src={`/static/pictos/picto-dribble${grey ? '-grey.png' : '.svg'}`} alt={`Mathilde Serra's dribble`} /></a>
     </div>
   </div>

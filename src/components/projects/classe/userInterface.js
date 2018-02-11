@@ -6,6 +6,7 @@ import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, Description, SubtitlePart } from '../common/texts'
 import Call from '../common/call'
+import {ButtonProject} from '../../button'
 
 class UserInterface extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class UserInterface extends React.Component {
           .Call_wrapper {
             position: absolute;
             top: 440px;
-            left: calc(50% - 14px);
+            left: calc(50% + 50px);
           }
           @media screen and (max-width: 750px) {
             .Call_wrapper {
@@ -65,13 +66,13 @@ class UserInterface extends React.Component {
           description={{color: '#474f6f', content: 'I developed a system to unify the experience on all screens and devices for users, and simplify the work of developers. With this specification, the implementation of current and future features is both clean and easy.'}}
           />
           <div className='Call_wrapper'>
-            <Call
-              color='#fb5e80'
-              colorHover='white'
-              background='linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
-              backgroundInner='white'
+            <ButtonProject
+              textColor='#fb5e80'
+              gradient='linear-gradient(to left, #f04372 0%, #ffd69c 100%)'
               width={200}
-              text='VIEW ALL THE CHARTE' />
+              href='/static/charte-graphique-classe-numerique.pdf#zoom=50'
+              target='_blank'
+              text='View all the charte' />
           </div>
           <Typography />
           <Colors isMobile={isMobile} />
