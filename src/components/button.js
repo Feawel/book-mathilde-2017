@@ -145,6 +145,19 @@ export const ButtonProject = ({text = 'Hello', href, target, height = 38, width 
       .button:hover .button_text {
         color: ${textColorHover};
       }
+      @media screen and (max-width: 1000px) {
+        .button_text {
+          color: ${textColorHover};
+        }
+        .circle {
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          border-radius: 20px;
+        }
+      }
     `}</style>
     <div className='button_container' />
     <div className='button futuralt_bold'>

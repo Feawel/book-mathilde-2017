@@ -39,7 +39,7 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
         marginBottom: isMobile ? 20 : 15,
         fontSize: isMobile ? 12 : 14,
         letterSpacing: isMobile ? 1.2 : 0.7,
-        maxWidth: isMobile ? 310 : maxWidth
+        maxWidth: isMobile ? 305 : maxWidth
       }} />
     <Description
       content={description.content}

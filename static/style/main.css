@@ -29,6 +29,13 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
 }
 
 @font-face {
+  font-family: 'Playfair Display - Bold';
+  font-style:normal;
+  font-weight:400;
+  src: url('/static/style/fonts/playfair_bold.ttf')  format('truetype');
+}
+
+@font-face {
   font-family: 'Playfair Display - Black Italic';
   font-style:normal;
   font-weight:400;
@@ -106,8 +113,18 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   font-weight:400;
 }
 
+.playfairdisplay {
+  font-family: 'Playfair Display - Regular';
+  font-weight:400;
+}
+
 .playfairdisplay_black {
   font-family: 'Playfair Display - Black';
+  font-weight:400;
+}
+
+.playfairdisplay_bold {
+  font-family: 'Playfair Display - Bold';
   font-weight:400;
 }
 

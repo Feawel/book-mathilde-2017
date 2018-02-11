@@ -26,7 +26,7 @@ class CloseProject extends React.Component {
     return (
       <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
         <div style={{
-            top: openAbout ? 625 : (isMobile ? 25 : 40),
+            top: openAbout ? 625 : 40,
             display: projectAppear && !hide ? 'block' : 'none'
           }}
           className='Menu_close_project clickable'
@@ -67,6 +67,11 @@ class CloseProject extends React.Component {
             }
             circle {
               opacity: 0.5;
+            }
+            @media screen and (max-width: 750px) {
+              .Menu_close_project {
+                right: 20px;
+              }
             }
           `}</style>
           <svg className='Circle'>

@@ -56,7 +56,7 @@ class UserInterface extends React.Component {
           isMobile={isMobile}
           marginTop={115}
           title={{content: 'User Interface', color: '#004459'}}
-          baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
+          baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
           description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create a UI kit to make it easy for developers to implement the 8 books needed."}}
           />
         <Typeface />
@@ -152,10 +152,11 @@ const Typo = ({ font, index }) =>
         height: 55px;
         margin-top: 5px;
       }
-      .Exemple {
+      .Example {
         height: 33px;
         position: absolute;
         left: 200px;
+        opacity: 0.2;
       }
       @media screen and (max-width: 750px) {
         .Typo {
@@ -166,7 +167,7 @@ const Typo = ({ font, index }) =>
           display: block;
           margin-bottom: 40px;
         }
-        .Exemple {
+        .Example {
           display: none;
         }
         .Border {
@@ -184,7 +185,7 @@ const Typo = ({ font, index }) =>
         content={font.app}
         style={{color: '#abb0bc', margin: 0}} />
       <img className='Font' src={`/static/projects/apps/4-user-interface/typeface/${font.font}.svg`} alt={`${font.font}`} />
-      <img className='Exemple' src={`/static/projects/apps/4-user-interface/typeface/${font.font}-exemple.svg`} alt={`${font.font} exemple`} />
+      <img className='Example' src={`/static/projects/apps/4-user-interface/typeface/${font.font}-exemple.svg`} alt={`${font.font} exemple`} />
     </div>
   </div>
 
@@ -212,7 +213,7 @@ const Colors = () =>
         width: 1020px;
         position: relative;
         margin: auto;
-        height: 540px;
+        height: 510px;
       }
       .Title_wrapper {
         position: relative;
@@ -220,7 +221,7 @@ const Colors = () =>
       }
       .Colors {
         position: relative;
-        margin-top: 60px;
+        margin-top: 30px;
         margin-left: 0;
       }
       .Main_colors {
@@ -248,7 +249,7 @@ const Colors = () =>
           position: relative;
           top: 0;
           left: 0;
-          margin: 60px 25px 0 25px;
+          margin: 50px 25px 10px 25px;
         }
         .Colors {
           margin-left: 25px;
@@ -279,7 +280,7 @@ const Colors = () =>
       <div className='Main_colors'>
         <SubtitlePart
           content='Main colors'
-          style={{color: '#abb0bc', lineHeight: '18px', margin: '0 0 20px 0'}} />
+          style={{color: '#abb0bc', lineHeight: '18px', margin: '0 0 30px 0'}} />
         {mainColors.map((color, i) => <MainColor color={color} key={i} />)}
       </div>
       <div className='Secondary_colors'>
@@ -435,7 +436,7 @@ const Picto = ({ isMobile }) =>
       .Picto {
         background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
         width: 100%;
-        height: 738px;
+        height: 746px;
         margin: auto;
         text-align: center;
         display: inline-block;
@@ -454,7 +455,7 @@ const Picto = ({ isMobile }) =>
       .Pictograms {
         width: 100%;
         margin: auto;
-        margin-top: 70px;
+        margin-top: 50px;
         text-align: left;
         position: relative;
         height: 290px;
@@ -504,6 +505,7 @@ const Picto = ({ isMobile }) =>
         }
         .Pictograms {
           height: 772px;
+          margin-top: 30px;
         }
         .Illustration {
           height: 310px!important;
@@ -541,7 +543,7 @@ const Picto = ({ isMobile }) =>
       <TitleSecondary content='PICTOGRAMME' style={{color: 'white', letterSpacing: 1.05, margin: '69px auto 0 auto'}} />
       <SubtitlePart
         content='Guidelines'
-        style={{opacity: 0.6}} />
+        style={{opacity: 0.6, margin: '10px 0 0 0'}} />
       <div className='Pictograms'>
         <img className='Illustration Illustration_1' height='288' src='/static/projects/apps/4-user-interface/picto/picto-grand.svg' alt='picto-grand' />
         <div className='Description_container_1'>
@@ -859,9 +861,9 @@ class Tools extends React.Component {
   componentDidMount() {
     const { screen1Title, screen1Desc, screen2Title, screen2Desc } = this.state
     this.setState({
-      screen1Title: responsive({base: {...screen1Title}, mobile: {textAlign: 'center', color: '#00b0dc'}}),
+      screen1Title: responsive({base: {...screen1Title}, mobile: {textAlign: 'center', color: '#00b0dc', marginTop: 20}}),
       screen1Desc: responsive({base: {...screen1Desc}, mobile: {textAlign: 'center', color: '#474f6f'}}),
-      screen2Title: responsive({base: {...screen2Title} , mobile:{textAlign: 'center', color: '#00b0dc'}}),
+      screen2Title: responsive({base: {...screen2Title} , mobile:{textAlign: 'center', color: '#00b0dc', position: 'relative', top: 20}}),
       screen2Desc: responsive({base: {...screen2Desc} , mobile:{textAlign: 'center', color: '#474f6f'}})
     })
   }
@@ -968,6 +970,16 @@ class Tools extends React.Component {
               margin: 0 auto;
               top: 530px;
             }
+            .Video_1 {
+              top: 30px;
+              left: 50px;
+              width: 276px;
+            }
+            .Video_2 {
+              top: 141px;
+              left: 50px;
+              width: 276px;
+            }
           }
         `}</style>
         <div className='Title_container'>
@@ -976,7 +988,7 @@ class Tools extends React.Component {
         </div>
         <div className='Screen Screen_1'>
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-1.png' />
-          <video autoPlay loop className='Video_1' src='/static/projects/apps/4-user-interface/types/exo.mp4' />
+          <video muted autoPlay loop className='Video_1' src='/static/projects/apps/4-user-interface/types/exo.mp4' />
           <div className='Infos'>
             <div className='Border' />
             <TitleSecondary content='Answer to the question' style={screen1Title} />
@@ -993,7 +1005,7 @@ class Tools extends React.Component {
               style={screen2Desc}
               content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
           </div>
-          <video autoPlay loop className='Video_2' src='/static/projects/apps/4-user-interface/types/dessin.mp4' />
+          <video muted autoPlay loop className='Video_2' src='/static/projects/apps/4-user-interface/types/dessin.mp4' />
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-2.png' />
         </div>
         <div className='Andmore_container'>

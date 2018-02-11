@@ -6,8 +6,8 @@ export const data = {
         {
           key: APPS_KEY,
           title: "Digital books",
-          problematic: "How to turn textbooks into applications ?",
-          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>Lelivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All manuals are available online for free.<br/>In 2016, I supervised the creation of new applications for tablets - all OS - from user experience to finalization.<br/>Those digital books offered a real challenge, since thousands of pages had to be adapted, including texts, documents and interactive exercises. We had to build them to be easily used by teachers and students, both at home and in the classroom.",
+          problematic: "How to turn textbooks into applications ?",
+          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All manuals are available online for free.<br/>In 2016, I supervised the creation of new applications for tablets - all OS - from user experience to finalization.<br/>Those digital books offered a real challenge, since thousands of pages had to be adapted, including texts, documents and interactive exercises. We had to build them to be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 1,
             height: 60
@@ -44,11 +44,11 @@ export const data = {
           stats: [
             {
               label: 'Application download',
-              value: '100,000'
+              value: '100k'
             },
             {
               label: "Textbooks' users",
-              value: '400,000'
+              value: '400k'
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]

@@ -15,7 +15,7 @@ const Lines = () =>
         position: absolute;
         top: 0;
         z-index: 2;
-        height: 5000px;
+        height: 15000px;
       }
       @media screen and (max-width: 1000px) {
         .Line_1 { left: 25%!important;}

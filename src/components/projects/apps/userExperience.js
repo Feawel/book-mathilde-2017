@@ -47,11 +47,11 @@ class UserExperience extends React.Component {
             overflow: hidden;
             position: relative;
             z-index: 0;
-            height: 2747px;
+            height: 2782px;
           }
           @media screen and (max-width: 750px) {
             .User_experience {
-              height: 2452px;
+              height: 2602px;
             }
           }
         `}</style>
@@ -363,7 +363,7 @@ const Navbar = () =>
           height: 677px;
         }
         .Infos {
-          height: 130px;
+          height: 0px;
           background-color: white;
           position: relative;
           width: 100%;
@@ -472,7 +472,7 @@ class Sidebar extends React.Component {
             width: 100%;
             text-align: center;
             background-image: linear-gradient(to left, #008db9 0%, #6ad7d9 100%);
-            height: 800px;
+            height: 835px;
             top: -150px;
             z-index: -1;
           }
@@ -491,10 +491,8 @@ class Sidebar extends React.Component {
             width: 368px;
             background-size: contain;
             position: absolute;
-            top: 280px;
-            left: 150px;
-            transform: scale(0.8, 0.8);
-            transform-origin: left center;
+            top: 330px;
+            left: 50px;
           }
           .Screens {
             display: inline-block;

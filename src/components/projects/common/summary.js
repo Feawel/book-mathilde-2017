@@ -84,7 +84,7 @@ class Summary extends React.Component {
             margin-left: 110px;
           }
           .Description_title {
-            margin-top: 110px;
+            margin-top: 92px;
             font-family: 'Futura - Bold';
             font-size: 10px;
             line-height: 27px;
@@ -97,6 +97,7 @@ class Summary extends React.Component {
           @media screen and (max-width: 1000px) {
             .Summary {
               width: 100%;
+              padding-bottom: 0;
             }
             .Summary_section {
               width: 100%;
@@ -125,7 +126,8 @@ class Summary extends React.Component {
                 style={{
                   fontSize: 74,
                   color: project.colors.typo,
-                  marginTop: 95,
+                  lineHeight: '84px',
+                  marginTop: isMobile ? 50 :  87,
                   marginBottom: 20
                 }}/>
               </div>
@@ -137,7 +139,8 @@ class Summary extends React.Component {
                   color: project.colors.primary,
                   fontSize: 24,
                   lineHeight:'36px',
-                  marginTop: 20
+                  marginTop: 20,
+                  letterSpacing: isMobile ? '1.8px' : undefined
                 }}/>
             </div>
             <div className='Social_container'>
@@ -218,8 +221,6 @@ const FooterMobile = ({ project }) =>
         letter-spacing: 1.1px;
       }
       .Value {
-        font-family: 'Playfair Display';
-        font-weight: 400;
         font-size: 12px;
         font-style: italic;
         line-height: 24px;
@@ -228,15 +229,13 @@ const FooterMobile = ({ project }) =>
         left: 28px;
       }
       .Value_stat {
-        font-family: 'Playfair Display';
-        font-weight: bold;
-        font-size: 72px;
+        font-size: 64px;
         line-height: 56px;
-        height: 54px;
+        height: 90px;
         margin-top: 10px;
         position: relative;
         right: 10px;
-        width: 150px;
+        width: 180px;
         background: linear-gradient(330deg, ${project.colors.darkGradient} 0%, ${project.colors.primary} 50%, ${project.colors.lightGradient} 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -246,6 +245,7 @@ const FooterMobile = ({ project }) =>
         vertical-align: top;
         position: relative;
         top: -4px;
+        text-transform: uppercase;
       }
       .Call_wrapper {
         margin-top: 25px;
@@ -260,21 +260,21 @@ const FooterMobile = ({ project }) =>
     <div className='Left'>
       <div className={`Mobile_meta ${project.customer ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>CLIENT</div>
-        <div className='Value'>{project.customer}</div>
+        <div className='Value playfairdisplay'>{project.customer}</div>
       </div>
       <div className={`Mobile_meta ${project.role ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>ROLE</div>
-        <div className='Value'>{project.role}</div>
+        <div className='Value playfairdisplay'>{project.role}</div>
       </div>
       <div className={`Mobile_meta ${project.year ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>YEAR</div>
-        <div className='Value'>{project.year}</div>
+        <div className='Value playfairdisplay'>{project.year}</div>
       </div>
     </div>
     <div className='Right'>
       <div className={`Mobile_stats ${project.stats ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label' dangerouslySetInnerHTML={{__html: get(project, 'stats[0].label')}} />
-        <div className='Value_stat' >{get(project, 'stats[0].value')}</div>
+        <div className='Value_stat playfairdisplay_bold' >{get(project, 'stats[0].value')}</div>
       </div>
     </div>
     <div className='Call_wrapper'>
@@ -314,23 +314,20 @@ const Meta = ({label, value}) =>
         vertical-align: top;
       }
       .Label {
-        font-family: 'Futura - Bold';
         font-size: 10px;
         line-height: 27px;
         color: #abb0bc;
         letter-spacing: 1.1px;
       }
       .Value {
-        font-family: 'Playfair Display';
-        font-weight: 400;
         font-size: 12px;
         font-style: italic;
         line-height: 24px;
         color: #474f6f;
       }
     `}</style>
-    <div className='Label'>{label}</div>
-    <div className='Value' dangerouslySetInnerHTML={{__html: String(value)}} />
+    <div className='Label futuralt_bold'>{label}</div>
+    <div className='Value playfairdisplay' dangerouslySetInnerHTML={{__html: String(value)}} />
   </div>
 
 const Stat = ({ label, value, colors }) =>
@@ -346,13 +343,11 @@ const Stat = ({ label, value, colors }) =>
         font-size: 10px;
         line-height: 14px;
         color: #abb0bc;
+        text-transform: uppercase;
       }
       .Value {
-        font-family: 'Playfair Display';
-        font-weight: bold;
         font-size: 72px;
         height: 84px;
-        margin-top: 20px;
         vertical-align: bottom;
         background: linear-gradient(330deg, ${colors.darkGradient} 0%, ${colors.primary} 50%, ${colors.lightGradient} 100%);
         -webkit-background-clip: text;
@@ -360,7 +355,7 @@ const Stat = ({ label, value, colors }) =>
       }
     `}</style>
     <div className='Label futuralt_bold' dangerouslySetInnerHTML={{__html: label}} />
-    <div style={{colors: colors.primary}} className='Value'>{value}</div>
+    <div style={{colors: colors.primary}} className='Value playfairdisplay_bold'>{value}</div>
   </div>
 
 export default Summary
