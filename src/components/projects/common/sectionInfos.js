@@ -11,6 +11,8 @@ const SectionInfos = ({title, baseline, description, maxWidth = 460, marginTop =
         vertical-align: top;
         margin-top: ${marginTop}px;
         padding-left: 50px;
+        z-index: 1;
+        position: relative;
       }
       @media screen and (max-width: 750px) {
         .Infos {

@@ -214,7 +214,7 @@ class Color extends React.Component {
           @media screen and (max-width: 750px) {
             .Outer_circle {
               position: relative;
-              left: 190px;
+              left: 165px;
               transform: scale(0.8, 0.8);
               transform-origin: left center;
             }

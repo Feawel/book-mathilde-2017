@@ -2,7 +2,7 @@ const Lines = () =>
   <div className='Lines'>
     <style jsx>{`
       .Lines {
-        z-index: -1;
+        z-index: -5;
         position: relative;
         width: calc(100% - 20px);
         border: 10px solid transparent;
@@ -15,7 +15,7 @@ const Lines = () =>
         position: absolute;
         top: 0;
         z-index: 2;
-        height: 15000px;
+        height: 20000px;
       }
       @media screen and (max-width: 1000px) {
         .Line_1 { left: 25%!important;}

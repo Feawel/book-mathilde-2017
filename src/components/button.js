@@ -149,6 +149,9 @@ export const ButtonProject = ({text = 'Hello', href, target, height = 38, width 
         .button_text {
           color: ${textColorHover};
         }
+        .button_container {
+          top: 1px;
+        }
         .circle {
           width: 100%;
           height: 100%;

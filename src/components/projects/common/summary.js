@@ -260,7 +260,7 @@ const FooterMobile = ({ project }) =>
     <div className='Left'>
       <div className={`Mobile_meta ${project.customer ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>CLIENT</div>
-        <div className='Value playfairdisplay'>{project.customer}</div>
+        <div className='Value playfairdisplay' dangerouslySetInnerHTML={{__html: project.customer}} />
       </div>
       <div className={`Mobile_meta ${project.role ? '' : 'hide'}`}>
         <div className='Line' /> <div className='Label'>ROLE</div>

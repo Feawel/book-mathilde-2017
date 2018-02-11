@@ -74,6 +74,8 @@ class UserInterface extends React.Component {
             background-position: center;
             width: 100%;
             height: 680px;
+            z-index: 2;
+            position: relative;
           }
           @media screen and (max-width: 1400px) {
             .Content_illustration {
@@ -92,7 +94,7 @@ class UserInterface extends React.Component {
           }
           @media screen and (max-width: 750px) {
             .User_interface {
-              height: 3075px;
+              height: 2935px;
             }
             .Background_1 {
               height: 815px;
@@ -180,7 +182,7 @@ const Content = ({isMobile}) =>
     }
   `}</style>
     <div className='Infos'>
-      <TitleSecondary content='CONTENT PAGE' style={{color: '#221061', margin: 0}} />
+      <TitleSecondary content='CONTENT PAGES' style={{color: '#221061', margin: 0}} />
       <SubtitlePart
         content='Scientific pages for a scientific exhibition'
         style={{color: '#abb0bc', width: isMobile ? 300 : 450, margin: 'auto'}} />
@@ -226,6 +228,9 @@ const Homepage = () =>
       text-shadow: 0px 5px 237px rgba(128, 97, 231, 0.8);
     }
     @media screen and (max-width: 750px) {
+      .Homepage {
+        margin-top: 45px;
+      }
       .Desktop {
         display: none;
       }

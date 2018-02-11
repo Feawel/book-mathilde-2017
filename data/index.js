@@ -88,7 +88,7 @@ export const data = {
               icon: "picto-illu"
             }
           ],
-          customer: 'The Air and Space museum <br/>of Paris',
+          customer: 'The Air and Space <br/>museum of Paris',
           role: 'Directrice artistique',
           year: 2015,
           stats: [

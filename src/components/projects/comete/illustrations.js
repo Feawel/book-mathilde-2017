@@ -42,6 +42,9 @@ class Illustrations extends React.Component {
             position: relative;
             top: 4px;
           }
+          .First_row.desktop {
+            margin-top: 70px;
+          }
           .First_row.responsive, .Second_row.responsive {
             display: none;
           }
