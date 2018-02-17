@@ -22,13 +22,13 @@ const Text = () =>
         width: 352px;
       }
       .Description {
-        margin-top: 53px;
+        margin-top: 48px;
         opacity: 0.6;
         line-height: 26px;
       }
       .Goal {
         margin: 0;
-        margin-top: 20px;
+        margin-top: 8px;
         line-height: 26px;
       }
       .Email {
@@ -70,7 +70,7 @@ const Text = () =>
         }
         .About_img_mask_mobile {
           position: absolute;
-          top: 150px;
+          top: 135px;
           left: 0;
           background-image: linear-gradient(to top, #001732 0%, rgba(0, 23, 50, 0) 100%);
           width: 100%;
@@ -83,8 +83,8 @@ const Text = () =>
     <div className='About_img_mask_mobile' />
     <div className='About_text Description'>
       Hello ! I am an artistic director specialized in the realization of website,
-      application, and web communication, especially in start-up.  <br />I like to explore other
-      forms of creation, such as illustration, typographic creation, video games or
+      application, and web communication, especially in startup.  <br />I like to explore other
+      forms of creation, such as illustration,  typographic creation, video games or
       interactive installations.
     </div>
     <div className='About_text_mobile Description'>

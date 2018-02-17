@@ -34,7 +34,7 @@ const TabletLines = ({ width = 1, opacity = 0.5 }) =>
       .Tablet_lines {
         display: none;
       }
-      @media screen and (min-width: 640px) and (max-width: 1000px) {
+      @media screen and (min-width: 750px) and (max-width: 1000px) {
         .Tablet_lines {
           display: inline-block;
         }
@@ -52,7 +52,7 @@ const SmartphoneLines = ({ width = 1, opacity = 0.5 }) =>
       .Smartphone_lines {
         display: none;
       }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 750px) {
         .Smartphone_lines {
           display: inline-block;
         }

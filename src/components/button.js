@@ -62,6 +62,13 @@ export const ButtonHome = ({infosAnimation, openProject, href, colors, height = 
         position: relative;
         top: 5px;
       }
+      @media screen and (max-width: 1023px) {
+        .Call_wra
+        a {
+          background: white;
+          color: ${colors.primary};
+        }
+      }
     `}</style>
     <i className="fa fa-dribbble"></i> <span className='Inner_text'>VIEW THE CASE</span>
   </a>

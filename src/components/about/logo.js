@@ -25,7 +25,7 @@ const Logo = ({ toggleOpen, open, openMenu, isMobile }) =>
       .Logo_2 {
         vertical-align: top;
         position : absolute;
-        top: 5px;
+        top: 8px;
       }
       .Logo_about {
         vertical-align: top;
@@ -47,7 +47,7 @@ const Logo = ({ toggleOpen, open, openMenu, isMobile }) =>
       }
     `}</style>
     <img className='Logo_1' height='40' src='/static/about/logo-final-part1.svg' alt='Logo Mathilde Serra - 2017©' />
-    <img className='Logo_2 transitions' height='30' src='/static/about/logo-about-me-01.svg' alt='Logo Mathilde Serra - 2017©' />
+    <img className='Logo_2 transitions' height='25' src='/static/about/logo-about-me-01.svg' alt='Logo Mathilde Serra - 2017©' />
     <img className='Logo_about transitions' height='25' src='/static/about/logo-final-part2.svg' alt='Logo Mathilde Serra - 2017©' />
   </div>
 

@@ -23,7 +23,7 @@ const Lines = () =>
         .Line_3 { left: 75%!important;}
         .Line_4 { display: none;}
       }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 750px) {
         .Line_1 { left: 33.3%!important;}
         .Line_2 { left: 66.6%!important;}
         .Line_3 { display: none;}

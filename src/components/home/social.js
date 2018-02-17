@@ -1,3 +1,5 @@
+import {RS_TWITTER, RS_LINKEDIN, RS_BEHANCE} from '../../../data'
+
 // src/componentqs/home/social.js
 const Social = () => (
   <div className='Social'>
@@ -25,9 +27,9 @@ const Social = () => (
         }
       }
     `}</style>
-    <a target='_blank' title='Twitter @Mathilde__Serra' href='/'><img src='/static/pictos/picto-twitter.svg' alt={`Mathilde Serra's twitter`} /></a>
-    <a target='_blank' title='Behance @MathildeSerra' href='/'><img src='/static/pictos/picto-behance-white.svg' alt={`Mathilde Serra's behance`} /></a>
-    <a target='_blank' title='Linkedin @MathildeSerra'href='/'><img src='/static/pictos/picto-linkedin.svg' alt={`Mathilde Serra's linkeding`} /></a>
+    <a target='_blank' title='Twitter @Mathilde__Serra' href={RS_TWITTER}><img src='/static/pictos/picto-twitter.svg' alt={`Mathilde Serra's twitter`} /></a>
+    <a target='_blank' title='Behance @MathildeSerra' href={RS_BEHANCE}><img src='/static/pictos/picto-behance.svg' alt={`Mathilde Serra's behance`} /></a>
+    <a target='_blank' title='Linkedin @MathildeSerra'href={RS_LINKEDIN}><img src='/static/pictos/picto-linkedin.svg' alt={`Mathilde Serra's linkeding`} /></a>
   </div>
 )
 

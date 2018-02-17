@@ -68,24 +68,22 @@ const Infos = ({ projectKey, infosAnimation, mask, title, problematic, number, t
           font-size:12px;
         }
       }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 750px) {
         h2 {
           padding: 10px;
         }
-      }
-      // Media Query to handle dezoom effect on centered typo when small height
-      @media screen and (max-height: 700px) {
         .Project_infos {
           transform: scale(0.9, 0.9);
         }
-      }
-      @media screen and (max-width: 750px) {
         .Project_infos_title {
           padding-top: 20px;
         }
         .Project_infos_problematic {
           line-height: 21px;
           letter-spacing: 1.8px;
+        }
+        .Call_wrapper {
+          margin-top: 35px;
         }
       }
     `}</style>

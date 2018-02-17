@@ -81,7 +81,7 @@ const HomeProjects = (props) => {
           .Bar_4 { left: 75%; }
           .Bar_5 { display: none; }
         }
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 750px) {
           .Bar { width: 33.3%; }
           .Bar_1 { left: 0; }
           .Bar_2 { left: 33.3%; }
