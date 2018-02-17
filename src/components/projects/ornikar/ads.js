@@ -2,7 +2,7 @@ import React from 'react'
 import { ads } from '../../../../data'
 import { TitleSecondary, Description } from '../common/texts'
 
-const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}) =>
+const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last, first, isMobile}) =>
   <div className='Ads'>
     <style jsx>{`
       .Ads {
@@ -47,7 +47,14 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
       .Low_picture_second {
         background-image: url('${thirdPic}');
       }
+      .Surpise_picture {
+        display: none;
+      }
       @media screen and (max-width: 750px) {
+        .Ads {
+          margin-top: 40px;
+          margin-bottom: 40px;
+        }
         .First_illustration_section {
           height: 288px;
         }
@@ -59,6 +66,10 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
           width: 100%;
           height: 360px;
           background-size: cover;
+        }
+        .Surpise_picture {
+          display: ${first ? 'block' : 'none'};
+          background-image: url('/static/projects/ornikar/smartphone/boys-second-2.png');
         }
         .Low_picture_first {
           background-image: url('${secondPic.replace('desktop', 'smartphone')}');
@@ -72,7 +83,7 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
     <div className='Infos'>
       <TitleSecondary content={title} style={{color: '#260608', margin: '0 auto', letterSpacing: 1.05}} />
       <Description
-          style={{color: '#474f6f', marginTop: 25, marginBottom: 54, maxWidth: '440px'}}
+          style={{color: '#474f6f', marginTop: 25, marginBottom: 54, maxWidth: isMobile ? 300 : 440}}
           content={description} />
     </div>
     <div
@@ -82,17 +93,18 @@ const Ads = ({gradient, firstPic, secondPic, thirdPic, title, description, last}
     </div>
     <div className='Second_illustration_section'>
       <div className='Low_picture Low_picture_first' />
+      <div className='Low_picture Surpise_picture' />
       <div className='Low_picture Low_picture_second' />
     </div>
   </div>
 
 
 
-export const BoysAds = () =>
-  <Ads {...ads.boys} />
+export const BoysAds = ({isMobile}) =>
+  <Ads isMobile={isMobile} {...ads.boys} first={true} />
 
-export const GirlsAds = () =>
-  <Ads {...ads.girls} />
+export const GirlsAds = ({isMobile}) =>
+  <Ads isMobile={isMobile} {...ads.girls} />
 
-export const YoungsAds = () =>
-  <Ads {...ads.youngs} last={true} />
+export const YoungsAds = ({isMobile}) =>
+  <Ads isMobile={isMobile} {...ads.youngs} last={true} />

@@ -341,3 +341,8 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   background-position: left center; /* on positionne où l'on veut */
   padding-left: 20px; /* pour éviter la superposition du contenu */
 }
+@media screen and (max-width: 750px) {
+  .Global_ul_classenumerique li {
+    background-position: 0 12px; /* on positionne où l'on veut */
+  }
+}

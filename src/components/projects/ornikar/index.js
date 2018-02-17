@@ -6,14 +6,14 @@ import Footer from '../common/footer'
 import Lines from '../common/lines'
 import data from '../../../../data'
 
-const Ornikar = ({ project }) =>
+const Ornikar = ({ project, isMobile }) =>
   <div id='project' className='Global_project'>
     <Lines />
     <Summary project={data.projects[2]} />
-    <div style={{marginTop: 60}}>
-      <BoysAds />
-      <GirlsAds />
-      <YoungsAds />
+    <div>
+      <BoysAds isMobile={isMobile} />
+      <GirlsAds isMobile={isMobile} />
+      <YoungsAds isMobile={isMobile} />
     </div>
     <Footer project={data.projects[2]}/>
   </div>

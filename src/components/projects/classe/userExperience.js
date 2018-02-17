@@ -47,7 +47,7 @@ class UserExperience extends React.Component {
           location={{bottom: 150, right: 120}}
           mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
-          marginTop={90}
+          marginTop={40}
           isMobile={isMobile}
           title={{content: 'User Experience', color: '#1a2432'}}
           baseline={{content: 'A simple and fun interface', color: '#a8adb9'}}
@@ -118,6 +118,7 @@ const Persona = () =>
       @media screen and (max-width: 750px) {
         .Persona {
           height: 1125px;
+          margin-top: 55px;
         }
         .Background {
           height: 1125px;
@@ -207,15 +208,16 @@ const Homepage = () =>
         width: 464px;
         display: inline-block;
         position: relative;
-        right: 100px;
+        right: 130px;
+        bottom: 30px;
       }
       .Background_shadow {
         position: absolute;
         box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.4);
         width: 313px;
         height: 237px;
-        top: 36px;
-        left: 29px;
+        top: 6px;
+        left: -1px;
       }
       .Classes {
         text-align: center;
@@ -260,7 +262,7 @@ const Homepage = () =>
           text-align: center;
         }
         .Anim {
-          right: 50px;
+          right: 130px;
           display: block;
           margin: auto;
         }
@@ -404,6 +406,9 @@ class Classe extends React.Component {
             left: calc(50% - 155px);
           }
           @media screen and (max-width: 750px) {
+            .Classe {
+              margin-top: 20px;
+            }
             .Ipad {
               display: none;
             }
@@ -482,6 +487,7 @@ const Statistics = () =>
         margin: auto;
         width: 800px;
         z-index: 5;
+        box-shadow: 0px 15px 30px 0px rgba(1,1,1,0.5);
       }
       .Anim_container {
         display: block;
@@ -527,7 +533,7 @@ const Statistics = () =>
           display: none;
         }
         .Title_container {
-          margin-top: 60px;
+          margin-top: 50px;
         }
         .Stats_background {
           display: none;
@@ -538,10 +544,18 @@ const Statistics = () =>
           display: block;
           margin: auto;
         }
+        .Background_shadow {
+          position: absolute;
+          top: 438px;
+          left: 40px;
+          width: 312px;
+          height: 142px;
+        }
         .Anim_stats {
           width: 350px;
-          position: relative;
-          bottom: auto;
+          position: absolute;
+          top: 420px;
+          left: 20px;
         }
       }
     `}</style>
@@ -667,7 +681,7 @@ const Step1 = ({ isMobile }) =>
         style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Choose to create an assignment by picking exercises yourself from books, and then correct each student's copy, or choose to generate a session of autocorrected exercises.`}
-        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
+        style={{margin: 0, fontSize: 12, lineHeight: '18px'}} />
     </div>
   </div>
 
@@ -730,7 +744,7 @@ const Step2 = ({ isMobile }) =>
         style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Choose the subject, the chapter, and the students to whom you intend this duty`}
-        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
+        style={{margin: 0, fontSize: 12, lineHeight: '18px'}} />
     </div>
     <img className='Mockup' alt='mockup' src='/static/projects/classe/4-user-experience/homework2.gif' />
   </div>
@@ -795,7 +809,7 @@ const Step3 = ({ isMobile }) =>
         style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
         content={`Give a name and instruction to the assignment, and choose exercises among those proposed.`}
-        style={{margin: 0, fontSize: 12, lineHeight: isMobile ? '18px' : '24px'}} />
+        style={{margin: 0, fontSize: 12, lineHeight: '18px'}} />
     </div>
   </div>
 

@@ -2,6 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import throttle from 'lodash/throttle'
+import isEmpty from 'lodash/isEmpty'
 import get from 'lodash/get'
 import Link from 'next/link'
 
@@ -27,7 +28,7 @@ class Menu extends React.Component {
       ? 170*((sections.length/2)-current)
       : 170*(current-sections.length/2)
     return (
-      <div className={`Menu ${fixed ? 'Menu_fixed' : ''}`}>
+      <div className={`Menu ${fixed ? 'Menu_fixed' : (isEmpty(sections) ? 'hide' : '')}`}>
        <style jsx>{`
           .Menu {
             width: 100%;

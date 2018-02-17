@@ -129,7 +129,7 @@ const Typography = () =>
         margin: auto;
         position: relative;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 65px;
         z-index: 1;
       }
       .Box {
@@ -167,7 +167,6 @@ const Typography = () =>
         font-weight: normal;
         font-size: 21px;
         line-height: 32px;
-        text-transform: uppercase;
         -webkit-margin-before: 0em;
         -webkit-margin-after: 0em;
         -webkit-margin-start: 0px;
@@ -357,10 +356,11 @@ const Colors = ({ isMobile }) =>
         }
         .Small_colors {
           width: 310px;
+          margin-top: 0px;
         }
       }
     `}</style>
-    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '120px auto 0 auto', letterSpacing: 1.05}} />
+    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '50px auto 0 auto', letterSpacing: 1.05}} />
     <SubtitlePart
       content='Colors to find there'
       style={{color: '#a8adb9', marginTop: 0, display: isMobile ? 'none' : 'inline-block'}} />
@@ -591,6 +591,10 @@ const Icon = () =>
       .Blue_background_mobile {
         display: none;
       }
+      .Mockups_desktop {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
       @media screen and (max-width: 750px) {
         .Blue_background_mobile {
           display: block;
@@ -643,7 +647,10 @@ const Icon = () =>
           display: none;
         }
         .Mockups_mobile {
-          display: inline-block;
+          display: block;
+          margin: 40px auto 20px auto;
+          position: relative;
+          right: 20px;
         }
         .Mockups_desktop {
           display: none;
@@ -742,17 +749,17 @@ const Components = ({ isMobile }) =>
         width: 400px;
         margin: 30px auto;
       }
-      @media screen and (max-width: 1280px) {
+      @media screen and (max-width: 1500px) {
         .Illustration {
           background-image: url('/static/projects/classe/3-user-interface/fond-2-1280.png');
         }
       }
-      @media screen and (min-width: 1280px) {
+      @media screen and (min-width: 1500px) {
         .Illustration {
           background-image: url('/static/projects/classe/3-user-interface/fond-2-2000.png');
         }
       }
-      @media screen and (min-width: 2000px) {
+      @media screen and (min-width: 2500px) {
         .Illustration {
           background-image: url('/static/projects/classe/3-user-interface/fond-2-3000.png');
         }
@@ -774,7 +781,7 @@ const Components = ({ isMobile }) =>
     <TitleSecondary content='Components' style={{color: '#474f6f', margin: '50px auto 0 auto'}} />
     <SubtitlePart
       content='Grid system for responsive'
-      style={{color: '#a8adb9', display: isMobile ? 'none' : 'inline-block'}} />
+      style={{color: '#a8adb9', display: isMobile ? 'none' : 'block'}} />
     <img alt='component mockups' src='/static/projects/classe/3-user-interface/grid-01.png' className='Mockups' />
     <div className='Description_container'>
       <Description

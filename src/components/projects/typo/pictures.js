@@ -33,7 +33,7 @@ class Pictures extends React.Component {
           }
           .H_separator {
             width: 100%;
-            height: 18px;
+            height: 16px;
           }
           .V_separator {
             display: inline-block;

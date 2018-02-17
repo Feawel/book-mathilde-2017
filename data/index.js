@@ -184,7 +184,7 @@ export const data = {
           stats: [
             {
               label: 'NUMBER OF USERS OF THE<BR /> DIGITAL CLASS',
-              value: '100K'
+              value: '100k'
             },
             {
               label: 'NUMBER OF CLASSES CREATED DURING FIRST YEAR',
@@ -225,7 +225,7 @@ export const data = {
             primary: '#2CD582',
             light: '#CCFFE0'
           },
-          year: 2016,
+          year: 2017,
           linkedProjects: [0, 1, 2, 3, 4]
         },
         {
@@ -257,7 +257,7 @@ export const data = {
             },
             {
               label: 'NUMBER OF POSTERS <br/>DISTRIBUTED',
-              value: '10,000'
+              value: '600'
             }
           ],
           linkedProjects: [0, 1, 2, 3, 4]
