@@ -152,10 +152,6 @@ class Menu extends React.Component {
     const { sections } = this.props
     const scrollY = window.scrollY
 
-    console.log('offsetTop, projectOffsetTop', offsetTop, projectOffsetTop)
-    console.log('offset', offset)
-    console.log('scrollY', scrollY)
-
     const current = sections.reduce((memo, section, index) => {
       if(section.element.offsetTop-60 < scrollY) {
         return index
