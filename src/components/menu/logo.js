@@ -26,6 +26,7 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
         width: 50px;
         height: 20px;
         visibility: inherit;
+        opacity: 1;
       }
       .Menu_dots_container.Open > .Menu_text {
         width: 50px;
@@ -58,6 +59,7 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
         font-size: 12px;
         letter-spacing: 2.4px;
         z-index: 8;
+        opacity: 0;
       }
       .Menu_text_menu.Menu_text_m {
         right: 48px;
