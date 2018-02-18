@@ -59,7 +59,8 @@ const Page = ({ url }) =>
     <App launchTypoAnimation={get(url, 'query.typo')} initialState={{
       currentProject: get(url, 'query.project', 'typo'),
       openMenu: false,
-      openAbout: false
+      openAbout: false,
+      initialAnimation: get(url, 'query.project') ? false : true
     }} />
   </div>
 

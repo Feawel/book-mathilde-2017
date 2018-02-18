@@ -8,10 +8,10 @@ import MobileSlider from './mobileSlider'
 import Lines from './lines'
 import {enableScroll, disableScroll} from '../../utils/scroll'
 
-const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject, isMobile}) =>
+const MenuPanel = ({open, openAbout, toggleOpen, current, projectAppear, setProject, isMobile}) =>
   <div style={{
     opacity: open ? 1 : 0,
-    display: projectAppear ? 'none' : 'block'
+    visibility: open ? '' : 'hidden'
   }} className={`Menu_panel ${open ? 'transitions_1_5s' : ''}`}>
     <style jsx>{`
       .Menu_panel {

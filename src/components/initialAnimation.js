@@ -48,6 +48,7 @@ export default class InitialAnimation extends React.Component {
       .Anim_wrapper {
         position: relative;
         top: 50px;
+        opacity: ${initialAnimation ? 1 : 0}
       }
     `}</style>
       <div className='Anim_wrapper'>

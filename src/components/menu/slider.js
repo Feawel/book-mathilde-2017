@@ -56,7 +56,7 @@ const Tags = () =>
 
 const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
   <Button key='button' project={projects[current]} toggleOpen={toggleOpen} gradient={projects[current].colors} />,
-  <div className='Picture_container'>
+  <div key='pictures' className='Picture_container'>
     {
       projects.map((project, i) =>
         <Picture isCurrent={i === current} key={i} picture={{src: `/static/menu/rond-${project.key}.jpg`, alt: 'rond menu'}} />

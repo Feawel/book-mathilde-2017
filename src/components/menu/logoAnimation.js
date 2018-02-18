@@ -13,7 +13,6 @@ class LogoAnimation extends React.Component {
       btnSize: 60,
       offsetValue: 30,
       backgroundColor: '#001732',
-      hideCircle: true
     }
     this.openMenu = this.openMenu.bind(this)
     this.closeMenu = this.closeMenu.bind(this)
@@ -23,7 +22,7 @@ class LogoAnimation extends React.Component {
     this.calculateValues = this.calculateValues.bind(this)
   }
   render() {
-    const {open, hideCircle, offsetValue, backgroundColor, btnSize, translateX, translateY, scale} = this.state
+    const {open, offsetValue, backgroundColor, btnSize, translateX, translateY, scale} = this.state
     return (
       <div className='Logo_animation_container' >
         <style jsx>{`
@@ -147,7 +146,6 @@ class LogoAnimation extends React.Component {
   openMenu() {
     const {offsetX, offsetY, scale} = this.state
     this.setState({
-      hideCircle: false,
       translateX: `-${offsetX}px`,
       translateY: `${offsetY}px`,
       scale: scale
@@ -158,8 +156,7 @@ class LogoAnimation extends React.Component {
     this.setState({
       translateX: 0,
       translateY: 0,
-      scale: 1,
-      hideCircle: true
+      scale: 1
     })
   }
 

@@ -26,7 +26,7 @@ class App extends React.Component {
       currentProject: 'typo',
       timeoutIds: [],
       backgroundSize: 'large',
-      initialAnimation: true,
+      initialAnimation: false,
       projectAppear: null,
       bar1: false,
       bar2: false,
@@ -67,7 +67,17 @@ class App extends React.Component {
     const project = getProjectByKey(currentProject)
     const content = projectAppear ? <Projects isMobile={isMobile} current={project} /> : null
 
+    console.log('backgroundDirectory', backgroundDirectory)
+
     return [
+      <InitialAnimation initialAnimation={initialAnimation} />,
+      <div className='Preload_pictures'>
+        {backgroundDirectory && data.projects.map(project =>
+          <div style={{
+            background: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg') no-repeat -99999px -99999px`
+          }} />
+        )}
+      </div>,
       <About
         key='about'
         isMobile={isMobile}
