@@ -10,7 +10,7 @@ const Ganesha = ({ project }) =>
   <div id='project' className='Global_project'>
     <Lines />
     <Summary project={project} />
-        <Menu sections={[]} section={null} project={project} color={project.colors.primary} borderImage={'white'} />
+    <Menu sections={[]} section={null} project={project} color={project.colors.primary} borderImage={'white'} />
     <Pictures />
     <Footer project={project}/>
   </div>
