@@ -73,11 +73,11 @@ export const ButtonHome = ({infosAnimation, openProject, href, colors, height = 
     <i className="fa fa-dribbble"></i> <span className='Inner_text'>VIEW THE CASE</span>
   </a>
 
-export const ButtonProject = ({text = 'Hello', href, target, height = 38, width = 200, textColor = '#8061e7', textColorHover = '#fff', gradient = 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)', background = 'white'}) =>
+export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38, width = 200, textColor = '#8061e7', textColorHover = '#fff', gradient = 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)', background = 'white'}) =>
   <a href={href} target={target} className='button_wrapper'>
     <style jsx>{`
       .button_wrapper {
-        display: inline-block;
+        display: block;
         position: relative;
         margin: 20px 0 20px 0;
         height: ${height+2}px;
@@ -97,7 +97,7 @@ export const ButtonProject = ({text = 'Hello', href, target, height = 38, width 
         overflow: hidden;
         position: relative;
         top: 1px;
-        left: 1px;
+        left: ${footer ? 0 : 1}px;
         cursor: pointer;
         border-radius: 20px;
         background: ${background};

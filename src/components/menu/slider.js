@@ -25,7 +25,7 @@ const Item = ({ project, index, current, setProject, isCurrent, toggleOpen }) =>
     {isCurrent && <Tags project={project} />}
   </div>
 
-const Tags = () =>
+const Tags = ({project}) =>
   <div className="Project_infos_tags playfairdisplay_black">
     <style jsx>{`
       .Project_infos_tags {
@@ -46,11 +46,10 @@ const Tags = () =>
         padding: 0 20px;
       }
     `}</style>
-    <span className='Tag'>User Interface</span>
-    <span className='Dot'>•</span>
-    <span className='Tag'>User Experience</span>
-    <span className='Dot' >•</span>
-    <span className='Tag'>Illustration</span>
+    {project.tags.map((tag, i) => {
+      const next = i === project.tags.length - 1 ? <span key={`dot-${i}`}/> : <span key={`dot-${i}`} className='Dot'>•</span>
+      return [<span key={`tag-${i}`} className='Tag'>{tag.title}</span>, next]
+    })}
   </div>
 
 

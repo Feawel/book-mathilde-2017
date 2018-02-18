@@ -5,7 +5,6 @@ import Number from '../common/number'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary, Description, SubtitlePart } from '../common/texts'
-import Call from '../common/call'
 import {ButtonProject} from '../../button'
 
 class UserInterface extends React.Component {

@@ -7,7 +7,8 @@ export const getProjectInitialStateByKey = (key, notransition) => ({
   currentProject: key,
   projectAppear: true,
   backgroundSize: 'medium',
-  preventUpdateProject: true
+  preventUpdateProject: true,
+  preventInitialAnimation: true
 })
 
 export const getNextProjectKey = key => {

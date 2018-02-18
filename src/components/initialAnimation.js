@@ -66,7 +66,6 @@ export default class InitialAnimation extends React.Component {
       bars, bar1, bar2, bar3, bar4, bar5, display} = this.state
     if (!isMount) return null
     const {initialAnimation} = this.props
-  console.log(bars, bar1, bar2, bar3, bar4, bar5)
     const buttonStyle = {
       display: 'block',
       margin: '10px auto'

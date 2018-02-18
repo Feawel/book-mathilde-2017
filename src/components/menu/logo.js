@@ -62,31 +62,76 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
         opacity: 0;
       }
       .Menu_text_menu.Menu_text_m {
-        right: 48px;
+        -webkit-transition      : all 0.5s  ;
+        -moz-transition       : all 0.5s  ;
+        -ms-transition        : all 0.5s  ;
+        -o-transition         : all 0.5s  ;
+        transition          : all 0.5s  ;
+        right: 58px;
       }
       .Menu_text_menu.Menu_text_e {
-        right: 33px;
+        -webkit-transition      : all .7s  ;
+        -moz-transition       : all .7s  ;
+        -ms-transition        : all .7s  ;
+        -o-transition         : all .7s  ;
+        transition          : all .7s  ;
+        right: 43px;
       }
       .Menu_text_menu.Menu_text_n {
-        right: 23px;
-      }
-      .Menu_text_menu.Menu_text_u {
-        right: 10px;
-      }
-      .Menu_text_close.Menu_text_c {
-        right: 54px;
-      }
-      .Menu_text_close.Menu_text_l {
-        right: 42px;
-      }
-      .Menu_text_close.Menu_text_o {
+        -webkit-transition      : all .9s  ;
+        -moz-transition       : all .9s  ;
+        -ms-transition        : all .9s  ;
+        -o-transition         : all .9s  ;
+        transition          : all .9s  ;
         right: 33px;
       }
-      .Menu_text_close.Menu_text_s {
+      .Menu_text_menu.Menu_text_u {
+        -webkit-transition      : all 1.1s  ;
+        -moz-transition       : all 1.1s  ;
+        -ms-transition        : all 1.1s  ;
+        -o-transition         : all 1.1s  ;
+        transition          : all 1.1s  ;
         right: 20px;
       }
+      .Menu_text_close.Menu_text_c {
+        right: 61px;
+        -webkit-transition      : all 0.5s  ;
+        -moz-transition       : all 0.5s  ;
+        -ms-transition        : all 0.5s  ;
+        -o-transition         : all 0.5s  ;
+        transition          : all 0.5s  ;
+      }
+      .Menu_text_close.Menu_text_l {
+        right: 49px;
+        -webkit-transition      : all 0.7s  ;
+        -moz-transition       : all 0.7s  ;
+        -ms-transition        : all 0.7s  ;
+        -o-transition         : all 0.7s  ;
+        transition          : all 0.7s  ;
+      }
+      .Menu_text_close.Menu_text_o {
+        right: 40px;
+        -webkit-transition      : all 0.9s  ;
+        -moz-transition       : all 0.9s  ;
+        -ms-transition        : all 0.9s  ;
+        -o-transition         : all 0.9s  ;
+        transition          : all 0.9s  ;
+      }
+      .Menu_text_close.Menu_text_s {
+        right: 27px;
+        -webkit-transition      : all 1.1s  ;
+        -moz-transition       : all 1.1s  ;
+        -ms-transition        : all 1.1s  ;
+        -o-transition         : all 1.1s  ;
+        transition          : all 1.1s  ;
+      }
       .Menu_text_close.Menu_text_e {
-        right: 10px;
+        right: 17px;
+        -webkit-transition      : all 1.3s  ;
+        -moz-transition       : all 1.3s  ;
+        -ms-transition        : all 1.3s  ;
+        -o-transition         : all 1.3s  ;
+        transition          : all 1.3s  ;
       }
       @media screen and (max-width: 750px) {
         .Menu_dots_container {

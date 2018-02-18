@@ -6,7 +6,6 @@ import { firstGameScreens,  secondGameScreens } from '../../../../data/comete'
 
 import {ButtonProject} from '../../button'
 import Number from '../common/number'
-import Call from '../common/call'
 import DoubleIllustrations from '../common/doubleIllustrations'
 import SectionInfos from '../common/sectionInfos'
 import { TitleSecondary,  Description } from '../common/texts'

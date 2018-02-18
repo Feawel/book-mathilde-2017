@@ -60,7 +60,8 @@ const Page = ({ url }) =>
       currentProject: get(url, 'query.project', 'typo'),
       openMenu: false,
       openAbout: false,
-      initialAnimation: get(url, 'query.project') ? false : true
+      initialAnimation: get(url, 'query.project') ? false : true,
+      preventInitialAnimation: get(url, 'query.project') ? true : false
     }} />
   </div>
 

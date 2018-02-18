@@ -1,10 +1,10 @@
 // src/componentqs/projects/common/social.js
 import React from 'react'
-import Call from './call'
 import Social from './social'
 import {data, JO_LINKEDIN, RS_LINKEDIN} from '../../../../data'
 import sampleSize from 'lodash/sampleSize'
 import { isMobile } from '../../../utils/responsive'
+import {ButtonProject} from '../../button'
 
 class Footer extends React.Component {
   constructor(props) {
@@ -84,6 +84,11 @@ class Footer extends React.Component {
           .Call_wrapper {
             display: inline-block;
             margin: auto;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            left: calc(50% - 75px);
           }
           .Infos {
             width: 100%;
@@ -189,9 +194,9 @@ class Footer extends React.Component {
                       {data.projects[index].title}
                     </div>
                     <Tags tags={data.projects[index].tags}/>
-                    <div className='Call_wrapper'>
-                      <Call href={`/${data.projects[index].key}`} text='TRY THE CASE' />
-                    </div>
+                  </div>
+                  <div className='Call_wrapper'>
+                    <ButtonProject footer={true} width={150} target='' href={`/${data.projects[index].key}`} text={'TRY THE CASE'} />
                   </div>
                 </div>
               </div>

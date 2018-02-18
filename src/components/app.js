@@ -27,6 +27,7 @@ class App extends React.Component {
       timeoutIds: [],
       backgroundSize: 'large',
       initialAnimation: false,
+      preventInitialAnimation: false,
       projectAppear: null,
       bar1: false,
       bar2: false,
@@ -62,18 +63,17 @@ class App extends React.Component {
   render () {
     const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
-      animating, openProjectAnimation, isMobile, initialAnimation } = this.state
+      animating, openProjectAnimation, isMobile, initialAnimation, preventInitialAnimation } = this.state
 
     const project = getProjectByKey(currentProject)
     const content = projectAppear ? <Projects isMobile={isMobile} current={project} /> : null
 
-    console.log('backgroundDirectory', backgroundDirectory)
-
+    const initAnim = preventInitialAnimation ? <div key='initial-anim-empty' /> : <InitialAnimation key='initial-anim' initialAnimation={initialAnimation} />
     return [
-      <InitialAnimation initialAnimation={initialAnimation} />,
-      <div className='Preload_pictures'>
-        {backgroundDirectory && data.projects.map(project =>
-          <div style={{
+      initAnim,
+      <div key='pictures' className='Preload_pictures'>
+        {backgroundDirectory && data.projects.map((project, i) =>
+          <div key={i} style={{
             background: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg') no-repeat -99999px -99999px`
           }} />
         )}

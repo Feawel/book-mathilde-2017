@@ -91,7 +91,7 @@ const Infos = ({ projectKey, infosAnimation, mask, title, problematic, number, t
     <div style={{ width: lineWidth, backgroundColor: colors.light}} className={`Line transitions ${infosAnimation.line}`} />
     <h2 style={{WebkitMaskImage: mask}} className={`Project_infos_title playfairdisplay_black transitions_1s ${infosAnimation.title}`}>{title}</h2>
     <p style={{ color: colors.light }} className={`futuralt_bold Project_infos_problematic transitions_1s baseline ${infosAnimation.baseline}`} dangerouslySetInnerHTML={{ __html: problematic }}/>
-    <Tags top={top} infosAnimation={infosAnimation} />
+    <Tags tags={tags} top={top} infosAnimation={infosAnimation} />
     <div className='Call_wrapper'>
       <ButtonHome href={`/${projectKey}`} colors={colors} openProject={() => openProject()} infosAnimation={infosAnimation} />
     </div>
@@ -121,7 +121,7 @@ const Number = ({ number, infosAnimation }) =>
     </object>
   </div>
 
-const Tags = ({ infosAnimation }) =>
+const Tags = ({ infosAnimation, tags }) =>
   <div className={`Project_infos_tags playfairdisplay_black transitions_1s ${infosAnimation.tags}`}>
     <style jsx>{`
       .Project_infos_tags {
@@ -141,11 +141,10 @@ const Tags = ({ infosAnimation }) =>
         padding: 0 20px;
       }
     `}</style>
-    <span className='Tag'>User Interface</span>
-    <span className='Dot'>•</span>
-    <span className='Tag'>User Experience</span>
-    <span className='Dot' >•</span>
-    <span className='Tag'>Illustration</span>
+    {tags.map((tag, i) => {
+      const next = i === tags.length - 1 ? <span key={`dot-${i}`} /> : <span key={`dot-${i}`} className='Dot'>•</span>
+      return [<span key={`tag-${i}`} className='Tag'>{tag.title}</span>, next]
+    })}
   </div>
 
 export default Infos

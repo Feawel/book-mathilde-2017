@@ -13,7 +13,20 @@ export const data = {
             index: 1,
             height: 60
           },
-          tags: ["User Interface", "User Experience", "Illustration"],
+          tags: [
+            {
+              title: "Typography",
+              icon: "picto-typo"
+            },
+            {
+              title: "Digital com.",
+              icon: "picto-com-web"
+            },
+            {
+              title: "Print com.",
+              icon: "picto-com-print"
+            }
+          ],
           colors : {
             gradient: 'linear-gradient(-220deg, #5541D9 0%, #59FCFF 100%)',
             darkGradient: '#5541D9',
@@ -112,10 +125,6 @@ export const data = {
             {
               title: "User Experience",
               icon: "picto-UX"
-            },
-            {
-              title: "Illustration",
-              icon: "picto-illu"
             }
           ],
           color: '#00b3df',
@@ -157,12 +166,12 @@ export const data = {
           },
           tags: [
             {
-              title: "User Interface",
-              icon: "picto-UI"
+              title: "Visual identity",
+              icon: "picto-ID"
             },
             {
-              title: "User Experience",
-              icon: "picto-UX"
+              title: "User Interface",
+              icon: "picto-UI"
             },
             {
               title: "Illustration",
@@ -213,12 +222,8 @@ export const data = {
           },
           tags: [
             {
-              title: "User Interface",
-              icon: "picto-UI"
-            },
-            {
-              title: "User Experience",
-              icon: "picto-UX"
+              title: "Digital communication",
+              icon: "picto-com-web"
             },
             {
               title: "Illustration",
@@ -238,14 +243,6 @@ export const data = {
             height: 70
           },
           tags: [
-            {
-              title: "User Interface",
-              icon: "picto-UI"
-            },
-            {
-              title: "User Experience",
-              icon: "picto-UX"
-            },
             {
               title: "Illustration",
               icon: "picto-illu"
