@@ -14,8 +14,8 @@ class Menu extends React.Component {
     this.state = {
       current: 0,
       fixed: false,
-      offsetTop: 0,
-      projectOffsetTop: 0
+      projectOffsetTop: 0,
+      offsetTop: 500
     }
 
     this.onScrollMenu = this.onScrollMenu.bind(this)
@@ -28,7 +28,7 @@ class Menu extends React.Component {
       ? 170*((sections.length/2)-current)
       : 170*(current-sections.length/2)
     return (
-      <div className={`Menu ${fixed ? 'Menu_fixed' : (isEmpty(sections) ? 'hide' : '')}`}>
+      <div id='project-top-menu' className={`Menu ${fixed ? 'Menu_fixed' : (isEmpty(sections) ? 'hide' : '')}`}>
        <style jsx>{`
           .Menu {
             width: 100%;
@@ -152,6 +152,10 @@ class Menu extends React.Component {
     const { sections } = this.props
     const scrollY = window.scrollY
 
+    console.log('offsetTop, projectOffsetTop', offsetTop, projectOffsetTop)
+    console.log('offset', offset)
+    console.log('scrollY', scrollY)
+
     const current = sections.reduce((memo, section, index) => {
       if(section.element.offsetTop-60 < scrollY) {
         return index
@@ -159,6 +163,7 @@ class Menu extends React.Component {
         return memo
       }
     }, 0)
+
     this.setState({
       fixed: scrollY >= offset,
       current
@@ -166,16 +171,15 @@ class Menu extends React.Component {
   }
 
   componentDidMount() {
-    this.handleScrollMenu = throttle(this.onScrollMenu, 30, { 'trailing': false });
+    this.handleScrollMenu = throttle(this.onScrollMenu, 100, { 'trailing': false });
     window.addEventListener('scroll', this.handleScrollMenu);
-    this.setState({
-      offsetTop: ReactDOM.findDOMNode(this).offsetTop,
-      projectOffsetTop: window.document.getElementById('project').offsetTop
-    })
+    setTimeout(() => this.setState({
+      projectOffsetTop: window.document.getElementById('project').offsetTop,
+      offsetTop: ReactDOM.findDOMNode(this).offsetTop
+    }), 300)
   }
 
   componentWillUnmount() {
-
     window.removeEventListener('scroll', this.handleScrollMenu);
   }
 }
