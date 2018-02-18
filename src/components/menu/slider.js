@@ -3,8 +3,8 @@ import Button from './button'
 import Picture from './picture'
 import Link from 'next/link'
 
-const Item = ({ project, index, current, setProject, isCurrent }) =>
-   <div onClick={() => setProject(project.key)} style={{
+const Item = ({ project, index, current, setProject, isCurrent, toggleOpen }) =>
+   <div onClick={() => isCurrent ? toggleOpen() : setProject(project.key)} style={{
       opacity: Math.max(1 - Math.abs(index-current)*0.2, 0),
       color: isCurrent ? project.colors.primary : 'white',
       fontSize: isCurrent ? 36 : 24,
@@ -81,13 +81,7 @@ const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
     `}</style>
 
     <div className='Items'>
-      {projects.map((project, i) =>
-        i === current
-          ? <Link key={i} href={{ pathname: '/', query: { project: projects[current].key, typo: true } }} prefetch >
-              <Item setProject={setProject} isCurrent={i === current} current={current} key={i} project={project} index={i} />
-            </Link>
-          : <Item setProject={setProject} isCurrent={i === current} current={current} key={i} project={project} index={i} />
-      )}
+      {projects.map((project, i) => <Item toggleOpen={toggleOpen} setProject={setProject} isCurrent={i === current} current={current} key={i} project={project} index={i} />)}
     </div>
   </div>
 ]

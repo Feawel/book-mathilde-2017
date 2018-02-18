@@ -149,6 +149,14 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
   transition          : all 1s  ;
 }
 
+.transitions_1_5s {
+  -webkit-transition      : all 1.5s  ;
+  -moz-transition       : all 1.5s  ;
+  -ms-transition        : all 1.5s  ;
+  -o-transition         : all 1.5s  ;
+  transition          : all 1.5s  ;
+}
+
 .hide {
   display: none;
 }

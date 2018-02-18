@@ -10,17 +10,16 @@ import {enableScroll, disableScroll} from '../../utils/scroll'
 
 const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject, isMobile}) =>
   <div style={{
-    visibility: open ? '' : 'hidden',
-    height: open ? '100%' : 0,
+    opacity: open ? 1 : 0,
     display: projectAppear ? 'none' : 'block'
-  }} className='Menu_panel transitions'>
+  }} className={`Menu_panel ${open ? 'transitions_1_5s' : ''}`}>
     <style jsx>{`
       .Menu_panel {
         position: absolute;
         top: 0;
         width: 100%;
+        height: 100%;
         z-index: 11;
-        background-color: #001732;
         overflow: hidden;
       }
       .Mobile_slider {
