@@ -1,5 +1,5 @@
 const Logo = ({ toggleOpen, open, openMenu, isMobile }) =>
-  <div style={{top: open ? 625 : (isMobile ? 25 : 40), display: openMenu ? 'none' : ''}} className='Logo_wrapper clickable' onClick={(e) => toggleOpen()}>
+  <div style={{top: open ? 625 : (isMobile ? 25 : 40)}} className='Logo_wrapper clickable' onClick={(e) => toggleOpen()}>
     <style jsx>{`
       .Logo_wrapper {
         position : absolute;

@@ -1,14 +1,13 @@
 const Contact = () =>
-  <div className='Menu_credits'>
+  <div className='Menu_credits futuralt_bold'>
     <style jsx>{`
       .Menu_credits {
         text-transform: uppercase;
-        font-family: Futura;
-        font-weight: bold;
         font-size: 10px;
         position: absolute;
         bottom: 40px;
         left: 40px;
+        letter-spacing: 1px;
       }
       .Me {
         color: #941c91;

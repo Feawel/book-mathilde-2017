@@ -8,7 +8,7 @@ import MobileSlider from './mobileSlider'
 import Lines from './lines'
 import {enableScroll, disableScroll} from '../../utils/scroll'
 
-const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
+const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject, isMobile}) =>
   <div style={{
     visibility: open ? '' : 'hidden',
     height: open ? '100%' : 0,
@@ -40,7 +40,7 @@ const MenuPanel = ({open, toggleOpen, current, projectAppear, setProject}) =>
         }
       }
     `}</style>
-    <Lines />
+    <Lines isMobile={isMobile} />
     <Contact />
     <Credits />
     <div className='Slider'>

@@ -1,29 +1,35 @@
 // src/componentqs/menu/slider.js
 import Button from './button'
 import Picture from './picture'
+import Link from 'next/link'
 
-const Item = ({ project, index, current, setProject }) =>
+const Item = ({ project, index, current, setProject, isCurrent }) =>
    <div onClick={() => setProject(project.key)} style={{
       opacity: Math.max(1 - Math.abs(index-current)*0.2, 0),
-      color: index === current ? project.colors.primary : 'white',
-      fontSize: index === current ? 36 : 24,
-      height: index===current ? 80 : 40
-    }} className='Item transitions clickable'>
+      color: isCurrent ? project.colors.primary : 'white',
+      fontSize: isCurrent ? 36 : 24,
+      height: isCurrent ? 80 : 40
+    }} className={`Item transitions clickable${isCurrent ? ' current' : ''}`}>
     <style jsx>{`
       .Item {
         height: 20px;
         margin: 30px 0;
       }
+      .current {
+        background: linear-gradient(330deg, ${project.colors.darkGradient} 0%, ${project.colors.primary} 50%, ${project.colors.lightGradient} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     `}</style>
     {project.title}
-    {index === current && <Tags project={project} />}
+    {isCurrent && <Tags project={project} />}
   </div>
 
 const Tags = () =>
   <div className="Project_infos_tags playfairdisplay_black">
     <style jsx>{`
       .Project_infos_tags {
-        font-size: 12px;
+        font-size: 10px;
         opacity: 1;
         margin-top: 10px;
       }
@@ -50,7 +56,12 @@ const Tags = () =>
 
 const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
   <Button key='button' project={projects[current]} toggleOpen={toggleOpen} gradient={projects[current].colors} />,
-  <Picture key='picture' picture={{src: `/static/menu/rond-${projects[current].key}.jpg`, alt: 'rond menu'}} />,
+  <div className='Picture_container'>
+    {
+      projects.map((project, i) =>
+        <Picture isCurrent={i === current} key={i} picture={{src: `/static/menu/rond-${project.key}.jpg`, alt: 'rond menu'}} />
+    )}
+  </div>,
   <div key='slider' className='Menu_slider playfairdisplay_black transitions' style={{top: `calc(50% - ${80 + 70*current}px)`}}>
     <style jsx>{`
       .Menu_slider {
@@ -70,7 +81,13 @@ const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
     `}</style>
 
     <div className='Items'>
-      {projects.map((project, i) => <Item setProject={setProject} current={current} key={i} project={project} index={i} />)}
+      {projects.map((project, i) =>
+        i === current
+          ? <Link key={i} href={{ pathname: '/', query: { project: projects[current].key, typo: true } }} prefetch >
+              <Item setProject={setProject} isCurrent={i === current} current={current} key={i} project={project} index={i} />
+            </Link>
+          : <Item setProject={setProject} isCurrent={i === current} current={current} key={i} project={project} index={i} />
+      )}
     </div>
   </div>
 ]

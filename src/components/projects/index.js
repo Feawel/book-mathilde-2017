@@ -8,19 +8,19 @@ import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
   ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../../utils/project'
 
 const Projects = ({current, isMobile}) => {
-  switch(current) {
+  switch(current.key) {
     case APPS_KEY:
-      return <Apps isMobile={isMobile} />
+      return <Apps project={current} isMobile={isMobile} />
     case COMETE_KEY:
-      return <Comete isMobile={isMobile} />
+      return <Comete project={current} isMobile={isMobile} />
     case ORNIKAR_KEY:
-      return <Ornikar isMobile={isMobile} />
+      return <Ornikar project={current} isMobile={isMobile} />
     case CLASSE_KEY:
-      return <Classe isMobile={isMobile} />
+      return <Classe project={current} isMobile={isMobile} />
     case GANESHA_KEY:
-      return <Ganesha isMobile={isMobile} />
+      return <Ganesha project={current} isMobile={isMobile} />
     case TYPO_KEY:
-      return <Typo isMobile={isMobile} />
+      return <Typo project={current} isMobile={isMobile} />
   }
 }
 

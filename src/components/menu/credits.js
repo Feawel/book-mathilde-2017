@@ -1,14 +1,13 @@
 const Credits = () =>
-  <div className='Menu_credits'>
+  <div className='Menu_credits futuralt_bold'>
     <style jsx>{`
       .Menu_credits {
         text-transform: uppercase;
-        font-family: Futura;
-        font-weight: bold;
         font-size: 10px;
         position: absolute;
         bottom: 40px;
         right: 40px;
+        letter-spacing: 1px;
       }
       .Prefix {
         color: #abb0bc;

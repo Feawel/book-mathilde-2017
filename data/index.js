@@ -149,8 +149,8 @@ export const data = {
           },
           colors : {
             gradient: 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)',
-            darkGradient: '#4dd0ff',
-            lightGradient: '#5d1bb0',
+            darkGradient: '#5d1bb0',
+            lightGradient: '#4dd0ff',
             typo: '#221061',
             primary: '#8061E7',
             light: '#79CAFF'

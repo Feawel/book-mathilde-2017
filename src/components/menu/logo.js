@@ -56,8 +56,7 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
         top: 13px;
         right: 40px;
         font-size: 12px;
-        font-family: Futura;
-        font-weight: bold;
+        letter-spacing: 2.4px;
         z-index: 8;
       }
       .Menu_text_menu.Menu_text_m {
@@ -103,17 +102,17 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
     {
       !open
       ? [
-          <div key='menu-text-1' className='clickable transitions Menu_text Menu_text_menu Menu_text_m'>M</div>,
-          <div key='menu-text-2' className='clickable transitions Menu_text Menu_text_menu Menu_text_e'>E</div>,
-          <div key='menu-text-3' className='clickable transitions Menu_text Menu_text_menu Menu_text_n'>N</div>,
-          <div key='menu-text-4' className='clickable transitions Menu_text Menu_text_menu Menu_text_u'>U</div>
+          <div key='menu-text-1' className='clickable transitions futuralt_bold Menu_text Menu_text_menu Menu_text_m'>M</div>,
+          <div key='menu-text-2' className='clickable transitions futuralt_bold Menu_text Menu_text_menu Menu_text_e'>E</div>,
+          <div key='menu-text-3' className='clickable transitions futuralt_bold Menu_text Menu_text_menu Menu_text_n'>N</div>,
+          <div key='menu-text-4' className='clickable transitions futuralt_bold Menu_text Menu_text_menu Menu_text_u'>U</div>
         ]
       : [
-          <div key='menu-text-1' className='clickable transitions Menu_text Menu_text_close Menu_text_c'>C</div>,
-          <div key='menu-text-2' className='clickable transitions Menu_text Menu_text_close Menu_text_l'>L</div>,
-          <div key='menu-text-3' className='clickable transitions Menu_text Menu_text_close Menu_text_o'>O</div>,
-          <div key='menu-text-4' className='clickable transitions Menu_text Menu_text_close Menu_text_s'>S</div>,
-          <div key='menu-text-5' className='clickable transitions Menu_text Menu_text_close Menu_text_e'>E</div>
+          <div key='menu-text-1' className='clickable transitions futuralt_bold Menu_text Menu_text_close Menu_text_c'>C</div>,
+          <div key='menu-text-2' className='clickable transitions futuralt_bold Menu_text Menu_text_close Menu_text_l'>L</div>,
+          <div key='menu-text-3' className='clickable transitions futuralt_bold Menu_text Menu_text_close Menu_text_o'>O</div>,
+          <div key='menu-text-4' className='clickable transitions futuralt_bold Menu_text Menu_text_close Menu_text_s'>S</div>,
+          <div key='menu-text-5' className='clickable transitions futuralt_bold Menu_text Menu_text_close Menu_text_e'>E</div>
         ]
     }
   </div>

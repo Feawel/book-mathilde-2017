@@ -1,29 +1,30 @@
 // src/componentqs/menu/button.js
 import Link from 'next/link'
 
-const MenuButton = ({ color, gradient, project, toggleOpen }) =>
+const MenuButton = ({ color, gradient, project }) =>
   <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
-    <div style={{backgroundImage: `linear-gradient(to left, ${gradient.darkGradient} 0%, ${gradient.lightGradient} 100%)`}}
-      className='Menu_button transitions clickable'>
+    <div style={{
+      backgroundImage: `linear-gradient(to left, ${gradient.darkGradient} 0%, ${gradient.lightGradient} 100%)`
+    }}
+      className='Menu_button transitions clickable futuralt_bold'>
       <style jsx>{`
         .Menu_button {
           position: absolute;
           top: calc(50% - 40px);
-          right: calc(50% - 550px);
-          width: 200px;
-          height: 52px;
+          right: calc(50% - 470px);
+          width: 194px;
+          height: 46px;
           border-radius: 25px;
           text-align: center;
-          font-family: Futura;
-          font-weight: bold;
           font-size: 12px;
           color: #ffffff;
           text-transform: uppercase;
           vertical-align: middle;
+          letter-spacing: 1.8px;
         }
         .Menu_button_text {
           position: relative;
-          top: 20px;
+          top: 17px;
         }
       `}</style>
       <span className='Menu_button_text'>View the case</span>

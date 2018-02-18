@@ -1,7 +1,5 @@
 import React from 'react'
 
-import data from '../../../../data'
-
 import Summary from '../common/summary'
 import Menu from '../common/menu'
 import Footer from '../common/footer'
@@ -21,13 +19,13 @@ class Comete extends React.Component {
   }
 
   render() {
-    const {project, section, sections} = this.state
-    const {isMobile} = this.props
+    const {section, sections} = this.state
+    const {isMobile, project} = this.props
     return (
       <div id='project' className='Global_project'>
         <Lines />
-        <Summary project={data.projects[1]} />
-        <Menu sections={sections} section={section} project={data.projects[1]} color='#8061e7' borderImage='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+        <Summary project={project} />
+        <Menu sections={sections} section={section} project={project} color='#8061e7' borderImage='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
         <VisualIdentity
           isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(0, metadata)} />
@@ -40,7 +38,7 @@ class Comete extends React.Component {
         <Illustrations
           isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(3, metadata)} />
-        <Footer project={data.projects[1]}/>
+        <Footer project={project}/>
       </div>
     )
   }

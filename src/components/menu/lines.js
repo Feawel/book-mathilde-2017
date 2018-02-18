@@ -1,18 +1,16 @@
-const Lines = () =>
+const Lines = ({ isMobile }) =>
   <div className='Lines'>
     <style jsx>{`
       .Lines {
-        z-index: -1;
+        z-index: ${isMobile ? 11 : -1};
         position: absolute;
-        width: 100%;
         height: 100%;
-        z-index: 0;
       }
       .Line {
         width: 1px;
         background-color: rgba(255,255,255,0.1);
         height: 100%
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 2;
         height: 100%;

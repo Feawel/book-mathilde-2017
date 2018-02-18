@@ -23,7 +23,7 @@ class App extends React.Component {
       backgroundDirectory: null,
       animating: false,
       openAbout: false,
-      currentProject: 'apps',
+      currentProject: 'typo',
       timeoutIds: [],
       backgroundSize: 'large',
       initialAnimation: true,
@@ -64,9 +64,9 @@ class App extends React.Component {
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
       animating, openProjectAnimation, isMobile, initialAnimation } = this.state
 
-    const content = projectAppear ? <Projects isMobile={isMobile} current={currentProject} /> : null
     const project = getProjectByKey(currentProject)
-      /*<InitialAnimation initialAnimation={initialAnimation} />,*/
+    const content = projectAppear ? <Projects isMobile={isMobile} current={project} /> : null
+
     return [
       <About
         key='about'

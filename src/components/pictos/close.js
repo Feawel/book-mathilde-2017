@@ -3,11 +3,13 @@ const SVGCloseIcon = () =>
     <style jsx>{`
       svg {
           position: absolute;
-          top: 6px;
-          left: 3px;
+          top: 5px;
+          left: 2px;
           fill: white;
           width: 40px;
           height: 40px;
+          transform: scale(0.7);
+          -moz-transform: scale(0.7);
         }
     `}</style>
     <polygon points="26.1,8.8 23.2,5.9 16,13.2 8.9,6.1 6.1,9 13.2,16 5.9,23.3 8.7,26.1 16,18.8 23,25.9 25.9,23.1 18.8,16 "/>

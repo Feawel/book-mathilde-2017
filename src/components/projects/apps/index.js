@@ -1,7 +1,5 @@
 import React from 'react'
 
-import data from '../../../../data'
-
 import Summary from '../common/summary'
 import Menu from '../common/menu'
 import Footer from '../common/footer'
@@ -21,8 +19,7 @@ class Comete extends React.Component {
 
   render() {
     const {section, sections} = this.state
-    const {isMobile} = this.props
-    const project = data.projects[0]
+    const {isMobile, project} = this.props
     return (
       <div id='project' className='Global_project'>
         <Lines />
