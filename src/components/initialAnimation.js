@@ -90,7 +90,7 @@ export default class InitialAnimation extends React.Component {
         top: calc(50% - 195px);
         height: 390px;
         z-index: 10;
-        opacity: ${initialAnimation ? 1 : 0}
+        opacity: ${initialAnimation ? 1 : 0};
       }
       .Infos {
         margin: auto;
@@ -98,7 +98,7 @@ export default class InitialAnimation extends React.Component {
         position: absolute;
         bottom: 60px;
         width: 100%;
-        opacity: ${initialAnimation ? 1 : 0}
+        opacity: ${initialAnimation ? 1 : 0};
         z-index: 10;
       }
       .Loader {
@@ -141,6 +141,21 @@ export default class InitialAnimation extends React.Component {
 
       .Bar.active { height: 100%; }
 
+      .Line {
+        width: 1px;
+        background-color: rgba(255,255,255,0.1);
+        height: 100%
+        position: absolute;
+        top: 0;
+        z-index: 13;
+        opacity: ${initialAnimation ? 1 : 0};
+      }
+
+      .Line_1 { left: 20%;}
+      .Line_2 { left: 40%;}
+      .Line_3 { left: 60%;}
+      .Line_4 { left: 80%;}
+
       @media screen and (max-width: 1000px) {
         .Bar { width: 25%; }
         .Bar_1 { left: 0; }
@@ -148,6 +163,10 @@ export default class InitialAnimation extends React.Component {
         .Bar_3 { left: 50%; }
         .Bar_4 { left: 75%; }
         .Bar_5 { display: none; }
+        .Line_1 { left: 25%!important;}
+        .Line_2 { left: 50%!important;}
+        .Line_3 { left: 75%!important;}
+        .Line_4 { display: none;}
       }
       @media screen and (max-width: 750px) {
         .Bar { width: 33.3%; }
@@ -156,9 +175,16 @@ export default class InitialAnimation extends React.Component {
         .Bar_3 { left: 66.6%; }
         .Bar_4 { display: none; }
         .Bar_5 { display: none; }
+        .Line_1 { left: 33.3%!important;}
+        .Line_2 { left: 66.6%!important;}
+        .Line_3 { display: none;}
+        .Line_4 { display: none;}
       }
     `}</style>
-      <Lines  />
+      <div className='Line Line_1' style={{left: '20%'}} />
+      <div className='Line Line_2' style={{left: '40%'}} />
+      <div className='Line Line_3' style={{left: '60%'}} />
+      <div className='Line Line_4' style={{left: '80%'}} />
       <div style={{zIndex: bars ? 9 : 0}} className='Bars'>
         <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
         <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />
