@@ -235,6 +235,7 @@ class App extends React.Component {
   /******* RELATED TO PROJECT CHANGE ON HOME *********/
 
   openProject(){
+    console.log('openProject')
     this.firstProjectAnimation()
     const { timeoutIds } = this.state
     timeoutIds.push(setTimeout(this.secondProjectAnimation, 400))
@@ -248,21 +249,25 @@ class App extends React.Component {
   }
 
   firstProjectAnimation() {
+    console.log('firstProjectAnimation')
     this.setState({  backgroundSize: 'small', openProjectAnimation: true })
   }
 
   secondProjectAnimation() {
+    console.log('secondProjectAnimation')
     this.setState({ backgroundSize: 'medium' }, this.thirdProjectAnimation)
   }
 
   thirdProjectAnimation() {
     // this.setState({ projectAppear: true, openProjectAnimation: false })
     const { currentProject } = this.state
+    console.log('thirdProjectAnimation')
     setTimeout(() => Router.push({ pathname: `/${currentProject}` }), 600)
 
   }
 
   deactivateUpdateHomeProject() {
+    console.log('deactivateUpdateHomeProject')
     window.removeEventListener('wheel', this.updateWithDebounce)
   }
 
