@@ -102,6 +102,7 @@ class Menu extends React.Component {
             top: 1px;
             width: 14px;
           }
+          .Close_mobile { display: none; }
           @media screen and (max-width: 750px) {
             .Menu_inner {
               width: 100%;
@@ -110,6 +111,16 @@ class Menu extends React.Component {
               width: ${sections.length*180}px!important;
             }
             .Close { display: none }
+            .Close_mobile {
+              position: absolute;
+              padding: 20px 20px;
+              padding-left: 10px;
+              top: 0;
+              display: block;
+              background-color: white;
+              right: 0px;
+            }
+            .Close_icon { width: 18px; }
           }
         `}</style>
         <div className='Menu_inner'>
@@ -134,6 +145,11 @@ class Menu extends React.Component {
               </div>
           </Link>
         </div>
+        <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
+          <div className='Close_mobile clickable transitions'>
+            <img src='/static/pictos/picto-croix.svg' className='Close_icon transitions' />
+          </div>
+        </Link>
       </div>
     )
   }

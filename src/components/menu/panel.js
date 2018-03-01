@@ -8,7 +8,7 @@ import MobileSlider from './mobileSlider'
 import Lines from './lines'
 import {enableScroll, disableScroll} from '../../utils/scroll'
 
-const MenuPanel = ({open, openAbout, toggleOpen, current, projectAppear, setProject, isMobile}) =>
+const MenuPanel = ({open, openProject, openAbout, toggleOpen, current, projectAppear, setProject, isMobile}) =>
   <div style={{
     opacity: open ? 1 : 0,
     visibility: open ? '' : 'hidden'
@@ -43,10 +43,10 @@ const MenuPanel = ({open, openAbout, toggleOpen, current, projectAppear, setProj
     <Contact />
     <Credits />
     <div className='Slider'>
-      <Slider toggleOpen={toggleOpen} setProject={setProject} projects={data.projects} current={current} />
+      <Slider openProject={openProject} toggleOpen={toggleOpen} setProject={setProject} projects={data.projects} current={current} />
     </div>
     <div className='Mobile_slider'>
-      <MobileSlider toggleOpen={toggleOpen} open={open} projects={data.projects} current={current} />
+      <MobileSlider openProject={openProject} toggleOpen={toggleOpen} open={open} projects={data.projects} current={current} />
     </div>
   </div>
 

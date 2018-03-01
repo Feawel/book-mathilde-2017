@@ -41,6 +41,7 @@ const Page = ({ url }) =>
       <meta name="twitter:image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <link href="/static/style/main.css" rel="stylesheet" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114907419-1"></script>
       <script src="/static/pure-swipe.min.js"></script>
     </Head>
     <style jsx global>{`

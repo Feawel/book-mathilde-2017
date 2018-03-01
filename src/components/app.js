@@ -58,6 +58,7 @@ class App extends React.Component {
     this.getInfosMaskAppear = this.getInfosMaskAppear.bind(this)
     this.displayTypoAnimation = this.displayTypoAnimation.bind(this)
     this.hideTypoAnimation = this.hideTypoAnimation.bind(this)
+    this.setProject = this.setProject.bind(this)
   }
 
   render () {
@@ -92,6 +93,7 @@ class App extends React.Component {
         currentMenu={getIndexByProjectKey(currentProject)}
         projectAppear={projectAppear}
         toggleOpen={() => this.toggleOpenMenu()}
+        openProject={() => this.openProject()}
         closeProject={() => this.closeProject()}
         setProject={project => this.setProject(project)}
         open={openMenu}
@@ -129,6 +131,7 @@ class App extends React.Component {
     this.setState({backgroundDirectory: getBackgroundResponsiveDirectory(), isMobile: isMobile()})
     this.activateUpdateHomeProject()
     setTimeout(() => this.setState({initialAnimation: false}), 7000)
+    this.initGoogleAnalytics()
   }
 
   componentWillReceiveProps(nextProps) {
@@ -142,6 +145,14 @@ class App extends React.Component {
     this.deactivateUpdateHomeProject()
     const { timeoutIds } = this.state
     timeoutIds.forEach(timeoutId => clearTimeout(timeoutId))
+  }
+
+  initGoogleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114907419-1');
   }
 
   onScrollMenu (e) {
@@ -235,7 +246,6 @@ class App extends React.Component {
   /******* RELATED TO PROJECT CHANGE ON HOME *********/
 
   openProject(){
-    console.log('openProject')
     this.firstProjectAnimation()
     const { timeoutIds } = this.state
     timeoutIds.push(setTimeout(this.secondProjectAnimation, 400))
@@ -249,26 +259,24 @@ class App extends React.Component {
   }
 
   firstProjectAnimation() {
-    console.log('firstProjectAnimation')
     this.setState({  backgroundSize: 'small', openProjectAnimation: true })
   }
 
   secondProjectAnimation() {
-    console.log('secondProjectAnimation')
     this.setState({ backgroundSize: 'medium' }, this.thirdProjectAnimation)
   }
 
   thirdProjectAnimation() {
     // this.setState({ projectAppear: true, openProjectAnimation: false })
     const { currentProject } = this.state
-    console.log('thirdProjectAnimation')
     setTimeout(() => Router.push({ pathname: `/${currentProject}` }), 600)
 
   }
 
   deactivateUpdateHomeProject() {
-    console.log('deactivateUpdateHomeProject')
     window.removeEventListener('wheel', this.updateWithDebounce)
+    window.removeEventListener('swiped-down', this.updateDownWithDebounce)
+    window.removeEventListener('swiped-up', this.updateUpWithDebounce)
   }
 
   activateUpdateHomeProject() {
@@ -276,10 +284,10 @@ class App extends React.Component {
     window.addEventListener('wheel', this.updateWithDebounce);
 
     this.updateDownWithDebounce = throttle(this.updateProjectDown, 500, { 'trailing': false });
-    document.addEventListener('swiped-down', this.updateDownWithDebounce);
+    // document.addEventListener('swiped-down', this.updateDownWithDebounce);
 
     this.updateUpWithDebounce = throttle(this.updateProjectUp, 500, { 'trailing': false });
-    document.addEventListener('swiped-up', this.updateUpWithDebounce);
+    // document.addEventListener('swiped-up', this.updateUpWithDebounce);
   }
 
   launchBarAnimation () {

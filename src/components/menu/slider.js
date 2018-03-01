@@ -53,8 +53,8 @@ const Tags = ({project}) =>
   </div>
 
 
-const MenuSlider = ({ projects = [], current , setProject, toggleOpen}) => [
-  <Button key='button' project={projects[current]} toggleOpen={toggleOpen} gradient={projects[current].colors} />,
+const MenuSlider = ({ projects = [], current , openProject, setProject, toggleOpen}) => [
+  <Button key='button' openProject={openProject} project={projects[current]} toggleOpen={toggleOpen} gradient={projects[current].colors} />,
   <div key='pictures' className='Picture_container'>
     {
       projects.map((project, i) =>

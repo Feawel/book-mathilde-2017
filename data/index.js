@@ -36,7 +36,7 @@ export const data = {
             light: '#99FCFF'
           },
           customer: 'Lelivrescolaire.fr',
-          role: 'Directrice artistique',
+          role: 'Artistic director',
           year: 2017,
           stats: [
             {
@@ -83,7 +83,7 @@ export const data = {
             light: '#ffcfae'
           },
           customer: 'Lelivrescolaire.fr',
-          role: 'Directrice artistique',
+          role: 'Artistic director',
           year: 2016,
           stats: [
             {
@@ -129,7 +129,7 @@ export const data = {
           ],
           color: '#00b3df',
           customer: 'Lelivrescolaire.fr',
-          role: 'Directrice artistique',
+          role: 'Artistic director',
           year: 2015,
           stats: [
             {
@@ -179,7 +179,7 @@ export const data = {
             }
           ],
           customer: 'The Air and Space <br/>museum of Paris',
-          role: 'Directrice artistique',
+          role: 'Artistic director',
           year: 2015,
           stats: [
             {
@@ -208,7 +208,7 @@ export const data = {
             light: '#FFD98F'
           },
           customer: 'Ornikar',
-          role: 'Directrice artistique',
+          role: 'Artistic director',
           year: 2015,
           stats: [
             {
@@ -274,32 +274,32 @@ export const skills = [
   {
     title: 'Adobe Illustrator',
     icon: '/static/about/picto-illustrator.svg',
-    level: '8 years experienced',
-    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    level: '10 years experienced',
+    description: 'My best ally in spite of the crashes! From quick sketches to the most achieved illustration, nothing is impossible with the all-powerful vectorial drawing!',
     className: 'Illustrator',
     lineLength: 128
   },
   {
     title: 'Sketch',
     icon: '/static/about/picto-sketch.svg',
-    level: '3 years experienced',
-    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    level: '2 years experienced',
+    description: 'I had the occasion of testing The Challenger on two user interface projects: if I\'m far from knowing all the mysteries of the sketch\'s plug-ins, I can deliver a project with it without any concern.',
     className: 'Sketch',
     lineLength: 70
   },
   {
     title: 'Adobe AfterEffect',
     icon: '/static/about/picto-aftereffect.svg',
-    level: '3 years experienced',
-    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    level: 'Sometimes',
+    description: 'From a little logo animation to a funky loader, I master this software enough for brighten up a digital interface.',
     className: 'Aftereffect',
     lineLength: 20
   },
   {
     title: 'Drawing',
     icon: '/static/about/picto-illu-skills.svg',
-    level: '20 years experienced',
-    description: 'Software that I mastered for the web or mobile interface. I also have some skills in photo editing.',
+    level: 'Something like 23 years',
+    description: 'My favorite way of thinking when it comes to design, my first skill in illustration and one my leaser, drawing is for me more than a representation mechanism, it\'s the base of my creative works.',
     className: 'Drawing',
     lineLength: 30
   }

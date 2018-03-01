@@ -1,8 +1,11 @@
 // src/componentqs/menu/button.js
 import Link from 'next/link'
 
-const MenuButton = ({ color, gradient, project }) =>
-  <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
+const MenuButton = ({ color, gradient, openProject, project, toggleOpen }) =>
+  <div onClick={() => {
+      toggleOpen()
+      openProject()
+    }}>
     <div style={{
       backgroundImage: `linear-gradient(to left, ${gradient.darkGradient} 0%, ${gradient.lightGradient} 100%)`
     }}
@@ -29,7 +32,7 @@ const MenuButton = ({ color, gradient, project }) =>
       `}</style>
       <span className='Menu_button_text'>View the case</span>
     </div>
-  </Link>
+  </div>
 
 
 export default MenuButton
