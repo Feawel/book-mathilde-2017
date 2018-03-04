@@ -1,7 +1,33 @@
 // src/componentqs/menu/button.js
 import Link from 'next/link'
+import {ButtonProject} from '../button'
 
 const MenuButton = ({ color, gradient, openProject, project, toggleOpen }) =>
+  <div className='Menu_button'>
+    <style jsx>{`
+      .Menu_button {
+        position: absolute;
+        top: calc(50% - 53px);
+        right: calc(50% - 470px);
+      }
+    `}</style>
+    <ButtonProject
+      textColor={project.colors.primary}
+      gradient={project.colors.gradient}
+      radius={25}
+      fontSize={12}
+      width={194}
+      height={46}
+      background='#001732'
+      href={`/${project.key}`}
+      onClick={(e) => {
+        e.preventDefault()
+        toggleOpen()
+        openProject()
+      }}
+      text='VIEW THE CASE' />
+  </div>
+/*const MenuButton = ({ color, gradient, openProject, project, toggleOpen }) =>
   <div onClick={() => {
       toggleOpen()
       openProject()
@@ -32,7 +58,7 @@ const MenuButton = ({ color, gradient, openProject, project, toggleOpen }) =>
       `}</style>
       <span className='Menu_button_text'>View the case</span>
     </div>
-  </div>
+  </div>*/
 
 
 export default MenuButton

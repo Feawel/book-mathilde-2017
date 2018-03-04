@@ -146,6 +146,7 @@ class UserInterface extends React.Component {
             mobileLocation={{top: -675, right: -315}} />
           <SectionInfos
             isMobile={isMobile}
+            marginTop={195}
             title={{content: 'User Interface', color: 'white'}}
             baseline={{content: 'Create a fun and immersive interface', color: 'white'}}
             description={{opacity: 0.6, color: 'white', content: 'While presenting the exhibition as well as important scientific content, we have designed a fun site, using animations, videos, diagrams or illustrations.'}}

@@ -281,7 +281,7 @@ export const skills = [
   },
   {
     title: 'Sketch',
-    icon: '/static/about/picto-sketch.svg',
+    icon: '/static/about/picto-sketch2.svg',
     level: '2 years experienced',
     description: 'I had the occasion of testing The Challenger on two user interface projects: if I\'m far from knowing all the mysteries of the sketch\'s plug-ins, I can deliver a project with it without any concern.',
     className: 'Sketch',

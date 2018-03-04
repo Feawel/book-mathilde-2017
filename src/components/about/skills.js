@@ -157,7 +157,7 @@ class Skills extends React.Component {
           skills.map((skill, index) =>
             <div key={index} className={`Skill_container Skill_container_${skill.className}`}>
               <div key={`icon-${index}`} onMouseEnter={() => this.changeCurrent(index)} className={`Skill futuralt_book clickable ${skill.className} ${current===index ? 'active' : ''}`}>
-                <img width='16px' className='Inner_skill' src={skill.icon} />
+                <img width={skill.className === 'Sketch' ? '18px' : '16px'} className='Inner_skill' src={skill.icon} />
               </div>
               <SkillLine key={`line-${index}`} lineLength={skill.lineLength} isCurrent={current===index} />
               <div key={`content-${index}`} className={`Skill_content Skill_content_${skill.className} ${current===index ? 'withHeight' : 'noHeight'}`}>

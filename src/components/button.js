@@ -73,8 +73,8 @@ export const ButtonHome = ({infosAnimation, openProject, href, colors, height = 
     <i className="fa fa-dribbble"></i> <span className='Inner_text'>VIEW THE CASE</span>
   </a>
 
-export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38, width = 200, textColor = '#8061e7', textColorHover = '#fff', gradient = 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)', background = 'white'}) =>
-  <a href={href} target={target} className='button_wrapper'>
+export const ButtonProject = ({footer, fontSize = 10, onClick = () => {}, radius = 20, text = 'Hello', href, target, height = 38, width = 200, textColor = '#8061e7', textColorHover = '#fff', gradient = 'linear-gradient(-220deg, #4dd0ff 0%, #5d1bb0 100%)', background = 'white'}) =>
+  <a href={href} onClick={onClick} target={target} className='button_wrapper'>
     <style jsx>{`
       .button_wrapper {
         display: block;
@@ -99,7 +99,7 @@ export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38
         top: 1px;
         left: ${footer ? 0 : 1}px;
         cursor: pointer;
-        border-radius: 20px;
+        border-radius: ${radius}px;
         background: ${background};
         font-size: 10px;
         z-index: 10;
@@ -113,13 +113,14 @@ export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38
         top: 0;
         left: 0;
         z-index: -1;
-        border-radius: 20px;
+        border-radius: ${radius}px;
       }
 
       .button_text {
         color: ${textColor};
         text-decoration: none;
         letter-spacing: 1.2px;
+        font-size: ${fontSize}px;
       }
 
       .button .button_text {
@@ -146,7 +147,7 @@ export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38
         opacity: 1;
         top: 0;
         left: 0;
-        border-radius: 20px;
+        border-radius: ${radius}px;
       }
 
       .button:hover .button_text {
@@ -165,7 +166,7 @@ export const ButtonProject = ({footer, text = 'Hello', href, target, height = 38
           opacity: 1;
           top: 0;
           left: 0;
-          border-radius: 20px;
+          border-radius: ${radius}px;
         }
       }
     `}</style>

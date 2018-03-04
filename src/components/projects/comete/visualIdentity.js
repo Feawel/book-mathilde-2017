@@ -78,6 +78,7 @@ class VisualIdentity extends React.Component {
             mobileLocation={{top: -800, right: -215}} />
         <SectionInfos
           isMobile={isMobile}
+          marginTop={195}
           title={{content: 'Visual Identity', color: '#221061'}}
           baseline={{content: 'Create a visual identity able to please to a large audience', color: '#abb0bc'}}
           description={{color: '#474f6f', content: "To feat to the strategic choice, we created a visual identity colorful and with a lot of illustrations. The colors are brightful and refer to 90's video games."}}

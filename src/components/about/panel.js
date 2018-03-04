@@ -17,7 +17,7 @@ class Panel extends React.Component {
     const {open, toggleOpen} = this.props
     return (
       <div style={{
-        height: open ? '585px' : 0,
+        height: open ? '565px' : 0,
         visibility: open ? '' : 'hidden',
         marginBottom: open ? 10 : 0
       }} className='About_panel'>

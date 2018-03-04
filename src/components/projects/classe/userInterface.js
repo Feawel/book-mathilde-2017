@@ -37,7 +37,7 @@ class UserInterface extends React.Component {
           }
           .Call_wrapper {
             position: absolute;
-            top: 440px;
+            top: 490px;
             left: calc(50% + 50px);
           }
           @media screen and (max-width: 750px) {
@@ -53,12 +53,12 @@ class UserInterface extends React.Component {
           responsivePicto='/static/projects/classe/3-user-interface/picto-UI.png'
           borderBackground='linear-gradient(to left, #f04372 0%, #ffd69c 100%)' />
         <DoubleIllustrations
-          main={{width: 400, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
+          main={{width: 460, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           second={{width: 850, src: '/static/projects/classe/3-user-interface/picto-UI.png'}}
           location={{bottom: 100, right: 120}}
           mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
-          marginTop={90}
+          marginTop={160}
           isMobile={isMobile}
           title={{content: 'User Interface', color: '#1a2432'}}
           baseline={{content: 'creation of a UI kit', color: '#a8adb9'}}

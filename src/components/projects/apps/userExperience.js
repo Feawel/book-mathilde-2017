@@ -68,7 +68,7 @@ class UserExperience extends React.Component {
           mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
           isMobile={isMobile}
-          marginTop={90}
+          marginTop={130}
           title={{content: 'User Experience', color: '#004459'}}
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
           description={{color: '#474f6f', content: "This app is a transcription of books for tablets. It is intended to be used by teachers and students in a class.<br/>The UX must remain as simple and instinctive than with books, even if we'll add tools such as fullscreen documents, drawing, comments, or answering exercises."}}

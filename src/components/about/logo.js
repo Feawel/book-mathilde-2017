@@ -37,7 +37,7 @@ const Logo = ({ toggleOpen, open, openMenu, isMobile }) =>
           top: 80px;
         }
         .Logo_wrapper:hover .Logo_about {
-          top: 5px;
+          top: 8px;
         }
       }
       @media screen and (max-width: 750px) {

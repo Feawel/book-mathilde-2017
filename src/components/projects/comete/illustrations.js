@@ -74,6 +74,7 @@ class Illustrations extends React.Component {
           location={{bottom: 200, right: 100}} />
         <SectionInfos
           isMobile={isMobile}
+          marginTop={193}
           title={{content: 'Illustrations', color: '#221061'}}
           baseline={{content: 'pedagogical illustrations', color: '#abb0bc'}}
           description={{color: '#474f6f', content: 'In addition to the site, the communication and the interractive games, I made for the exhibition illustrations with pedagogical purpose in addition to the photographs presented.'}}

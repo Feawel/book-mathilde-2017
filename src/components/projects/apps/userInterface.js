@@ -48,13 +48,13 @@ class UserInterface extends React.Component {
           borderBackground='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)'
           responsivePicto='/static/projects/apps/4-user-interface/picto-UI.png' />
         <DoubleIllustrations
-          main={{width: 402, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
+          main={{width: 462, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           second={{width: 1060, src: '/static/projects/apps/4-user-interface/picto-UI.png'}}
           location={{bottom: 50, right: 100}}
           mobileLocation={{top: -675, right: -2315}} />
         <SectionInfos
           isMobile={isMobile}
-          marginTop={115}
+          marginTop={155}
           title={{content: 'User Interface', color: '#004459'}}
           baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
           description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create a UI kit to make it easy for developers to implement the 8 books needed."}}

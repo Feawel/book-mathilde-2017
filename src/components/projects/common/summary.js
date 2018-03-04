@@ -344,10 +344,11 @@ const Stat = ({ label, value, colors }) =>
         line-height: 14px;
         color: #abb0bc;
         text-transform: uppercase;
+        letter-spacing: 1px;
       }
       .Value {
         font-size: 72px;
-        height: 84px;
+        height: 94px;
         vertical-align: bottom;
         background: linear-gradient(330deg, ${colors.darkGradient} 0%, ${colors.primary} 50%, ${colors.lightGradient} 100%);
         -webkit-background-clip: text;

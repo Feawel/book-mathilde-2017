@@ -47,7 +47,7 @@ class Illustration extends React.Component {
           location={{bottom: 150, right: 120}}
           mobileLocation={{top: -675, right: -1315}} />
         <SectionInfos
-          marginTop={45}
+          marginTop={190}
           isMobile={isMobile}
           title={{content: 'Illustrations', color: '#1a2432'}}
           baseline={{content: 'brighten up the interface', color: '#a8adb9'}}

@@ -6,7 +6,7 @@ const ScrollDown = ({ onClick, move = false }) => (
     <style jsx>{`
       .Scroll_down {
         position: absolute;
-        bottom: 40px;
+        bottom: 45px;
         left: 35px;
         font-size: 10px;
         z-index: 10;
