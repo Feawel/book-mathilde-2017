@@ -218,6 +218,7 @@ class Color extends React.Component {
               left: 165px;
               transform: scale(0.8, 0.8);
               transform-origin: left center;
+              z-index: 0;
             }
             .Picture {
               right: 50px;
@@ -230,6 +231,7 @@ class Color extends React.Component {
               margin-right: 28px;
             }
             .Add_colors {
+              z-index: 1;
               top: 180px;
               left: 25px;
             }
@@ -239,10 +241,12 @@ class Color extends React.Component {
             .Add_colors_2 {
               left: 25px;
               top: 280px;
+              z-index: 1;
             }
             .Add_colors_3 {
               left: 25px;
               top: 330px;
+              z-index: 1;
             }
             .Add_colors.responsive, .Add_colors_2.responsive, .Add_colors_3.responsive {
               display: inline-block;

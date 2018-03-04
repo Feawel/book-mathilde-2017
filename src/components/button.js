@@ -63,7 +63,6 @@ export const ButtonHome = ({infosAnimation, openProject, href, colors, height = 
         top: 5px;
       }
       @media screen and (max-width: 1023px) {
-        .Call_wra
         a {
           background: white;
           color: ${colors.primary};

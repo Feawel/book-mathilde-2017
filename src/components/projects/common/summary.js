@@ -248,8 +248,10 @@ const FooterMobile = ({ project }) =>
         text-transform: uppercase;
       }
       .Call_wrapper {
+        margin: auto;
         margin-top: 25px;
         margin-bottom: 25px;
+        width: 200px;
       }
       @media screen and (max-width: 1000px) {
         .Footer_mobile {

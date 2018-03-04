@@ -225,8 +225,8 @@ const Homepage = () =>
     .Home_screen_image {
       vertical-align: top;
       height: 2565px;
-      filter: drop-shadow(0px 5px 50px rgba(128, 97, 231, 0.8));
-      text-shadow: 0px 5px 237px rgba(128, 97, 231, 0.8);
+      filter: drop-shadow(0px 5px 50px rgba(128, 97, 231, 0.5));
+      text-shadow: 0px 5px 237px rgba(128, 97, 231, 0.5);
     }
     @media screen and (max-width: 750px) {
       .Homepage {

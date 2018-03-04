@@ -32,8 +32,8 @@ const ScrollDown = ({ onClick, move = false }) => (
         .Scroll_down {
           bottom: 70px;
           text-align: center;
-          transform: scale(1.5);
-          -moz-transform: scale(1.5);
+          transform: scale(1.3);
+          -moz-transform: scale(1.3);
           left: 50%;
         }
         .Scroll_down_text {

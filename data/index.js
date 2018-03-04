@@ -137,7 +137,7 @@ export const data = {
               value: '100k'
             },
             {
-              label: "Textbooks' users",
+              label: "Textbooks users",
               value: '400k'
             }
           ],

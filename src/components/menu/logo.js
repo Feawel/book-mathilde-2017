@@ -137,6 +137,9 @@ const MenuLogo = ({open, toggleOpen, openAbout, projectAppear, isMobile}) =>
         .Menu_dots_container {
           right: 25px;
         }
+        .Menu_text {
+          display: none;
+        }
       }
     `}</style>
     <div key='menu-dots' className='Menu_dots'>

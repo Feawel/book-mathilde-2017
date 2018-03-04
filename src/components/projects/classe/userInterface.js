@@ -187,6 +187,9 @@ const Typography = () =>
         display: none;
       }
       @media screen and (max-width: 750px) {
+        .Typography {
+          padding-bottom: 50px;
+        }
         .Box {
           width: 100%;
           position: absolute;
