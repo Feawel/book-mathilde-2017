@@ -71,7 +71,7 @@ class UserInterface extends React.Component {
               width={200}
               href='/static/charte-graphique-classe-numerique.pdf#zoom=50'
               target='_blank'
-              text='View all the charte' />
+              text='View all the charter' />
           </div>
           <Typography />
           <Colors isMobile={isMobile} />
@@ -362,7 +362,7 @@ const Colors = ({ isMobile }) =>
         }
       }
     `}</style>
-    <TitleSecondary content='Color palette' style={{color: '#474f6f', margin: '50px auto 0 auto', letterSpacing: 1.05}} />
+    <TitleSecondary content='Color range' style={{color: '#474f6f', margin: '50px auto 0 auto', letterSpacing: 1.05}} />
     <SubtitlePart
       content='Colors to find there'
       style={{color: '#a8adb9', marginTop: 0, display: isMobile ? 'none' : 'inline-block'}} />
@@ -700,7 +700,7 @@ const Icon = () =>
         <div className='Description_container Description_container_2'>
           <Description
             style={descriptionStyle}
-            content='The contours and radius of angles makes 2px for a picto of 32x32.' />
+            content='The contours and radius of angles make 2px for a picto of 32 x 32.' />
         </div>
       </div>
       <div className='Infos Infos_3' style={{marginTop: 10}}>
@@ -788,7 +788,7 @@ const Components = ({ isMobile }) =>
     <div className='Description_container'>
       <Description
               style={{margin: 0, color: '#474f6f', lineHeight: '20px'}}
-              content='For a layout between 840 and 1600px, the grid contains 12 columns. The first breaking point is at 840px (8 columns), the second at 600px (4 columns). At over 1600px, the grid aligns in the center and stops growing.' />
+              content='For a layout between 840 and 1600px, the grid contains 12 columns. The first breaking point is at 840px (8 columns), the second at 600px (4 columns). Over 1600px, the grid aligns in the center and stops growing.' />
     </div>
     <div className='Illustration' />
   </div>

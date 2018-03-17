@@ -51,7 +51,7 @@ class UserExperience extends React.Component {
           isMobile={isMobile}
           title={{content: 'User Experience', color: '#1a2432'}}
           baseline={{content: 'A simple and fun interface', color: '#a8adb9'}}
-          description={{color: '#474f6f', content: 'The digital class interface offers a large number of complex functionnalities. The design work consisted of making it simple enough and playful for teachers and students.'}}
+          description={{color: '#474f6f', content: 'The digital class interface offers a large number of complex features. The design work consisted of making it simple enough and playful for teachers and students.'}}
           />
         <Persona />
         <Homepage />
@@ -133,7 +133,7 @@ const Persona = () =>
       }
     `}</style>
     <div className='Background' />
-    <TitleSecondary content='how DOES it’s work ?' style={{color: '#474f6f', margin: '0 auto', marginBottom: 60, position: 'relative', top: 60}} />
+    <TitleSecondary content='how DOES it work ?' style={{color: '#474f6f', margin: '0 auto', marginBottom: 60, position: 'relative', top: 60}} />
     <SubtitlePart
       content='Uses of the digital class'
       style={{color: '#a6abb7', marginBottom: 60}} />
@@ -290,7 +290,7 @@ const Homepage = () =>
       <TitleSecondary content='homepage' style={{margin: '0 auto'}} />
       <div className='Description_container'>
         <Description
-          content='Here is the interface that welcomes the user at first.  It has access to all classes already created, and can create new ones. It can also modify or delete a class already created.'
+          content='Here is the interface that welcomes the user at first.  He has access to all classes already created, and can create new ones. He can also modify or delete a class already created.'
           style={{marginTop: 15}} />
       </div>
       <div className='Anim_container'>
@@ -302,7 +302,7 @@ const Homepage = () =>
     </div>
     <div className='Classes'>
       <div className='Header'>
-        <TitleSecondary content='on a classe' style={{margin: '0 auto'}} />
+        <TitleSecondary content='in a class' style={{margin: '0 auto'}} />
         <SubtitlePart
           content='Manage your students, your homework and communicate with the class.'
           style={{lineHeight: '24px', opacity: 0.6}} />
@@ -566,7 +566,7 @@ const Statistics = () =>
           <TitleSecondary content='statistics' style={{margin: '0 auto'}} />
         </div>
         <SubtitlePart
-          content={`Follow your students' progress.`}
+          content={`Follow your students' progresses.`}
           style={{opacity: 0.7}} />
       </div>
       <img className='Stats_background' alt='statistics mockup' src='/static/projects/classe/4-user-experience/stat-fond.png' />
@@ -808,7 +808,7 @@ const Step3 = ({ isMobile }) =>
         content='EDIT the homework'
         style={{letterSpacing: 0.7, margin: 0, marginBottom: 5}} />
       <Description
-        content={`Give a name and instruction to the assignment, and choose exercises among those proposed.`}
+        content={`Give a name and instructions to the assignment, and choose exercises among those proposed.`}
         style={{margin: 0, fontSize: 12, lineHeight: '18px'}} />
     </div>
   </div>

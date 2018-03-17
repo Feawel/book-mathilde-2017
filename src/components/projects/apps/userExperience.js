@@ -71,7 +71,7 @@ class UserExperience extends React.Component {
           marginTop={130}
           title={{content: 'User Experience', color: '#004459'}}
           baseline={{content: 'Create an app as easy to use as a book', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: "This app is a transcription of books for tablets. It is intended to be used by teachers and students in a class.<br/>The UX must remain as simple and instinctive than with books, even if we'll add tools such as fullscreen documents, drawing, comments, or answering exercises."}}
+          description={{color: '#474f6f', content: "This app is a transcription of books for tablets. It is intended for both teachers’ use and students’ usage in class.<br/>The UX remains as simple and instinctive than books’ reading, even if we add features such as fullscreen documents, drawing, comments, or answering exercises."}}
           />
         { isMobile !== null && isMobile && <ArchitectureMobile timer={this.state.timer} /> }
         { isMobile !== null && !isMobile && <Architecture timer={this.state.timer} /> }
@@ -491,8 +491,8 @@ class Sidebar extends React.Component {
             width: 368px;
             background-size: contain;
             position: absolute;
-            top: 330px;
-            left: 50px;
+            top: 320px;
+            left: 70px;
           }
           .Screens {
             display: inline-block;
@@ -589,7 +589,7 @@ class Sidebar extends React.Component {
             <SubtitlePart
               content='iOS version' style={{opacity: 0.8}} />
             <Description
-              content='The sidebarre was divided into two tabs: On one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
+              content='The sidebar is divided into two tabs: on one side, all the chapters and pages of the book, on the other all personalized or marked pages.'
               style={{color: 'white', margin: '20px 0', opacity: 0.8}} />
           </div>
           <div className='Pictos' />

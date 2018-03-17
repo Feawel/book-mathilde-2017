@@ -139,14 +139,14 @@ class Menu extends React.Component {
             </div>
           </div>
             <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
-              <div className='Close clickable transitions'>
+              <div className={`Close clickable transitions ${fixed ? '' : 'hide'}`}>
                 <span className='Close_text futuralt_bold transitions'>close project</span>
                 <img src='/static/pictos/picto-croix.svg' className='Close_icon transitions' />
               </div>
           </Link>
         </div>
         <Link href={{ pathname: '/', query: { project: project.key, typo: true } }} prefetch >
-          <div className='Close_mobile clickable transitions'>
+          <div className={`Close_mobile clickable transitions ${fixed ? '' : 'hide'}`}>
             <img src='/static/pictos/picto-croix.svg' className='Close_icon transitions' />
           </div>
         </Link>

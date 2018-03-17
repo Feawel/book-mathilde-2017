@@ -99,7 +99,7 @@ class Skills extends React.Component {
             opacity: 0.6;
           }
           .Skill_content_description {
-            font-size: 10px;
+            font-size: 11px;
             color: #ffffff;
             line-height: 16px;
             opacity: 0.6;
@@ -134,7 +134,7 @@ class Skills extends React.Component {
             height: 0;
           }
           .withHeight {
-            height: 120px;
+            height: 150px;
             -webkit-transition      : all  1s  ;
             -moz-transition       : all 1s  ;
             -ms-transition        : all 1s  ;

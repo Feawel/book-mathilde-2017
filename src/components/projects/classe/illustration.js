@@ -51,7 +51,7 @@ class Illustration extends React.Component {
           isMobile={isMobile}
           title={{content: 'Illustrations', color: '#1a2432'}}
           baseline={{content: 'brighten up the interface', color: '#a8adb9'}}
-          description={{color: '#474f6f', content: 'I have produced two types of illustrations for the interface: drawings to populate even empty interfaces, and illustrations that serve to identify the classes.'}}
+          description={{color: '#474f6f', content: 'I have produced two types of illustrations for the interface: drawings to fill in event empty interfaces, and illustrations to identify the classes.'}}
           />
         <Interfaces isMobile={isMobile} />
         <Classes />

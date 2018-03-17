@@ -7,7 +7,7 @@ export const data = {
           title: "Typography project",
           key: TYPO_KEY,
           problematic: "Typographic work to<br/> increase brand visibility",
-          description: "<span class='Global_first_letter Global_first_letter_typo'>L</span>elivrescolaire.fr is an edtech start-up specialized in the  creation of french textbooks for middle and high schools.  All books are created by a community of teachers.<br /> To increase their notoriety and <strong>reinforce the community of teachers</strong>, I created for them a series of <strong>ten typographical works based on famous quotes</strong>. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. <br />Here is a selection of three of them",
+          description: "<span class='Global_first_letter Global_first_letter_typo'>L</span>elivrescolaire.fr is an edtech start-up specialized in the  creation of French textbooks for middle and high schools.  All books are created by a community of teachers.<br /> To increase their notoriety and <strong>reinforce the community of teachers</strong>, I created for them a series of <strong>ten typographical works based on famous quotes</strong>. They were used in facebook posts, upon bags distributed during shows, and posters offered to teachers for their classrooms. <br />Here is a selection of three of them.",
           behance: 'https://www.behance.net/gallery/58977035/Typography-for-a-communication-campaign',
           number: {
             index: 1,
@@ -48,13 +48,13 @@ export const data = {
               value: '600'
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [1, 2, 3, 4, 5]
         },
         {
           title: "Digital class",
           key: CLASSE_KEY,
-          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE ?",
-          description: "<span class='Global_first_letter Global_first_letter_classe'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All books are available online for free. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>Create classes</strong> by registering their students,</li><li>Track their student's results <strong>using statistics</strong>,</li><li>Create and correct <strong>online assignments</strong></li><li><strong>Communicate </strong>with their students via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
+          problematic: "HOW TO MANAGE A CLASSROOM <br /> WITH A WEBINTERFACE?",
+          description: "<span class='Global_first_letter Global_first_letter_classe'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of French textbooks for middle and high schools. All books are available online for free. I realized for them the design of the digital class, a service to which colleges and high schools subscribe. It allows teachers to :<ul class='Global_ul_classenumerique'><li><strong>Create classes</strong> by registering their students,</li><li>Track their student's results <strong>using statistics</strong>,</li><li>Create and correct <strong>online assignments</strong>,</li><li><strong>Communicate </strong>with their students via messaging.</li></ul> The interface, which offers several complex features, had to be easy to handle by children and their teachers.",
           behance: 'https://www.behance.net/gallery/58260849/Digital-classes-Web-Interface',
           number: {
             index: 2,
@@ -95,13 +95,13 @@ export const data = {
               value: 3500
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [0, 2, 3, 4, 5]
         },
         {
           key: APPS_KEY,
           title: "Digital books",
-          problematic: "How to turn textbooks <br />into applications ?",
-          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of french textbooks for middle and high schools. All manuals are available online for free.<br/>In 2016, I supervised the creation of new applications for tablets - all OS - from user experience to finalization.<br/>Those digital books offered a real challenge, since thousands of pages had to be adapted, including texts, documents and interactive exercises. We had to build them to be easily used by teachers and students, both at home and in the classroom.",
+          problematic: "How to turn textbooks <br />into applications?",
+          description: "<span class='Global_first_letter Global_first_letter_apps'>L</span>elivrescolaire.fr is an ed-tech start-up specialized in the creation of French textbooks for middle and high schools. All manuals are available online for free.<br/>In 2016, I supervised the creation of new applications for tablets - all OS - from user experience to its completion.<br/>Those digital books offered a real challenge, since thousands of pages had to be adapted, including texts, documents and interactive exercises. We optimised their use so they would be easily used by teachers and students, both at home and in the classroom.",
           number: {
             index: 3,
             height: 70
@@ -141,14 +141,14 @@ export const data = {
               value: '400k'
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [0, 1, 3, 4, 5]
         },
         {
           title: "Comete Exhibition",
           key: COMETE_KEY,
           callSummaryText: 'View the website',
           callSummary: 'http://www.expo-cometes.fr/',
-          problematic: "How to get maximum of people going <br />to a scientific exhibition ?",
+          problematic: "How to encourage people to attend <br/>a scientific exhibition?",
           website: "http://www.expo-cometes.fr/",
           description: "<span class='Global_first_letter Global_first_letter_comete'>T</span>o open to the public the breakthrough of the Rosetta space probe, which landed upon the Churyumov-Gerasimenko comet, the European Space Agency (ESA) decided to hold an exhibition.<br/>It took place at the Air and Space Museum of Paris. With my team, we created one website, two videos games, some illustrations for the exhibition and a communication campaign on the social networks.",
           behance: 'https://www.behance.net/gallery/58260273/Comet-Exhibition-Website-Video-games-Illustration',
@@ -191,12 +191,12 @@ export const data = {
               value: 589
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [0, 1, 2, 4, 5]
         },
         {
           title: "Ornikar’s adds",
           key: ORNIKAR_KEY,
-          problematic: "HOW TOUCH A CIBLE<br /> THAT YOU DON’T KNOW ?",
+          problematic: "HOW TOUCH A CIBLE<br /> THAT YOU DON’T KNOW?",
           description: "<span class='Global_first_letter Global_first_letter_ornikar'>O</span>rnikar is a start-up that offers to handle driving licenses as an online service. To increase sales of online training, we used three facebook ads to each a different target: young boys 16-20 years old, young girls 16-20 years old and 20-26 years adults.",
           behance: 'https://www.behance.net/mathildese8e32',
           colors : {
@@ -230,13 +230,13 @@ export const data = {
               icon: "picto-illu"
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [0, 1, 2, 3, 5]
         },
         {
           title: "Ganesha Drawing",
           key: GANESHA_KEY,
-          description: "<span class='Global_first_letter Global_first_letter_ganesha'>O</span>ne big draw experimentation, made in 2017 for decorate a client appartment.<br />It is 6ft by 6ft (180cmX180cm) only made with posca markers.",
-          problematic: "EXPERIMENTAL DRAW",
+          description: "<span class='Global_first_letter Global_first_letter_ganesha'>O</span>ne big drawing experiment, made in 2017 to decorate a client's apartment.<br />It is 6ft by 6ft (180 cm x 180 cm) only made with posca markers.",
+          problematic: "EXPERIMENTAL DRAWING",
           behance: 'https://www.behance.net/gallery/59719467/Ganesha-drawing',
           number: {
             index: 6,

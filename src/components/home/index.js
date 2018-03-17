@@ -91,7 +91,7 @@ const HomeProjects = (props) => {
         }
       `}</style>
       <Lines  />
-      {!(projectAppear || openProjectAnimation) && <ScrollDown move={animating} onClick={() => updateProject({deltaY: 1})} />}
+      {!(projectAppear || openProjectAnimation) && <ScrollDown isMobile={isMobile} project={project} move={animating} onPrevious={() => updateProject({deltaY: -1})} onNext={() => updateProject({deltaY: 1})} />}
       {!(projectAppear || openProjectAnimation) && <Social />}
       <div className='Background_wrapper'>
         <div className='Background transitions'

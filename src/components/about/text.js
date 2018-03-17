@@ -82,23 +82,23 @@ const Text = () =>
     <img className='About_img' src='/static/about/typo-about.svg' />
     <div className='About_img_mask_mobile' />
     <div className='About_text Description'>
-      Hello ! I am an artistic director specialized in the realization of website,
+      Hello! I am an artistic director specialized in the realization of website,
       application, and web communication, especially in startup.  <br />I like to explore other
       forms of creation, such as illustration,  typographic creation, video games or
       interactive installations.
     </div>
     <div className='About_text_mobile Description'>
-      Hello ! I am an artistic director specialized in the
+      Hello! I am an artistic director specialized in the
       realization of website, application, and web
       communication, especially in start-up.
     </div>
     <div className='About_text futuralt_bold Goal'>
       I’m looking for challenging design work, if you have a particulary tricky one, no doubt,
-      i’m the girl for you !
+      i’m the girl for you!
     </div>
     <div className='About_text_mobile futuralt_bold Goal'>
       I’m looking for challenging design work, if you have a particulary tricky one, no doubt,
-      i’m the girl for you !
+      i’m the girl for you!
     </div>
     <div className='About_text Email futuralt_bold transitions'>mathilde.serra01@gmail.com</div>
     <div className='About_text_mobile futuralt_bold Email transitions'>mathilde.serra01@gmail.com</div>

@@ -176,8 +176,8 @@ class Footer extends React.Component {
           }
         `}</style>
         <div className='Title futuralt_book'>
-          If you love that project
-          <br /><strong>those can interest you :</strong>
+          If you loved this project,
+          <br /><strong>you might be interested in those ones</strong>
         </div>
         <div className='Projects'>
           {

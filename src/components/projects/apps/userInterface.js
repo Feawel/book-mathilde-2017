@@ -56,8 +56,8 @@ class UserInterface extends React.Component {
           isMobile={isMobile}
           marginTop={155}
           title={{content: 'User Interface', color: '#004459'}}
-          baseline={{content: 'Create an interface able to please to children', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create a UI kit to make it easy for developers to implement the 8 books needed."}}
+          baseline={{content: 'Create an interface to please children', color: '#abb0bc'}}
+          description={{color: '#474f6f', content: "The user interface was designed to be appealing to middle school students. So I decided to use multiple colors and themes, and to let an important place to pictures.<br/>However, the interface must also remain clear and uncluttered.<br/>Finally, I decided to create an UI kit for an easier implementation by the developers of the 8 books produced."}}
           />
         <Typeface />
         <Colors />
@@ -540,7 +540,7 @@ const Picto = ({ isMobile }) =>
       }
     `}</style>
     <div className='Picto_container'>
-      <TitleSecondary content='PICTOGRAMME' style={{color: 'white', letterSpacing: 1.05, margin: '69px auto 0 auto'}} />
+      <TitleSecondary content='PICTOGRAM' style={{color: 'white', letterSpacing: 1.05, margin: '69px auto 0 auto'}} />
       <SubtitlePart
         content='Guidelines'
         style={{opacity: 0.6, margin: '10px 0 0 0'}} />
@@ -549,7 +549,7 @@ const Picto = ({ isMobile }) =>
         <div className='Description_container_1'>
           <Description
             style={{verticalAlign: 'top', opacity: 0.8, lineHeight: '18px', textAlign: isMobile ? 'center' : 'left', display: 'inline-block', fontSize: 12, marginTop: 0}}
-            content="The contours and angle's radius is 2px for a picto of 44x44. The interior spaces are 2px or a multiple." />
+            content="The contours and angle's radius is 2px for a picto of 44 x 44px. The interior spaces are 2px or a multiple of 2px." />
         </div>
         <img className='Illustration Illustration_2' height='144px' src='/static/projects/apps/4-user-interface/picto/picto-petit.svg' alt='picto-petit' />
         <div className='Description_container_2'>
@@ -633,7 +633,7 @@ const Types = () =>
     </div>
     <div className='Subtitle_container'>
       <SubtitlePart
-        content='We create a template for every type of page'
+        content='We created a template for every type of page'
         style={{color: '#abb0bc', lineHeight: '22px'}} />
     </div>
     <Background />
@@ -696,7 +696,7 @@ const Templates = () =>
     </div>
     <div className='Template'>
       <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template2.jpg' />
-      <div className='Description futuralt_book'>A page with a main document (here a text) and some others less important.</div>
+      <div className='Description futuralt_book'>A page with one main document (here a text) and secondary pictures.</div>
     </div>
     <div className='Template'>
       <img alt='template ouverture' src='/static/projects/apps/4-user-interface/types/template3.jpg' />
@@ -984,17 +984,17 @@ class Tools extends React.Component {
         `}</style>
         <div className='Title_container'>
           <TitleSecondary content='We also make awesome' style={{letterSpacing: 1.05, color: 'white', margin: 0}} />
-          <TitleSecondary content='tools ...' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
+          <TitleSecondary content='tools!' style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
         </div>
         <div className='Screen Screen_1'>
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-1.png' />
           <video muted autoPlay loop className='Video_1' src='/static/projects/apps/4-user-interface/types/exo.mp4' />
           <div className='Infos'>
             <div className='Border' />
-            <TitleSecondary content='Answer to the question' style={screen1Title} />
+            <TitleSecondary content='Answer the questions' style={screen1Title} />
             <Description
               style={screen1Desc}
-              content='On each page, the student can answer questions. It is accessed thanks to a floating button which is therefore always accessible. Once it has pressed the button, the interface divides between questions and response space, and related documents on the other. Once he has answered, the student can send the answers to his teacher.' />
+              content='On each page, the students can answer the questions. It is accessed thanks to a floating button which is therefore always accessible. When you click, the interface divides into questions and response spaces on one side, and related documents on the other. Once the students have answered, they can send their answers to their teacher.' />
           </div>
         </div>
         <div className='Screen Screen_2'>
@@ -1003,13 +1003,13 @@ class Tools extends React.Component {
             <TitleSecondary content='Draw on the pages' style={screen2Title} />
             <Description
               style={screen2Desc}
-              content='The user can operate a "draft" mode. This feature allows it to draw on a page and save this draft. Teachers use it for classroom demonstrations.' />
+              content='The user can operate a "draft" mode. This feature allows him to draw on a page and save his draft. Teachers can use it for classroom demonstrations.' />
           </div>
           <video muted autoPlay loop className='Video_2' src='/static/projects/apps/4-user-interface/types/dessin.mp4' />
           <img alt='exercise screen' src='/static/projects/apps/4-user-interface/types/ipad-seul-2.png' />
         </div>
         <div className='Andmore_container'>
-          <TitleSecondary content='and more ...'
+          <TitleSecondary content='and more!'
             style={{letterSpacing: 1.05, color: '#005970', margin: 0}} />
         </div>
       </div>

@@ -130,7 +130,7 @@ class App extends React.Component {
   componentDidMount() {
     this.setState({backgroundDirectory: getBackgroundResponsiveDirectory(), isMobile: isMobile()})
     this.activateUpdateHomeProject()
-    setTimeout(() => this.setState({initialAnimation: false}), 7000)
+    setTimeout(() => this.setState({initialAnimation: false}), 9000)
     this.initGoogleAnalytics()
   }
 
@@ -275,8 +275,8 @@ class App extends React.Component {
 
   deactivateUpdateHomeProject() {
     window.removeEventListener('wheel', this.updateWithDebounce)
-    window.removeEventListener('swiped-down', this.updateDownWithDebounce)
-    window.removeEventListener('swiped-up', this.updateUpWithDebounce)
+    window.removeEventListener('swiped-right', this.updateDownWithDebounce)
+    window.removeEventListener('swiped-left', this.updateUpWithDebounce)
   }
 
   activateUpdateHomeProject() {
@@ -284,10 +284,10 @@ class App extends React.Component {
     window.addEventListener('wheel', this.updateWithDebounce);
 
     this.updateDownWithDebounce = throttle(this.updateProjectDown, 500, { 'trailing': false });
-    // document.addEventListener('swiped-down', this.updateDownWithDebounce);
+    document.addEventListener('swiped-right', this.updateDownWithDebounce);
 
     this.updateUpWithDebounce = throttle(this.updateProjectUp, 500, { 'trailing': false });
-    // document.addEventListener('swiped-up', this.updateUpWithDebounce);
+    document.addEventListener('swiped-left', this.updateUpWithDebounce);
   }
 
   launchBarAnimation () {

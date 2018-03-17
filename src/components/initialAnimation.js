@@ -19,7 +19,7 @@ export default class InitialAnimation extends React.Component {
       percentColorG: 28,
       percentColorB: 142,
       // endColor: 'rgb(97,218,255)',
-      animationDuration: 7000,
+      animationDuration: 9000,
       animationStep: 100,
       bars: true,
       bar1: true,
@@ -42,7 +42,7 @@ export default class InitialAnimation extends React.Component {
   }
 
   load() {
-    const percent = Math.min(100, this.state.percent + this.state.animationDuration/(this.state.animationStep*50))
+    const percent = Math.min(100, this.state.percent + this.state.animationDuration/(this.state.animationStep*83))
     this.setState({
       percentColorR: Math.max(97, this.state.percentColorR - (145 - 97)/(this.state.animationDuration/this.state.animationStep)),
       percentColorG: Math.min(218, this.state.percentColorG + (218 - 28)/(this.state.animationDuration/this.state.animationStep)),
