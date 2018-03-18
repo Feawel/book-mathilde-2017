@@ -1,8 +1,55 @@
 import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
-  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../src/utils/project'
+  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY, ADVERTISING_KEY} from '../src/utils/project'
 
 export const data = {
     projects: [
+        {
+          title: "Ornikar's advertisings",
+          key: ADVERTISING_KEY,
+          problematic: "Install a new brand to the public",
+          description: "<span class='Global_first_letter Global_first_letter_advertising'>O</span>rnikar is a start-up founded in 2013. It offers online driving license training, as well as an online platform used as an intermediary between independent teachers and candidates.<br/>Ornikar is today the first driving school in France and the most awarded start-up in France in 2014. I realized their communication during the year 2015. Here are some of the productions.",
+          behance: 'https://www.behance.net/gallery/62488867/Print-and-Digital-communications-for-Ornikar',
+          number: {
+            index: 1,
+            height: 60
+          },
+          tags: [
+            {
+              title: "Visual identity",
+              icon: "picto-ID"
+            },
+            {
+              title: "Print com.",
+              icon: "picto-com-print"
+            },
+            {
+              title: "Digital com.",
+              icon: "picto-com-web"
+            }
+          ],
+          colors : {
+            gradient: 'linear-gradient(-220deg, #DA3C41 0%, #ffd678 100%)',
+            darkGradient: '#DA3C41',
+            lightGradient: '#ffd678',
+            typo: '#0D2D40',
+            primary: '#FFBB66',
+            light: '#FFEEC7'
+          },
+          customer: 'Ornikar',
+          role: 'Artistic director',
+          year: 2015,
+          stats: [
+            {
+              label: 'DRIVING LICENSES SOLD',
+              value: '80k'
+            },
+            {
+              label: 'TOTAL USERS',
+              value: '211k'
+            }
+          ],
+          linkedProjects: [1, 2, 3, 4, 5]
+        },
         {
           title: "Typography project",
           key: TYPO_KEY,

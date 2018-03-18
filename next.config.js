@@ -6,6 +6,7 @@ exports.exportPathMap = () => ({
   "/apps": { page: "/apps" },
   "/classe": { page: "/classe" },
   "/ganesha": { page: "/ganesha" },
-  "/typo": { page: "/typo" }
+  "/typo": { page: "/typo" },
+  "/ornikar-print": { page: "/ornikar-print" }
   //"/p/hello-nextjs": { page: "/post", query: { title: "hello-nextjs" } },
 })

@@ -4,8 +4,9 @@ import Classe from './classe'
 import Ganesha from './ganesha'
 import Ornikar from './ornikar'
 import Typo from './typo'
+import OrnikarPrint from './ornikar-campaign'
 import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
-  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY} from '../../utils/project'
+  ORNIKAR_KEY, GANESHA_KEY, TYPO_KEY, ADVERTISING_KEY} from '../../utils/project'
 
 const Projects = ({current, isMobile}) => {
   switch(current.key) {
@@ -21,6 +22,8 @@ const Projects = ({current, isMobile}) => {
       return <Ganesha project={current} isMobile={isMobile} />
     case TYPO_KEY:
       return <Typo project={current} isMobile={isMobile} />
+    case ADVERTISING_KEY:
+      return <OrnikarPrint project={current} isMobile={isMobile} />
   }
 }
 
