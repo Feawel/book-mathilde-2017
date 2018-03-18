@@ -74,7 +74,7 @@ const Tone = ({isMobile}) =>
         background-color: #0d2d40;
       }
       .Top_border {
-        background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-grise_2000.png');
+        background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-grise_3000.png');
         background-size: contain;
         background-repeat: no-repeat;
         height: 270px;
@@ -107,11 +107,17 @@ const Tone = ({isMobile}) =>
         top: -80px;
       }
       @media screen and (max-width: 2000px) {
+        .Top_border {
+          background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-grise_2000.png');
+        }
         .Bottom_border {
           background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-noire_2000.png');
         }
       }
       @media screen and (max-width: 1200px) {
+        .Top_border {
+          background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-grise_1200.png');
+        }
         .Bottom_border {
           background-image: url('/static/projects/ornikar-campaign/1-visual-identity/bordure-noire_1200.png');
         }

@@ -4,53 +4,6 @@ import {APPS_KEY, COMETE_KEY, CLASSE_KEY,
 export const data = {
     projects: [
         {
-          title: "Ornikar's advertisings",
-          key: ADVERTISING_KEY,
-          problematic: "Install a new brand to the public",
-          description: "<span class='Global_first_letter Global_first_letter_advertising'>O</span>rnikar is a start-up founded in 2013. It offers online driving license training, as well as an online platform used as an intermediary between independent teachers and candidates.<br/>Ornikar is today the first driving school in France and the most awarded start-up in France in 2014. I realized their communication during the year 2015. Here are some of the productions.",
-          behance: 'https://www.behance.net/gallery/62488867/Print-and-Digital-communications-for-Ornikar',
-          number: {
-            index: 1,
-            height: 60
-          },
-          tags: [
-            {
-              title: "Visual identity",
-              icon: "picto-ID"
-            },
-            {
-              title: "Print com.",
-              icon: "picto-com-print"
-            },
-            {
-              title: "Digital com.",
-              icon: "picto-com-web"
-            }
-          ],
-          colors : {
-            gradient: 'linear-gradient(-220deg, #DA3C41 0%, #ffd678 100%)',
-            darkGradient: '#DA3C41',
-            lightGradient: '#ffd678',
-            typo: '#0D2D40',
-            primary: '#FFBB66',
-            light: '#FFEEC7'
-          },
-          customer: 'Ornikar',
-          role: 'Artistic director',
-          year: 2015,
-          stats: [
-            {
-              label: 'DRIVING LICENSES SOLD',
-              value: '80k'
-            },
-            {
-              label: 'TOTAL USERS',
-              value: '211k'
-            }
-          ],
-          linkedProjects: [1, 2, 3, 4, 5]
-        },
-        {
           title: "Typography project",
           key: TYPO_KEY,
           problematic: "Typographic work to<br/> increase brand visibility",
@@ -95,7 +48,7 @@ export const data = {
               value: '600'
             }
           ],
-          linkedProjects: [1, 2, 3, 4, 5]
+          linkedProjects: [1, 2, 3, 4, 5, 6]
         },
         {
           title: "Digital class",
@@ -142,7 +95,7 @@ export const data = {
               value: 3500
             }
           ],
-          linkedProjects: [0, 2, 3, 4, 5]
+          linkedProjects: [0, 2, 3, 4, 5, 6]
         },
         {
           key: APPS_KEY,
@@ -188,7 +141,7 @@ export const data = {
               value: '400k'
             }
           ],
-          linkedProjects: [0, 1, 3, 4, 5]
+          linkedProjects: [0, 1, 3, 4, 5, 6]
         },
         {
           title: "Comete Exhibition",
@@ -241,6 +194,53 @@ export const data = {
           linkedProjects: [0, 1, 2, 4, 5]
         },
         {
+          title: "Ornikar's advertisings",
+          key: ADVERTISING_KEY,
+          problematic: "Install a new brand to the public",
+          description: "<span class='Global_first_letter Global_first_letter_advertising'>O</span>rnikar is a start-up founded in 2013. It offers online driving license training, as well as an online platform used as an intermediary between independent teachers and candidates.<br/>Ornikar is today the first driving school in France and the most awarded start-up in France in 2014. I realized their communication during the year 2015. Here are some of the productions.",
+          behance: 'https://www.behance.net/gallery/62488867/Print-and-Digital-communications-for-Ornikar',
+          number: {
+            index: 5,
+            height: 60
+          },
+          tags: [
+            {
+              title: "Visual identity",
+              icon: "picto-ID"
+            },
+            {
+              title: "Print com.",
+              icon: "picto-com-print"
+            },
+            {
+              title: "Digital com.",
+              icon: "picto-com-web"
+            }
+          ],
+          colors : {
+            gradient: 'linear-gradient(-220deg, #DA3C41 0%, #ffd678 100%)',
+            darkGradient: '#DA3C41',
+            lightGradient: '#ffd678',
+            typo: '#0D2D40',
+            primary: '#FFBB66',
+            light: '#FFEEC7'
+          },
+          customer: 'Ornikar',
+          role: 'Artistic director',
+          year: 2015,
+          stats: [
+            {
+              label: 'DRIVING LICENSES SOLD',
+              value: '80k'
+            },
+            {
+              label: 'TOTAL USERS',
+              value: '211k'
+            }
+          ],
+          linkedProjects: [0, 1, 2, 3, 5, 6]
+        },
+        {
           title: "Ornikar’s adds",
           key: ORNIKAR_KEY,
           problematic: "HOW TOUCH A CIBLE<br /> THAT YOU DON’T KNOW?",
@@ -264,7 +264,7 @@ export const data = {
             }
           ],
           number: {
-            index: 5,
+            index: 6,
             height: 67
           },
           tags: [
@@ -277,7 +277,7 @@ export const data = {
               icon: "picto-illu"
             }
           ],
-          linkedProjects: [0, 1, 2, 3, 5]
+          linkedProjects: [0, 1, 2, 3, 4, 6]
         },
         {
           title: "Ganesha Drawing",
@@ -286,7 +286,7 @@ export const data = {
           problematic: "EXPERIMENTAL DRAWING",
           behance: 'https://www.behance.net/gallery/59719467/Ganesha-drawing',
           number: {
-            index: 6,
+            index: 7,
             height: 70
           },
           tags: [
@@ -304,7 +304,7 @@ export const data = {
             light: '#CCFFE0'
           },
           year: 2017,
-          linkedProjects: [0, 1, 2, 3, 4]
+          linkedProjects: [0, 1, 2, 3, 4, 5]
         }
     ]
 }

@@ -25,7 +25,7 @@ class Comete extends React.Component {
       <div id='project' className='Global_project'>
         <Lines />
         <Summary project={project} />
-        <Menu sections={sections} section={section} project={project} color='#00b3df' borderImage='linear-gradient(to left, #008db9 0%, #6ad7d9 100%)' />
+        <Menu sections={sections} section={section} project={project} color={project.colors.primary} borderImage='linear-gradient(to left, #da3c41 0%, #ffd678 100%)' />
         <VisualIdentity
           isMobile={isMobile}
           setSectionMetadata={(metadata) => this.setSectionMetadata(0, metadata)} />
@@ -34,7 +34,7 @@ class Comete extends React.Component {
           setSectionMetadata={(metadata) => this.setSectionMetadata(1, metadata)} />
         <DigitalCom
           isMobile={isMobile}
-          setSectionMetadata={(metadata) => this.setSectionMetadata(1, metadata)} />
+          setSectionMetadata={(metadata) => this.setSectionMetadata(2, metadata)} />
         <Footer project={project}/>
       </div>
     )

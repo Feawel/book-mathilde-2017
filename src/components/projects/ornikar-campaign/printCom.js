@@ -29,6 +29,7 @@ class PrintCom extends React.Component {
   render() {
     const {isMobile} = this.props
     const {directory} = this.state
+    if(!directory) return <div />
     return (
       <div className='Print_com'>
        <style jsx>{`
@@ -151,13 +152,13 @@ const Section = ({section, directory, isMobile}) =>
     `}</style>
     <Subtitle
       content={section.title}
-      style={{color: '#0d2d40', textAlign: 'center', fontSize: 21, letterSpacing: '1.05px', margin: `${isMobile ? 40 : 80}px auto 20px auto`}} />
+      style={{color: '#0d2d40', textAlign: 'center', fontSize: 21, letterSpacing: 1.05, margin: `${isMobile ? 40 : 80}px auto 20px auto`}} />
     <SubtitlePart
       content={section.subtitle}
       style={{color: '#a5aab6', textAlign: 'center', fontSize: 16, margin: '0 auto 20px auto'}} />
     <Description
       content={section.description}
-      style={{color: '#375e71', lineHeight: '28px', fontSize: 16, textAlign: isMobile ? 'center' : 'left', width: isMobile ? 300 : 435, margin: `0 auto ${isMobile ? 40 : 80}px auto`}} />
+      style={{color: '#375e71', lineHeight: '28px', fontSize: 16, textAlign: 'center', width: isMobile ? 300 : 435, margin: `0 auto ${isMobile ? 40 : 80}px auto`}} />
     <div className='Pictures'>
       <img className='Picture_1' src={`/static/projects/ornikar-campaign/2-print-com/${directory}/${section.picture1}.${section.picture1Extension}`} />
       <div className='H_separator' />
