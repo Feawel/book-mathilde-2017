@@ -23,6 +23,19 @@ export const getResponsiveDirectory = () => {
     return 'mobile-720'
 }
 
+
+// Use for ornikar campaign project
+export const getOrnikarResponsiveDirectory = () => {
+  if(window.innerWidth > 2000 || (window.innerWidth > 1000 && isRetina()))
+    return '3000'
+  if(window.innerWidth > 1400 || (window.innerWidth > 750 && isRetina()))
+    return '2000'
+  else if(window.innerWidth > 750)
+    return '1200'
+  else
+    return 'mobile'
+}
+
 // Use for project homepage
 export const getBackgroundResponsiveDirectory = () => {
   if(window.innerWidth < 750) {// mobile
