@@ -63,7 +63,7 @@ class VideoGames extends React.Component {
           marginTop={170}
           title={{content: 'Video Games', color: '#221061'}}
           baseline={{content: 'Make funny and educational videos games', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'We built two games to ensure traffic to the website, but also as a scientific mediation to the public.'}}
+          description={{color: '#474f6f', content: 'We built two games to ensure traffic to the website, but also as a scientific mediation towards the public.'}}
           />
         <div className='Call_wrapper'>
           <ButtonProject
