@@ -80,8 +80,8 @@ class VisualIdentity extends React.Component {
           isMobile={isMobile}
           marginTop={195}
           title={{content: 'Visual Identity', color: '#221061'}}
-          baseline={{content: 'Create a visual identity able to please to a large audience', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: "To feat to the strategic choice, we created a visual identity colorful and with a lot of illustrations. The colors are brightful and refer to 90's video games."}}
+          baseline={{content: 'Create a visual identity to please a large audience', color: '#abb0bc'}}
+          description={{color: '#474f6f', content: "To fit the strategic choices, we created a visual identity colorful and full of illustrations. The colors are very vivid and refer to 90's video games."}}
           />
         <div className='Logo_header'>
           <img className='Logo' width='410' src='/static/projects/comete/3-visual-identity/logo.svg' alt='comete header' />

@@ -149,7 +149,7 @@ class UserInterface extends React.Component {
             marginTop={195}
             title={{content: 'User Interface', color: 'white'}}
             baseline={{content: 'Create a fun and immersive interface', color: 'white'}}
-            description={{opacity: 0.6, color: 'white', content: 'While presenting the exhibition as well as important scientific content, we have designed a fun site, using animations, videos, diagrams or illustrations.'}}
+            description={{opacity: 0.6, color: 'white', content: 'We have designed a fun website, using animations, videos, diagrams or illustrations as well as featured the exhibition and thorough scientific content.'}}
             />
         </div>
         <Homepage />
@@ -188,7 +188,7 @@ const Content = ({isMobile}) =>
         content='Scientific pages for a scientific exhibition'
         style={{color: '#abb0bc', width: isMobile ? 300 : 450, margin: 'auto'}} />
       <Description
-        content='The exhibition presented a large scientific content. We grouped this content into two pages, one focus on Rosetta mission and the other one on comets. Information was presented as much as possible with diagrams and graphics, making them more understandable.'
+        content='The exhibition presented a large scientific content. We gathered this content into two pages, one focused on rosetta mission and the other one on different comets. Pieces of information were presented as much as possible with diagrams and graphics for greater clarity.'
         style={{color: '#474f6f', fontSize: 16, margin: '10px auto', width: isMobile ? 300 : 450}} />
     </div>
   </div>
@@ -251,7 +251,7 @@ const Homepage = () =>
     <TitleSecondary content='Homepage' style={{color: '#8061e7', margin: 'auto auto 40px auto'}} />
     <div className='Desktop'>
       <Description
-        content='The goal of the homepage is to be as immersive as possible. The page is cut by strips of animated illustrations in parallax and opens a teasing video.'
+        content='The homepage intends to be as immersive as possible. The page is cut by strips of animated illustrations in parallax and offers a teasing video.'
         style={{opacity: 0.6, margin: 'auto', width: 300, textAlign: 'center'}} />
     </div>
     <div className='Mobile'>

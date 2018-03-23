@@ -45,7 +45,7 @@ export const data = {
             },
             {
               label: 'NUMBER OF POSTERS <br/>DISTRIBUTED',
-              value: '600'
+              value: '1000'
             }
           ],
           linkedProjects: [1, 2, 3, 4, 5, 6]
@@ -150,7 +150,7 @@ export const data = {
           callSummary: 'http://www.expo-cometes.fr/',
           problematic: "How to encourage people to attend <br/>a scientific exhibition?",
           website: "http://www.expo-cometes.fr/",
-          description: "<span class='Global_first_letter Global_first_letter_comete'>T</span>o open to the public the breakthrough of the Rosetta space probe, which landed upon the Churyumov-Gerasimenko comet, the European Space Agency (ESA) decided to hold an exhibition.<br/>It took place at the Air and Space Museum of Paris. With my team, we created one website, two videos games, some illustrations for the exhibition and a communication campaign on the social networks.",
+          description: "<span class='Global_first_letter Global_first_letter_comete'>T</span>he European Space Agency (ESA) organized an exhibition about a major scientific breakthrough, the landing of space probe Rosetta  upon the Churyumov-Gerasimenko comet, to make it public.<br/>It took place in the Air and Space Museum of Paris. With my team, we created one website, two videos games, some illustrations for the exhibition and a communication campaign on the social networks.",
           behance: 'https://www.behance.net/gallery/58260273/Comet-Exhibition-Website-Video-games-Illustration',
           number: {
             index: 4,

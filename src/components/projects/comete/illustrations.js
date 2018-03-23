@@ -76,8 +76,8 @@ class Illustrations extends React.Component {
           isMobile={isMobile}
           marginTop={193}
           title={{content: 'Illustrations', color: '#221061'}}
-          baseline={{content: 'pedagogical illustrations', color: '#abb0bc'}}
-          description={{color: '#474f6f', content: 'In addition to the site, the communication and the interractive games, I made for the exhibition illustrations with pedagogical purpose in addition to the photographs presented.'}}
+          baseline={{content: 'educational illustrations', color: '#abb0bc'}}
+          description={{color: '#474f6f', content: 'In addition to the site, the communication and the interactive games, I achieved illustrations with educational purposes besides the photographs presented.'}}
           />
         <div className='First_row desktop'>
           <img className='First_row_illustrations' src='/static/projects/comete/6-illustrations/illu1-2.png' />
