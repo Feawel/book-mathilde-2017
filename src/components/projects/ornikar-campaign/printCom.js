@@ -73,7 +73,8 @@ const sections = [
     picture2: 'PART2-flyer1-carre1',
     picture2Extension: 'jpg',
     picture3: 'PART2-flyer1-carre2',
-    picture3Extension: 'jpg'
+    picture3Extension: 'jpg',
+    isSpecial: true
   },
   {
     title: 'INFOGRAPHIC FOR HELP CANDIDATES',
@@ -135,6 +136,14 @@ const Section = ({section, directory, isMobile}) =>
       .Picture_2, .Picture_3 {
         width: calc(50% - 10px);
       }
+      .Special_bloc {
+        height: 800px;
+        background-image: url('/static/projects/ornikar-campaign/2-print-com/${directory}/${section.picture1}.${section.picture1Extension}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        background-position: center center;
+      }
       @media screen and (max-width: 750px) {
         .Picture_2, .Picture_3 {
           width: 100%;
@@ -160,7 +169,8 @@ const Section = ({section, directory, isMobile}) =>
       content={section.description}
       style={{color: '#375e71', lineHeight: '28px', fontSize: 16, textAlign: 'center', width: isMobile ? 300 : 435, margin: `0 auto ${isMobile ? 40 : 80}px auto`}} />
     <div className='Pictures'>
-      <img className='Picture_1' src={`/static/projects/ornikar-campaign/2-print-com/${directory}/${section.picture1}.${section.picture1Extension}`} />
+      <div className={`Special_bloc ${section.isSpecial && !isMobile ? '' : 'hide'}`} />
+      <img className={`Picture_1 ${section.isSpecial && !isMobile ? 'hide' : ''}`} src={`/static/projects/ornikar-campaign/2-print-com/${directory}/${section.picture1}.${section.picture1Extension}`} />
       <div className='H_separator' />
       <img className='Picture_2' src={`/static/projects/ornikar-campaign/2-print-com/${directory}/${section.picture2}.${section.picture2Extension}`} />
       <div className='V_separator' />

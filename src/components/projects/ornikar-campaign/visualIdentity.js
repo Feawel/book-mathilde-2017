@@ -67,6 +67,7 @@ const Tone = ({isMobile}) =>
         position: relative;
         margin: auto;
         width: 100%;
+        margin-top: 100px;
       }
       .Background {
         width; 100%;

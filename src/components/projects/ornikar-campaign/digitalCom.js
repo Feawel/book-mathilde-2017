@@ -60,10 +60,10 @@ class DigitalCom extends React.Component {
           }
         `}</style>
         <Number
-          content='01'
-          color='#221061'
+          content='03'
+          color='#0d2d40'
           responsivePicto='/static/projects/ornikar-campaign/3-digital-com/picto-com-digital.png'
-          borderBackground='linear-gradient(to left, #5d1bb0 0%, #4dd0ff 100%)' />
+          borderBackground='linear-gradient(to left, #da3c41 0%, #ffd678 100%)' />
         <DoubleIllustrations
             main={{width: 462, src: '/static/projects/ornikar-campaign/3-digital-com/picto-com-digital.png'}}
             second={{width: 1001, src: '/static/projects/ornikar-campaign/3-digital-com/picto-com-digital.png'}}
@@ -275,6 +275,7 @@ const OrangeSection = () =>
         margin: auto;
         top: 155px;
         z-index: 4;
+        box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.25);
       }
       @media screen and (max-width: 2000px) {
         .Top_border {

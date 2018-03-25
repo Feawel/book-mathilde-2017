@@ -183,18 +183,18 @@ export const data = {
           year: 2015,
           stats: [
             {
-              label: 'CHILDS WHO USE THE <br/>NUMERIQUE BOOK',
-              value: 1200
+              label: 'Exhibit duration (in months)',
+              value: 13
             },
             {
-              label: 'NUMBER OF DOWNLOAD <br/>OF THE APP',
-              value: 589
+              label: 'NUMBER OF VIDEO GAMES',
+              value: 2
             }
           ],
           linkedProjects: [0, 1, 2, 4, 5]
         },
         {
-          title: "Ornikar's advertisings",
+          title: "Ornikar's campaigns",
           key: ADVERTISING_KEY,
           problematic: "Install a new brand to the public",
           description: "<span class='Global_first_letter Global_first_letter_advertising'>O</span>rnikar is a start-up founded in 2013. It offers online driving license training, as well as an online platform used as an intermediary between independent teachers and candidates.<br/>Ornikar is today the first driving school in France and the most awarded start-up in France in 2014. I realized their communication during the year 2015. Here are some of the productions.",
