@@ -79,7 +79,7 @@ const Text = () =>
         }
       }
     `}</style>
-    <img className='About_img' src='/static/about/typo-about.svg' />
+    <img className='About_img' alt='typo about' src='/static/about/typo-about.svg' />
     <div className='About_img_mask_mobile' />
     <div className='About_text Description'>
       Hello! I am an artistic director specialized in the realization of website,

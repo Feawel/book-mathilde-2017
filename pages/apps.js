@@ -8,7 +8,6 @@ import { getProjectInitialStateByKey, APPS_KEY } from '../src/utils/project'
 const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
-      <meta charset="UTF-8" />
       <meta name="google-site-verification" content="ttfHHfD2dU8BUV7DXBlA_ywxnQV_HCocu40xBGLmtVI" />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name="robots" content="index,follow" />
@@ -16,10 +15,6 @@ const Page = ({ url }) => (
       <link rel="icon" href="https://www.matserra.design/static/favicon/favicon-02.png" />
       <link rel="canonical" href="https://www.matserra.design/apps/" />
       <title>Mathilde SERRA - Tablet applications | Edtech | Textbook</title>
-
-      <meta itemprop="name" content="Mathilde SERRA - Tablet applications | Edtech | Textbook" />
-      <meta itemprop="description" content="Conception, UX & UI of ipad / android / windows textbooks applications for tablet." />
-      <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="Conception, UX & UI of ipad / android / windows textbooks applications for tablet." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />

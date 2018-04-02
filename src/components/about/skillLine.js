@@ -20,16 +20,16 @@ const SkillLine = ({ draw, isCurrent, lineLength }) =>
         left: 0;
       }
       .path {
-        stroke-dasharray: 2000;
+        stroke-dasharray: 2000px;
         animation: dash 3s linear forwards;
       }
       .path2 {
-        stroke-dasharray: 2000;
+        stroke-dasharray: 2000px;
         animation: dash2 3s linear forwards;
       }
       @keyframes dash {
         from {
-          stroke-dashoffset: 2000;
+          stroke-dashoffset: 2000px;
         }
         to {
           stroke-dashoffset: 0;

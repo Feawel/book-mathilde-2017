@@ -8,7 +8,6 @@ import { getProjectInitialStateByKey, COMETE_KEY } from '../src/utils/project'
 const Page = ({ url }) => (
   <div className='generic-text'>
     <Head>
-      <meta charset="UTF-8" />
       <meta name="google-site-verification" content="ttfHHfD2dU8BUV7DXBlA_ywxnQV_HCocu40xBGLmtVI" />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name="robots" content="index,follow" />
@@ -16,10 +15,6 @@ const Page = ({ url }) => (
       <link rel="icon" href="https://www.matserra.design/static/favicon/favicon-02.png" />
       <link rel="canonical" href="https://www.matserra.design/comete/" />
       <title>Mathilde SERRA - Comet exhibit | Science | Space exploration</title>
-
-      <meta itemprop="name" content="Mathilde SERRA - Comet exhibit | Science | Space exploration" />
-      <meta itemprop="description" content="Conception, UX & UI of a scientific exhibition website to explain the result of the Churyumov-Gerasimenko comet thanks to Rosetta space probe." />
-      <meta itemprop="image" content="https://www.matserra.design/static/seo/homepage.png" />
 
       <meta name="description" content="Conception, UX & UI of a scientific exhibition website to explain the result of the Churyumov-Gerasimenko comet thanks to Rosetta space probe." />
       <meta name="keywords" content="designer, artistic director, directeur artistique, start-up, web, mobile, tablet, tablette, apps, applications, com, marketing, illustration, design" />
