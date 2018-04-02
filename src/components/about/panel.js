@@ -26,6 +26,7 @@ class Panel extends React.Component {
             width: 100%;
             z-index: 12;
             margin-bottom: 10px;
+            position: relative;
             overflow: hidden;
             background-color: #001732;
             -webkit-transition      : all 1.5s  ;

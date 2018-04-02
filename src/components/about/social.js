@@ -8,7 +8,7 @@ const Social = () => (
         z-index: 10;
         width: 20px;
         position: absolute;
-        bottom: 58px;
+        top: 420px;
         right: 30px;
       }
       img {
