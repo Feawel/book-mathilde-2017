@@ -26,7 +26,7 @@ const getBackgroundStyle = (size, isMobile) => {
 const HomeProjects = (props) => {
   const { projectAppear, backgroundSize, openProject, animating, project,
     bar1, bar2, bar3, bar4, bar5, bars, infosAnimation, backgroundDirectory,
-    mask, openProjectAnimation, isMobile, updateProject } = props
+    mask, openProjectAnimation, isMobile, updateProject, toggleAwwward } = props
   if(!backgroundDirectory) return <div />
 
   return (
@@ -73,6 +73,15 @@ const HomeProjects = (props) => {
 
         .Bar.active { height: 100%; }
 
+        .Awwward_ribbon {
+          position: absolute;
+          right: 0;
+          top: 150px;
+          width: 90px;
+          z-index: 10;
+        }
+        .Awwward_ribbon:hover { cursor: pointer; }
+
         @media screen and (max-width: 1000px) {
           .Bar { width: 25%; }
           .Bar_1 { left: 0; }
@@ -97,6 +106,7 @@ const HomeProjects = (props) => {
         <div className='Background transitions'
           style={{backgroundImage: `url('/static/home-projects/background/${backgroundDirectory}/${project.key}.jpg')`, ...getBackgroundStyle(backgroundSize, isMobile)}} />
       </div>
+      <img onClick={toggleAwwward} className='Awwward_ribbon clickable' alt='awwward ribbon' src='/static/awwwards_nominee_black_right@2x.png' />
       <div style={{zIndex: bars ? 9 : 0}} className='Bars'>
         <div className={`Bar Bar_1 ${bar1 ? 'active' : ''}`} />
         <div className={`Bar Bar_2 ${bar2 ? 'active' : ''}`} />

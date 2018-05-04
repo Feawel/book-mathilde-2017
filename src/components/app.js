@@ -7,6 +7,7 @@ import Router from 'next/router'
 import Menu from './menu'
 import About from './about'
 import Home from './home'
+import Awwward from './awwward'
 import throttle from 'lodash/throttle'
 import Projects from './projects'
 import InitialAnimation from './initialAnimation'
@@ -45,6 +46,7 @@ class App extends React.Component {
         call: ''
       },
       isMobile: false,
+      awwward: false,
       ...props.initialState
     }
 
@@ -59,17 +61,19 @@ class App extends React.Component {
     this.displayTypoAnimation = this.displayTypoAnimation.bind(this)
     this.hideTypoAnimation = this.hideTypoAnimation.bind(this)
     this.setProject = this.setProject.bind(this)
+    this.toggleAwwward = this.toggleAwwward.bind(this)
   }
 
   render () {
     const { openMenu, openAbout, currentProject, projectAppear, backgroundSize,
       infosAnimation, backgroundDirectory, bar1, bar2, bar3, bar4, bar5, bars,
-      animating, openProjectAnimation, isMobile, initialAnimation, preventInitialAnimation } = this.state
+      animating, openProjectAnimation, isMobile, initialAnimation, preventInitialAnimation,
+      awwward } = this.state
 
     const project = getProjectByKey(currentProject)
     const content = projectAppear ? <Projects isMobile={isMobile} current={project} /> : null
 
-    const initAnim = preventInitialAnimation ? <div key='initial-anim-empty' /> : <InitialAnimation key='initial-anim' initialAnimation={initialAnimation} />
+    const initAnim = <div/>//preventInitialAnimation ? <div key='initial-anim-empty' /> : <InitialAnimation key='initial-anim' initialAnimation={initialAnimation} />
     return [
       initAnim,
       <div key='pictures' className='Preload_pictures'>
@@ -79,6 +83,10 @@ class App extends React.Component {
           }} />
         )}
       </div>,
+      <Awwward
+        key='awwward'
+        toggleAwwward={this.toggleAwwward}
+        awwward={awwward} />,
       <About
         key='about'
         isMobile={isMobile}
@@ -101,6 +109,7 @@ class App extends React.Component {
       <Home
         openProject={() => this.openProject()}
         closeProject={() => this.closeProject()}
+        toggleAwwward={this.toggleAwwward}
         mask={this.getInfosMaskAppear()}
         bar1={bar1} bar2={bar2} bar3={bar3} bar4={bar4} bar5={bar5} bars={bars}
         projectAppear={projectAppear}
@@ -386,6 +395,15 @@ class App extends React.Component {
 
       this.launchHomeContentAnimation(e)
     }
+  }
+
+  toggleAwwward() {
+    if(this.state.awwward) {
+      this.activateUpdateHomeProject()
+    } else  {
+      this.deactivateUpdateHomeProject()
+    }
+    this.setState({awwward: !this.state.awwward})
   }
 }
 

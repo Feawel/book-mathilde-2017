@@ -1,6 +1,6 @@
 import Close from '../pictos/close'
 
-const CloseAbout = ({toggleOpen}) =>
+const CloseAbout = ({toggleOpen, zIndex = 5, color = 'white'}) =>
   <div className='About_close clickable' onClick={() => toggleOpen()}>
     <style jsx>{`
       .About_close {
@@ -10,17 +10,17 @@ const CloseAbout = ({toggleOpen}) =>
         line-height: 22px;
         font-size: 12px;
         text-transform: uppercase;
-        color: white;
+        color: ${color};
         display: inline-block;
         letter-spacing: 2.4px;
         width: 110px;
-        z-index: 5;
+        z-index: ${zIndex};
       }
       .About_close:hover .Circle_container {
         opacity: 0.8;
       }
       svg {
-        fill: white;
+        fill: ${color};
         width: 50px;
         height: 50px;
         display: inline-block;
@@ -61,7 +61,7 @@ const CloseAbout = ({toggleOpen}) =>
     <div className='Close_container'>
       <div className='Circle_container'>
         <svg className='Circle'>
-          <circle cx="26" cy="26" r="20" stroke="white" strokeWidth="1" fill="none" />
+          <circle cx="26" cy="26" r="20" stroke={color} strokeWidth="1" fill="none" />
         </svg>
       </div>
       <div className='Cross_container'>

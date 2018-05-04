@@ -355,3 +355,15 @@ body > div:first-child, #__next, #__next > div:first-child, #__next > div:first-
     background-position: 0 12px; /* on positionne où l'on veut */
   }
 }
+
+@-webkit-keyframes shine
+{
+  0%
+  {
+      background-position: top left;
+  }
+  100%
+  {
+      background-position: top right;
+  }
+}

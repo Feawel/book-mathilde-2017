@@ -6,7 +6,6 @@ import Contact from './contact'
 import Slider from './slider'
 import MobileSlider from './mobileSlider'
 import Lines from './lines'
-import {enableScroll, disableScroll} from '../../utils/scroll'
 
 const MenuPanel = ({open, openProject, openAbout, toggleOpen, current, projectAppear, setProject, isMobile}) =>
   <div style={{
