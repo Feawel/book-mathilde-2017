@@ -73,7 +73,7 @@ class App extends React.Component {
     const project = getProjectByKey(currentProject)
     const content = projectAppear ? <Projects isMobile={isMobile} current={project} /> : null
 
-    const initAnim = <div/>//preventInitialAnimation ? <div key='initial-anim-empty' /> : <InitialAnimation key='initial-anim' initialAnimation={initialAnimation} />
+    const initAnim = preventInitialAnimation ? <div key='initial-anim-empty' /> : <InitialAnimation key='initial-anim' initialAnimation={initialAnimation} />
     return [
       initAnim,
       <div key='pictures' className='Preload_pictures'>
